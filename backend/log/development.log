@@ -75,3 +75,468 @@ Migrating to CreateThemes (20200228165542)
   [1m[36mSelection Create (2.3ms)[0m  [1m[32mINSERT INTO "selections" ("user_id", "kit_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", "2"], ["kit_id", "1"], ["created_at", "2020-02-28 17:38:45.088693"], ["updated_at", "2020-02-28 17:38:45.088693"]]
   [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits" INNER JOIN "selections" ON "kits"."id" = "selections"."kit_id" WHERE "selections"."user_id" = ? LIMIT ?[0m  [["user_id", "2"], ["LIMIT", 11]]
+Started GET "/manifest.json" for ::1 at 2020-02-28 13:55:50 -0400
+Started GET "/favicon.ico" for ::1 at 2020-02-28 13:55:50 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.2) lib/puma/configuration.rb:228:in `call'
+puma (4.3.2) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.2) lib/puma/server.rb:472:in `process_client'
+puma (4.3.2) lib/puma/server.rb:328:in `block in run'
+puma (4.3.2) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.2) lib/puma/configuration.rb:228:in `call'
+puma (4.3.2) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.2) lib/puma/server.rb:472:in `process_client'
+puma (4.3.2) lib/puma/server.rb:328:in `block in run'
+puma (4.3.2) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/rails/info/routes" for ::1 at 2020-02-28 13:55:55 -0400
+Processing by Rails::InfoController#routes as HTML
+  Rendering /usr/local/rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [49 times] (Duration: 15.2ms | Allocations: 6727)
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 1.1ms | Allocations: 703)
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 30.2ms | Allocations: 10345)
+Completed 200 OK in 43ms (Views: 40.7ms | ActiveRecord: 0.0ms | Allocations: 11605)
+
+
+Started GET "/rails/info/routes" for ::1 at 2020-02-28 14:22:16 -0400
+  [1m[35m (6.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::InfoController#routes as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 1598)
+
+
+  
+NoMethodError (undefined method `protect_from_forgery' for ApplicationController:Class):
+  
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+Started GET "/rails/info/routes" for ::1 at 2020-02-28 14:22:37 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::InfoController#routes as HTML
+  Rendering /usr/local/rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [49 times] (Duration: 19.7ms | Allocations: 6758)
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 8.7ms | Allocations: 931)
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 52.4ms | Allocations: 10617)
+Completed 200 OK in 86ms (Views: 70.3ms | ActiveRecord: 0.0ms | Allocations: 12003)
+
+
+Started POST "/?name=peter&password=[FILTERED]" for ::1 at 2020-02-28 14:23:17 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.2) lib/puma/configuration.rb:228:in `call'
+puma (4.3.2) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.2) lib/puma/server.rb:472:in `process_client'
+puma (4.3.2) lib/puma/server.rb:328:in `block in run'
+puma (4.3.2) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/users?name=peter&password=[FILTERED]" for ::1 at 2020-02-28 14:24:12 -0400
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"peter", "password"=>"[FILTERED]"}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 69)
+
+
+Started POST "/users" for ::1 at 2020-02-28 14:27:21 -0400
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"peter", "password"=>"[FILTERED]"}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 29)
+
+
+Started POST "/users" for ::1 at 2020-02-28 14:28:17 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"peter", "password"=>"[FILTERED]"}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 46)
+
+
+Started POST "/users" for ::1 at 2020-02-28 14:30:42 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"peter", "password"=>"[FILTERED]"}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 48)
+
+
+Started POST "/users" for ::1 at 2020-02-28 14:30:57 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"peter", "password"=>"[FILTERED]"}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 47)
+
+
+Started POST "/users" for ::1 at 2020-02-28 14:31:25 -0400
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"peter", "password"=>"[FILTERED]"}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 27)
+
+
+Started POST "/users" for ::1 at 2020-02-28 14:39:23 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "user"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+Completed 204 No Content in 0ms (ActiveRecord: 0.8ms | Allocations: 46)
+
+
+Started POST "/users" for ::1 at 2020-02-28 14:40:17 -0400
+Processing by UsersController#create as */*
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 27)
+
+
+Started POST "/users" for ::1 at 2020-02-28 14:40:42 -0400
+Processing by UsersController#create as */*
+  Parameters: {"{\n\t\"name\": \"Louise\",\n\t\"password\": \"mypassword\"\n}"=>"[FILTERED]"}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 27)
+
+
+Started POST "/users" for ::1 at 2020-02-28 14:41:10 -0400
+Processing by UsersController#create as */*
+  Parameters: {"{\n\t\"name\": \"Louise\",\n\t\"password\": \"mypassword\"\n}"=>"[FILTERED]"}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 27)
+
+
+Started POST "/users" for ::1 at 2020-02-28 14:41:41 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as */*
+  Parameters: {"{\n\t\"name\": \"Louise\",\n\t\"password\": \"mypassword\"\n}"=>"[FILTERED]"}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 46)
+
+
+Started POST "/users" for ::1 at 2020-02-28 14:41:53 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as */*
+  Parameters: {"{\n\t\"name\": \"Louise\",\n\t\"password\": \"mypassword\"\n}"=>"[FILTERED]"}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 46)
+
+
+Started POST "/users" for ::1 at 2020-02-28 14:42:07 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as */*
+  Parameters: {"{\n\t\"name\": \"Louise\",\n\t\"password\": \"mypassword\"\n}"=>"[FILTERED]"}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 46)
+
+
+Started POST "/users" for ::1 at 2020-02-28 14:45:29 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as */*
+  Parameters: {"{\n\t\"name\": \"Louise\",\n\t\"password\": \"mypassword\"\n}"=>"[FILTERED]"}
+[31mUnpermitted parameter: :{
+	"name": "Louise",
+	"password": "mypassword"
+}[0m
+[31mUnpermitted parameter: :{
+	"name": "Louise",
+	"password": "mypassword"
+}[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 30064ms (Views: 0.2ms | ActiveRecord: 2.1ms | Allocations: 69146)
+
+
+Started POST "/users" for ::1 at 2020-02-28 14:48:05 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "user"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (5.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Louise"], ["password_digest", "$2a$12$q.1CoNm4hdcMja9UD6NpzeZbJ2KHs3dkWd/GpSSrkswHOHHQiIxPW"], ["created_at", "2020-02-28 18:48:05.598290"], ["updated_at", "2020-02-28 18:48:05.598290"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (8.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 321ms (Views: 0.6ms | ActiveRecord: 14.9ms | Allocations: 10183)
+
+
+Started GET "/rails/info/routes" for ::1 at 2020-02-28 14:52:54 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::InfoController#routes as HTML
+  Rendering /usr/local/rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [49 times] (Duration: 12.0ms | Allocations: 6760)
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 2.3ms | Allocations: 928)
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 25.0ms | Allocations: 10736)
+Completed 200 OK in 33ms (Views: 29.7ms | ActiveRecord: 0.0ms | Allocations: 12778)
+
+
+Started GET "/rails/info/routes" for ::1 at 2020-02-28 14:53:53 -0400
+  
+SyntaxError (/mnt/c/Users/Peter/flatiron_labs/current_lab/brick-it/backend/config/routes.rb:2: syntax error, unexpected tIDENTIFIER, expecting end
+  get 'login' to 'sessions#create'
+              ^~
+/mnt/c/Users/Peter/flatiron_labs/current_lab/brick-it/backend/config/routes.rb:10: syntax error, unexpected end, expecting end-of-input):
+  
+config/routes.rb:2: syntax error, unexpected tIDENTIFIER, expecting end
+config/routes.rb:10: syntax error, unexpected end, expecting end-of-input
+config/routes.rb:2: syntax error, unexpected tIDENTIFIER, expecting end
+config/routes.rb:10: syntax error, unexpected end, expecting end-of-input
+Started GET "/rails/info/routes" for ::1 at 2020-02-28 14:54:05 -0400
+  
+SyntaxError (/mnt/c/Users/Peter/flatiron_labs/current_lab/brick-it/backend/config/routes.rb:2: syntax error, unexpected tIDENTIFIER, expecting end
+  post 'login' to 'sessions#create'
+               ^~
+/mnt/c/Users/Peter/flatiron_labs/current_lab/brick-it/backend/config/routes.rb:10: syntax error, unexpected end, expecting end-of-input):
+  
+config/routes.rb:2: syntax error, unexpected tIDENTIFIER, expecting end
+config/routes.rb:10: syntax error, unexpected end, expecting end-of-input
+config/routes.rb:2: syntax error, unexpected tIDENTIFIER, expecting end
+config/routes.rb:10: syntax error, unexpected end, expecting end-of-input
+Started GET "/rails/info/routes" for ::1 at 2020-02-28 14:54:44 -0400
+  
+SyntaxError (/mnt/c/Users/Peter/flatiron_labs/current_lab/brick-it/backend/config/routes.rb:2: syntax error, unexpected tIDENTIFIER, expecting end
+  post '/login' to: 'sessions#create'
+                ^~):
+  
+config/routes.rb:2: syntax error, unexpected tIDENTIFIER, expecting end
+config/routes.rb:2: syntax error, unexpected tIDENTIFIER, expecting end
+Started GET "/rails/info/routes" for ::1 at 2020-02-28 14:55:09 -0400
+  
+SyntaxError (/mnt/c/Users/Peter/flatiron_labs/current_lab/brick-it/backend/config/routes.rb:2: syntax error, unexpected tIDENTIFIER, expecting end
+  post '/login' to: 'sessions#create'
+                ^~):
+  
+config/routes.rb:2: syntax error, unexpected tIDENTIFIER, expecting end
+config/routes.rb:2: syntax error, unexpected tIDENTIFIER, expecting end
+Started GET "/rails/info/routes" for ::1 at 2020-02-28 14:56:27 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::InfoController#routes as HTML
+  Rendering /usr/local/rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [49 times] (Duration: 9.8ms | Allocations: 6726)
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 1.3ms | Allocations: 703)
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 36.5ms | Allocations: 10341)
+Completed 200 OK in 67ms (Views: 65.5ms | ActiveRecord: 0.0ms | Allocations: 11604)
+
+
+Started POST "/login" for ::1 at 2020-02-28 14:57:08 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? AND "users"."password" = ? LIMIT ?[0m  [["name", "Louise"], ["password", "mypassword"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 3489)
+
+
+Started POST "/login" for ::1 at 2020-02-28 14:58:40 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 200 OK in 253ms (Views: 0.4ms | ActiveRecord: 1.4ms | Allocations: 6874)
+
+
+Started POST "/login" for ::1 at 2020-02-28 14:58:56 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 200 OK in 246ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 712)
+
+
+Started POST "/login" for ::1 at 2020-02-28 15:17:45 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 266ms (ActiveRecord: 1.7ms | Allocations: 9159)
+
+
+  
+NameError (uninitialized constant SessionsController::Auth):
+  
+app/controllers/sessions_controller.rb:8:in `create'
+Started POST "/login" for ::1 at 2020-02-28 15:18:31 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/mnt/c/Users/Peter/flatiron_labs/current_lab/brick-it/backend/app/controllers/sessions_controller.rb:8: syntax error, unexpected '}', expecting =>
+     render json: {"hi there"}
+                             ^):
+  
+app/controllers/sessions_controller.rb:8: syntax error, unexpected '}', expecting =>
+app/controllers/sessions_controller.rb:8: syntax error, unexpected '}', expecting =>
+Started POST "/login" for ::1 at 2020-02-28 15:19:27 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 200 OK in 259ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 6776)
+
+
+Started POST "/login" for ::1 at 2020-02-28 15:19:36 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 272ms (ActiveRecord: 1.7ms | Allocations: 8183)
+
+
+  
+NameError (uninitialized constant SessionsController::Auth):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started POST "/login" for ::1 at 2020-02-28 15:23:10 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 277ms (ActiveRecord: 1.6ms | Allocations: 9604)
+
+
+  
+NameError (uninitialized constant SessionsController::Auth):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started POST "/login" for ::1 at 2020-02-28 15:23:58 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 260ms (ActiveRecord: 1.6ms | Allocations: 8557)
+
+
+  
+NameError (uninitialized constant SessionsController::Auth):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started POST "/login" for ::1 at 2020-02-28 15:27:00 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 265ms (ActiveRecord: 1.9ms | Allocations: 8553)
+
+
+  
+NameError (uninitialized constant SessionsController::Auth):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started POST "/login" for ::1 at 2020-02-28 15:29:21 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 275ms (ActiveRecord: 1.7ms | Allocations: 9635)
+
+
+  
+NameError (uninitialized constant SessionsController::Auth):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started POST "/login" for ::1 at 2020-02-28 15:31:53 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+LoadError (cannot load such file -- Auth):
+  
+app/controllers/sessions_controller.rb:1:in `<main>'
+Started POST "/login" for ::1 at 2020-02-28 15:34:34 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+LoadError (cannot load such file -- JWT):
+  
+lib/Auth.rb:1:in `<main>'
+app/controllers/sessions_controller.rb:1:in `<main>'
+Started POST "/login" for ::1 at 2020-02-28 15:34:53 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 291ms (ActiveRecord: 1.7ms | Allocations: 9730)
+
+
+  
+NameError (uninitialized constant SessionsController::Auth):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started POST "/login" for ::1 at 2020-02-28 15:35:36 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+LoadError (cannot load such file -- JWT):
+  
+lib/Auth.rb:1:in `<main>'
+app/controllers/sessions_controller.rb:1:in `<main>'
+Started POST "/login" for ::1 at 2020-02-28 15:36:41 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 200 OK in 264ms (Views: 0.2ms | ActiveRecord: 1.6ms | Allocations: 8258)
+
+

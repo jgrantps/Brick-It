@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  post '/login', to: 'sessions#create'
+  get 'session/destroy'
+  
   resources :themes
   resources :kits
   resources :comments
