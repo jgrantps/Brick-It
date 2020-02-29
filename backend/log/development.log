@@ -540,3 +540,1062 @@ Processing by SessionsController#create as */*
 Completed 200 OK in 264ms (Views: 0.2ms | ActiveRecord: 1.6ms | Allocations: 8258)
 
 
+Started POST "/login" for ::1 at 2020-02-28 21:26:28 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 200 OK in 255ms (Views: 0.1ms | ActiveRecord: 1.3ms | Allocations: 8258)
+
+
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mSelection Load (0.5ms)[0m  [1m[34mSELECT "selections".* FROM "selections" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/login" for ::1 at 2020-02-28 22:02:39 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 200 OK in 258ms (Views: 0.1ms | ActiveRecord: 1.3ms | Allocations: 8258)
+
+
+Started GET "/kits" for ::1 at 2020-02-28 22:05:20 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 500 Internal Server Error in 152ms (ActiveRecord: 1.1ms | Allocations: 70266)
+
+
+  
+NameError (undefined local variable or method `some_attribute' for #<KitsController:0x00007fffd5b0f248>):
+  
+app/controllers/application_controller.rb:5:in `index'
+Started POST "/login" for ::1 at 2020-02-28 22:06:02 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 200 OK in 267ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 6658)
+
+
+Started POST "/login" for ::1 at 2020-02-28 22:07:48 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 200 OK in 242ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 825)
+
+
+Started GET "/games" for ::1 at 2020-02-28 22:09:25 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/games"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.2) lib/puma/configuration.rb:228:in `call'
+puma (4.3.2) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.2) lib/puma/server.rb:472:in `process_client'
+puma (4.3.2) lib/puma/server.rb:328:in `block in run'
+puma (4.3.2) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/kits" for ::1 at 2020-02-28 22:10:49 -0400
+Started GET "/kits" for ::1 at 2020-02-28 22:13:14 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 500 Internal Server Error in 118911ms (ActiveRecord: 0.8ms | Allocations: 110555)
+
+
+  
+NameError (undefined local variable or method `some_attribute' for #<KitsController:0x00007fffd3c5c698>):
+  
+app/controllers/kits_controller.rb:8:in `index'
+Started POST "/login" for ::1 at 2020-02-28 22:15:25 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 200 OK in 284ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 7447)
+
+
+Started GET "/kits" for ::1 at 2020-02-28 22:15:47 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 500 Internal Server Error in 197840ms (ActiveRecord: 0.0ms | Allocations: 322280)
+
+
+  
+NameError (undefined local variable or method `some_attribute' for #<KitsController:0x00007fffd386dc80>):
+  
+app/controllers/kits_controller.rb:8:in `index'
+Started GET "/kits" for ::1 at 2020-02-28 22:19:41 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.7ms | Allocations: 738)
+
+
+  
+NoMethodError (undefined method `decod' for JWT:Module
+Did you mean?  decode):
+  
+lib/Auth.rb:12:in `decode_token'
+app/controllers/kits_controller.rb:8:in `index'
+Started GET "/kits" for ::1 at 2020-02-28 22:20:26 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits"[0m
+  ↳ app/controllers/kits_controller.rb:9:in `index'
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 1.4ms | Allocations: 5374)
+
+
+Started POST "/login" for ::1 at 2020-02-29 07:58:23 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 200 OK in 290ms (Views: 0.2ms | ActiveRecord: 1.5ms | Allocations: 7585)
+
+
+Started POST "/login" for ::1 at 2020-02-29 07:59:56 -0400
+  [1m[35m (12.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 500 Internal Server Error in 279ms (ActiveRecord: 1.3ms | Allocations: 8452)
+
+
+  
+NotImplementedError (Unsupported signing method):
+  
+lib/Auth.rb:8:in `create_token'
+app/controllers/sessions_controller.rb:11:in `create'
+Started POST "/login" for ::1 at 2020-02-29 08:01:37 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 500 Internal Server Error in 258ms (ActiveRecord: 1.7ms | Allocations: 7051)
+
+
+  
+NotImplementedError (Unsupported signing method):
+  
+lib/Auth.rb:8:in `create_token'
+app/controllers/sessions_controller.rb:11:in `create'
+Started POST "/login" for ::1 at 2020-02-29 08:02:06 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 500 Internal Server Error in 269ms (ActiveRecord: 1.6ms | Allocations: 7020)
+
+
+  
+NotImplementedError (Unsupported signing method):
+  
+lib/Auth.rb:8:in `create_token'
+app/controllers/sessions_controller.rb:11:in `create'
+Started POST "/login" for ::1 at 2020-02-29 08:02:19 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 500 Internal Server Error in 256ms (ActiveRecord: 1.5ms | Allocations: 7019)
+
+
+  
+NotImplementedError (Unsupported signing method):
+  
+lib/Auth.rb:8:in `create_token'
+app/controllers/sessions_controller.rb:11:in `create'
+Started POST "/login" for ::1 at 2020-02-29 08:03:31 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 500 Internal Server Error in 254ms (ActiveRecord: 1.5ms | Allocations: 7018)
+
+
+  
+NotImplementedError (Unsupported signing method):
+  
+lib/Auth.rb:8:in `create_token'
+app/controllers/sessions_controller.rb:11:in `create'
+Started POST "/login" for ::1 at 2020-02-29 08:05:03 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 200 OK in 10706ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 48114)
+
+
+Started POST "/login" for ::1 at 2020-02-29 08:05:24 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 200 OK in 5253ms (Views: 0.3ms | ActiveRecord: 1.8ms | Allocations: 9328)
+
+
+Started POST "/login" for ::1 at 2020-02-29 08:05:55 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 200 OK in 271ms (Views: 0.1ms | ActiveRecord: 1.6ms | Allocations: 8508)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 08:06:08 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.5ms | Allocations: 176)
+
+
+  
+JWT::VerificationError (Signature verification raised):
+  
+lib/Auth.rb:18:in `decode_token'
+app/controllers/kits_controller.rb:8:in `index'
+Started GET "/kits" for ::1 at 2020-02-29 08:07:31 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.9ms | Allocations: 178)
+
+
+  
+JWT::VerificationError (Signature verification raised):
+  
+lib/Auth.rb:18:in `decode_token'
+app/controllers/kits_controller.rb:8:in `index'
+Started POST "/login" for ::1 at 2020-02-29 08:07:41 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 200 OK in 267ms (Views: 0.1ms | ActiveRecord: 1.6ms | Allocations: 6600)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 08:08:02 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.8ms | Allocations: 178)
+
+
+  
+JWT::VerificationError (Signature verification raised):
+  
+lib/Auth.rb:18:in `decode_token'
+app/controllers/kits_controller.rb:8:in `index'
+Started GET "/kits" for ::1 at 2020-02-29 08:08:35 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.7ms | Allocations: 176)
+
+
+  
+JWT::VerificationError (Signature verification raised):
+  
+lib/Auth.rb:18:in `decode_token'
+app/controllers/kits_controller.rb:8:in `index'
+Started GET "/kits" for ::1 at 2020-02-29 08:08:55 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 500 Internal Server Error in 4891ms (ActiveRecord: 0.6ms | Allocations: 40715)
+
+
+  
+JWT::VerificationError (Signature verification raised):
+  
+lib/Auth.rb:19:in `decode_token'
+app/controllers/kits_controller.rb:8:in `index'
+Started GET "/kits" for ::1 at 2020-02-29 08:09:16 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 500 Internal Server Error in 723842ms (ActiveRecord: 0.0ms | Allocations: 56405)
+
+
+  
+JWT::VerificationError (Signature verification raised):
+  
+lib/Auth.rb:19:in `decode_token'
+app/controllers/kits_controller.rb:8:in `index'
+Started POST "/login" for ::1 at 2020-02-29 08:21:41 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 200 OK in 272ms (Views: 0.1ms | ActiveRecord: 2.1ms | Allocations: 7856)
+
+
+Started GET "/kits?=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7Im5hbWUiOiJMb3Vpc2UiLCJpZCI6M319.Q3t3197vzuk7iXlDfuZHXcoM-1lM0-ei_8NZrHL4qMs" for ::1 at 2020-02-29 08:22:44 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+  [1m[36mKit Load (1.4ms)[0m  [1m[34mSELECT "kits".* FROM "kits"[0m
+  ↳ app/controllers/kits_controller.rb:9:in `index'
+Completed 200 OK in 23068ms (Views: 11.1ms | ActiveRecord: 2.4ms | Allocations: 12290)
+
+
+Started POST "/login" for ::1 at 2020-02-29 08:23:49 -0400
+  [1m[35m (12.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 200 OK in 277ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 8263)
+
+
+Started GET "/kits?=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7Im5hbWUiOiJMb3Vpc2UiLCJpZCI6M319.Q3t3197vzuk7iXlDfuZHXcoM-1lM0-ei_8NZrHL4qMs" for ::1 at 2020-02-29 08:24:35 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+  [1m[36mKit Load (0.4ms)[0m  [1m[34mSELECT "kits".* FROM "kits"[0m
+  ↳ app/controllers/kits_controller.rb:9:in `index'
+Completed 200 OK in 13424ms (Views: 12.9ms | ActiveRecord: 1.7ms | Allocations: 45399)
+
+
+Started POST "/login" for ::1 at 2020-02-29 08:26:03 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 200 OK in 265ms (Views: 0.1ms | ActiveRecord: 1.6ms | Allocations: 8509)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 08:26:52 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits"[0m
+  ↳ app/controllers/kits_controller.rb:9:in `index'
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 1.3ms | Allocations: 5098)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 08:28:07 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits"[0m
+  ↳ app/controllers/kits_controller.rb:9:in `index'
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 1.4ms | Allocations: 5008)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 08:28:19 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.7ms | Allocations: 446)
+
+
+  
+JWT::VerificationError (Signature verification raised):
+  
+lib/Auth.rb:20:in `decode_token'
+app/controllers/kits_controller.rb:8:in `index'
+Started POST "/login" for ::1 at 2020-02-29 08:30:23 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 200 OK in 261ms (Views: 0.1ms | ActiveRecord: 2.1ms | Allocations: 7430)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 08:31:48 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 160)
+
+
+  
+JWT::VerificationError (Signature verification raised):
+  
+lib/Auth.rb:20:in `decode_token'
+app/controllers/kits_controller.rb:8:in `index'
+Started GET "/kits" for ::1 at 2020-02-29 08:32:30 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.8ms | Allocations: 179)
+
+
+  
+JWT::VerificationError (Signature verification raised):
+  
+lib/Auth.rb:20:in `decode_token'
+app/controllers/kits_controller.rb:8:in `index'
+Started GET "/kits" for ::1 at 2020-02-29 08:32:53 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.8ms | Allocations: 179)
+
+
+  
+JWT::VerificationError (Signature verification raised):
+  
+lib/Auth.rb:20:in `decode_token'
+app/controllers/kits_controller.rb:8:in `index'
+Started GET "/kits" for ::1 at 2020-02-29 08:33:05 -0400
+Processing by KitsController#index as */*
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 158)
+
+
+  
+JWT::VerificationError (Signature verification raised):
+  
+lib/Auth.rb:20:in `decode_token'
+app/controllers/kits_controller.rb:8:in `index'
+Started GET "/kits" for ::1 at 2020-02-29 08:33:06 -0400
+Processing by KitsController#index as */*
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 158)
+
+
+  
+JWT::VerificationError (Signature verification raised):
+  
+lib/Auth.rb:20:in `decode_token'
+app/controllers/kits_controller.rb:8:in `index'
+Started POST "/login" for ::1 at 2020-02-29 08:33:13 -0400
+Processing by SessionsController#create as */*
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms | Allocations: 2096)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: session):
+  
+app/controllers/sessions_controller.rb:26:in `sessionsParams'
+app/controllers/sessions_controller.rb:6:in `create'
+Started POST "/login" for ::1 at 2020-02-29 08:33:32 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 200 OK in 253ms (Views: 0.1ms | ActiveRecord: 1.6ms | Allocations: 4676)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 08:33:51 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 158)
+
+
+  
+JWT::VerificationError (Signature verification raised):
+  
+lib/Auth.rb:20:in `decode_token'
+app/controllers/kits_controller.rb:8:in `index'
+Started GET "/kits" for ::1 at 2020-02-29 08:34:01 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits"[0m
+  ↳ app/controllers/kits_controller.rb:9:in `index'
+Completed 200 OK in 18ms (Views: 15.9ms | ActiveRecord: 1.4ms | Allocations: 5617)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 08:34:31 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+  [1m[36mKit Load (0.4ms)[0m  [1m[34mSELECT "kits".* FROM "kits"[0m
+  ↳ app/controllers/kits_controller.rb:10:in `index'
+Completed 200 OK in 161693ms (Views: 12.0ms | ActiveRecord: 2.1ms | Allocations: 59668)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 08:37:28 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 163)
+
+
+  
+JWT::VerificationError (Signature verification raised):
+  
+lib/Auth.rb:20:in `decode_token'
+app/controllers/kits_controller.rb:8:in `index'
+Started GET "/kits" for ::1 at 2020-02-29 08:40:47 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.9ms | Allocations: 178)
+
+
+  
+JWT::VerificationError (Signature verification raised):
+  
+lib/Auth.rb:20:in `decode_token'
+app/controllers/kits_controller.rb:8:in `index'
+Started GET "/kits" for ::1 at 2020-02-29 08:40:53 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+  [1m[36mKit Load (0.5ms)[0m  [1m[34mSELECT "kits".* FROM "kits"[0m
+  ↳ app/controllers/kits_controller.rb:10:in `index'
+Completed 200 OK in 13ms (Views: 10.7ms | ActiveRecord: 1.0ms | Allocations: 4988)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 08:41:23 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+  [1m[36mKit Load (0.4ms)[0m  [1m[34mSELECT "kits".* FROM "kits"[0m
+  ↳ app/controllers/kits_controller.rb:11:in `index'
+Completed 200 OK in 22399ms (Views: 8.4ms | ActiveRecord: 1.7ms | Allocations: 8123)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 08:41:50 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 500 Internal Server Error in 48572ms (ActiveRecord: 0.0ms | Allocations: 3238)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+lib/Auth.rb:20:in `decode_token'
+app/controllers/kits_controller.rb:9:in `index'
+Started GET "/kits" for ::1 at 2020-02-29 08:43:14 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 500 Internal Server Error in 7863ms (ActiveRecord: 0.0ms | Allocations: 3285)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+lib/Auth.rb:20:in `decode_token'
+app/controllers/kits_controller.rb:9:in `index'
+Started GET "/kits" for ::1 at 2020-02-29 08:43:37 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 500 Internal Server Error in 520370ms (ActiveRecord: 0.0ms | Allocations: 26436)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+lib/Auth.rb:20:in `decode_token'
+app/controllers/kits_controller.rb:9:in `index'
+Started GET "/kits" for ::1 at 2020-02-29 09:02:06 -0400
+Started GET "/kits" for ::1 at 2020-02-29 09:03:06 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 500 Internal Server Error in 11430ms (Views: 0.5ms | ActiveRecord: 1.0ms | Allocations: 41577)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:03:52 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits"[0m
+  ↳ app/controllers/kits_controller.rb:11:in `index'
+Completed 200 OK in 1670ms (Views: 17.5ms | ActiveRecord: 1.0ms | Allocations: 9609)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:04:01 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 500 Internal Server Error in 4792ms (ActiveRecord: 0.0ms | Allocations: 5165)
+
+
+  
+NoMethodError (undefined method `render' for Auth:Class):
+  
+lib/Auth.rb:25:in `rescue in decode_token'
+lib/Auth.rb:19:in `decode_token'
+app/controllers/kits_controller.rb:9:in `index'
+Started GET "/kits" for ::1 at 2020-02-29 09:05:01 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 500 Internal Server Error in 2007ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 41877)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:07:15 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits"[0m
+  ↳ app/controllers/kits_controller.rb:11:in `index'
+Completed 200 OK in 10ms (Views: 7.4ms | ActiveRecord: 1.4ms | Allocations: 5617)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:07:20 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 500 Internal Server Error in 2ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 186)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:07:31 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 500 Internal Server Error in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 147)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:07:36 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 500 Internal Server Error in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 127)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:10:45 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 500 Internal Server Error in 3ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 444)
+
+
+Started POST "/login" for ::1 at 2020-02-29 09:10:57 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 200 OK in 256ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 7397)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:11:10 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits"[0m
+  ↳ app/controllers/kits_controller.rb:12:in `index'
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.8ms | Allocations: 5089)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:11:16 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 500 Internal Server Error in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 184)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:11:52 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 165)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:12:06 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits"[0m
+  ↳ app/controllers/kits_controller.rb:12:in `index'
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 1.5ms | Allocations: 5583)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:12:18 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits"[0m
+  ↳ app/controllers/kits_controller.rb:12:in `index'
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.3ms | Allocations: 994)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:12:37 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 77)
+
+
+Started POST "/login" for ::1 at 2020-02-29 09:12:52 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 200 OK in 261ms (Views: 0.1ms | ActiveRecord: 1.4ms | Allocations: 7170)
+
+
+Started POST "/login" for ::1 at 2020-02-29 09:13:09 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 200 OK in 245ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 845)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:13:15 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 75)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:13:39 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 75)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:13:43 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 101)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:13:52 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 389)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:13:53 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 76)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:14:05 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 101)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:14:55 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 397)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:14:58 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+  [1m[36mKit Load (0.5ms)[0m  [1m[34mSELECT "kits".* FROM "kits"[0m
+  ↳ app/controllers/kits_controller.rb:12:in `index'
+Completed 200 OK in 15ms (Views: 12.7ms | ActiveRecord: 1.2ms | Allocations: 5319)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:15:01 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 82)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:17:13 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 106)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:17:24 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 397)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:17:25 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 82)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:17:28 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+  [1m[36mKit Load (0.4ms)[0m  [1m[34mSELECT "kits".* FROM "kits"[0m
+  ↳ app/controllers/kits_controller.rb:12:in `index'
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.8ms | Allocations: 5319)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:17:39 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 140)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:17:50 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 166)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:18:13 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 163)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:18:22 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits"[0m
+  ↳ app/controllers/kits_controller.rb:12:in `index'
+Completed 200 OK in 19ms (Views: 16.2ms | ActiveRecord: 1.5ms | Allocations: 5582)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:18:29 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits"[0m
+  ↳ app/controllers/kits_controller.rb:12:in `index'
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.3ms | Allocations: 1032)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:18:37 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 76)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:18:43 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits"[0m
+  ↳ app/controllers/kits_controller.rb:12:in `index'
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.3ms | Allocations: 964)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:19:58 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 74)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:23:05 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 200 OK in 123134ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 57959)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:25:15 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 500 Internal Server Error in 287999ms (ActiveRecord: 0.0ms | Allocations: 71187)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `rescue in decode_token'
+lib/Auth.rb:26:in `rescue in decode_token'
+lib/Auth.rb:19:in `decode_token'
+app/controllers/kits_controller.rb:8:in `index'
+Started POST "/login" for ::1 at 2020-02-29 09:30:18 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Started POST "/login" for ::1 at 2020-02-29 09:30:18 -0400
+Completed 200 OK in 269ms (Views: 0.1ms | ActiveRecord: 1.9ms | Allocations: 8811)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 200 OK in 241ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 857)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:30:40 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.6ms | Allocations: 1141)
+
+
+  
+NoMethodError (undefined method `render' for Auth:Class):
+  
+lib/Auth.rb:25:in `rescue in decode_token'
+lib/Auth.rb:19:in `decode_token'
+app/controllers/kits_controller.rb:8:in `index'
+Started GET "/kits" for ::1 at 2020-02-29 09:31:17 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 1.0ms | Allocations: 1133)
+
+
+  
+NoMethodError (undefined method `render' for Auth:Class):
+  
+lib/Auth.rb:25:in `rescue in decode_token'
+lib/Auth.rb:19:in `decode_token'
+app/controllers/kits_controller.rb:8:in `index'
+Started POST "/login" for ::1 at 2020-02-29 09:40:01 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 200 OK in 264ms (Views: 0.1ms | ActiveRecord: 2.0ms | Allocations: 8510)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:40:22 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+  [1m[36mKit Load (0.4ms)[0m  [1m[34mSELECT "kits".* FROM "kits"[0m
+  ↳ app/controllers/kits_controller.rb:12:in `index'
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 1.7ms | Allocations: 5098)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:40:34 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits"[0m
+  ↳ app/controllers/kits_controller.rb:12:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.3ms | Allocations: 997)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:40:46 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits"[0m
+  ↳ app/controllers/kits_controller.rb:12:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms | Allocations: 940)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:41:10 -0400
+  [1m[35m (10.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits"[0m
+  ↳ app/controllers/kits_controller.rb:12:in `index'
+Completed 200 OK in 19ms (Views: 7.7ms | ActiveRecord: 1.4ms | Allocations: 5524)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:41:16 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 76)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:41:24 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits"[0m
+  ↳ app/controllers/kits_controller.rb:12:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.2ms | Allocations: 998)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:41:30 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits"[0m
+  ↳ app/controllers/kits_controller.rb:12:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.3ms | Allocations: 1032)
+
+
+Started POST "/login" for ::1 at 2020-02-29 09:47:53 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "session"=>{"name"=>"Louise", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Louise"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 200 OK in 287ms (Views: 0.1ms | ActiveRecord: 1.7ms | Allocations: 8510)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:48:09 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+  [1m[36mKit Load (0.4ms)[0m  [1m[34mSELECT "kits".* FROM "kits"[0m
+  ↳ app/controllers/kits_controller.rb:14:in `index'
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 2.0ms | Allocations: 5098)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:48:14 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits"[0m
+  ↳ app/controllers/kits_controller.rb:14:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 939)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:48:36 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+  [1m[36mKit Load (0.4ms)[0m  [1m[34mSELECT "kits".* FROM "kits"[0m
+  ↳ app/controllers/kits_controller.rb:15:in `index'
+Completed 200 OK in 16757ms (Views: 10.8ms | ActiveRecord: 1.8ms | Allocations: 47949)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:49:12 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 438)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:49:19 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+  [1m[36mKit Load (0.4ms)[0m  [1m[34mSELECT "kits".* FROM "kits"[0m
+  ↳ app/controllers/kits_controller.rb:15:in `index'
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.8ms | Allocations: 5317)
+
+
+Started GET "/kits" for ::1 at 2020-02-29 09:49:25 -0400
+Processing by KitsController#index as */*
+  Parameters: {"name"=>"Louise", "password"=>"[FILTERED]", "kit"=>{"name"=>"Louise"}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 180)
+
+

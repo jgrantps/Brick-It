@@ -1,4 +1,4 @@
-require 'Auth'
+
 
 class SessionsController < ApplicationController
   
