@@ -606,6 +606,23 @@ video {
   }
 }
 
+.submit-btn {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-width: 1px;
+  border-color: #a0aec0;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: #f7fafc;
+}
+
+.submit-btn:hover {
+  background-color: #edf2f7;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

@@ -20,7 +20,7 @@ class Auth
         begin
             decoded_results = JWT.decode(token, salt, true, { algorithm: algo })
         rescue JWT::JWKError
-            decoded_results = "this is a JWK Error"
+            decoded_results = "JWK Error"
         
         rescue JWT::DecodeError
             decoded_results = "Error"               
