@@ -1,0 +1,19 @@
+Todos
+
+Monday March 2nd:
+
+=> complete building out the backend controllers#actions
+
+=> confirm the persistence of current_user throughout the different controllers (confirm the the before_action validations needed!!)
+
+=> implement the fast JSON api and build out the serializers.
+
+=> confirm the integration with Rebrickable API.
+
+    => confirm how to handle the api key.
+    => confirm how to handle the JSON retrieved and map it to its appropriate builder classes.
+
+    BUILDER CLASSES FOR REBRICKABLE CONTENT:
+
+    1. Builder class for the Theme.
+    2. Builder class for the kit.

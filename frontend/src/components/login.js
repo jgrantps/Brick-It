@@ -1,22 +1,30 @@
 import React, { Component } from 'react'
+import {Bird} from '../classes/bird'
+import { connect } from 'react-redux';
 
 
 class Login extends Component {
-
+    
     state= {
         name: "",
         password: ""
     }
-
+    
     handleOnChange = event => {
         const {name, value} = event.target
         this.setState({
             [name]: value
         })
     }
-
+    
     handleOnLogIn = event => {
+        const { namee, nname, bird } = this.props
         event.preventDefault()
+        let daffy = new Bird(namee.louise())
+        // let daffy = bird(nname.louise())
+        console.log(daffy.name)
+
+
 
         let formData = {
             name: this.state.name,
@@ -87,8 +95,8 @@ render() {
                     />
 
                     <div className="py-4">
-                        <input className="submit-btn mr-2" id="signup-btn" type="submit" onClick={this.handleOnSignUp} value="Get Kits"/>
-                        <input className="submit-btn mr-2" id="login-btn" type="submit" onClick={this.handleOnLogIn} value="Log In"/>
+                        <input className="submit-btn mr-2" id="signup-btn" type="submit" onClick={this.handleOnSignUp} value="GET KITS"/>
+                        <input className="submit-btn mr-2" id="login-btn" type="submit" onClick={this.handleOnLogIn} value="LOG IN"/>
                     </div>
                     <div id="alert-div" className="hidden"></div>
                 </div> 
@@ -99,4 +107,9 @@ render() {
 }
 }
 
-export default Login
+const mapStateToProps = state => ({
+    nname: state.classes.name,
+    bird: state.classes.bird,
+})
+
+export default connect(mapStateToProps)(Login)

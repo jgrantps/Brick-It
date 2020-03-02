@@ -3,7 +3,7 @@
 @tailwind components;
 
 .submit-btn {
-    @apply px-4 py-2 border border-gray-500 rounded font-semibold uppercase bg-gray-100; 
+    @apply px-4 py-2 border border-gray-500 rounded font-semibold bg-gray-100; 
   }
   
   .submit-btn:hover {

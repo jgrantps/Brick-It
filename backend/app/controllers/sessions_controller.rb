@@ -1,12 +1,13 @@
 
 
 class SessionsController < ApplicationController
-  
+  # skip_before_action :check_token, only: [:create]
   def create
-    user = User.find_by(:name => sessionsParams[:name])
+    user = User.find_by(:name => sessionParams[:name])
     
-    if user&& user.authenticate(sessionsParams[:password])
-     render json: {token: Auth.create_token({name: user.name, id: user.id })}
+    if user&& user.try(:authenticate, sessionParams[:password])
+      token = Auth.create_token({name: user.name, id: user.id})
+      render json: {token: token}
 
      
     #  this render result is to be stored in the ${window.localstorage.setItem('Token', renderResult)}
@@ -36,7 +37,7 @@ class SessionsController < ApplicationController
 
   private
 
-  def sessionsParams
+  def sessionParams
     params.require(:session).permit(:name, :password)
   end
 

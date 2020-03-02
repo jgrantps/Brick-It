@@ -1,7 +1,7 @@
 require 'Auth'
 require 'byebug'
 class ApplicationController < ActionController::API
-   
+  
     
     
     
@@ -14,7 +14,12 @@ class ApplicationController < ActionController::API
       end
 
     def current_user
-        @current_user ||= User.find(session[:user_id]) if session[:user_id]
+      token = request.env["HTTP_AUTHORIZATION"]
+      if token != 'undefined'
+        return @current_user ||= User.find(Auth.decode_token(token).first["user"]["id"]) if token      
+      else
+        render json: {error: {message: "Web Token is Invalid Or Missing"}}
+        return false
+      end
     end
-
 end
