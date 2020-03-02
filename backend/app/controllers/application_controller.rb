@@ -1,9 +1,7 @@
 require 'Auth'
 require 'byebug'
 class ApplicationController < ActionController::API
-  
-    
-    
+  before_action :signed_in?
     
     def signed_out?
         return true if !!current_user != true
@@ -15,6 +13,7 @@ class ApplicationController < ActionController::API
 
     def current_user
       token = request.env["HTTP_AUTHORIZATION"]
+      
       if token != 'undefined'
         return @current_user ||= User.find(Auth.decode_token(token).first["user"]["id"]) if token      
       else

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import {Bird} from '../classes/bird'
 import { connect } from 'react-redux';
-
+import api from '../classes/adapters'
 
 class Login extends Component {
+   
     
     state= {
         name: "",
@@ -18,52 +18,58 @@ class Login extends Component {
     }
     
     handleOnLogIn = event => {
-        const { namee, nname, bird } = this.props
+      
         event.preventDefault()
-        let daffy = new Bird(namee.louise())
-        // let daffy = bird(nname.louise())
-        console.log(daffy.name)
 
-
-
-        let formData = {
+        let logInCredentials = {
             name: this.state.name,
             password: this.state.password
         }
 
-        let configurationObject = {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify(formData)
+        api.Login(logInCredentials)
+        .then(resp => {
+            window.localStorage.setItem('token', resp.token)
+            console.log(resp)
+             })
+        .catch(err => console.log(err))
 
-        }
-          
-        fetch('http://localhost:3001/login', configurationObject)
-       .then(response => response.json())
-       .then(resp => {
-           window.localStorage.setItem('token', resp.token)
-           console.log(resp)
-            })
-       .catch(err => console.log(err))
-        }
+    }
 
-
-    handleOnSignUp = event => {
+    handleOnLogOut = event => {
+      
         event.preventDefault()
-        let configurationObject = {
-            method: "GET",
-            headers: {
-              "Authorization": window.localStorage.token
-            }
+
+        api.Logout()
+        .then(resp => {
+            window.localStorage.removeItem('token')
+            console.log(resp)
+             })
+        .catch(err => console.log(err))
+    }
+
+    fetchThemes = event => {
+        event.preventDefault()
+       
+        
+        api.getTheme("14")
+         .then(user => console.log(user))
+         .catch(err => console.log(err))
         }
 
-        fetch('http://localhost:3001/kits', configurationObject)
-        .then(response => response.json())
+
+    fetchKits = event => {
+        event.preventDefault()
+        
+        api.fetchKit(window.localStorage.token)
        .then(resp => { console.log(resp) })
        .catch(err => console.log(err))
     }
+
+
+
+
+
+
 
 render() {
     return(
@@ -95,8 +101,10 @@ render() {
                     />
 
                     <div className="py-4">
-                        <input className="submit-btn mr-2" id="signup-btn" type="submit" onClick={this.handleOnSignUp} value="GET KITS"/>
+                        <input className="submit-btn mr-2" id="signup-btn" type="submit" onClick={this.fetchKits} value="GET KITS"/>
                         <input className="submit-btn mr-2" id="login-btn" type="submit" onClick={this.handleOnLogIn} value="LOG IN"/>
+                        <input className="submit-btn mr-2" id="logout-btn" type="submit" onClick={this.handleOnLogOut} value="LOG OUT"/>
+                        <input className="submit-btn mr-2" id="fetch-btn" type="submit" onClick={this.fetchThemes} value="FETCH THEMES"/>
                     </div>
                     <div id="alert-div" className="hidden"></div>
                 </div> 
@@ -109,7 +117,7 @@ render() {
 
 const mapStateToProps = state => ({
     nname: state.classes.name,
-    bird: state.classes.bird,
+    birdie: state.classes.api,
 })
 
 export default connect(mapStateToProps)(Login)

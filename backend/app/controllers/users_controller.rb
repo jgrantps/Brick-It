@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    skip_before_action :check_token, only: [:create]
+    skip_before_action :signed_in?, only: [:create]
 
     def create
        

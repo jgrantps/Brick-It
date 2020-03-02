@@ -5,6 +5,7 @@ Monday March 2nd:
 => complete building out the backend controllers#actions
 
 => confirm the persistence of current_user throughout the different controllers (confirm the the before_action validations needed!!)
+    :) working with a before_action signed_in? that runs over all non log-in/sign-up actions.
 
 => implement the fast JSON api and build out the serializers.
 

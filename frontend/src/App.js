@@ -6,6 +6,7 @@ import {NameAdapter} from './classes/names'
 
 function App() {
   const name = new NameAdapter;
+  
 
   
   return (
@@ -15,7 +16,7 @@ function App() {
     <Link to="/kits">Kits</Link>
     <Link to="/login">Login</Link>
 
-    <Route path="/login" render={(props) => <Login {...props} namee={name}/>}/>
+    <Route path="/login" render={(props) => <Login {...props}  namee={name}/>}/>
     <Route path="/kits" component={Kits}/>
    
     </div>

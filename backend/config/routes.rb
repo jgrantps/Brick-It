@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
-  get 'session/destroy'
+  post '/logout', to: 'sessions#destroy'
   
   resources :themes
   resources :kits
