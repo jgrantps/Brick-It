@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import api from '../classes/adapters'
+import api from '../classes/adapters';
+import {Kit} from '../classes/kits';
 
 class Login extends Component {
    
@@ -18,7 +19,6 @@ class Login extends Component {
     }
     
     handleOnLogIn = event => {
-      
         event.preventDefault()
 
         let logInCredentials = {
@@ -36,7 +36,6 @@ class Login extends Component {
     }
 
     handleOnLogOut = event => {
-      
         event.preventDefault()
 
         api.Logout()
@@ -62,6 +61,19 @@ class Login extends Component {
         
         api.fetchKit(window.localStorage.token)
        .then(resp => { console.log(resp) })
+       .catch(err => console.log(err))
+    }
+
+
+    fetchKit = event => {
+        event.preventDefault()
+        
+        api.getKit("40289-1")
+       .then(resp => { 
+           console.log(resp)
+           let legoset = new Kit(resp)
+           console.log(legoset)
+        })
        .catch(err => console.log(err))
     }
 
@@ -105,6 +117,7 @@ render() {
                         <input className="submit-btn mr-2" id="login-btn" type="submit" onClick={this.handleOnLogIn} value="LOG IN"/>
                         <input className="submit-btn mr-2" id="logout-btn" type="submit" onClick={this.handleOnLogOut} value="LOG OUT"/>
                         <input className="submit-btn mr-2" id="fetch-btn" type="submit" onClick={this.fetchThemes} value="FETCH THEMES"/>
+                        <input className="submit-btn mr-2" id="fetch-btn" type="submit" onClick={this.fetchKit} value="FETCH KIT"/>
                     </div>
                     <div id="alert-div" className="hidden"></div>
                 </div> 

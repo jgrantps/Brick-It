@@ -11,8 +11,8 @@ Monday March 2nd:
 
 => confirm the integration with Rebrickable API.
 
-    => confirm how to handle the api key.
-    => confirm how to handle the JSON retrieved and map it to its appropriate builder classes.
+    => :) confirm how to handle the api key.
+    => :) confirm how to handle the JSON retrieved and map it to its appropriate builder classes.
 
     BUILDER CLASSES FOR REBRICKABLE CONTENT:
 

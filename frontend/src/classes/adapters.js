@@ -43,14 +43,13 @@ class ApiAdapter {
     }
 
     getKit(URL) {
-        return fetch('${this.rebrickableBaseUrl}/lego/sets/${URL}', this.rebrickableAuth)
+        return fetch(`${this.rebrickableBaseUrl}sets/${URL}/`, this.rebrickableAuth)
         .then(r=>r.json())
     }
 
+    
+
 // Fetch Requests to Brickit API:
-
-
-
     Login(formData) {
         return fetch(`${this.baseUrl}/login`, this.postConfig(formData))
         .then(r=>r.json())
@@ -65,8 +64,7 @@ class ApiAdapter {
         return fetch(`${this.baseUrl}/kits`, this.brickItAuth(storage))
         .then(response => response.json())
     }
-
-
 }
+
 let api = new ApiAdapter
 export default api
