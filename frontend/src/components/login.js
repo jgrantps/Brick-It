@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import api from '../classes/adapters';
 import {Kit} from '../classes/kits';
+import { Theme } from '../classes/themes';
 
 class Login extends Component {
    
@@ -18,6 +19,7 @@ class Login extends Component {
         })
     }
     
+    //LOG USER IN.
     handleOnLogIn = event => {
         event.preventDefault()
 
@@ -34,7 +36,8 @@ class Login extends Component {
         .catch(err => console.log(err))
 
     }
-
+    
+    //LOG USER OUT
     handleOnLogOut = event => {
         event.preventDefault()
 
@@ -46,16 +49,28 @@ class Login extends Component {
         .catch(err => console.log(err))
     }
 
-    fetchThemes = event => {
+    //GET KITS FOR SPECIFIED THEME FROM REBRICKABLE API
+    getKitsFromTheme = event => {
         event.preventDefault()
-       
         
-        api.getTheme("14")
-         .then(user => console.log(user))
-         .catch(err => console.log(err))
-        }
+        api.fetchThemedKits("125")
+        .then(resp => { resp.results.map(kit => {new Kit(kit)}) 
+                        console.log(Kit.allIncludedKits); //returns array of KIT objects to be sorted
+                    })
+        .catch(err => console.log(err))
+    } 
 
+    //GET ALL THEMES FROM REBRICKABLE API
+    getAllThemes = event => {
+        event.preventDefault()
 
+        api.getThemes()
+        .then(resp => { resp.results.map(theme => { new Theme(theme)})
+                        console.log(Theme.allIncludedThemes); //returns array of THEME objects to be sorted.
+                        })
+        .catch(err => console.log(err))
+    }
+    
     fetchKits = event => {
         event.preventDefault()
         
@@ -64,7 +79,8 @@ class Login extends Component {
        .catch(err => console.log(err))
     }
 
-
+    
+    
     fetchKit = event => {
         event.preventDefault()
         
@@ -75,6 +91,14 @@ class Login extends Component {
            console.log(legoset)
         })
        .catch(err => console.log(err))
+    }
+
+    fetchSelection = event => {
+        event.preventDefault()
+
+        api.fetchSelection('3', window.localStorage.token)
+        .then(resp => { console.log(resp) })
+        .catch(err => console.log(err))
     }
 
 
@@ -116,8 +140,11 @@ render() {
                         <input className="submit-btn mr-2" id="signup-btn" type="submit" onClick={this.fetchKits} value="GET KITS"/>
                         <input className="submit-btn mr-2" id="login-btn" type="submit" onClick={this.handleOnLogIn} value="LOG IN"/>
                         <input className="submit-btn mr-2" id="logout-btn" type="submit" onClick={this.handleOnLogOut} value="LOG OUT"/>
-                        <input className="submit-btn mr-2" id="fetch-btn" type="submit" onClick={this.fetchThemes} value="FETCH THEMES"/>
+                        <input className="submit-btn mr-2" id="fetch-btn" type="submit" onClick={this.getAllThemes} value="FETCH ALL THEMES FROM REBRICKABLE"/>
+                        <input className="submit-btn mr-2" id="fetch-btn" type="submit" onClick={this.getKitsFromTheme} value="FETCH KITS FROM SPECIFIED THEME"/>
                         <input className="submit-btn mr-2" id="fetch-btn" type="submit" onClick={this.fetchKit} value="FETCH KIT"/>
+                        <input className="submit-btn mr-2" id="fetch-btn" type="submit" onClick={this.fetchSelection} value="FETCH Selection from BrickIt"/>
+                        <input className="submit-btn mr-2" id="fetch-btn" type="submit" onClick={this.fetchThemes} value="FETCH Themes from Rebrickable"/>
                     </div>
                     <div id="alert-div" className="hidden"></div>
                 </div> 

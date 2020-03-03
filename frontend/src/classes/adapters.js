@@ -32,13 +32,15 @@ class ApiAdapter {
     }
 
 // Fetch Requests to Rebrickable API:
-    getTheme(URL) {
-        return fetch(`${this.rebrickableBaseUrl}/themes/${URL}`, this.rebrickableAuth)
+    //GET KITS FOR SPECIFIED THEME
+    fetchThemedKits(URL) {
+        return fetch(`${this.rebrickableBaseUrl}/sets/?theme_id=${URL}`, this.rebrickableAuth)
         .then(r => r.json())
     }
 
+    //GET ALL THEMES
     getThemes() {
-        return fetch(`${this.rebrickableBaseUrl}/themes`, this.rebrickableAuth)
+        return fetch(`${this.rebrickableBaseUrl}/themes/?page_size=655`, this.rebrickableAuth)
         .then(r => r.json())
     }
 
@@ -60,9 +62,16 @@ class ApiAdapter {
         .then(r=>r.json())
     }
 
-    fetchKit(storage) {
-        return fetch(`${this.baseUrl}/kits`, this.brickItAuth(storage))
+    fetchKit(token) {
+        return fetch(`${this.baseUrl}/kits`, this.brickItAuth(token))
         .then(response => response.json())
+    }
+    
+
+    // GET request to Selections#Show
+    fetchSelection(id, token) {
+        return fetch(`${this.baseUrl}/selections/${id}`, this.brickItAuth(token))
+        .then(resp => resp.json())
     }
 }
 

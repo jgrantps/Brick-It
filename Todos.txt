@@ -4,12 +4,12 @@ Monday March 2nd:
 
 => complete building out the backend controllers#actions
 
-=> confirm the persistence of current_user throughout the different controllers (confirm the the before_action validations needed!!)
+=> :) confirm the persistence of current_user throughout the different controllers (confirm the the before_action validations needed!!)
     :) working with a before_action signed_in? that runs over all non log-in/sign-up actions.
 
-=> implement the fast JSON api and build out the serializers.
+=>  :) implement the fast JSON api and build out the serializers.
 
-=> confirm the integration with Rebrickable API.
+=> :) confirm the integration with Rebrickable API.
 
     => :) confirm how to handle the api key.
     => :) confirm how to handle the JSON retrieved and map it to its appropriate builder classes.
@@ -17,4 +17,17 @@ Monday March 2nd:
     BUILDER CLASSES FOR REBRICKABLE CONTENT:
 
     1. Builder class for the Theme.
-    2. Builder class for the kit.
+        a. user makes a get request for all themes at start.
+            // https://rebrickable.com/api/v3/lego/themes/
+        b. theme data comes back and is built into "Theme" objects and rendered to the DOM.
+        c. User selects a particular theme, which then triggers another get request for all kits of that theme:
+            // https://rebrickable.com/api/v3/lego/sets/?theme_id=12
+        d. kit data are returned and are again built into "Kit" objects and rendered to the DOM.
+        e. User clicks on a "select" button, which adds the selected "Kit" object to the selections array
+        f. User clicks on a "Submit" button, which sends a "POST" request to the local API <selections#create>.
+            // http://localhost:3001/selections
+        g. Create action populates database with the selections to the current_user. It then renders back all selections.
+        h. React rebuilds the user's selections page with the updated selections.      
+        
+          
+    2. :) Builder class for the kit.

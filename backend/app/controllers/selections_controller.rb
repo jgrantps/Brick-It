@@ -15,12 +15,13 @@ class SelectionsController < ApplicationController
     end
 
     def show
+        selection = Selection.find_by(:id => specific_selection_param[:id].to_i)
         
-        selection = Selection.find_by(:id => selections_params[:id])
         if (selection.user == current_user) || (selection.public == true)
             options = {
-                include: [:user, :kit]
+                include: [:user, :kit, :'kit.theme']
             }
+            
             render json: SelectionSerializer.new(selection, options)
         else
             render json: {main: selection.errors.as_json(full_messages: true), reason: "error!"}
@@ -34,6 +35,11 @@ private
     
     def selections_params
         params.permit(:selection).require(:id, :user_id, :kit_id)
-    end    
+    end   
+    
+    def specific_selection_param
+        params.permit(:id)
+    end
+
     
 end
