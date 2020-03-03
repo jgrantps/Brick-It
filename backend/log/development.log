@@ -4949,3 +4949,15 @@ Processing by SessionsController#create as */*
 Completed 200 OK in 239ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 840)
 
 
+  [1m[35m (10.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mSelection Load (0.3ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."user_id" = ? LIMIT ?[0m  [["user_id", "4"], ["LIMIT", 11]]
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits" INNER JOIN "selections" ON "kits"."id" = "selections"."kit_id" WHERE "selections"."user_id" = ? LIMIT ?[0m  [["user_id", "4"], ["LIMIT", 11]]
+  [1m[36mKit Load (0.4ms)[0m  [1m[34mSELECT "kits".* FROM "kits" ORDER BY "kits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mKit Load (0.1ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSelection Create (1.6ms)[0m  [1m[32mINSERT INTO "selections" ("user_id", "kit_id", "public", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "4"], ["kit_id", "1"], ["public", 1], ["created_at", "2020-03-03 11:01:50.988675"], ["updated_at", "2020-03-03 11:01:50.988675"]]
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits" INNER JOIN "selections" ON "kits"."id" = "selections"."kit_id" WHERE "selections"."user_id" = ? LIMIT ?[0m  [["user_id", "4"], ["LIMIT", 11]]
+  [1m[36mSelection Load (0.3ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."user_id" = ? LIMIT ?[0m  [["user_id", "4"], ["LIMIT", 11]]
