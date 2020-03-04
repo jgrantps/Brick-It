@@ -16,7 +16,7 @@ Monday March 2nd:
 
     BUILDER CLASSES FOR REBRICKABLE CONTENT:
 
-    1. Builder class for the Theme.
+    1. :) Builder class for the Theme.
         a. user makes a get request for all themes at start.
             // https://rebrickable.com/api/v3/lego/themes/
         b. theme data comes back and is built into "Theme" objects and rendered to the DOM.
@@ -28,6 +28,29 @@ Monday March 2nd:
             // http://localhost:3001/selections
         g. Create action populates database with the selections to the current_user. It then renders back all selections.
         h. React rebuilds the user's selections page with the updated selections.      
-        
-          
+
+
     2. :) Builder class for the kit.
+    3. :) Builder class for the Selection.
+
+
+
+=> :) add image URL to the kit database (check for theme images too.)
+=> configure parent_id for themes to group theme ids.
+=
+=>begin building React components.  
+
+    Login: 
+        => separate container with components.
+        => CSS divs to display validation errors.
+        => routes away to '/user'(?) when logged in or signed up.
+        => omniAuth?????????????  Twitter??
+
+
+    Themes:
+        => Alphabetical sorting, with:
+        => Filter for each letter
+        => Search based on state.
+
+ => render Kit list component in response to selected theme.
+

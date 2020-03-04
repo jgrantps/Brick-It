@@ -5392,3 +5392,608 @@ Processing by SessionsController#destroy as */*
 Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 106)
 
 
+Started POST "/logout" for ::1 at 2020-03-03 21:59:31 -0400
+  [1m[35m (6.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>"", "session"=>{"_json"=>""}}
+Completed 200 OK in 8ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 531)
+
+
+Started POST "/login" for ::1 at 2020-03-03 21:59:32 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 200 OK in 314ms (Views: 0.2ms | ActiveRecord: 2.5ms | Allocations: 8464)
+
+
+Started POST "/logout" for ::1 at 2020-03-03 22:03:02 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>"", "session"=>{"_json"=>""}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 108)
+
+
+Started GET "/selections/1" for ::1 at 2020-03-03 22:03:03 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"1"}
+Filter chain halted as :signed_in? rendered or redirected
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 146)
+
+
+Started POST "/login" for ::1 at 2020-03-03 22:03:06 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 200 OK in 243ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 856)
+
+
+Started GET "/selections/1" for ::1 at 2020-03-03 22:03:07 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.2ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+Completed 200 OK in 82ms (Views: 0.1ms | ActiveRecord: 2.0ms | Allocations: 9094)
+
+
+Started POST "/logout" for ::1 at 2020-03-03 22:03:20 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>"", "session"=>{"_json"=>""}}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 106)
+
+
+Started POST "/login" for ::1 at 2020-03-03 22:03:21 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 200 OK in 243ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 854)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-03 22:03:22 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.2ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.3ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 106ms (Views: 73.9ms | ActiveRecord: 3.5ms | Allocations: 16014)
+
+
+Started POST "/logout" for ::1 at 2020-03-03 22:17:18 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>"", "session"=>{"_json"=>""}}
+Filter chain halted as :signed_in? rendered or redirected
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 152)
+
+
+Started POST "/login" for ::1 at 2020-03-03 22:17:24 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 200 OK in 262ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 6696)
+
+
+Started POST "/login" for ::1 at 2020-03-03 22:26:18 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 200 OK in 236ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 858)
+
+
+Started POST "/logout" for ::1 at 2020-03-03 22:26:19 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+Completed 200 OK in 40838ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 80776)
+
+
+Started POST "/login" for ::1 at 2020-03-03 22:27:19 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 200 OK in 256ms (Views: 0.1ms | ActiveRecord: 1.6ms | Allocations: 7094)
+
+
+Started POST "/logout" for ::1 at 2020-03-03 22:27:21 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 807)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-03 22:27:22 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+Filter chain halted as :signed_in? rendered or redirected
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 140)
+
+
+Started POST "/login" for ::1 at 2020-03-03 22:27:24 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 200 OK in 237ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 840)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-03 22:27:24 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.2ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.2ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 65ms (Views: 33.8ms | ActiveRecord: 3.8ms | Allocations: 20970)
+
+
+Started POST "/logout" for ::1 at 2020-03-03 22:27:30 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 690)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-03 22:27:30 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+Filter chain halted as :signed_in? rendered or redirected
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 122)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-03 22:44:06 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+Filter chain halted as :signed_in? rendered or redirected
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 123)
+
+
+Started POST "/login" for ::1 at 2020-03-03 22:44:07 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 200 OK in 236ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 859)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-03 22:44:08 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.3ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.4ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 26ms (Views: 16.1ms | ActiveRecord: 1.5ms | Allocations: 4343)
+
+
+Started POST "/login" for ::1 at 2020-03-03 23:00:00 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 200 OK in 253ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 858)
+
+
+Started POST "/login" for ::1 at 2020-03-03 23:00:09 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 200 OK in 235ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 841)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-03 23:00:13 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.3ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.3ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 16ms (Views: 6.4ms | ActiveRecord: 1.4ms | Allocations: 4343)
+
+
+Started POST "/logout" for ::1 at 2020-03-03 23:01:40 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 690)
+
+
+Started POST "/login" for ::1 at 2020-03-03 23:01:41 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 200 OK in 234ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 840)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-03 23:01:44 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.3ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.2ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 31ms (Views: 14.5ms | ActiveRecord: 1.3ms | Allocations: 4273)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-03 23:04:59 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.2ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.2ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 16ms (Views: 5.9ms | ActiveRecord: 1.1ms | Allocations: 4273)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-03 23:05:51 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.2ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.3ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 33ms (Views: 15.2ms | ActiveRecord: 1.3ms | Allocations: 4273)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-03 23:06:48 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.2ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.3ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 25ms (Views: 15.4ms | ActiveRecord: 1.2ms | Allocations: 4273)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-03 23:08:56 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.3ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.3ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 24ms (Views: 15.1ms | ActiveRecord: 1.4ms | Allocations: 4273)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-03 23:09:03 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.2ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.4ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 35ms (Views: 15.5ms | ActiveRecord: 1.4ms | Allocations: 4273)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-03 23:09:33 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.2ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.2ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 15ms (Views: 6.0ms | ActiveRecord: 1.1ms | Allocations: 4273)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-03 23:10:21 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.2ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.2ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 34ms (Views: 15.3ms | ActiveRecord: 1.3ms | Allocations: 4273)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-03 23:12:25 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.2ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.3ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 34ms (Views: 15.6ms | ActiveRecord: 1.4ms | Allocations: 4273)
+
+
+Started POST "/login" for ::1 at 2020-03-03 23:14:47 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 200 OK in 246ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 840)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-03 23:14:48 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.3ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.4ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 31ms (Views: 14.9ms | ActiveRecord: 1.5ms | Allocations: 4273)
+
+
+  [1m[35m (12.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddImageurlToKit (20200304110851)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (5.3ms)[0m  [1m[35mALTER TABLE "kits" ADD "image_url" varchar[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200304110851"]]
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mKit Load (0.8ms)[0m  [1m[34mSELECT "kits".* FROM "kits" ORDER BY "kits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTheme Load (0.1ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mKit Update (1.2ms)[0m  [1m[33mUPDATE "kits" SET "updated_at" = ?, "image_url" = ? WHERE "kits"."id" = ?[0m  [["updated_at", "2020-03-04 11:14:40.612910"], ["image_url", "https://cdn.rebrickable.com/media/sets/10040-1/3493.jpg"], ["id", 1]]
+  [1m[35m (8.6ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/login" for ::1 at 2020-03-04 07:15:20 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 200 OK in 290ms (Views: 0.1ms | ActiveRecord: 1.6ms | Allocations: 8540)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-04 07:15:24 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.2ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.2ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 143ms (Views: 81.7ms | ActiveRecord: 4.0ms | Allocations: 23874)
+
+
+Started POST "/login" for ::1 at 2020-03-04 07:21:25 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 200 OK in 274ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 6738)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-04 07:21:26 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.3ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.3ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 68ms (Views: 45.3ms | ActiveRecord: 1.6ms | Allocations: 24111)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-04 07:22:42 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.3ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.2ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 16ms (Views: 5.7ms | ActiveRecord: 1.2ms | Allocations: 4294)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-04 07:23:14 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.2ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.2ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 16ms (Views: 6.0ms | ActiveRecord: 1.0ms | Allocations: 4293)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-04 07:23:34 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.2ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.2ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 18ms (Views: 7.5ms | ActiveRecord: 1.3ms | Allocations: 4294)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-04 07:24:16 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.2ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.2ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 13ms (Views: 5.3ms | ActiveRecord: 1.1ms | Allocations: 4293)
+
+
+Started POST "/login" for ::1 at 2020-03-04 07:36:35 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 200 OK in 245ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 868)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-04 07:36:36 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (1.1ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.3ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 21ms (Views: 9.9ms | ActiveRecord: 2.2ms | Allocations: 4365)
+
+
+Started POST "/logout" for ::1 at 2020-03-04 08:03:48 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+Completed 200 OK in 283ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 15280)
+
+
+Started POST "/login" for ::1 at 2020-03-04 08:03:49 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 200 OK in 244ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 857)
+
+
+Started POST "/logout" for ::1 at 2020-03-04 08:03:50 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 690)
+
+

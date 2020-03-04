@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_28_165542) do
+ActiveRecord::Schema.define(version: 2020_03_04_110851) do
 
   create_table "comments", force: :cascade do |t|
     t.string "selection_id"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2020_02_28_165542) do
     t.string "theme_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image_url"
   end
 
   create_table "selections", force: :cascade do |t|

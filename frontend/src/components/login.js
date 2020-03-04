@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import api from '../classes/adapters';
 import {Kit} from '../classes/kits';
 import { Theme } from '../classes/themes';
+import { Selection } from '../classes/selections';
 
 class Login extends Component {
    
@@ -41,7 +42,7 @@ class Login extends Component {
     handleOnLogOut = event => {
         event.preventDefault()
 
-        api.Logout()
+        api.Logout(window.localStorage.token)
         .then(resp => {
             window.localStorage.removeItem('token')
             console.log(resp)
@@ -49,7 +50,34 @@ class Login extends Component {
         .catch(err => console.log(err))
     }
 
-    //GET KITS FOR SPECIFIED THEME FROM REBRICKABLE API
+    //RETRIEVE SPECIFIC SELECTION FROM LOCAL API
+    getSelections = event => {
+        event.preventDefault()
+
+        api.fetchSelection('2', window.localStorage.token)
+        .then(resp =>{ 
+            console.log(resp)
+            let bb = new Selection(resp)
+            console.log(bb)
+        })
+    }
+
+    //RETRIEVE ALL THEMES FROM REBRICKABLE API
+    getAllThemes = event => {
+        event.preventDefault()
+
+        api.retrieveThemes()
+        .then(resp => { resp.results.map(theme => { 
+                        //ASSIGN REBRICKABLE API_ID TO A SPECIFIED ID ATTRIBUTE; DEFAULT ID SET TO 'UNDEFINED'.
+                        let formattedTheme = {...theme, api_id: theme.id}
+
+                        new Theme(formattedTheme)})
+                        console.log(Theme.allIncludedThemes); //returns array of THEME objects to be sorted.
+                        })
+        .catch(err => console.log(err))
+    }
+    
+    //RETRIEVE ALL KITS FOR SPECIFIED THEME FROM REBRICKABLE API
     getKitsFromTheme = event => {
         event.preventDefault()
         
@@ -59,47 +87,37 @@ class Login extends Component {
                     })
         .catch(err => console.log(err))
     } 
-
-    //GET ALL THEMES FROM REBRICKABLE API
-    getAllThemes = event => {
-        event.preventDefault()
-
-        api.getThemes()
-        .then(resp => { resp.results.map(theme => { new Theme(theme)})
-                        console.log(Theme.allIncludedThemes); //returns array of THEME objects to be sorted.
-                        })
+    
+    //RETRIEVE SPECIFIC KIT FROM THE REBRICKABLE API 
+     fetchKit = event => {
+         event.preventDefault()
+         
+         api.getOneKitFromRb("40289-1")
+        .then(resp => { 
+            console.log(resp)
+            let legoset = new Kit(resp)
+            console.log(legoset)
+         })
         .catch(err => console.log(err))
-    }
-    
-    fetchKits = event => {
-        event.preventDefault()
-        
-        api.fetchKit(window.localStorage.token)
-       .then(resp => { console.log(resp) })
-       .catch(err => console.log(err))
-    }
+     }
 
-    
-    
-    fetchKit = event => {
-        event.preventDefault()
-        
-        api.getKit("40289-1")
-       .then(resp => { 
-           console.log(resp)
-           let legoset = new Kit(resp)
-           console.log(legoset)
-        })
-       .catch(err => console.log(err))
-    }
 
-    fetchSelection = event => {
-        event.preventDefault()
+    //SEND SELECTION TO USER DB
+    // ****BROKEN STILL --> MUST FIX
+    // sendSelection = event => {
+    //     event.preventDefault()
 
-        api.fetchSelection('3', window.localStorage.token)
-        .then(resp => { console.log(resp) })
-        .catch(err => console.log(err))
-    }
+    //     api.sendSelection(window.localStorage.token, selectionData)
+    // }
+
+    // RETRIEVE SPECIFIC SELECTION FROM USER DB.
+    // fetchSelection = event => {
+    //     event.preventDefault()
+
+    //     api.fetchSelection('3', window.localStorage.token)
+    //     .then(resp => { console.log(resp) })
+    //     .catch(err => console.log(err))
+    // }
 
 
 
@@ -111,9 +129,9 @@ render() {
     return(
         <div className="entry-modal flex w-xl" id="sign-in">
             <div className="bg-white rounded-lg  px-6 shadow">
-                <h1 className="font-semibold pb-2 text-xl"> Welcome to Brickit!</h1>
+                <h1 className="font-semibold pb-2 my-2 text-xl"> Welcome to Brickit!</h1>
                 <h2>Please sign up or sign in below:</h2> 
-                <div className="my-2">
+                <div className="my-2 my-2">
                     <h2 className="font-semibold">Username:</h2>
 
                     <input 
@@ -137,14 +155,14 @@ render() {
                     />
 
                     <div className="py-4">
-                        <input className="submit-btn mr-2" id="signup-btn" type="submit" onClick={this.fetchKits} value="GET KITS"/>
-                        <input className="submit-btn mr-2" id="login-btn" type="submit" onClick={this.handleOnLogIn} value="LOG IN"/>
-                        <input className="submit-btn mr-2" id="logout-btn" type="submit" onClick={this.handleOnLogOut} value="LOG OUT"/>
-                        <input className="submit-btn mr-2" id="fetch-btn" type="submit" onClick={this.getAllThemes} value="FETCH ALL THEMES FROM REBRICKABLE"/>
-                        <input className="submit-btn mr-2" id="fetch-btn" type="submit" onClick={this.getKitsFromTheme} value="FETCH KITS FROM SPECIFIED THEME"/>
-                        <input className="submit-btn mr-2" id="fetch-btn" type="submit" onClick={this.fetchKit} value="FETCH KIT"/>
-                        <input className="submit-btn mr-2" id="fetch-btn" type="submit" onClick={this.fetchSelection} value="FETCH Selection from BrickIt"/>
-                        <input className="submit-btn mr-2" id="fetch-btn" type="submit" onClick={this.fetchThemes} value="FETCH Themes from Rebrickable"/>
+                        <input className="submit-btn mr-2 my-2" id="signup-btn" type="submit" onClick={this.getSelections} value="GET SELECTION FROM LOCAL API"/>
+                        <input className="submit-btn mr-2 my-2" id="login-btn" type="submit" onClick={this.handleOnLogIn} value="LOG IN"/>
+                        <input className="submit-btn mr-2 my-2" id="logout-btn" type="submit" onClick={this.handleOnLogOut} value="LOG OUT"/>
+                        <input className="submit-btn mr-2 my-2" id="fetch-btn" type="submit" onClick={this.getAllThemes} value="FETCH ALL THEMES FROM REBRICKABLE"/>
+                        <input className="submit-btn mr-2 my-2" id="fetch-btn" type="submit" onClick={this.getKitsFromTheme} value="FETCH KITS FROM SPECIFIED THEME"/>
+                        <input className="submit-btn mr-2 my-2" id="fetch-btn" type="submit" onClick={this.fetchKit} value="FETCH KIT"/>
+                        {/* <input className="submit-btn mr-2 my-2" id="fetch-btn" type="submit" onClick={this.fetchSelection} value="FETCH Selection from BrickIt"/> */}
+                        <input className="submit-btn mr-2 my-2" id="fetch-btn" type="submit" onClick={this.fetchThemes} value="FETCH Themes from Rebrickable"/>
                     </div>
                     <div id="alert-div" className="hidden"></div>
                 </div> 
