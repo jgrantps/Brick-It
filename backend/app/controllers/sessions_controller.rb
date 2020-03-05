@@ -1,14 +1,43 @@
 class SessionsController < ApplicationController
   skip_before_action :signed_in?, only: [:create]
   
-  def create
-    user = User.find_by(:name => sessionParams[:name])
+  require 'open-uri'
 
-    if user&& user.try(:authenticate, sessionParams[:password])
-      token = Auth.create_token({name: user.name, id: user.id})
-      render json: {token: token}
+  def create
+   
+    if request.env["omniauth.auth"]
+      # log in with omniauth data
+      oauth_username = request.env["omniauth.auth"]["info"]["nickname"]
+      if user = User.find_by(:name => oauth_username)
+        # if already a user in the db.
+        token = Auth.create_token({:name=> user.name, :id=> user.id})     
+        # pass token to frontend as param to be stored in window.localstorage.token
+        redirect_to "http://localhost:3000/login/github/?token=#{token}"
+      else
+        user = User.new(:name => oauth_username, :password => SecureRandom.base36)
+        # creates a new user based on GitHub credentials.
+        if user.save
+          token = Auth.create_token({:name=> user.name, :id=> user.id})
+          # pass token to frontend as param to be stored in window.localstorage.token
+          redirect_to "http://localhost:3000/login/github/?token=#{token}"
+        else
+          # pass error to frontend as param to be processed accordingly.
+          redirect_to "http://localhost:3000/login/github/?token=error"
+        end
+      end
+
+        
+
     else
-      render json: {message: "Login Failed, Please Try Again!"}
+      
+      # Normal login with username and password
+      user = User.find_by(:name => sessionParams[:name])
+      if user&& user.try(:authenticate, sessionParams[:password])
+        token = Auth.create_token({:name=> user.name, :id=> user.id})
+        render json: {token: token}
+      else
+        render json: {message: "Login Failed, Please Try Again!"}
+      end
     end
   
   end

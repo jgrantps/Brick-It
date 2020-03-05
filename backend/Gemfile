@@ -18,7 +18,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'jwt'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-
+gem 'omniauth'
+gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 # Serializer for rendeing JSON to the front end.
 gem 'fast_jsonapi'
 

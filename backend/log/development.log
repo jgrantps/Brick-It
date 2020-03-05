@@ -5997,3 +5997,2810 @@ Processing by SessionsController#destroy as */*
 Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 690)
 
 
+Started GET "/" for ::1 at 2020-03-04 09:53:42 -0400
+  [1m[35m (6.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+OmniAuth::NoSessionError (You must provide a session to use OmniAuth.):
+  
+omniauth (1.9.1) lib/omniauth/strategy.rb:180:in `call!'
+omniauth (1.9.1) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.1) lib/omniauth/builder.rb:45:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.5) lib/rack/cors.rb:98:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.2) lib/puma/configuration.rb:228:in `call'
+puma (4.3.2) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.2) lib/puma/server.rb:472:in `process_client'
+puma (4.3.2) lib/puma/server.rb:328:in `block in run'
+puma (4.3.2) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/auth/github" for ::1 at 2020-03-04 09:54:24 -0400
+  
+OmniAuth::NoSessionError (You must provide a session to use OmniAuth.):
+  
+omniauth (1.9.1) lib/omniauth/strategy.rb:180:in `call!'
+omniauth (1.9.1) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.1) lib/omniauth/builder.rb:45:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.5) lib/rack/cors.rb:98:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.2) lib/puma/configuration.rb:228:in `call'
+puma (4.3.2) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.2) lib/puma/server.rb:472:in `process_client'
+puma (4.3.2) lib/puma/server.rb:328:in `block in run'
+puma (4.3.2) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/auth/github" for ::1 at 2020-03-04 09:55:13 -0400
+  
+OmniAuth::NoSessionError (You must provide a session to use OmniAuth.):
+  
+omniauth (1.9.1) lib/omniauth/strategy.rb:180:in `call!'
+omniauth (1.9.1) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.1) lib/omniauth/builder.rb:45:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.5) lib/rack/cors.rb:98:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.2) lib/puma/configuration.rb:228:in `call'
+puma (4.3.2) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.2) lib/puma/server.rb:472:in `process_client'
+puma (4.3.2) lib/puma/server.rb:328:in `block in run'
+puma (4.3.2) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/auth/github" for ::1 at 2020-03-04 10:02:24 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/auth/github" for ::1 at 2020-03-04 10:05:43 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/auth/github" for ::1 at 2020-03-04 10:08:24 -0400
+Started GET "/auth/github" for ::1 at 2020-03-04 10:16:10 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github" for ::1 at 2020-03-04 10:19:19 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/auth/github" for ::1 at 2020-03-04 10:20:40 -0400
+Started GET "/auth/github" for ::1 at 2020-03-04 10:25:29 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/auth/github/callback?code=3d5e0bd4659f51ea9fd0&state=5cc8cb79f5a7448a580098dfc88034ffa8dd48d3aa13d735" for ::1 at 2020-03-04 10:25:49 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"3d5e0bd4659f51ea9fd0", "state"=>"5cc8cb79f5a7448a580098dfc88034ffa8dd48d3aa13d735", "provider"=>"github"}
+Started POST "/login" for ::1 at 2020-03-04 10:51:27 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+Completed 400 Bad Request in 1528216ms (ActiveRecord: 0.0ms | Allocations: 121033)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: session):
+  
+app/controllers/sessions_controller.rb:26:in `sessionParams'
+app/controllers/sessions_controller.rb:6:in `create'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 200 OK in 7313ms (Views: 0.2ms | ActiveRecord: 2.7ms | Allocations: 55857)
+
+
+Started POST "/logout" for ::1 at 2020-03-04 10:51:41 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/mnt/c/Users/Peter/flatiron_labs/current_lab/brick-it/backend/app/controllers/sessions_controller.rb:51: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/sessions_controller.rb:51: syntax error, unexpected end-of-input, expecting end
+app/controllers/sessions_controller.rb:51: syntax error, unexpected end-of-input, expecting end
+Started POST "/login" for ::1 at 2020-03-04 10:52:32 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:29:in `create'
+Completed 200 OK in 252ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 7203)
+
+
+Started POST "/logout" for ::1 at 2020-03-04 10:52:37 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 847)
+
+
+Started POST "/login" for ::1 at 2020-03-04 10:52:49 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:29:in `create'
+Completed 200 OK in 270ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 8308)
+
+
+Started POST "/logout" for ::1 at 2020-03-04 10:52:50 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 851)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 10:52:52 -0400
+Started POST "/login" for ::1 at 2020-03-04 10:54:05 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:29:in `create'
+Completed 200 OK in 239ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 864)
+
+
+Started POST "/logout" for ::1 at 2020-03-04 10:54:08 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 722)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 10:54:13 -0400
+Started GET "/auth/github" for ::1 at 2020-03-04 10:54:36 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=9a14312103a5851c01db&state=b3b925a699ab9f777d86df931a8ba2ed5f37c48333bcf90c" for ::1 at 2020-03-04 10:54:39 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"9a14312103a5851c01db", "state"=>"b3b925a699ab9f777d86df931a8ba2ed5f37c48333bcf90c", "provider"=>"github"}
+Completed 500 Internal Server Error in 138615ms (ActiveRecord: 0.0ms | Allocations: 99643)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:8:in `create'
+Started GET "/rails/info/routes" for ::1 at 2020-03-04 10:57:41 -0400
+Processing by Rails::InfoController#routes as HTML
+  Rendering /usr/local/rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [50 times] (Duration: 36.5ms | Allocations: 6885)
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 46.9ms | Allocations: 1093)
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 97.4ms | Allocations: 10949)
+Completed 200 OK in 108ms (Views: 105.9ms | ActiveRecord: 0.0ms | Allocations: 12203)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 10:57:54 -0400
+Started GET "/auth/github/callback?code=fb68578d4e1f0700fa3f&state=af0ff6bc30e533c4c1c82a0f2442068a7a23769e8cc2e010" for ::1 at 2020-03-04 10:57:58 -0400
+Started GET "/rails/info/routes?path=/sel" for ::1 at 2020-03-04 10:58:07 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"/sel"}
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 2155)
+
+
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"fb68578d4e1f0700fa3f", "state"=>"af0ff6bc30e533c4c1c82a0f2442068a7a23769e8cc2e010", "provider"=>"github"}
+Completed 500 Internal Server Error in 66266ms (ActiveRecord: 0.0ms | Allocations: 33846)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:8:in `create'
+Started POST "/login" for ::1 at 2020-03-04 10:59:48 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:29:in `create'
+Completed 200 OK in 263ms (Views: 0.1ms | ActiveRecord: 1.7ms | Allocations: 7209)
+
+
+Started POST "/logout" for ::1 at 2020-03-04 10:59:50 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 826)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 10:59:52 -0400
+Started GET "/auth/github" for ::1 at 2020-03-04 11:00:33 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github" for ::1 at 2020-03-04 11:01:53 -0400
+Started GET "/auth/github/callback?code=4cf7ba8f1ebfaeab91b5&state=dbf5c048a2b93137409cee47004aea30ebc7644f6588d46d" for ::1 at 2020-03-04 11:01:59 -0400
+Started GET "/auth/github/callback?code=4cf7ba8f1ebfaeab91b5&state=dbf5c048a2b93137409cee47004aea30ebc7644f6588d46d" for ::1 at 2020-03-04 11:02:05 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+OAuth2::Error (bad_verification_code: The code passed is incorrect or expired.
+error=bad_verification_code&error_description=The+code+passed+is+incorrect+or+expired.&error_uri=https%3A%2F%2Fdeveloper.github.com%2Fapps%2Fmanaging-oauth-apps%2Ftroubleshooting-oauth-app-access-token-request-errors%2F%23bad-verification-code):
+  
+oauth2 (1.4.4) lib/oauth2/client.rb:150:in `get_token'
+oauth2 (1.4.4) lib/oauth2/strategy/auth_code.rb:30:in `get_token'
+omniauth-oauth2 (1.6.0) lib/omniauth/strategies/oauth2.rb:89:in `build_access_token'
+omniauth-oauth2 (1.6.0) lib/omniauth/strategies/oauth2.rb:73:in `callback_phase'
+omniauth (1.9.1) lib/omniauth/strategy.rb:238:in `callback_call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:189:in `call!'
+omniauth (1.9.1) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.1) lib/omniauth/builder.rb:45:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.5) lib/rack/cors.rb:98:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.2) lib/puma/configuration.rb:228:in `call'
+puma (4.3.2) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.2) lib/puma/server.rb:472:in `process_client'
+puma (4.3.2) lib/puma/server.rb:328:in `block in run'
+puma (4.3.2) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"4cf7ba8f1ebfaeab91b5", "state"=>"dbf5c048a2b93137409cee47004aea30ebc7644f6588d46d", "provider"=>"github"}
+Started GET "/auth/github" for ::1 at 2020-03-04 11:02:58 -0400
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:10:in `create'
+Completed 500 Internal Server Error in 42749ms (ActiveRecord: 0.8ms | Allocations: 127323)
+
+
+  
+NameError (undefined local variable or method `secure_random' for #<SessionsController:0x00007fffe20b2428>):
+  
+app/controllers/sessions_controller.rb:15:in `create'
+Started GET "/auth/github/callback?code=13cb06c5699fbed56a8d&state=977b210820943452a91f5a7f75629b32023942b63c415f93" for ::1 at 2020-03-04 11:02:58 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"13cb06c5699fbed56a8d", "state"=>"977b210820943452a91f5a7f75629b32023942b63c415f93", "provider"=>"github"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:10:in `create'
+Completed 500 Internal Server Error in 8163ms (ActiveRecord: 0.5ms | Allocations: 108102)
+
+
+  
+NameError (undefined local variable or method `secure_random' for #<SessionsController:0x00007f2de43ab740>):
+  
+app/controllers/sessions_controller.rb:15:in `create'
+Started GET "/auth/github" for ::1 at 2020-03-04 11:03:42 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github" for ::1 at 2020-03-04 11:05:18 -0400
+Started POST "/logout" for ::1 at 2020-03-04 11:05:53 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+Filter chain halted as :signed_in? rendered or redirected
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 154)
+
+
+Started POST "/login" for ::1 at 2020-03-04 11:05:57 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:30:in `create'
+Completed 200 OK in 250ms (Views: 0.1ms | ActiveRecord: 1.4ms | Allocations: 7075)
+
+
+Started POST "/logout" for ::1 at 2020-03-04 11:05:59 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 824)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 11:07:29 -0400
+Started GET "/auth/github" for ::1 at 2020-03-04 11:14:40 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github" for ::1 at 2020-03-04 11:15:09 -0400
+Started GET "/auth/github" for ::1 at 2020-03-04 11:16:35 -0400
+Started GET "/auth/github" for ::1 at 2020-03-04 11:17:16 -0400
+Started GET "/auth/github" for ::1 at 2020-03-04 11:17:55 -0400
+Started GET "/auth/github" for ::1 at 2020-03-04 11:18:34 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github" for ::1 at 2020-03-04 11:19:49 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/auth/github" for ::1 at 2020-03-04 11:22:22 -0400
+Started GET "/auth/github/callback?code=20f1531de26043de93b5&state=7bbad01a40e381684c20d76277c5cf11b948fe888738461a" for ::1 at 2020-03-04 11:22:23 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"20f1531de26043de93b5", "state"=>"7bbad01a40e381684c20d76277c5cf11b948fe888738461a", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:10:in `create'
+Completed 500 Internal Server Error in 22946ms (ActiveRecord: 0.8ms | Allocations: 78165)
+
+
+  
+NameError (uninitialized constant SessionsController::Secure_Random
+Did you mean?  SecureRandom):
+  
+app/controllers/sessions_controller.rb:15:in `create'
+Started GET "/auth/github" for ::1 at 2020-03-04 11:24:23 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=0949fb789b1dc8eaaf19&state=ae397660f7c177657056aad4822e536135c5947e24dd38bc" for ::1 at 2020-03-04 11:24:24 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"0949fb789b1dc8eaaf19", "state"=>"ae397660f7c177657056aad4822e536135c5947e24dd38bc", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:17:in `create'
+  [1m[36mUser Create (4.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "jgrantps"], ["password_digest", "$2a$12$si6Asi/h34XCJZ5H9zDhh.gjnLiCJpaOzTQ9J6iyrJ7jNrt40oCgy"], ["created_at", "2020-03-04 15:24:28.506181"], ["updated_at", "2020-03-04 15:24:28.506181"]]
+  ↳ app/controllers/sessions_controller.rb:17:in `create'
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/sessions_controller.rb:17:in `create'
+Completed 200 OK in 2031ms (Views: 0.1ms | ActiveRecord: 12.9ms | Allocations: 47274)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 11:37:01 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started POST "/logout" for ::1 at 2020-03-04 11:38:01 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+Filter chain halted as :signed_in? rendered or redirected
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 129)
+
+
+Started POST "/login" for ::1 at 2020-03-04 11:38:16 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+Started POST "/login" for ::1 at 2020-03-04 11:38:31 -0400
+  ↳ app/controllers/sessions_controller.rb:30:in `create'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Completed 200 OK in 15621ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 35701)
+
+
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 16876ms (ActiveRecord: 0.0ms | Allocations: 45968)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/sessions_controller.rb:7:in `create'
+Started POST "/login" for ::1 at 2020-03-04 11:47:03 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:30:in `create'
+Completed 200 OK in 259ms (Views: 0.1ms | ActiveRecord: 1.4ms | Allocations: 8309)
+
+
+Started POST "/logout" for ::1 at 2020-03-04 11:47:05 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 848)
+
+
+Started POST "/login" for ::1 at 2020-03-04 11:47:06 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:30:in `create'
+Completed 200 OK in 238ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 864)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-04 11:47:07 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.2ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.2ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 81ms (Views: 34.2ms | ActiveRecord: 4.2ms | Allocations: 23815)
+
+
+Started POST "/logout" for ::1 at 2020-03-04 11:47:10 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+Completed 200 OK in 36ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 722)
+
+
+Started POST "/login" for ::1 at 2020-03-04 11:48:07 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:30:in `create'
+Completed 200 OK in 262ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 848)
+
+
+Started POST "/logout" for ::1 at 2020-03-04 11:48:09 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 707)
+
+
+Started POST "/login" for ::1 at 2020-03-04 11:57:05 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:30:in `create'
+Completed 200 OK in 238ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 867)
+
+
+Started POST "/logout" for ::1 at 2020-03-04 11:57:07 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 724)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 11:57:09 -0400
+Started GET "/auth/github/callback?code=8b6760a404f0ad72cbab&state=86a85e9524b55c6bb9ed0a956e51c147be11a54b067cb532" for ::1 at 2020-03-04 11:57:10 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"8b6760a404f0ad72cbab", "state"=>"86a85e9524b55c6bb9ed0a956e51c147be11a54b067cb532", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:10:in `create'
+Completed 200 OK in 19ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 730)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 12:12:14 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=36c0c93b32d0aabbfed2&state=afd88599403907d704fcb4ece93ebd2d096a20564eb8c763" for ::1 at 2020-03-04 12:12:15 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"36c0c93b32d0aabbfed2", "state"=>"afd88599403907d704fcb4ece93ebd2d096a20564eb8c763", "provider"=>"github"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:10:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 748)
+
+
+Started POST "/logout" for ::1 at 2020-03-04 12:12:21 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+Filter chain halted as :signed_in? rendered or redirected
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 130)
+
+
+Started POST "/login" for ::1 at 2020-03-04 12:12:23 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:30:in `create'
+Completed 200 OK in 241ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 848)
+
+
+Started POST "/logout" for ::1 at 2020-03-04 12:12:25 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 724)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 12:12:26 -0400
+Started GET "/auth/github/callback?code=094ad9be97a31c6df545&state=dad002eb60952e74ddae87062b8ced02412001e336a4c4cf" for ::1 at 2020-03-04 12:12:26 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"094ad9be97a31c6df545", "state"=>"dad002eb60952e74ddae87062b8ced02412001e336a4c4cf", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:10:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 729)
+
+
+Started POST "/logout" for ::1 at 2020-03-04 12:12:54 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+Filter chain halted as :signed_in? rendered or redirected
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 126)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 12:12:56 -0400
+Started GET "/omniauth" for ::1 at 2020-03-04 12:28:06 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#GitHub as */*
+Started GET "/auth/github" for 127.0.0.1 at 2020-03-04 12:28:06 -0400
+Completed 500 Internal Server Error in 120004ms (ActiveRecord: 0.0ms | Allocations: 2713)
+
+
+  
+Net::ReadTimeout (Net::ReadTimeout with #<TCPSocket:(closed)>):
+  
+app/controllers/sessions_controller.rb:7:in `GitHub'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/omniauth" for ::1 at 2020-03-04 12:30:07 -0400
+Started GET "/auth/github" for 127.0.0.1 at 2020-03-04 12:30:07 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#GitHub as */*
+Completed 500 Internal Server Error in 220ms (ActiveRecord: 0.0ms | Allocations: 42296)
+
+
+  
+Errno::EIO (Input/output error @ io_write - <STDERR>):
+  
+app/controllers/sessions_controller.rb:8:in `GitHub'
+Started GET "/auth/github" for ::1 at 2020-03-04 12:30:37 -0400
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/auth/github/callback?code=47359362451744be2bd9&state=32b67fd64d158dd5efbc5486494de5b4b72de3c948222f6e" for ::1 at 2020-03-04 12:30:38 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"47359362451744be2bd9", "state"=>"32b67fd64d158dd5efbc5486494de5b4b72de3c948222f6e", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:17:in `create'
+Completed 200 OK in 30ms (Views: 0.1ms | ActiveRecord: 1.8ms | Allocations: 8223)
+
+
+Started POST "/logout" for ::1 at 2020-03-04 12:30:59 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+Filter chain halted as :signed_in? rendered or redirected
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 129)
+
+
+Started POST "/login" for ::1 at 2020-03-04 12:31:01 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:37:in `create'
+Completed 200 OK in 244ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 874)
+
+
+Started POST "/logout" for ::1 at 2020-03-04 12:31:02 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 848)
+
+
+Started GET "/omniauth" for ::1 at 2020-03-04 12:31:03 -0400
+Processing by SessionsController#GitHub as */*
+Started GET "/auth/github" for 127.0.0.1 at 2020-03-04 12:31:15 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Completed 204 No Content in 12575ms (ActiveRecord: 0.0ms | Allocations: 60765)
+
+
+Started GET "/omniauth" for ::1 at 2020-03-04 12:32:54 -0400
+Processing by SessionsController#GitHub as */*
+Started GET "/auth/github" for 127.0.0.1 at 2020-03-04 12:33:15 -0400
+Started GET "/auth/github" for 127.0.0.1 at 2020-03-04 12:33:20 -0400
+Completed 204 No Content in 27214ms (ActiveRecord: 0.0ms | Allocations: 404096)
+
+
+Started GET "/omniauth" for ::1 at 2020-03-04 12:35:02 -0400
+Processing by SessionsController#GitHub as */*
+Started GET "/auth/github" for 127.0.0.1 at 2020-03-04 12:35:20 -0400
+Completed 204 No Content in 18989ms (ActiveRecord: 0.0ms | Allocations: 7259)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 12:38:41 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/auth/github" for ::1 at 2020-03-04 12:45:00 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=f67abb046aa1c1c45a7f&state=7dfd3475d94767efb4eed5af7d8f54f3ac72ed01f00eeaf7" for ::1 at 2020-03-04 12:45:01 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"f67abb046aa1c1c45a7f", "state"=>"7dfd3475d94767efb4eed5af7d8f54f3ac72ed01f00eeaf7", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:17:in `create'
+Completed 200 OK in 25ms (Views: 0.2ms | ActiveRecord: 1.5ms | Allocations: 8307)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 12:46:55 -0400
+Started GET "/auth/github" for ::1 at 2020-03-04 12:49:01 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/omniauth" for ::1 at 2020-03-04 12:49:36 -0400
+Processing by SessionsController#GitHub as */*
+Started GET "/auth/github" for 127.0.0.1 at 2020-03-04 12:49:37 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Completed 204 No Content in 1459ms (ActiveRecord: 0.0ms | Allocations: 6276)
+
+
+Started GET "/omniauth" for ::1 at 2020-03-04 12:49:55 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#GitHub as */*
+Started GET "/auth/github" for 127.0.0.1 at 2020-03-04 12:49:55 -0400
+Started GET "/auth/github" for 127.0.0.1 at 2020-03-04 12:50:55 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Completed 204 No Content in 61399ms (ActiveRecord: 0.0ms | Allocations: 13291)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started POST "/login" for ::1 at 2020-03-04 12:51:16 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:38:in `create'
+Completed 200 OK in 264ms (Views: 0.2ms | ActiveRecord: 1.6ms | Allocations: 8349)
+
+
+Started POST "/logout" for ::1 at 2020-03-04 12:51:20 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 848)
+
+
+Started GET "/omniauth" for ::1 at 2020-03-04 12:51:25 -0400
+Processing by SessionsController#GitHub as */*
+Started GET "/auth/github" for 127.0.0.1 at 2020-03-04 12:51:25 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Completed 204 No Content in 1374ms (ActiveRecord: 0.0ms | Allocations: 20630)
+
+
+Started GET "/omniauth" for ::1 at 2020-03-04 12:52:54 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#GitHub as */*
+Started GET "/auth/github" for 127.0.0.1 at 2020-03-04 12:52:54 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Completed 204 No Content in 1196ms (ActiveRecord: 0.0ms | Allocations: 10993)
+
+
+Started GET "/omniauth" for ::1 at 2020-03-04 12:53:29 -0400
+Processing by SessionsController#GitHub as */*
+Started GET "/auth/github" for 127.0.0.1 at 2020-03-04 12:53:29 -0400
+Completed 204 No Content in 1108ms (ActiveRecord: 0.0ms | Allocations: 4179)
+
+
+Started GET "/omniauth" for ::1 at 2020-03-04 13:00:55 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#GitHub as */*
+Started GET "/auth/github" for 127.0.0.1 at 2020-03-04 13:00:56 -0400
+Completed 500 Internal Server Error in 120004ms (ActiveRecord: 0.0ms | Allocations: 11683)
+
+
+  
+Net::ReadTimeout (Net::ReadTimeout with #<TCPSocket:(closed)>):
+  
+app/controllers/sessions_controller.rb:7:in `GitHub'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/omniauth" for ::1 at 2020-03-04 13:02:56 -0400
+Started GET "/omniauth" for ::1 at 2020-03-04 13:02:56 -0400
+Started GET "/auth/github" for 127.0.0.1 at 2020-03-04 13:02:56 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#GitHub as */*
+Processing by SessionsController#GitHub as */*
+Started GET "/auth/github" for 127.0.0.1 at 2020-03-04 13:02:56 -0400
+Started GET "/auth/github" for 127.0.0.1 at 2020-03-04 13:02:56 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Completed 204 No Content in 1408ms (ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Completed 204 No Content in 1414ms (ActiveRecord: 0.0ms | Allocations: 5518)
+
+
+Started POST "/login" for ::1 at 2020-03-04 13:02:59 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:37:in `create'
+Completed 200 OK in 264ms (Views: 0.2ms | ActiveRecord: 1.8ms | Allocations: 8347)
+
+
+Started GET "/login" for ::1 at 2020-03-04 13:03:06 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.5) lib/rack/cors.rb:98:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.2) lib/puma/configuration.rb:228:in `call'
+puma (4.3.2) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.2) lib/puma/server.rb:472:in `process_client'
+puma (4.3.2) lib/puma/server.rb:328:in `block in run'
+puma (4.3.2) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/selections/2" for ::1 at 2020-03-04 13:05:21 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.3ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.2ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 55ms (Views: 25.7ms | ActiveRecord: 3.9ms | Allocations: 24097)
+
+
+Started POST "/logout" for ::1 at 2020-03-04 13:05:25 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 708)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-04 13:05:26 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+Filter chain halted as :signed_in? rendered or redirected
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 125)
+
+
+Started POST "/logout" for ::1 at 2020-03-04 13:06:16 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+Filter chain halted as :signed_in? rendered or redirected
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 126)
+
+
+Started POST "/login" for ::1 at 2020-03-04 13:06:18 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:37:in `create'
+Completed 200 OK in 242ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 849)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-04 13:06:19 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.3ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.2ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 14ms (Views: 5.5ms | ActiveRecord: 1.2ms | Allocations: 4333)
+
+
+Started POST "/logout" for ::1 at 2020-03-04 13:06:21 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 707)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 13:06:43 -0400
+Started GET "/auth/github/callback?code=95eaffe2fdcb14ccbdea&state=8eee33c7529fa3b630c1008ed16f093eddfa95e81a17b896" for ::1 at 2020-03-04 13:06:44 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"95eaffe2fdcb14ccbdea", "state"=>"8eee33c7529fa3b630c1008ed16f093eddfa95e81a17b896", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:15:in `create'
+Completed 200 OK in 24ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1359)
+
+
+Started GET "/omniauth" for ::1 at 2020-03-04 13:09:07 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#GitHub as */*
+Started GET "/auth/github" for 127.0.0.1 at 2020-03-04 13:09:07 -0400
+Completed 500 Internal Server Error in 120004ms (ActiveRecord: 0.0ms | Allocations: 1178)
+
+
+  
+Net::ReadTimeout (Net::ReadTimeout with #<TCPSocket:(closed)>):
+  
+app/controllers/sessions_controller.rb:7:in `GitHub'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github" for 127.0.0.1 at 2020-03-04 13:11:07 -0400
+Started GET "/omniauth" for ::1 at 2020-03-04 13:11:35 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#GitHub as */*
+Started GET "/auth/github" for 127.0.0.1 at 2020-03-04 13:11:35 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Completed 204 No Content in 1147ms (ActiveRecord: 0.0ms | Allocations: 10983)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 13:12:14 -0400
+Started GET "/auth/github/callback?code=09a600fa2c07e666cb7c&state=4dc50c1683dd4f4d36ba74d4b9df583d0be5eb4db59b7051" for ::1 at 2020-03-04 13:12:14 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"09a600fa2c07e666cb7c", "state"=>"4dc50c1683dd4f4d36ba74d4b9df583d0be5eb4db59b7051", "provider"=>"github"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:15:in `create'
+Completed 200 OK in 46ms (Views: 0.2ms | ActiveRecord: 2.7ms | Allocations: 8130)
+
+
+Started GET "/omniauth" for ::1 at 2020-03-04 13:15:18 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#GitHub as */*
+Started GET "/auth/github" for 127.0.0.1 at 2020-03-04 13:15:18 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Completed 204 No Content in 1186ms (ActiveRecord: 0.0ms | Allocations: 10996)
+
+
+Started GET "/omniauth" for ::1 at 2020-03-04 13:24:26 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#GitHub as */*
+Started GET "/auth/github" for 127.0.0.1 at 2020-03-04 13:24:26 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Completed 204 No Content in 1087ms (ActiveRecord: 0.0ms | Allocations: 5053)
+
+
+Started POST "/login" for ::1 at 2020-03-04 13:25:36 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:37:in `create'
+Completed 200 OK in 535ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 23168)
+
+
+Started POST "/logout" for ::1 at 2020-03-04 13:25:39 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+Completed 200 OK in 18ms (Views: 1.0ms | ActiveRecord: 0.4ms | Allocations: 841)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 13:25:49 -0400
+Started GET "/auth/github" for ::1 at 2020-03-04 13:33:51 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/auth/github" for ::1 at 2020-03-04 13:38:05 -0400
+Started GET "/auth/github" for ::1 at 2020-03-04 13:45:19 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github" for ::1 at 2020-03-04 13:47:35 -0400
+Started GET "/omniauth" for ::1 at 2020-03-04 13:48:47 -0400
+Processing by SessionsController#GitHub as HTML
+Started GET "/auth/github" for 127.0.0.1 at 2020-03-04 13:48:48 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Completed 204 No Content in 1173ms (ActiveRecord: 0.0ms | Allocations: 5296)
+
+
+Started GET "/github" for ::1 at 2020-03-04 13:57:28 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/github"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.5) lib/rack/cors.rb:98:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.2) lib/puma/configuration.rb:228:in `call'
+puma (4.3.2) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.2) lib/puma/server.rb:472:in `process_client'
+puma (4.3.2) lib/puma/server.rb:328:in `block in run'
+puma (4.3.2) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/github" for ::1 at 2020-03-04 13:57:42 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/github"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.5) lib/rack/cors.rb:98:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.2) lib/puma/configuration.rb:228:in `call'
+puma (4.3.2) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.2) lib/puma/server.rb:472:in `process_client'
+puma (4.3.2) lib/puma/server.rb:328:in `block in run'
+puma (4.3.2) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/omniauth" for ::1 at 2020-03-04 13:58:10 -0400
+Processing by SessionsController#GitHub as */*
+Started GET "/auth/github" for 127.0.0.1 at 2020-03-04 13:58:10 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Completed 204 No Content in 1149ms (ActiveRecord: 0.0ms | Allocations: 5009)
+
+
+Started GET "/omniauth" for ::1 at 2020-03-04 13:59:00 -0400
+Processing by SessionsController#GitHub as */*
+Started GET "/auth/github" for 127.0.0.1 at 2020-03-04 13:59:00 -0400
+Completed 204 No Content in 1109ms (ActiveRecord: 0.0ms | Allocations: 4141)
+
+
+Started GET "/omniauth" for ::1 at 2020-03-04 14:04:34 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#GitHub as */*
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1800)
+
+
+  
+NameError (uninitialized constant SessionsController::Uri
+Did you mean?  URI):
+  
+app/controllers/sessions_controller.rb:7:in `GitHub'
+Started GET "/omniauth" for ::1 at 2020-03-04 14:05:25 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#GitHub as */*
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1786)
+
+
+  
+NameError (uninitialized constant SessionsController::Uri
+Did you mean?  URI):
+  
+app/controllers/sessions_controller.rb:7:in `GitHub'
+Started GET "/auth/github" for ::1 at 2020-03-04 14:07:52 -0400
+Started GET "/auth/github/callback?code=0df6dbe3942e04e9cc1f&state=1bc5fd503ff8674276cafe757e81ba33a6c5d5d08e13f23d" for ::1 at 2020-03-04 14:07:54 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"0df6dbe3942e04e9cc1f", "state"=>"1bc5fd503ff8674276cafe757e81ba33a6c5d5d08e13f23d", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:17:in `create'
+Completed 200 OK in 22ms (Views: 0.1ms | ActiveRecord: 1.7ms | Allocations: 8196)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 14:08:48 -0400
+Started GET "/auth/github" for ::1 at 2020-03-04 14:13:07 -0400
+Started GET "/auth/github/callback?code=5e7dda8405576e319a8e&state=1764842c4113992ea475886547d88e12116fc8c007ed2f60" for ::1 at 2020-03-04 14:13:08 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"5e7dda8405576e319a8e", "state"=>"1764842c4113992ea475886547d88e12116fc8c007ed2f60", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:17:in `create'
+Completed 200 OK in 21ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 735)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 14:13:20 -0400
+Started GET "/auth/github/callback?code=e960c72a4b01adaf0d94&state=9cfa95aa8c2b469865252a9c2e9649112460f3d197ecc2e0" for ::1 at 2020-03-04 14:13:20 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"e960c72a4b01adaf0d94", "state"=>"9cfa95aa8c2b469865252a9c2e9649112460f3d197ecc2e0", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:17:in `create'
+Completed 200 OK in 22ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 735)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 14:17:42 -0400
+Started GET "/auth/github/callback?code=60a600018970d773fca0&state=38a14611643bbe7d4fcdbad8d9c0be8a4bc85bc8ae999a80" for ::1 at 2020-03-04 14:17:42 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"60a600018970d773fca0", "state"=>"38a14611643bbe7d4fcdbad8d9c0be8a4bc85bc8ae999a80", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:17:in `create'
+Completed 200 OK in 23ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 745)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 14:18:10 -0400
+Started GET "/auth/github/callback?code=81900f89c505f9ede473&state=7dda6b57b42a546c0a47f9a4a0e58f42d03a33df4c10a35c" for ::1 at 2020-03-04 14:18:10 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"81900f89c505f9ede473", "state"=>"7dda6b57b42a546c0a47f9a4a0e58f42d03a33df4c10a35c", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:17:in `create'
+Completed 200 OK in 23ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 738)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 14:18:26 -0400
+Started GET "/auth/github/callback?code=f0b75f21d51e543d982c&state=c541e7b4a2ee65adc9d1b28d78fddccf30c31389f236aa23" for ::1 at 2020-03-04 14:18:26 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"f0b75f21d51e543d982c", "state"=>"c541e7b4a2ee65adc9d1b28d78fddccf30c31389f236aa23", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:17:in `create'
+Completed 200 OK in 23ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 729)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 14:19:23 -0400
+Started GET "/auth/github/callback?code=50cc44ccdf8ad3f56cfb&state=c07d72786cc4bea61ba4e9453ee5c26adaddeff1b2480b1e" for ::1 at 2020-03-04 14:19:24 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"50cc44ccdf8ad3f56cfb", "state"=>"c07d72786cc4bea61ba4e9453ee5c26adaddeff1b2480b1e", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:17:in `create'
+Completed 200 OK in 22ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 729)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 14:19:36 -0400
+Started GET "/auth/github" for ::1 at 2020-03-04 14:20:32 -0400
+Started GET "/auth/github/callback?code=70e0525ebd5267b9c328&state=a3ba86a8d81074104fd4f22dfbf845a1adbee179bf1d0153" for ::1 at 2020-03-04 14:20:33 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"70e0525ebd5267b9c328", "state"=>"a3ba86a8d81074104fd4f22dfbf845a1adbee179bf1d0153", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:17:in `create'
+Completed 200 OK in 21ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 729)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 14:21:10 -0400
+Started GET "/auth/github/callback?code=56006f39b4e244c548c2&state=ad20e517ba972374c2eb16286bfde8f1335b5049b2317c86" for ::1 at 2020-03-04 14:21:10 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"56006f39b4e244c548c2", "state"=>"ad20e517ba972374c2eb16286bfde8f1335b5049b2317c86", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:17:in `create'
+Completed 200 OK in 21ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 729)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 14:22:46 -0400
+Started GET "/auth/github" for ::1 at 2020-03-04 14:22:57 -0400
+Started GET "/auth/github" for ::1 at 2020-03-04 14:24:16 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/auth/github" for ::1 at 2020-03-04 14:24:29 -0400
+Started GET "/auth/github/callback?code=a523f4ff85a69524dec0&state=82fdeaa57def491d7416bb9cfa025fe74bb20f731a3bb89e" for ::1 at 2020-03-04 14:24:53 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"a523f4ff85a69524dec0", "state"=>"82fdeaa57def491d7416bb9cfa025fe74bb20f731a3bb89e", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:17:in `create'
+Completed 200 OK in 35ms (Views: 0.7ms | ActiveRecord: 2.1ms | Allocations: 8223)
+
+
+Started GET "/auth/github/callback?code=db1beb2e91bc6b192fca&state=82fdeaa57def491d7416bb9cfa025fe74bb20f731a3bb89e" for ::1 at 2020-03-04 14:25:01 -0400
+  
+OmniAuth::Strategies::OAuth2::CallbackError (csrf_detected | CSRF detected):
+  
+omniauth (1.9.1) lib/omniauth/failure_endpoint.rb:25:in `raise_out!'
+omniauth (1.9.1) lib/omniauth/failure_endpoint.rb:20:in `call'
+omniauth (1.9.1) lib/omniauth/failure_endpoint.rb:12:in `call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:491:in `fail!'
+omniauth-oauth2 (1.6.0) lib/omniauth/strategies/oauth2.rb:71:in `callback_phase'
+omniauth (1.9.1) lib/omniauth/strategy.rb:238:in `callback_call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:189:in `call!'
+omniauth (1.9.1) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.1) lib/omniauth/builder.rb:45:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.5) lib/rack/cors.rb:98:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.2) lib/puma/configuration.rb:228:in `call'
+puma (4.3.2) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.2) lib/puma/server.rb:472:in `process_client'
+puma (4.3.2) lib/puma/server.rb:328:in `block in run'
+puma (4.3.2) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/auth/github/callback?code=15788aa91b3f525d641a&state=82fdeaa57def491d7416bb9cfa025fe74bb20f731a3bb89e" for ::1 at 2020-03-04 14:25:13 -0400
+  
+OmniAuth::Strategies::OAuth2::CallbackError (csrf_detected | CSRF detected):
+  
+omniauth (1.9.1) lib/omniauth/failure_endpoint.rb:25:in `raise_out!'
+omniauth (1.9.1) lib/omniauth/failure_endpoint.rb:20:in `call'
+omniauth (1.9.1) lib/omniauth/failure_endpoint.rb:12:in `call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:491:in `fail!'
+omniauth-oauth2 (1.6.0) lib/omniauth/strategies/oauth2.rb:71:in `callback_phase'
+omniauth (1.9.1) lib/omniauth/strategy.rb:238:in `callback_call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:189:in `call!'
+omniauth (1.9.1) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.1) lib/omniauth/builder.rb:45:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.5) lib/rack/cors.rb:98:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.2) lib/puma/configuration.rb:228:in `call'
+puma (4.3.2) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.2) lib/puma/server.rb:472:in `process_client'
+puma (4.3.2) lib/puma/server.rb:328:in `block in run'
+puma (4.3.2) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/auth/github/callback?code=182277f9219b62850dda&state=82fdeaa57def491d7416bb9cfa025fe74bb20f731a3bb89e" for ::1 at 2020-03-04 14:25:17 -0400
+  
+OmniAuth::Strategies::OAuth2::CallbackError (csrf_detected | CSRF detected):
+  
+omniauth (1.9.1) lib/omniauth/failure_endpoint.rb:25:in `raise_out!'
+omniauth (1.9.1) lib/omniauth/failure_endpoint.rb:20:in `call'
+omniauth (1.9.1) lib/omniauth/failure_endpoint.rb:12:in `call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:491:in `fail!'
+omniauth-oauth2 (1.6.0) lib/omniauth/strategies/oauth2.rb:71:in `callback_phase'
+omniauth (1.9.1) lib/omniauth/strategy.rb:238:in `callback_call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:189:in `call!'
+omniauth (1.9.1) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.1) lib/omniauth/builder.rb:45:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.5) lib/rack/cors.rb:98:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.2) lib/puma/configuration.rb:228:in `call'
+puma (4.3.2) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.2) lib/puma/server.rb:472:in `process_client'
+puma (4.3.2) lib/puma/server.rb:328:in `block in run'
+puma (4.3.2) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/auth/github/callback?code=182277f9219b62850dda&state=82fdeaa57def491d7416bb9cfa025fe74bb20f731a3bb89e" for ::1 at 2020-03-04 14:25:19 -0400
+  
+OmniAuth::Strategies::OAuth2::CallbackError (csrf_detected | CSRF detected):
+  
+omniauth (1.9.1) lib/omniauth/failure_endpoint.rb:25:in `raise_out!'
+omniauth (1.9.1) lib/omniauth/failure_endpoint.rb:20:in `call'
+omniauth (1.9.1) lib/omniauth/failure_endpoint.rb:12:in `call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:491:in `fail!'
+omniauth-oauth2 (1.6.0) lib/omniauth/strategies/oauth2.rb:71:in `callback_phase'
+omniauth (1.9.1) lib/omniauth/strategy.rb:238:in `callback_call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:189:in `call!'
+omniauth (1.9.1) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.1) lib/omniauth/builder.rb:45:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.5) lib/rack/cors.rb:98:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.2) lib/puma/configuration.rb:228:in `call'
+puma (4.3.2) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.2) lib/puma/server.rb:472:in `process_client'
+puma (4.3.2) lib/puma/server.rb:328:in `block in run'
+puma (4.3.2) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/auth/github/callback?code=c001fb16c59a004681d4&state=82fdeaa57def491d7416bb9cfa025fe74bb20f731a3bb89e" for ::1 at 2020-03-04 14:25:24 -0400
+  
+OmniAuth::Strategies::OAuth2::CallbackError (csrf_detected | CSRF detected):
+  
+omniauth (1.9.1) lib/omniauth/failure_endpoint.rb:25:in `raise_out!'
+omniauth (1.9.1) lib/omniauth/failure_endpoint.rb:20:in `call'
+omniauth (1.9.1) lib/omniauth/failure_endpoint.rb:12:in `call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:491:in `fail!'
+omniauth-oauth2 (1.6.0) lib/omniauth/strategies/oauth2.rb:71:in `callback_phase'
+omniauth (1.9.1) lib/omniauth/strategy.rb:238:in `callback_call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:189:in `call!'
+omniauth (1.9.1) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.1) lib/omniauth/builder.rb:45:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.5) lib/rack/cors.rb:98:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.2) lib/puma/configuration.rb:228:in `call'
+puma (4.3.2) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.2) lib/puma/server.rb:472:in `process_client'
+puma (4.3.2) lib/puma/server.rb:328:in `block in run'
+puma (4.3.2) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/auth/github/callback?code=8600682a8c11b49bc00a&state=82fdeaa57def491d7416bb9cfa025fe74bb20f731a3bb89e" for ::1 at 2020-03-04 14:25:30 -0400
+  
+OmniAuth::Strategies::OAuth2::CallbackError (csrf_detected | CSRF detected):
+  
+omniauth (1.9.1) lib/omniauth/failure_endpoint.rb:25:in `raise_out!'
+omniauth (1.9.1) lib/omniauth/failure_endpoint.rb:20:in `call'
+omniauth (1.9.1) lib/omniauth/failure_endpoint.rb:12:in `call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:491:in `fail!'
+omniauth-oauth2 (1.6.0) lib/omniauth/strategies/oauth2.rb:71:in `callback_phase'
+omniauth (1.9.1) lib/omniauth/strategy.rb:238:in `callback_call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:189:in `call!'
+omniauth (1.9.1) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.1) lib/omniauth/builder.rb:45:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.5) lib/rack/cors.rb:98:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.2) lib/puma/configuration.rb:228:in `call'
+puma (4.3.2) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.2) lib/puma/server.rb:472:in `process_client'
+puma (4.3.2) lib/puma/server.rb:328:in `block in run'
+puma (4.3.2) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/auth/github/callback?code=8600682a8c11b49bc00a&state=82fdeaa57def491d7416bb9cfa025fe74bb20f731a3bb89e" for ::1 at 2020-03-04 14:26:03 -0400
+  
+OmniAuth::Strategies::OAuth2::CallbackError (csrf_detected | CSRF detected):
+  
+omniauth (1.9.1) lib/omniauth/failure_endpoint.rb:25:in `raise_out!'
+omniauth (1.9.1) lib/omniauth/failure_endpoint.rb:20:in `call'
+omniauth (1.9.1) lib/omniauth/failure_endpoint.rb:12:in `call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:491:in `fail!'
+omniauth-oauth2 (1.6.0) lib/omniauth/strategies/oauth2.rb:71:in `callback_phase'
+omniauth (1.9.1) lib/omniauth/strategy.rb:238:in `callback_call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:189:in `call!'
+omniauth (1.9.1) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.1) lib/omniauth/builder.rb:45:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.5) lib/rack/cors.rb:98:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.2) lib/puma/configuration.rb:228:in `call'
+puma (4.3.2) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.2) lib/puma/server.rb:472:in `process_client'
+puma (4.3.2) lib/puma/server.rb:328:in `block in run'
+puma (4.3.2) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/auth/github" for ::1 at 2020-03-04 14:26:14 -0400
+Started GET "/auth/github/callback?code=6a14187fdd07f5a402fd&state=55c84a06bd75c2f7918efd6bafc841c51fa57954720ed402" for ::1 at 2020-03-04 14:26:15 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"6a14187fdd07f5a402fd", "state"=>"55c84a06bd75c2f7918efd6bafc841c51fa57954720ed402", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:17:in `create'
+Completed 200 OK in 22ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 775)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 14:28:53 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=4a0218549c370f9a90a4&state=97b02d00ae6641abb327c43926b6ac0595ad8bdf9ee1e9bd" for ::1 at 2020-03-04 14:28:54 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"4a0218549c370f9a90a4", "state"=>"97b02d00ae6641abb327c43926b6ac0595ad8bdf9ee1e9bd", "provider"=>"github"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:17:in `create'
+Redirected to http://localserver:3000/login
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 1.4ms | Allocations: 7136)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/sessions_controller.rb:21:in `create'
+Started GET "/auth/github" for ::1 at 2020-03-04 14:30:56 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=84551260f3f69fc2b16a&state=e567bee208e85b6fdef058487c1de9abb87ac00b08d5844b" for ::1 at 2020-03-04 14:30:57 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"84551260f3f69fc2b16a", "state"=>"e567bee208e85b6fdef058487c1de9abb87ac00b08d5844b", "provider"=>"github"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:17:in `create'
+Redirected to http://localserver:3000/login
+Completed 302 Found in 27ms (ActiveRecord: 1.6ms | Allocations: 6917)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 14:31:32 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=1a6c0c6c889ef1f449ca&state=5b419c72dfac456bf5af51dfaef5a51269dae66fd0ac7f9e" for ::1 at 2020-03-04 14:31:32 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"1a6c0c6c889ef1f449ca", "state"=>"5b419c72dfac456bf5af51dfaef5a51269dae66fd0ac7f9e", "provider"=>"github"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:17:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 32ms (ActiveRecord: 1.3ms | Allocations: 6883)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 21:01:28 -0400
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/auth/github" for ::1 at 2020-03-04 21:02:14 -0400
+Started GET "/auth/github/callback?code=85502cfda84866093790&state=7943a91405def495a11f41a6608293b51c67ca2bdc7869be" for ::1 at 2020-03-04 21:02:14 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"85502cfda84866093790", "state"=>"7943a91405def495a11f41a6608293b51c67ca2bdc7869be", "provider"=>"github"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 209)
+
+
+  
+RuntimeError (<ActionController::Parameters {"code"=>"85502cfda84866093790", "state"=>"7943a91405def495a11f41a6608293b51c67ca2bdc7869be", "controller"=>"sessions", "action"=>"create", "provider"=>"github"} permitted: false>):
+  
+app/controllers/sessions_controller.rb:13:in `create'
+Started GET "/auth/github" for ::1 at 2020-03-04 21:03:43 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=9212b9e82ba91e13efe0&state=d79f4fb15c21098b6373027e39fdeaeb99ee7e4fb055e50e" for ::1 at 2020-03-04 21:03:44 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"9212b9e82ba91e13efe0", "state"=>"d79f4fb15c21098b6373027e39fdeaeb99ee7e4fb055e50e", "provider"=>"github"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 178)
+
+
+  
+RuntimeError (<ActionController::Parameters {"code"=>"9212b9e82ba91e13efe0", "state"=>"d79f4fb15c21098b6373027e39fdeaeb99ee7e4fb055e50e", "controller"=>"sessions", "action"=>"create", "provider"=>"github"} permitted: false>):
+  
+app/controllers/sessions_controller.rb:14:in `create'
+Started GET "/auth/github" for ::1 at 2020-03-04 21:04:02 -0400
+Started GET "/selections/2" for ::1 at 2020-03-04 21:09:07 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+Filter chain halted as :signed_in? rendered or redirected
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 175)
+
+
+Started POST "/login" for ::1 at 2020-03-04 21:10:27 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 140)
+
+
+  
+RuntimeError (<ActionController::Parameters {"name"=>"Bobby bob", "password"=>"password123", "controller"=>"sessions", "action"=>"create", "session"=>{"name"=>"Bobby bob", "password"=>"password123"}} permitted: false>):
+  
+app/controllers/sessions_controller.rb:14:in `create'
+Started POST "/login" for ::1 at 2020-03-04 21:11:30 -0400
+  [1m[35m (11.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 211)
+
+
+  
+RuntimeError (<ActionController::Parameters {"name"=>"Bobby bob", "password"=>"password123", "controller"=>"sessions", "action"=>"create", "session"=>{"name"=>"Bobby bob", "password"=>"password123"}} permitted: false>):
+  
+app/controllers/sessions_controller.rb:14:in `create'
+Started POST "/login" for ::1 at 2020-03-04 21:12:08 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+  
+RuntimeError (<ActionController::Parameters {"name"=>"Bobby bob", "password"=>"password123", "controller"=>"sessions", "action"=>"create", "session"=>{"name"=>"Bobby bob", "password"=>"password123"}} permitted: false>):
+  
+app/controllers/sessions_controller.rb:14:in `create'
+Started POST "/login" for ::1 at 2020-03-04 21:12:18 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 141)
+
+
+  
+RuntimeError (<ActionController::Parameters {"name"=>"Bobby bob", "password"=>"password123", "controller"=>"sessions", "action"=>"create", "session"=>{"name"=>"Bobby bob", "password"=>"password123"}} permitted: false>):
+  
+app/controllers/sessions_controller.rb:14:in `create'
+Started POST "/login" for ::1 at 2020-03-04 21:12:30 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 211)
+
+
+  
+RuntimeError (<ActionController::Parameters {"name"=>"Bobby bob", "password"=>"password123", "controller"=>"sessions", "action"=>"create", "session"=>{"name"=>"Bobby bob", "password"=>"password123"}} permitted: false>):
+  
+app/controllers/sessions_controller.rb:14:in `create'
+Started POST "/login" for ::1 at 2020-03-04 21:13:15 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:43:in `create'
+Completed 200 OK in 7297ms (Views: 0.1ms | ActiveRecord: 1.7ms | Allocations: 48166)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-04 21:13:27 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.3ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.4ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 192ms (Views: 63.2ms | ActiveRecord: 4.6ms | Allocations: 23938)
+
+
+Started POST "/login" for ::1 at 2020-03-04 21:13:56 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:43:in `create'
+Completed 200 OK in 7069ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 3364)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-04 21:14:06 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.2ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.2ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 29ms (Views: 20.3ms | ActiveRecord: 1.2ms | Allocations: 4334)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mSelection Load (0.3ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Started POST "/login" for ::1 at 2020-03-04 21:16:11 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 44112ms (ActiveRecord: 0.0ms | Allocations: 18147)
+
+
+Started POST "/login" for ::1 at 2020-03-04 21:16:55 -0400
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/sessions_controller.rb:43:in `create'
+Started POST "/login" for ::1 at 2020-03-04 21:16:56 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+Started POST "/login" for ::1 at 2020-03-04 21:17:07 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:43:in `create'
+Completed 200 OK in 269ms (Views: 0.1ms | ActiveRecord: 3.1ms | Allocations: 8332)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-04 21:17:09 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.2ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.2ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 99ms (Views: 41.7ms | ActiveRecord: 4.2ms | Allocations: 23979)
+
+
+Started POST "/login" for ::1 at 2020-03-04 21:18:24 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:43:in `create'
+Completed 200 OK in 241ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 864)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-04 21:18:25 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.2ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.3ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 39ms (Views: 26.4ms | ActiveRecord: 1.2ms | Allocations: 4350)
+
+
+Started POST "/login" for ::1 at 2020-03-04 21:20:08 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:43:in `create'
+Completed 200 OK in 243ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 865)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-04 21:20:12 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.2ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.3ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 15ms (Views: 5.7ms | ActiveRecord: 1.2ms | Allocations: 4333)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 21:29:26 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=ff4422ee0a7104cd3b37&state=87220bfdc749a66f505147895cf997b82442955cc57ad6f3" for ::1 at 2020-03-04 21:29:26 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"ff4422ee0a7104cd3b37", "state"=>"87220bfdc749a66f505147895cf997b82442955cc57ad6f3", "provider"=>"github"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:18:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 27ms (ActiveRecord: 0.4ms | Allocations: 6587)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 21:29:39 -0400
+Started GET "/auth/github/callback?code=4c286783453ccc2c42aa&state=1754861ca13c34f7bc495423e6b8fbf108e71b60331de5c5" for ::1 at 2020-03-04 21:29:39 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"4c286783453ccc2c42aa", "state"=>"1754861ca13c34f7bc495423e6b8fbf108e71b60331de5c5", "provider"=>"github"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:18:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 23ms (ActiveRecord: 0.4ms | Allocations: 696)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 21:30:38 -0400
+Started GET "/auth/github/callback?code=6f73d0fdf671489d593d&state=bf3a80f9bf1f1d9f45b0db96fba5887535390fab6ed11f48" for ::1 at 2020-03-04 21:30:38 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"6f73d0fdf671489d593d", "state"=>"bf3a80f9bf1f1d9f45b0db96fba5887535390fab6ed11f48", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:18:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 23ms (ActiveRecord: 0.3ms | Allocations: 696)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 21:32:43 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=ab00adf0a160465ef153&state=11a256b2d30482fab1df1a2e49e613ed7035a5290d3324bd" for ::1 at 2020-03-04 21:32:44 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"ab00adf0a160465ef153", "state"=>"11a256b2d30482fab1df1a2e49e613ed7035a5290d3324bd", "provider"=>"github"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:18:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 28ms (ActiveRecord: 1.5ms | Allocations: 6917)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 21:33:08 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=c368d6204e95118414f2&state=e812bcaf307466c13624a828eecacfe039db26f31675d5e7" for ::1 at 2020-03-04 21:33:09 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"c368d6204e95118414f2", "state"=>"e812bcaf307466c13624a828eecacfe039db26f31675d5e7", "provider"=>"github"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:18:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 495097ms (ActiveRecord: 1.3ms | Allocations: 47376)
+
+
+Started POST "/login" for ::1 at 2020-03-04 21:41:41 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:44:in `create'
+Completed 200 OK in 239ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 858)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-04 21:41:51 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.2ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.2ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 68ms (Views: 33.5ms | ActiveRecord: 3.8ms | Allocations: 21753)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 21:43:00 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=1371120c4b8cb55de9bb&state=d1679f520fc674812c86e68cd0755e71d2de58517f5f6027" for ::1 at 2020-03-04 21:43:01 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"1371120c4b8cb55de9bb", "state"=>"d1679f520fc674812c86e68cd0755e71d2de58517f5f6027", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:18:in `create'
+Redirected to 
+Completed 500 Internal Server Error in 30ms (Views: 0.1ms | ActiveRecord: 1.8ms | Allocations: 7044)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/sessions_controller.rb:22:in `create'
+Started GET "/auth/github/callback?code=1371120c4b8cb55de9bb&state=d1679f520fc674812c86e68cd0755e71d2de58517f5f6027" for ::1 at 2020-03-04 21:43:46 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+OAuth2::Error (bad_verification_code: The code passed is incorrect or expired.
+error=bad_verification_code&error_description=The+code+passed+is+incorrect+or+expired.&error_uri=https%3A%2F%2Fdeveloper.github.com%2Fapps%2Fmanaging-oauth-apps%2Ftroubleshooting-oauth-app-access-token-request-errors%2F%23bad-verification-code):
+  
+oauth2 (1.4.4) lib/oauth2/client.rb:150:in `get_token'
+oauth2 (1.4.4) lib/oauth2/strategy/auth_code.rb:30:in `get_token'
+omniauth-oauth2 (1.6.0) lib/omniauth/strategies/oauth2.rb:89:in `build_access_token'
+omniauth-oauth2 (1.6.0) lib/omniauth/strategies/oauth2.rb:73:in `callback_phase'
+omniauth (1.9.1) lib/omniauth/strategy.rb:238:in `callback_call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:189:in `call!'
+omniauth (1.9.1) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.1) lib/omniauth/builder.rb:45:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.5) lib/rack/cors.rb:98:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.2) lib/puma/configuration.rb:228:in `call'
+puma (4.3.2) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.2) lib/puma/server.rb:472:in `process_client'
+puma (4.3.2) lib/puma/server.rb:328:in `block in run'
+puma (4.3.2) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/auth/github" for ::1 at 2020-03-04 21:43:54 -0400
+Started GET "/auth/github/callback?code=53ca051fd1b95dc5c843&state=0212900e6bb8535ce4d67a9e4864ad201986e0b410887bbb" for ::1 at 2020-03-04 21:43:55 -0400
+  
+SyntaxError (/mnt/c/Users/Peter/flatiron_labs/current_lab/brick-it/backend/app/controllers/sessions_controller.rb:22: syntax error, unexpected tLABEL
+...host:3000/login", alert: (json:token )and return
+...                          ^~~~~):
+  
+app/controllers/sessions_controller.rb:22: syntax error, unexpected tLABEL
+app/controllers/sessions_controller.rb:22: syntax error, unexpected tLABEL
+Started GET "/auth/github" for ::1 at 2020-03-04 21:51:20 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github" for ::1 at 2020-03-04 21:51:38 -0400
+Started GET "/auth/github/callback?code=bde750691b19e4b52e18&state=c0fb5b140fd6544608c8a12e6bbd74f75fc4b4e4d7cfc79a" for ::1 at 2020-03-04 21:51:39 -0400
+  
+SyntaxError (/mnt/c/Users/Peter/flatiron_labs/current_lab/brick-it/backend/app/controllers/sessions_controller.rb:22: syntax error, unexpected tLABEL
+...host:3000/login", alert: (json:token )and return
+...                          ^~~~~):
+  
+app/controllers/sessions_controller.rb:22: syntax error, unexpected tLABEL
+app/controllers/sessions_controller.rb:22: syntax error, unexpected tLABEL
+Started GET "/auth/github" for ::1 at 2020-03-04 21:52:29 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=0a8abbee2ebd318a2183&state=d3747c1e2af2fd07aedbae76de40ce13fcdbcf442ce843c2" for ::1 at 2020-03-04 21:52:29 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"0a8abbee2ebd318a2183", "state"=>"d3747c1e2af2fd07aedbae76de40ce13fcdbcf442ce843c2", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:18:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 30ms (ActiveRecord: 1.7ms | Allocations: 7027)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 21:52:58 -0400
+Started GET "/auth/github" for ::1 at 2020-03-04 22:01:38 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=99ec8458affaf8816402&state=025950bc719aad0bd7ba844c2a585f680087cf5dc7952b67" for ::1 at 2020-03-04 22:01:53 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"99ec8458affaf8816402", "state"=>"025950bc719aad0bd7ba844c2a585f680087cf5dc7952b67", "provider"=>"github"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:18:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 21ms (ActiveRecord: 0.4ms | Allocations: 714)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 22:02:00 -0400
+Started GET "/auth/github/callback?code=b64d6bec78cad45a0e6c&state=7388434e3a34542778d2166cf5dfc5bea28e8fce73909c87" for ::1 at 2020-03-04 22:02:00 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"b64d6bec78cad45a0e6c", "state"=>"7388434e3a34542778d2166cf5dfc5bea28e8fce73909c87", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:18:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 20ms (ActiveRecord: 0.3ms | Allocations: 697)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 22:02:10 -0400
+Started GET "/auth/github" for ::1 at 2020-03-04 22:04:09 -0400
+Started GET "/auth/github" for ::1 at 2020-03-04 22:04:25 -0400
+Started GET "/auth/github" for ::1 at 2020-03-04 22:18:26 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github" for ::1 at 2020-03-04 22:19:47 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github" for ::1 at 2020-03-04 22:21:22 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github" for ::1 at 2020-03-04 23:51:21 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=00eb616490aa9c80f492&state=06269f7f539108027fb669ecc38f2f2ac2ea99a8b3b33287" for ::1 at 2020-03-04 23:51:21 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"00eb616490aa9c80f492", "state"=>"06269f7f539108027fb669ecc38f2f2ac2ea99a8b3b33287", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:18:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 39ms (ActiveRecord: 1.6ms | Allocations: 6931)
+
+
+Started POST "/logout" for ::1 at 2020-03-04 23:51:40 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 831)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 23:51:42 -0400
+Started GET "/auth/github/callback?code=66d8c4397d7dbe4c8040&state=e660ca50fbdc36e63e266ae04843150c497968601dcbeb69" for ::1 at 2020-03-04 23:51:43 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"66d8c4397d7dbe4c8040", "state"=>"e660ca50fbdc36e63e266ae04843150c497968601dcbeb69", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:18:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 18ms (ActiveRecord: 0.3ms | Allocations: 696)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 23:52:10 -0400
+Started GET "/auth/github" for ::1 at 2020-03-04 23:53:20 -0400
+Started GET "/auth/github" for ::1 at 2020-03-04 23:53:32 -0400
+Started GET "/auth/github" for ::1 at 2020-03-04 23:53:34 -0400
+Started GET "/auth/github/callback?code=4b903945c187f83f56cb&state=ac91346680bb1427cc62627857dd672c40a66cf2cd83390d" for ::1 at 2020-03-04 23:53:34 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"4b903945c187f83f56cb", "state"=>"ac91346680bb1427cc62627857dd672c40a66cf2cd83390d", "provider"=>"github"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:18:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 21ms (ActiveRecord: 0.4ms | Allocations: 696)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 23:53:47 -0400
+Started GET "/rails/info/routes" for ::1 at 2020-03-04 23:55:14 -0400
+Processing by Rails::InfoController#routes as HTML
+  Rendering /usr/local/rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [51 times] (Duration: 40.3ms | Allocations: 7018)
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 84.9ms | Allocations: 1098)
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 139.8ms | Allocations: 11135)
+Completed 200 OK in 153ms (Views: 151.6ms | ActiveRecord: 0.0ms | Allocations: 12387)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-04 23:55:44 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=eab1bf1dae722c67eef4&state=b1b75991f8799155a4dea05ce90107e34ff23520b38381d4" for ::1 at 2020-03-04 23:55:44 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"eab1bf1dae722c67eef4", "state"=>"b1b75991f8799155a4dea05ce90107e34ff23520b38381d4", "provider"=>"github"}
+Redirected to http://localhost:3001/login
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:18:in `create'
+Redirected to 
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 1.6ms | Allocations: 7069)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/sessions_controller.rb:22:in `create'
+Started GET "/auth/github" for ::1 at 2020-03-04 23:56:29 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github" for ::1 at 2020-03-04 23:56:31 -0400
+Started GET "/auth/github/callback?code=bc85f05d985500d0b79c&state=af17651c81fc3796cb0975c56e8555d11d3553d3c0f4ea38" for ::1 at 2020-03-04 23:56:31 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"bc85f05d985500d0b79c", "state"=>"af17651c81fc3796cb0975c56e8555d11d3553d3c0f4ea38", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:18:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 35ms (ActiveRecord: 1.7ms | Allocations: 7284)
+
+
+Started POST "/login" for ::1 at 2020-03-05 00:24:22 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:44:in `create'
+Completed 200 OK in 255ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 877)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-05 00:24:24 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.2ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.2ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 114ms (Views: 62.9ms | ActiveRecord: 4.4ms | Allocations: 21967)
+
+
+Started GET "/login" for ::1 at 2020-03-05 00:24:31 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.5) lib/rack/cors.rb:98:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.2) lib/puma/configuration.rb:228:in `call'
+puma (4.3.2) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.2) lib/puma/server.rb:472:in `process_client'
+puma (4.3.2) lib/puma/server.rb:328:in `block in run'
+puma (4.3.2) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/auth/github" for ::1 at 2020-03-05 00:26:18 -0400
+Started GET "/auth/github" for ::1 at 2020-03-05 00:26:20 -0400
+Started GET "/auth/github/callback?code=d402c7c009169082e999&state=44758fecfc09953e9497141609bc540147cddfed45de86c6" for ::1 at 2020-03-05 00:26:21 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"d402c7c009169082e999", "state"=>"44758fecfc09953e9497141609bc540147cddfed45de86c6", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:18:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 695)
+
+
+Started POST "/logout" for ::1 at 2020-03-05 00:26:35 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 707)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-05 00:26:36 -0400
+Started GET "/auth/github/callback?code=b84af6b1f6daa0a69a8f&state=e4ee5ad6d1e30c936c04b50994c75970be3e906eaabc00ae" for ::1 at 2020-03-05 00:26:37 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"b84af6b1f6daa0a69a8f", "state"=>"e4ee5ad6d1e30c936c04b50994c75970be3e906eaabc00ae", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:18:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 696)
+
+
+Started POST "/logout" for ::1 at 2020-03-05 00:27:10 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+Filter chain halted as :signed_in? rendered or redirected
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 155)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-05 00:27:12 -0400
+Started GET "/auth/github/callback?code=789569d58e7a8b465d68&state=9ef36c5b5535b3e47aaa45218342ade192baf39d39cbe932" for ::1 at 2020-03-05 00:27:12 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"789569d58e7a8b465d68", "state"=>"9ef36c5b5535b3e47aaa45218342ade192baf39d39cbe932", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:18:in `create'
+Completed 200 OK in 24ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 6932)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-05 06:39:57 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=394a106b28c7df0e866a&state=f1e30e2ed2a39797311bffe7d858a03bbddbae1c49f303cb" for ::1 at 2020-03-05 06:39:57 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"394a106b28c7df0e866a", "state"=>"f1e30e2ed2a39797311bffe7d858a03bbddbae1c49f303cb", "provider"=>"github"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:18:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 747)
+
+
+Started GET "/rails/info/routes" for ::1 at 2020-03-05 06:43:24 -0400
+Processing by Rails::InfoController#routes as HTML
+  Rendering /usr/local/rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [51 times] (Duration: 16.5ms | Allocations: 6987)
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 31.3ms | Allocations: 703)
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 63.5ms | Allocations: 10696)
+Completed 200 OK in 75ms (Views: 72.3ms | ActiveRecord: 0.0ms | Allocations: 11800)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-05 06:44:41 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=c5c26ea4f48482f31c66&state=77a3212c08dae0d4520c7dd5c2e08af79664755a751bd3a1" for ::1 at 2020-03-05 06:44:42 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"c5c26ea4f48482f31c66", "state"=>"77a3212c08dae0d4520c7dd5c2e08af79664755a751bd3a1", "provider"=>"github"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:18:in `create'
+Redirected to http://localhost:3001/omniauth
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 1.5ms | Allocations: 7045)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/sessions_controller.rb:24:in `create'
+Started GET "/auth/github" for ::1 at 2020-03-05 06:44:59 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=455d6ab02ddde57ac3df&state=7a623df5fdc1469fe72acdbdf3898ef37381e6f8b5bd600a" for ::1 at 2020-03-05 06:44:59 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"455d6ab02ddde57ac3df", "state"=>"7a623df5fdc1469fe72acdbdf3898ef37381e6f8b5bd600a", "provider"=>"github"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:18:in `create'
+Redirected to http://localhost:3001/omniauth
+Completed 302 Found in 27ms (ActiveRecord: 1.6ms | Allocations: 6946)
+
+
+Started GET "/omniauth" for ::1 at 2020-03-05 06:45:00 -0400
+Processing by SessionsController#GitHub as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 124)
+
+
+  
+RuntimeError (<ActionController::Parameters {"controller"=>"sessions", "action"=>"GitHub"} permitted: false>):
+  
+app/controllers/sessions_controller.rb:7:in `GitHub'
+Started GET "/auth/github" for ::1 at 2020-03-05 06:52:45 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=13283ee691edde70605c&state=1d5c0ead7c682b53ac3a256aac10d815c58810320b5a30fe" for ::1 at 2020-03-05 06:52:45 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"13283ee691edde70605c", "state"=>"1d5c0ead7c682b53ac3a256aac10d815c58810320b5a30fe", "provider"=>"github"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:18:in `create'
+Completed 204 No Content in 21ms (ActiveRecord: 0.4ms | Allocations: 6539)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-05 06:54:06 -0400
+Started GET "/auth/github" for ::1 at 2020-03-05 06:54:34 -0400
+Started GET "/auth/github/callback?code=9572fd88297cb77ef108&state=63ee3377f53a3e4cb42dff63f4bfb567a080a032ccc63c26" for ::1 at 2020-03-05 06:54:34 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"9572fd88297cb77ef108", "state"=>"63ee3377f53a3e4cb42dff63f4bfb567a080a032ccc63c26", "provider"=>"github"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:18:in `create'
+Completed 204 No Content in 19ms (ActiveRecord: 0.4ms | Allocations: 665)
+
+
+Started POST "/logout" for ::1 at 2020-03-05 06:54:45 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+Filter chain halted as :signed_in? rendered or redirected
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 132)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-05 06:54:48 -0400
+Started GET "/auth/github/callback?code=1a377472497f06944053&state=e0bf0fd65093aff139201f3f387be8ca8ea1bc9629829b3d" for ::1 at 2020-03-05 06:54:49 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"1a377472497f06944053", "state"=>"e0bf0fd65093aff139201f3f387be8ca8ea1bc9629829b3d", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:18:in `create'
+Completed 204 No Content in 19ms (ActiveRecord: 0.3ms | Allocations: 665)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-05 06:58:13 -0400
+Started GET "/auth/github/callback?code=149c9c0629961dce96fb&state=9a9882711f3e6006102a2bebeb8c47d1908aea9f670fb6d3" for ::1 at 2020-03-05 06:58:13 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"149c9c0629961dce96fb", "state"=>"9a9882711f3e6006102a2bebeb8c47d1908aea9f670fb6d3", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:18:in `create'
+Completed 204 No Content in 18ms (ActiveRecord: 0.3ms | Allocations: 665)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-05 06:59:44 -0400
+Started GET "/auth/github/callback?code=3f125ba14487bd1b5042&state=78ed30dc5555b91307479fe9321a18ab32f80563d06572b6" for ::1 at 2020-03-05 06:59:45 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"3f125ba14487bd1b5042", "state"=>"78ed30dc5555b91307479fe9321a18ab32f80563d06572b6", "provider"=>"github"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:18:in `create'
+Completed 204 No Content in 20ms (ActiveRecord: 0.4ms | Allocations: 665)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-05 07:02:26 -0400
+Started GET "/auth/github/callback?code=d4baeb8bb64a8f5a02ed&state=01095ce0d1162f62a1ce766d81499f6b876247a42f5228b7" for ::1 at 2020-03-05 07:02:26 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"d4baeb8bb64a8f5a02ed", "state"=>"01095ce0d1162f62a1ce766d81499f6b876247a42f5228b7", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:18:in `create'
+Completed 204 No Content in 19ms (ActiveRecord: 0.3ms | Allocations: 665)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-05 09:47:41 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=c4f87c83ed7336a95893&state=efd9ac8d3e2f2819338673af6f44d884dc2cffde9a4ae763" for ::1 at 2020-03-05 09:47:42 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"c4f87c83ed7336a95893", "state"=>"efd9ac8d3e2f2819338673af6f44d884dc2cffde9a4ae763", "provider"=>"github"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:18:in `create'
+Completed 204 No Content in 19ms (ActiveRecord: 0.4ms | Allocations: 683)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-05 09:50:16 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=19afda6605004e9b71cf&state=7582cccbeb148aac275b1665afcff8afa6e63566830afa77" for ::1 at 2020-03-05 09:50:17 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"19afda6605004e9b71cf", "state"=>"7582cccbeb148aac275b1665afcff8afa6e63566830afa77", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:18:in `create'
+Completed 204 No Content in 22ms (ActiveRecord: 1.8ms | Allocations: 6888)
+
+
+Started POST "/logout" for ::1 at 2020-03-05 09:50:50 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+Filter chain halted as :signed_in? rendered or redirected
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 132)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-05 10:11:18 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+Filter chain halted as :signed_in? rendered or redirected
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 143)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-05 10:12:23 -0400
+Started GET "/auth/github/callback?code=ca7bf89b4268bcbb9bd9&state=020bddac2bab31b03fbe5e0f9202d50cfd65d34893b17f9c" for ::1 at 2020-03-05 10:12:24 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"ca7bf89b4268bcbb9bd9", "state"=>"020bddac2bab31b03fbe5e0f9202d50cfd65d34893b17f9c", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:18:in `create'
+Completed 204 No Content in 12ms (ActiveRecord: 0.3ms | Allocations: 6538)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-05 10:12:34 -0400
+Started GET "/auth/github/callback?code=67afe8f466b1220b0f2b&state=e87a9944edfe9920a036c2ed3d44d95658e23471af856fc9" for ::1 at 2020-03-05 10:12:34 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"67afe8f466b1220b0f2b", "state"=>"e87a9944edfe9920a036c2ed3d44d95658e23471af856fc9", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:18:in `create'
+Completed 204 No Content in 3ms (ActiveRecord: 0.3ms | Allocations: 665)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-05 10:12:49 -0400
+Started GET "/auth/github" for ::1 at 2020-03-05 10:15:58 -0400
+Started GET "/auth/github" for ::1 at 2020-03-05 10:16:47 -0400
+Started GET "/auth/github/callback?code=edd44e3f462a371180ea&state=7408cc47a12ef98a4ba7a2997c2f8286d2dc7fb29436da89" for ::1 at 2020-03-05 10:18:27 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"edd44e3f462a371180ea", "state"=>"7408cc47a12ef98a4ba7a2997c2f8286d2dc7fb29436da89", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:18:in `create'
+Completed 204 No Content in 3ms (ActiveRecord: 0.3ms | Allocations: 665)
+
+
+Started GET "/auth/github/callback?code=edd44e3f462a371180ea&state=7408cc47a12ef98a4ba7a2997c2f8286d2dc7fb29436da89" for ::1 at 2020-03-05 10:18:50 -0400
+  
+OmniAuth::Strategies::OAuth2::CallbackError (csrf_detected | CSRF detected):
+  
+omniauth (1.9.1) lib/omniauth/failure_endpoint.rb:25:in `raise_out!'
+omniauth (1.9.1) lib/omniauth/failure_endpoint.rb:20:in `call'
+omniauth (1.9.1) lib/omniauth/failure_endpoint.rb:12:in `call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:491:in `fail!'
+omniauth-oauth2 (1.6.0) lib/omniauth/strategies/oauth2.rb:71:in `callback_phase'
+omniauth (1.9.1) lib/omniauth/strategy.rb:238:in `callback_call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:189:in `call!'
+omniauth (1.9.1) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.1) lib/omniauth/builder.rb:45:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.5) lib/rack/cors.rb:98:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.2) lib/puma/configuration.rb:228:in `call'
+puma (4.3.2) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.2) lib/puma/server.rb:472:in `process_client'
+puma (4.3.2) lib/puma/server.rb:328:in `block in run'
+puma (4.3.2) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/auth/github" for ::1 at 2020-03-05 10:28:04 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github" for ::1 at 2020-03-05 10:29:27 -0400
+Started GET "/auth/github/callback?code=df92fe829116817e1b6a&state=d271f1ed763d47cfff67ab3acc46f8e50152a2acd04e85cc" for ::1 at 2020-03-05 10:29:27 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"df92fe829116817e1b6a", "state"=>"d271f1ed763d47cfff67ab3acc46f8e50152a2acd04e85cc", "provider"=>"github"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 6607)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-05 10:30:34 -0400
+Started GET "/auth/github/callback?code=e4f3b5e83bca2144b136&state=bd832865c50e45abd7fb6eade2b35cfa900240e8e39844e3" for ::1 at 2020-03-05 10:30:35 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"e4f3b5e83bca2144b136", "state"=>"bd832865c50e45abd7fb6eade2b35cfa900240e8e39844e3", "provider"=>"github"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 729)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-05 10:31:26 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=dcc0089bbfca4d6cf37b&state=15388ce3ec3797328efd79ab81e736f796d7319d428db27c" for ::1 at 2020-03-05 10:31:27 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"dcc0089bbfca4d6cf37b", "state"=>"15388ce3ec3797328efd79ab81e736f796d7319d428db27c", "provider"=>"github"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Completed 200 OK in 26ms (Views: 0.1ms | ActiveRecord: 1.6ms | Allocations: 6972)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-05 10:31:52 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=012cb7ad68dc25202fd8&state=ae2ca16ca12a5b5541e4c29bf49aa3e7c3c5a4874123de73" for ::1 at 2020-03-05 10:31:52 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"012cb7ad68dc25202fd8", "state"=>"ae2ca16ca12a5b5541e4c29bf49aa3e7c3c5a4874123de73", "provider"=>"github"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 2.0ms | Allocations: 6973)
+
+
+  
+ArgumentError ({:json=>{:token=>"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7Im5hbWUiOiJqZ3JhbnRwcyIsImlkIjo1fX0.MUt_o3fD69IFV2F5Dv4C1qyAucwB1qY5QPLtugwT-5o", :message=>"hello there"}} is not a valid value for `status`.):
+  
+app/controllers/sessions_controller.rb:14:in `create'
+Started GET "/auth/github" for ::1 at 2020-03-05 10:32:52 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=cd6da261c64296944c49&state=b0c4e713f80914e600462854fa7aec614169512888550e7c" for ::1 at 2020-03-05 10:33:03 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"cd6da261c64296944c49", "state"=>"b0c4e713f80914e600462854fa7aec614169512888550e7c", "provider"=>"github"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 1.6ms | Allocations: 6966)
+
+
+  
+ArgumentError (Unrecognized status code :token):
+  
+app/controllers/sessions_controller.rb:15:in `create'
+Started GET "/auth/github" for ::1 at 2020-03-05 10:34:37 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=054b1ba17bc2e909a872&state=3000a948ce0943d08777f0e19f6bbde2d5e4dc304762d063" for ::1 at 2020-03-05 10:34:38 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"054b1ba17bc2e909a872", "state"=>"3000a948ce0943d08777f0e19f6bbde2d5e4dc304762d063", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Completed 201 Created in 26ms (ActiveRecord: 2.1ms | Allocations: 7293)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-05 10:36:10 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=9863ba53673b9ec56bb0&state=f15694d2b6dd924d0a57cead5298a7992070aad87859913b" for ::1 at 2020-03-05 10:36:11 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"9863ba53673b9ec56bb0", "state"=>"f15694d2b6dd924d0a57cead5298a7992070aad87859913b", "provider"=>"github"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.5ms | Allocations: 6992)
+
+
+  
+ArgumentError (missing keyword: fallback_location):
+  
+app/controllers/sessions_controller.rb:15:in `create'
+Started GET "/auth/github" for ::1 at 2020-03-05 10:36:47 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=d24be798695599b4dfc4&state=7e0583aac10494b0fb2ce2ec411eac8eb67583fff395a460" for ::1 at 2020-03-05 10:36:48 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"d24be798695599b4dfc4", "state"=>"7e0583aac10494b0fb2ce2ec411eac8eb67583fff395a460", "provider"=>"github"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 25ms (ActiveRecord: 1.5ms | Allocations: 6917)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-05 10:38:17 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=e2fbb9a470f26776ecbe&state=a68262585eb266da2442bfe96efd5789c46066468dd30698" for ::1 at 2020-03-05 10:38:18 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"e2fbb9a470f26776ecbe", "state"=>"a68262585eb266da2442bfe96efd5789c46066468dd30698", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Redirected to http://localhost:3000/login/${token}
+Completed 302 Found in 23ms (ActiveRecord: 1.5ms | Allocations: 6882)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-05 10:40:08 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=0dd11acab2f747299c78&state=d9c6d200491f5923ff750333dd0d122d2fe9bc24ef1b6ebc" for ::1 at 2020-03-05 10:40:09 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"0dd11acab2f747299c78", "state"=>"d9c6d200491f5923ff750333dd0d122d2fe9bc24ef1b6ebc", "provider"=>"github"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Redirected to http://localhost:3000/login/#{token}
+Completed 302 Found in 36ms (ActiveRecord: 1.5ms | Allocations: 6917)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-05 10:41:13 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=3b0e44e0fb97b462bcdb&state=5ff1813ae53c49208e3d7bb08b197ef3457ce83e7afde28a" for ::1 at 2020-03-05 10:41:14 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"3b0e44e0fb97b462bcdb", "state"=>"5ff1813ae53c49208e3d7bb08b197ef3457ce83e7afde28a", "provider"=>"github"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Redirected to http://localhost:3000/login/eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7Im5hbWUiOiJqZ3JhbnRwcyIsImlkIjo1fX0.MUt_o3fD69IFV2F5Dv4C1qyAucwB1qY5QPLtugwT-5o
+Completed 302 Found in 29ms (ActiveRecord: 1.5ms | Allocations: 6918)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-05 10:56:43 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=c462e90f74626df9782e&state=ef667c7dfe9da3ba1bdc19d72141a10caf5c29ac1a6d938f" for ::1 at 2020-03-05 10:56:44 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"c462e90f74626df9782e", "state"=>"ef667c7dfe9da3ba1bdc19d72141a10caf5c29ac1a6d938f", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Redirected to http://localhost:3000/login/?token=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7Im5hbWUiOiJqZ3JhbnRwcyIsImlkIjo1fX0.MUt_o3fD69IFV2F5Dv4C1qyAucwB1qY5QPLtugwT-5o
+Completed 302 Found in 24ms (ActiveRecord: 0.3ms | Allocations: 6534)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-05 11:12:09 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=5cc2b73bf2dd11ed0d38&state=c919a5cb74d0fa122bcee7d3512db97ee6572d035131cc4d" for ::1 at 2020-03-05 11:12:10 -0400
+  
+SyntaxError (/mnt/c/Users/Peter/flatiron_labs/current_lab/brick-it/backend/app/controllers/sessions_controller.rb:40: syntax error, unexpected tCONSTANT, expecting end
+...  render json: {message: "Login Failed, Please Try Again!"}
+...                          ^~~~~
+/mnt/c/Users/Peter/flatiron_labs/current_lab/brick-it/backend/app/controllers/sessions_controller.rb:40: syntax error, unexpected tCONSTANT, expecting do or '{' or '('
+...sage: "Login Failed, Please Try Again!"}
+...                            ^~~
+/mnt/c/Users/Peter/flatiron_labs/current_lab/brick-it/backend/app/controllers/sessions_controller.rb:49: syntax error, unexpected tIDENTIFIER, expecting end
+    render json: {message: "you are logged out"}
+                            ^~~
+/mnt/c/Users/Peter/flatiron_labs/current_lab/brick-it/backend/app/controllers/sessions_controller.rb:58: unterminated string meets end of file
+/mnt/c/Users/Peter/flatiron_labs/current_lab/brick-it/backend/app/controllers/sessions_controller.rb:58: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/sessions_controller.rb:40: syntax error, unexpected tCONSTANT, expecting end
+app/controllers/sessions_controller.rb:40: syntax error, unexpected tCONSTANT, expecting do or '{' or '('
+app/controllers/sessions_controller.rb:49: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/sessions_controller.rb:58: unterminated string meets end of file
+app/controllers/sessions_controller.rb:58: syntax error, unexpected end-of-input, expecting end
+app/controllers/sessions_controller.rb:40: syntax error, unexpected tCONSTANT, expecting end
+app/controllers/sessions_controller.rb:40: syntax error, unexpected tCONSTANT, expecting do or '{' or '('
+app/controllers/sessions_controller.rb:49: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/sessions_controller.rb:58: unterminated string meets end of file
+app/controllers/sessions_controller.rb:58: syntax error, unexpected end-of-input, expecting end
+Started GET "/auth/github" for ::1 at 2020-03-05 11:12:38 -0400
+Started GET "/auth/github/callback?code=d6e5c9f5698dd4ae7fc1&state=4474caebf4b9931297d2cdcd1b8c5712552dac47c7a88def" for ::1 at 2020-03-05 11:12:39 -0400
+  
+SyntaxError (/mnt/c/Users/Peter/flatiron_labs/current_lab/brick-it/backend/app/controllers/sessions_controller.rb:40: syntax error, unexpected tCONSTANT, expecting end
+...  render json: {message: "Login Failed, Please Try Again!"}
+...                          ^~~~~
+/mnt/c/Users/Peter/flatiron_labs/current_lab/brick-it/backend/app/controllers/sessions_controller.rb:40: syntax error, unexpected tCONSTANT, expecting do or '{' or '('
+...sage: "Login Failed, Please Try Again!"}
+...                            ^~~
+/mnt/c/Users/Peter/flatiron_labs/current_lab/brick-it/backend/app/controllers/sessions_controller.rb:49: syntax error, unexpected tIDENTIFIER, expecting end
+    render json: {message: "you are logged out"}
+                            ^~~
+/mnt/c/Users/Peter/flatiron_labs/current_lab/brick-it/backend/app/controllers/sessions_controller.rb:58: unterminated string meets end of file
+/mnt/c/Users/Peter/flatiron_labs/current_lab/brick-it/backend/app/controllers/sessions_controller.rb:58: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/sessions_controller.rb:40: syntax error, unexpected tCONSTANT, expecting end
+app/controllers/sessions_controller.rb:40: syntax error, unexpected tCONSTANT, expecting do or '{' or '('
+app/controllers/sessions_controller.rb:49: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/sessions_controller.rb:58: unterminated string meets end of file
+app/controllers/sessions_controller.rb:58: syntax error, unexpected end-of-input, expecting end
+app/controllers/sessions_controller.rb:40: syntax error, unexpected tCONSTANT, expecting end
+app/controllers/sessions_controller.rb:40: syntax error, unexpected tCONSTANT, expecting do or '{' or '('
+app/controllers/sessions_controller.rb:49: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/sessions_controller.rb:58: unterminated string meets end of file
+app/controllers/sessions_controller.rb:58: syntax error, unexpected end-of-input, expecting end
+Started GET "/auth/github" for ::1 at 2020-03-05 11:13:32 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=b5158d044a0c1c038365&state=f4a2441e77f6cdbf49d345b2d376dae1e22589c30221d954" for ::1 at 2020-03-05 11:13:41 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"b5158d044a0c1c038365", "state"=>"f4a2441e77f6cdbf49d345b2d376dae1e22589c30221d954", "provider"=>"github"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Redirected to http://localhost:3000/login/?token=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7Im5hbWUiOiJqZ3JhbnRwcyIsImlkIjo1fX0.MUt_o3fD69IFV2F5Dv4C1qyAucwB1qY5QPLtugwT-5o
+Completed 302 Found in 30ms (ActiveRecord: 2.1ms | Allocations: 6918)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-05 11:35:04 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=56ed93f465fc9ec68de3&state=ad66b5dfa1253ecfcf809d2ba1c49b6302ee8bc92e69f03b" for ::1 at 2020-03-05 11:35:05 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"56ed93f465fc9ec68de3", "state"=>"ad66b5dfa1253ecfcf809d2ba1c49b6302ee8bc92e69f03b", "provider"=>"github"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Redirected to http://localhost:3000/login/github/?token=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7Im5hbWUiOiJqZ3JhbnRwcyIsImlkIjo1fX0.MUt_o3fD69IFV2F5Dv4C1qyAucwB1qY5QPLtugwT-5o
+Completed 302 Found in 27ms (ActiveRecord: 0.4ms | Allocations: 6568)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-05 11:36:11 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.2ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.2ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 92ms (Views: 34.9ms | ActiveRecord: 4.8ms | Allocations: 21799)
+
+
+Started POST "/logout" for ::1 at 2020-03-05 11:36:24 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 710)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-05 11:36:28 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+Filter chain halted as :signed_in? rendered or redirected
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 122)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-05 11:36:33 -0400
+Started GET "/auth/github/callback?code=4e774195a714f3b08b41&state=8d6ca27b9569e51d734605ffec7e8cde6b65f18f78a39d77" for ::1 at 2020-03-05 11:36:33 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"4e774195a714f3b08b41", "state"=>"8d6ca27b9569e51d734605ffec7e8cde6b65f18f78a39d77", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Redirected to http://localhost:3000/login/github/?token=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7Im5hbWUiOiJqZ3JhbnRwcyIsImlkIjo1fX0.MUt_o3fD69IFV2F5Dv4C1qyAucwB1qY5QPLtugwT-5o
+Completed 302 Found in 23ms (ActiveRecord: 0.3ms | Allocations: 697)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-05 11:36:40 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.3ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.3ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 32ms (Views: 23.8ms | ActiveRecord: 1.3ms | Allocations: 4334)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-05 11:36:44 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.2ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.2ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 31ms (Views: 5.3ms | ActiveRecord: 1.4ms | Allocations: 4334)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-05 11:37:26 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.2ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.3ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 34ms (Views: 26.3ms | ActiveRecord: 1.2ms | Allocations: 4334)
+
+
+Started POST "/logout" for ::1 at 2020-03-05 11:37:31 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 707)
+
+
+Started POST "/login" for ::1 at 2020-03-05 11:37:34 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:35:in `create'
+Completed 200 OK in 244ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 851)
+
+
+Started GET "/selections/2" for ::1 at 2020-03-05 11:37:36 -0400
+Processing by SelectionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  [1m[36mSelection Load (0.2ms)[0m  [1m[34mSELECT "selections".* FROM "selections" WHERE "selections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:20:in `show'
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+  [1m[36mTheme Load (0.3ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:25:in `show'
+Completed 200 OK in 32ms (Views: 24.3ms | ActiveRecord: 1.4ms | Allocations: 4333)
+
+
+Started POST "/logout" for ::1 at 2020-03-05 11:37:38 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 707)
+
+
+Started GET "/auth/github" for 127.0.0.1 at 2020-03-05 11:37:55 -0400
+Started GET "/auth/github/callback?code=5d90319fc29a0fc7aa14&state=829c1d8056ca798333d236a494ff772f7204333151e7103d" for 127.0.0.1 at 2020-03-05 11:38:12 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"5d90319fc29a0fc7aa14", "state"=>"829c1d8056ca798333d236a494ff772f7204333151e7103d", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Redirected to http://localhost:3000/login/github/?token=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7Im5hbWUiOiJqZ3JhbnRwcyIsImlkIjo1fX0.MUt_o3fD69IFV2F5Dv4C1qyAucwB1qY5QPLtugwT-5o
+Completed 302 Found in 14ms (ActiveRecord: 0.3ms | Allocations: 699)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-05 11:39:53 -0400
+Started GET "/auth/github/callback?code=024b6385a1812fee3b2a&state=6fa03e9d2f0b54fe972476879ccc68c7cf7d8ba7607bc974" for ::1 at 2020-03-05 11:39:58 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"024b6385a1812fee3b2a", "state"=>"6fa03e9d2f0b54fe972476879ccc68c7cf7d8ba7607bc974", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Redirected to http://localhost:3000/login/github/?token=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7Im5hbWUiOiJqZ3JhbnRwcyIsImlkIjo1fX0.MUt_o3fD69IFV2F5Dv4C1qyAucwB1qY5QPLtugwT-5o
+Completed 302 Found in 22ms (ActiveRecord: 0.3ms | Allocations: 697)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-05 11:40:42 -0400
+Started GET "/auth/github/callback?code=bbde6c6aba27181a624b&state=64c895833c7e4ab08ae120c6d4de22d46fed66c858fc386c" for ::1 at 2020-03-05 11:40:53 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"bbde6c6aba27181a624b", "state"=>"64c895833c7e4ab08ae120c6d4de22d46fed66c858fc386c", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Redirected to http://localhost:3000/login/github/?token=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7Im5hbWUiOiJqZ3JhbnRwcyIsImlkIjo1fX0.MUt_o3fD69IFV2F5Dv4C1qyAucwB1qY5QPLtugwT-5o
+Completed 302 Found in 22ms (ActiveRecord: 0.3ms | Allocations: 697)
+
+
+Started POST "/logout" for ::1 at 2020-03-05 11:46:31 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+Completed 200 OK in 24ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 725)
+
+
+Started POST "/login" for ::1 at 2020-03-05 11:46:32 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"", "password"=>"[FILTERED]", "session"=>{"name"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:35:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 658)
+
+
+Started POST "/logout" for ::1 at 2020-03-05 11:46:35 -0400
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+Filter chain halted as :signed_in? rendered or redirected
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 126)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-05 11:46:36 -0400
+Started GET "/auth/github/callback?code=b7736db9d6d6021312a4&state=dee0990a8f4ed945b214410532331ffc9eca9b43ccd03e6e" for ::1 at 2020-03-05 11:46:37 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"b7736db9d6d6021312a4", "state"=>"dee0990a8f4ed945b214410532331ffc9eca9b43ccd03e6e", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Redirected to http://localhost:3000/login/github/?token=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7Im5hbWUiOiJqZ3JhbnRwcyIsImlkIjo1fX0.MUt_o3fD69IFV2F5Dv4C1qyAucwB1qY5QPLtugwT-5o
+Completed 302 Found in 23ms (ActiveRecord: 0.3ms | Allocations: 697)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-05 11:51:45 -0400
+Started GET "/auth/github/callback?code=dca918d640fad0c22a44&state=26de376e525220326af835689512ea6428ddf65c2682ed5f" for ::1 at 2020-03-05 11:51:45 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"dca918d640fad0c22a44", "state"=>"26de376e525220326af835689512ea6428ddf65c2682ed5f", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Redirected to http://localhost:3000/login/github/?token=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7Im5hbWUiOiJqZ3JhbnRwcyIsImlkIjo1fX0.MUt_o3fD69IFV2F5Dv4C1qyAucwB1qY5QPLtugwT-5o
+Completed 302 Found in 22ms (ActiveRecord: 0.3ms | Allocations: 697)
+
+

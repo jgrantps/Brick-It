@@ -33,6 +33,21 @@ class ApiAdapter {
                 }
             })
         }
+
+        this.oauthHeader = () => {
+            return ({
+                method: "GET",
+                
+                headers: {
+                    "permissions": [
+                        "http://localhost:3000/login", 
+                    "http://localhost:3000/", 
+                    "http://localhost:3001/auth/github", 
+                    "http://localhost:3001/auth/github/callback"
+                ]
+                }
+            })
+        }
     }
 
 //Requests to Rebrickable API:
@@ -61,6 +76,16 @@ class ApiAdapter {
     Login(formData) {
         return fetch(`${this.baseUrl}/login`, this.postConfig(formData))
         .then(r=>r.json())
+    }
+
+    //LOG USER IN VIA GITHUB
+    LoginViaGithub() {
+        return fetch(`http://localhost:3001/auth/github`)
+        .then(r=>console.log(r))
+    }
+
+    accessGitHubAction() {
+        return fetch(`${this.baseUrl}/omniauth`)
     }
 
     //LOG USER OUT --> POST request to sessions#destroy

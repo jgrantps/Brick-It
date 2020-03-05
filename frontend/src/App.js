@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import Login from './components/login'
+import Oauth from './components/oauth'
 import Kits from './components/kits'
 import {NameAdapter} from './classes/names'
 
@@ -15,7 +16,9 @@ function App() {
 
     <Link to="/kits">Kits</Link>
     <Link to="/login">Login</Link>
+    
 
+    <Route path="/login/github" render={(props) => <Oauth {...props}  namee={name}/>}/>
     <Route path="/login" render={(props) => <Login {...props}  namee={name}/>}/>
     <Route path="/kits" component={Kits}/>
    

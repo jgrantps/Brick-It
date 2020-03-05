@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   post '/logout', to: 'sessions#destroy'
+  get '/auth/:provider/callback', to: 'sessions#create'
+  get '/omniauth', to: 'sessions#GitHub'
   
   resources :themes
   resources :kits
