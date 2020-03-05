@@ -7,8 +7,8 @@ class UsersController < ApplicationController
         user = User.new(userParams)
         
         if user.save
-            
-            render json: user          
+            token = Auth.create_token({:name=> user.name, :id=> user.id})
+            render json: {token: token}         
         else
             render json: {main: user.errors.as_json(full_messages: true), reason: "error!"}
         end

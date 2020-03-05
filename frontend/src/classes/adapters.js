@@ -4,12 +4,14 @@ class ApiAdapter {
         this.baseUrl = "http://localhost:3001" 
         this.rebrickableBaseUrl = "https://rebrickable.com/api/v3/lego/"
         
-        //AUTHENTICATION KEY FOR REBRICKABLE API.
-        this.rebrickableAuth = {
-            method: "GET", 
-            headers: {
-                Authorization: "key 691de533ab29f2be2c2a36d536590a5e",
-            }
+        //AUTHENTICATION HEADER FOR FETCH REQUESTS TO LOCAL API.
+        this.getConfig = (token = undefined) =>{
+            return ({
+                method: "GET",
+                headers: {
+                    "Authorization": token,
+                }
+            })
         }
         
         //CONFIGURATION OBJECT FOR POST REQUESTS TO LOCAL API.
@@ -24,34 +26,17 @@ class ApiAdapter {
             })
         }
         
-        //AUTHENTICATION HEADER FOR FETCH REQUESTS TO LOCAL API.
-        this.getConfig = (token = undefined) =>{
-            return ({
-                method: "GET",
-                headers: {
-                    "Authorization": token,
-                }
-            })
-        }
-
-        this.oauthHeader = () => {
-            return ({
-                method: "GET",
-                
-                headers: {
-                    "permissions": [
-                        "http://localhost:3000/login", 
-                    "http://localhost:3000/", 
-                    "http://localhost:3001/auth/github", 
-                    "http://localhost:3001/auth/github/callback"
-                ]
-                }
-            })
+        //AUTHENTICATION KEY FOR REBRICKABLE API FETCH REQUESTS.
+        this.rebrickableAuth = {
+            method: "GET", 
+            headers: {
+                Authorization: "key 691de533ab29f2be2c2a36d536590a5e",
+            }
         }
     }
-
-//Requests to Rebrickable API:
-
+    
+    //Requests to Rebrickable API:
+    
     //RETRIEVE ALL THEMES
     retrieveThemes() {
         return fetch(`${this.rebrickableBaseUrl}/themes/?page_size=655`, this.rebrickableAuth)
@@ -78,16 +63,12 @@ class ApiAdapter {
         .then(r=>r.json())
     }
 
-    //LOG USER IN VIA GITHUB
-    LoginViaGithub() {
-        return fetch(`http://localhost:3001/auth/github`)
-        .then(r=>console.log(r))
+    //SIGN NEW USER UP
+    Signup(formData) {
+        return fetch(`${this.baseUrl}/signup`, this.postConfig(formData))
+        .then(r=>r.json())
     }
-
-    accessGitHubAction() {
-        return fetch(`${this.baseUrl}/omniauth`)
-    }
-
+    
     //LOG USER OUT --> POST request to sessions#destroy
     Logout(token) {
         return fetch(`${this.baseUrl}/logout`, this.postConfig(null, token))

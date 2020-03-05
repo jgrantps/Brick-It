@@ -32,7 +32,7 @@ class SessionsController < ApplicationController
       
       # Normal login with username and password
       user = User.find_by(:name => sessionParams[:name])
-      if user&& user.try(:authenticate, sessionParams[:password])
+      if user && user.try(:authenticate, sessionParams[:password])
         token = Auth.create_token({:name=> user.name, :id=> user.id})
         render json: {token: token}
       else

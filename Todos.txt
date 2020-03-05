@@ -42,15 +42,27 @@ Monday March 2nd:
 
     Login: 
         => separate container with components.
+            
+            -> Login container
+                -> username component
+                -> password component
+                -> login button component
+                -> gitub Oauth button component
+                -> validation error component???
+
+
         => CSS divs to display validation errors.
         => routes away to '/user'(?) when logged in or signed up.
-        => omniAuth?????????????  Twitter??
+        => :) omniAuth!!!!!!!!!  Github!!
 
 
-    Themes:
+
+
+    Rebrickable API lego Themes:
         => Alphabetical sorting, with:
         => Filter for each letter
         => Search based on state.
 
- => render Kit list component in response to selected theme.
-
+ => render Kit:
+    -> list component in response to selected theme.
+    -> 

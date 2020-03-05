@@ -8804,3 +8804,67 @@ Redirected to http://localhost:3000/login/github/?token=eyJhbGciOiJIUzI1NiJ9.eyJ
 Completed 302 Found in 22ms (ActiveRecord: 0.3ms | Allocations: 697)
 
 
+Started POST "/login" for ::1 at 2020-03-05 13:36:40 -0400
+  [1m[35m (14.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"appels", "password"=>"[FILTERED]", "session"=>{"name"=>"appels", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "appels"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 77ms (Views: 0.9ms | ActiveRecord: 1.0ms | Allocations: 4485)
+
+
+Started POST "/signup" for ::1 at 2020-03-05 13:45:43 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"e", "password"=>"[FILTERED]", "user"=>{"name"=>"e", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "e"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (5.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "e"], ["password_digest", "$2a$12$TxKAKi6PbxOo/HPN.MSmg.F0qN4COZMzbW3lhPZUKhcL9mUYBaQt6"], ["created_at", "2020-03-05 17:45:44.381017"], ["updated_at", "2020-03-05 17:45:44.381017"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 293ms (Views: 0.1ms | ActiveRecord: 13.8ms | Allocations: 17634)
+
+
+Started GET "/auth/github" for ::1 at 2020-03-05 14:23:05 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=a907f3103ee1a226a95e&state=e756f3912d64c532308a5d8cb7027c1996211aa7fcab5901" for ::1 at 2020-03-05 14:23:07 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"a907f3103ee1a226a95e", "state"=>"e756f3912d64c532308a5d8cb7027c1996211aa7fcab5901", "provider"=>"github"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Redirected to http://localhost:3000/login/github/?token=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7Im5hbWUiOiJqZ3JhbnRwcyIsImlkIjo1fX0.MUt_o3fD69IFV2F5Dv4C1qyAucwB1qY5QPLtugwT-5o
+Completed 302 Found in 22ms (ActiveRecord: 0.4ms | Allocations: 880)
+
+
+Started POST "/signup" for ::1 at 2020-03-05 14:40:49 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"e", "password"=>"[FILTERED]", "user"=>{"name"=>"e", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "e"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 312ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 4206)
+
+
+Started POST "/signup" for ::1 at 2020-03-05 14:45:28 -0400
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"e", "password"=>"[FILTERED]", "user"=>{"name"=>"e", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "e"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 251ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 3093)
+
+
