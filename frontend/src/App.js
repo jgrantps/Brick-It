@@ -18,8 +18,8 @@ function App() {
     <div className="App">
     
 
-    <Link to="/kits">Kits</Link>
-    <Link to="/login">Login</Link>
+    {/* <Link to="/kits">Kits</Link>
+    <Link to="/login">Login</Link> */}
     
     <NavContainer />
     <Route path="/login/github" render={(props) => <Oauth {...props}  namee={name}/>}/>

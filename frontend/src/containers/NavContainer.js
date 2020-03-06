@@ -16,7 +16,7 @@ class NavContainer extends Component {
 
             <Route path="/themes" component={CatalogueContainer}/>
             <Route path="/myCollection" component={CollectionsContainer}/>
-            {/* <Route path="/login" component={LoginContainer}/> */}
+            
             </div>
         )
     }
