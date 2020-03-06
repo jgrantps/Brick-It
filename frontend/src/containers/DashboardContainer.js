@@ -7,7 +7,7 @@ class DashboardContainer extends Component {
         return(
             <div>
                 <h1>
-                    welcome!  You're logged in.
+                    this is the dashboard container
                 </h1>
             </div>
         )

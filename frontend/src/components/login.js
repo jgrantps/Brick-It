@@ -175,8 +175,7 @@ class Login extends Component {
 }
 
 const mapStateToProps = state => ({
-    nname: state.classes.name,
-    birdie: state.classes.api,
+ 
 })
 
 export default connect(mapStateToProps)(Login)

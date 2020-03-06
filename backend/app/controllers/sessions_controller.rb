@@ -34,7 +34,7 @@ class SessionsController < ApplicationController
       user = User.find_by(:name => sessionParams[:name])
       if user && user.try(:authenticate, sessionParams[:password])
         token = Auth.create_token({:name=> user.name, :id=> user.id})
-        render json: {token: token}
+        render json: {token: token, package: {name: user.name, id: user.id}}
       else
         render json: {message: "Login Failed, Please Try Again!"}
       end
