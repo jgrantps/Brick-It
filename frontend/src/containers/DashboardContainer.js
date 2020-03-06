@@ -8,6 +8,7 @@ class DashboardContainer extends Component {
             <div>
                 <h1>
                     this is the dashboard container
+                    {this.props.myName}
                 </h1>
             </div>
         )

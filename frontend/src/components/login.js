@@ -1,3 +1,6 @@
+//old sandbox for proving functionality.
+
+
 import React, { Component } from 'react'
 import { Link, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
