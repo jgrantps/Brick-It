@@ -4,6 +4,8 @@ import {setUser} from '../actions/authentications'
 import LoginInput from '../components/Login/LoginInput';
 import LoginOauth from '../components/Login/LoginOauth';
 import api from '../classes/adapters'
+import auth from '../classes/auth';
+
 
 
 class LoginContainer extends Component {
@@ -36,11 +38,12 @@ class LoginContainer extends Component {
             
             console.log(verifiedUserCredentials)
             window.localStorage.setItem('token', resp.token)
-            
+           
             if (window.localStorage.token){
                 this.props.setUser(verifiedUserCredentials)
             } else {
                 this.props.setUser('unresolved')
+                
             }
         })
         .catch(err => console.log(err))

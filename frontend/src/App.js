@@ -8,10 +8,12 @@ import Kits from './components/kits'
 import LoginContainer from './containers/LoginContainer'
 import DashboardContainer from './containers/DashboardContainer'
 import LandingPage from './components/LandingPage'
+
 import NavContainer from './containers/NavContainer';
-import {hideDashboard} from './components/routes/hideDashboard'
-import {hideLogin} from './components/routes/hideLogin'
-import { ProtectedRoute } from './components/restrictedLogin';
+
+import {HideDashboard} from './components/routes/hideDashboard'
+import {HideLogin} from './components/routes/hideLogin'
+import { ProtectedRoute } from './components/routes/restrictedLogin';
 
 
 
@@ -23,14 +25,15 @@ class App extends Component {
     allowAccess: false
   }
   render() {
+    const {loggedIn, username} = this.props
     return(
       <div className="App">
         <NavContainer/>
         <Switch>
         <Route exact path="/" component={LandingPage} />
-        {/* <hideLogin exact path="/login" myName="I'm a login routee!!!!" component={LoginContainer} />
-        <hideDashboard exact path="/app" myName="headdddphones" component={DashboardContainer} /> */}
-        <ProtectedRoute exact path='/login' component={LoginContainer} />
+        <HideLogin exact path='/login' loggedIn={loggedIn} myName="I'm a login routee!!!!" component={LoginContainer} />
+        <HideDashboard exact path="/app" myName="headdddphones" component={DashboardContainer} />
+        {/* <ProtectedRoute exact path='/login' component={LoginContainer} /> */}
         <Route path="*" component= {() => "404 NOT FOUND"} />
         </Switch>
       </div>
@@ -39,7 +42,8 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => ({
-   username: state.user.name
+   username: state.user.name,
+   loggedIn: state.user.loggedIn
    })
 
 

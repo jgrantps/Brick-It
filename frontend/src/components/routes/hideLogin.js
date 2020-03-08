@@ -1,17 +1,19 @@
 import React from 'react';
-import auth from '../auth'
+import auth from '../../classes/auth'
 import {Route, Redirect} from 'react-router-dom';
 
 //REDIRECTS USER FROM LOGIN TO THE DASHBOARD IF THEY'RE ALREADY LOGGED IN.
-export const hideLogin = ({component: Component, ...rest}) => {
+export const HideLogin = ({component: Component, ...rest}) => {
     return (
+        //DISPLAY LOGIN
       <Route {...rest} render={(props) => {
-        //if condition is met, render first or second componenet
-          if (auth.success()) {
+        //IF USER IS LOGGED IN, REDIRECT TO THE '/APP' DASHBOARD PAGE.
+          if (rest.loggedIn) {
+              return <Redirect to={{pathname: "/app", state: {from: props.location}}} />
+        } else {
+            //IF USER IS NOT LOGGED IN, RENDER THE LOGIN COMPONENT AS REQUESTED.
             return <Component   { ...props} {...rest} />;
-          } else {
-           return <h2>you are forbiden!!</h2>
-            // return <Redirect to={{pathname: "/", state: {from: props.location}}} />
+        //    return <h2>you are forbiden!!</h2>
           }
         }}
       />
