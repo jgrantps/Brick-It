@@ -7,8 +7,13 @@ import mainReducer from './reducers/mainReducer';
 import './assets/main.css'
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import service from './classes/service'
 
-const store = createStore(mainReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const persistedState = service.loadFromLocalStorage();
+
+const store = createStore(mainReducer, persistedState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+
+store.subscribe(()=> service.saveToLocalStorage(store.getState()))
 
 ReactDOM.render(
     <Provider store = {store}>

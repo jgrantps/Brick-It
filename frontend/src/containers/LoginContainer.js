@@ -47,7 +47,8 @@ class LoginContainer extends Component {
                 let verifiedUserCredentials={name: resp.package.name, id: resp.package.id, slug: service.slugify(resp.package.name)}
                 window.localStorage.setItem('token', resp.token)
                 this.props.setUser(verifiedUserCredentials) 
-                <Redirect to='/:slug' component={DashboardContainer}
+                
+                
                  
             }else{
                //HANDLE ERRORS:
@@ -75,9 +76,7 @@ class LoginContainer extends Component {
                 let verifiedUserCredentials={name: resp.package.name, slug: service.slugify(resp.package.name), id: resp.package.id}
                 window.localStorage.setItem('token', resp.token)
                 this.props.setUser(verifiedUserCredentials)
-                //  <Redirect to={{pathname: "/:slug", state: {from: props.location}}} />
-            }
-            else {
+         } else {
             //HANDLE ERRORS:
             var nameMsg;
             var passwordMsg;

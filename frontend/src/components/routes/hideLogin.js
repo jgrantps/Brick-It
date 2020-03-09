@@ -9,7 +9,7 @@ export const HideLogin = ({component: Component, ...rest}) => {
       <Route {...rest} render={(props) => {
         //IF USER IS LOGGED IN, REDIRECT TO THE '/APP' DASHBOARD PAGE.
           if (rest.loggedIn) {
-              return <Redirect to={{pathname: "/app", state: {from: props.location}}} />
+              return <Redirect to={{pathname: `/user/${rest.slug}`, state: {from: props.location}}} />
         } else {
             //IF USER IS NOT LOGGED IN, RENDER THE LOGIN COMPONENT AS REQUESTED.
             return <Component   { ...props} {...rest} />;

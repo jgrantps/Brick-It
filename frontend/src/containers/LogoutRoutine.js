@@ -5,7 +5,6 @@ import {logout} from '../actions/authentications'
 
 class LogoutRoutine extends Component {
     render() {
-
         this.props.logout()
         return( <Redirect to="/login" component />)
     }

@@ -17,7 +17,7 @@ class NavContainer extends Component {
         }   
     }
     render() {
-        const {loggedIn, username} = this.props
+        const {loggedIn, name} = this.props
         
         return(
             <div className="navBarr">
@@ -34,7 +34,7 @@ class NavContainer extends Component {
 }
 
 const mapStateToProps = (state) => ({
-        username: state.user.name,
+        name: state.user.name,
         loggedIn: state.user.loggedIn
         })
 
