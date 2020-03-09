@@ -37,11 +37,11 @@ Monday March 2nd:
 
 => :) add image URL to the kit database (check for theme images too.)
 => configure parent_id for themes to group theme ids.
-=
-=>begin building React components.  
+
+=> :)begin building React components.  
 
     Login: 
-        => separate container with components.
+        => :) separate container with components.
             
             -> Login container
                 -> :) username component
@@ -53,7 +53,7 @@ Monday March 2nd:
 
         => :) containerstate pushes validation error to component.
         => :) omniAuth!!!!!!!!!  Github!!
-        =>  routes to the user's slug after successful login.  id: 'http://localhost:3000/jgrantps' -> this is their DASHBOARD component.
+        => :) routes to the user's slug after successful login.  id: 'http://localhost:3000/jgrantps' -> this is their DASHBOARD component.
 
 
 
@@ -66,3 +66,5 @@ Monday March 2nd:
  => render Kit:
     -> list component in response to selected theme.
     -> 
+
+

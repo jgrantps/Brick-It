@@ -10562,3 +10562,258 @@ Processing by SessionsController#create as */*
 Completed 200 OK in 239ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 906)
 
 
+Started POST "/login" for ::1 at 2020-03-09 13:03:34 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 237ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 907)
+
+
+Started POST "/login" for ::1 at 2020-03-09 13:04:52 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 236ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 889)
+
+
+Started POST "/login" for ::1 at 2020-03-09 13:14:36 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 242ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 907)
+
+
+Started POST "/signup" for ::1 at 2020-03-09 13:14:41 -0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "user"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 275ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 4572)
+
+
+Started POST "/signup" for ::1 at 2020-03-09 13:16:19 -0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "user"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 247ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 3079)
+
+
+Started POST "/signup" for ::1 at 2020-03-09 13:17:05 -0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "user"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 245ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 3078)
+
+
+Started POST "/signup" for ::1 at 2020-03-09 13:17:15 -0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"", "password"=>"[FILTERED]", "user"=>{"name"=>"", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 258ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 3123)
+
+
+Started POST "/signup" for ::1 at 2020-03-09 13:17:25 -0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asdfasdf", "password"=>"[FILTERED]", "user"=>{"name"=>"asdfasdf", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "asdfasdf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 3366)
+
+
+Started POST "/signup" for ::1 at 2020-03-09 13:20:56 -0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"", "password"=>"[FILTERED]", "user"=>{"name"=>"", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 247ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 3062)
+
+
+Started POST "/signup" for ::1 at 2020-03-09 13:21:13 -0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "user"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 248ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 3077)
+
+
+Started POST "/signup" for ::1 at 2020-03-09 13:21:19 -0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "user"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 3766)
+
+
+Started POST "/signup" for ::1 at 2020-03-09 13:27:11 -0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "user"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 3766)
+
+
+Started POST "/signup" for ::1 at 2020-03-09 13:27:30 -0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "user"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 246ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 3073)
+
+
+Started POST "/signup" for ::1 at 2020-03-09 13:27:34 -0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "user"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 3766)
+
+
+Started POST "/signup" for ::1 at 2020-03-09 13:27:45 -0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asdfasdf", "password"=>"[FILTERED]", "user"=>{"name"=>"asdfasdf", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "asdfasdf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 3317)
+
+
+Started POST "/signup" for ::1 at 2020-03-09 13:27:48 -0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asdfasdf", "password"=>"[FILTERED]", "user"=>{"name"=>"asdfasdf", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "asdfasdf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 3317)
+
+
+Started POST "/signup" for ::1 at 2020-03-09 13:27:49 -0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asdfasdf", "password"=>"[FILTERED]", "user"=>{"name"=>"asdfasdf", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "asdfasdf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 3317)
+
+
+Started POST "/signup" for ::1 at 2020-03-09 13:28:32 -0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "user"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 3766)
+
+
+Started POST "/signup" for ::1 at 2020-03-09 13:28:43 -0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"", "password"=>"[FILTERED]", "user"=>{"name"=>"", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 3755)
+
+
+Started POST "/signup" for ::1 at 2020-03-09 13:29:04 -0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "user"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 246ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 3074)
+
+
+Started POST "/login" for ::1 at 2020-03-09 13:29:05 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 241ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 890)
+
+

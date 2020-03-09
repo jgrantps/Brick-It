@@ -78,11 +78,11 @@ class LoginContainer extends Component {
                 this.props.setUser(verifiedUserCredentials)
          } else {
             //HANDLE ERRORS:
-            var nameMsg;
-            var passwordMsg;
-               resp.main.name[0] ? nameMsg= resp.main.name[0] : nameMsg=""
-               resp.main.password[0] ? passwordMsg = resp.main.password[0] : passwordMsg=""                   
-            let msg = `${nameMsg}; ${passwordMsg}`
+            var ary=[]
+               resp.main.name ? ary.push(resp.main.name[0]) : console.log(null)
+               resp.main.password ? ary.push(resp.main.password[0]) : console.log(null) 
+                               
+            let msg = ary.join(", ")
             this.setErrorMessage(msg)
             }
         })
