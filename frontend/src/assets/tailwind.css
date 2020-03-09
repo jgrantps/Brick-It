@@ -10,4 +10,8 @@
     @apply bg-gray-200;
   }
 
+  .error-msg {
+    @apply bg-red-300 leading-tight px-2  py-2 border-2 border-red-900 rounded-lg;
+  }
+
 @tailwind utilities;

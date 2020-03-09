@@ -44,16 +44,16 @@ Monday March 2nd:
         => separate container with components.
             
             -> Login container
-                -> username component
-                -> password component
-                -> login button component
-                -> gitub Oauth button component
-                -> validation error component???
+                -> :) username component
+                -> :) password component
+                -> :) login button component
+                -> :) gitub Oauth button component
+                -> :) validation error component???
 
 
-        => CSS divs to display validation errors.
-        => routes away to '/user'(?) when logged in or signed up.
+        => :) containerstate pushes validation error to component.
         => :) omniAuth!!!!!!!!!  Github!!
+        =>  routes to the user's slug after successful login.  id: 'http://localhost:3000/jgrantps' -> this is their DASHBOARD component.
 
 
 

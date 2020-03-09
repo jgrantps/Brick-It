@@ -622,6 +622,18 @@ video {
   background-color: #edf2f7;
 }
 
+.error-msg {
+  background-color: #feb2b2;
+  line-height: 1.25;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-width: 2px;
+  border-color: #742a2a;
+  border-radius: 0.5rem;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

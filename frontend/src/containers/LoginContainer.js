@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
+import {Redirect} from 'react-router-dom'
 import {connect} from 'react-redux';
+
 import {setUser} from '../actions/authentications'
 import LoginInput from '../components/Login/LoginInput';
 import LoginOauth from '../components/Login/LoginOauth';
 import api from '../classes/adapters'
-import auth from '../classes/auth';
+import service from '../classes/service';
 
 
 
 class LoginContainer extends Component {
    state = {
        name: "",
-       password: ""
+       password: "",
+       errors: undefined
    }
 
    //RECORDS USERNAME AND PASSWORD KEYSTROKES
@@ -21,12 +24,17 @@ class LoginContainer extends Component {
            [name]: value
         })
     }
+
+    setErrorMessage = (message) => {
+        this.setState({
+          errors: <h2 className="error-msg">{message}</h2>
+        }) 
+    }
         
     //LOG USER IN.
     handleOnLogin = e => {
         e.preventDefault()
        
-
         let logInCredentials = {
             name: this.state.name,
             password: this.state.password
@@ -34,16 +42,16 @@ class LoginContainer extends Component {
 
         api.Login(logInCredentials)
         .then(resp => {
-            let verifiedUserCredentials={name: resp.package.name, id: resp.package.id}
-            
-            console.log(verifiedUserCredentials)
-            window.localStorage.setItem('token', resp.token)
-           
-            if (window.localStorage.token){
-                this.props.setUser(verifiedUserCredentials)
-            } else {
-                this.props.setUser('unresolved')
-                
+            //HANDLE SUCCESS:
+            if (resp.token) {
+                let verifiedUserCredentials={name: resp.package.name, id: resp.package.id, slug: service.slugify(resp.package.name)}
+                window.localStorage.setItem('token', resp.token)
+                this.props.setUser(verifiedUserCredentials) 
+                <Redirect to='/:slug' component={DashboardContainer}
+                 
+            }else{
+               //HANDLE ERRORS:
+                this.setErrorMessage(resp.error)
             }
         })
         .catch(err => console.log(err))
@@ -62,8 +70,22 @@ class LoginContainer extends Component {
 
         api.Signup(logInCredentials)
         .then(resp => {
-            window.localStorage.setItem('token', resp.token)
-            console.log(resp)
+            //HANDLE SUCCESS:
+            if (resp.token) {
+                let verifiedUserCredentials={name: resp.package.name, slug: service.slugify(resp.package.name), id: resp.package.id}
+                window.localStorage.setItem('token', resp.token)
+                this.props.setUser(verifiedUserCredentials)
+                //  <Redirect to={{pathname: "/:slug", state: {from: props.location}}} />
+            }
+            else {
+            //HANDLE ERRORS:
+            var nameMsg;
+            var passwordMsg;
+               resp.main.name[0] ? nameMsg= resp.main.name[0] : nameMsg=""
+               resp.main.password[0] ? passwordMsg = resp.main.password[0] : passwordMsg=""                   
+            let msg = `${nameMsg}; ${passwordMsg}`
+            this.setErrorMessage(msg)
+            }
         })
         .catch(err=> console.log("errors!!!:", err))
     }
@@ -72,7 +94,7 @@ class LoginContainer extends Component {
         return(
             <div className="entry-modal flex w-xl" id="sign-in">
                 <div className="bg-white rounded-lg flex flex-col px-6 shadow">
-                    <LoginInput passwordState={this.state.password} nameState={this.state.name} Signup={this.handleOnSignup} Login={this.handleOnLogin} trackChange={this.handleOnChange}/>
+                    <LoginInput passwordState={this.state.password} error={this.state.errors} nameState={this.state.name} Signup={this.handleOnSignup} Login={this.handleOnLogin} trackChange={this.handleOnChange}/>
                     <LoginOauth />
                 {/* </div> */}
             </div>

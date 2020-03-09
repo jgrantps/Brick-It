@@ -9049,3 +9049,1079 @@ Processing by SessionsController#create as */*
 Completed 200 OK in 244ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 888)
 
 
+Started POST "/login" for ::1 at 2020-03-08 21:09:29 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 234ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 906)
+
+
+Started POST "/login" for ::1 at 2020-03-08 22:01:17 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 242ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 906)
+
+
+Started POST "/login" for ::1 at 2020-03-08 22:01:30 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 240ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 888)
+
+
+Started POST "/login" for ::1 at 2020-03-08 22:08:48 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 240ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 906)
+
+
+Started POST "/login" for ::1 at 2020-03-08 22:13:22 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 245ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 888)
+
+
+Started POST "/login" for ::1 at 2020-03-08 22:13:54 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 239ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 888)
+
+
+Started POST "/login" for ::1 at 2020-03-09 07:06:41 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 245ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 907)
+
+
+Started POST "/login" for ::1 at 2020-03-09 07:06:48 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 243ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 889)
+
+
+Started POST "/login" for ::1 at 2020-03-09 07:12:47 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 7ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 07:13:53 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 243ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 888)
+
+
+Started POST "/login" for ::1 at 2020-03-09 07:14:05 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 07:14:22 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 240ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 888)
+
+
+Started POST "/login" for ::1 at 2020-03-09 07:19:26 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 277ms (Views: 0.2ms | ActiveRecord: 2.9ms | Allocations: 7125)
+
+
+Started POST "/login" for ::1 at 2020-03-09 07:20:00 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms | Allocations: 1027)
+
+
+  
+NoMethodError (undefined method `errors' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:39:in `create'
+Started POST "/login" for ::1 at 2020-03-09 07:20:30 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms | Allocations: 1015)
+
+
+  
+NoMethodError (undefined method `errors' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:39:in `create'
+Started POST "/login" for ::1 at 2020-03-09 07:30:47 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 6688)
+
+
+Started POST "/login" for ::1 at 2020-03-09 07:31:44 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 3522)
+
+
+Started POST "/login" for ::1 at 2020-03-09 07:50:04 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 660)
+
+
+Started POST "/login" for ::1 at 2020-03-09 07:50:54 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby ", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby ", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby "], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 07:51:56 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 19439ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 43367)
+
+
+Started POST "/login" for ::1 at 2020-03-09 07:53:32 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 3525)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:01:02 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 659)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:02:08 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:02:11 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:02:12 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:02:12 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:02:12 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:02:12 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 17ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:02:19 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 247ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 4290)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:02:24 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:03:02 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:03:03 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:03:04 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:04:41 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:04:42 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:04:42 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:04:42 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:06:03 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:06:04 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:07:06 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 642)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:07:07 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:07:07 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:07:07 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:07:07 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:10:12 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bb", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bb", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bb"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:10:43 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:10:44 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:10:44 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:11:59 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b=", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b=", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b="], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:11:59 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b=", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b=", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b="], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:12:00 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b=", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b=", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b="], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:29:47 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 239ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 906)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:29:51 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 241ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 888)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:30:40 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 243ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 890)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:33:03 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:33:05 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:33:06 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:33:24 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 644)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:34:28 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:34:30 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:34:30 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:34:31 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:36:15 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bo", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bo", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bo"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:36:16 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bo", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bo", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bo"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:36:16 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bo", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bo", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bo"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:36:17 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bo", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bo", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bo"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:38:05 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:39:15 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:39:17 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:39:17 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:39:17 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:39:17 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:39:17 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:40:12 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:40:13 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:40:13 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:40:13 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 642)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:40:13 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:40:23 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobb", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobb", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobb"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:40:24 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobb", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobb", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobb"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:40:24 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobb", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobb", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobb"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:40:24 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobb", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobb", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobb"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:40:25 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobb", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobb", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobb"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:40:43 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobb", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobb", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobb"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:40:46 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"laksjdfh", "password"=>"[FILTERED]", "session"=>{"name"=>"laksjdfh", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "laksjdfh"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:40:47 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"laksjdfh", "password"=>"[FILTERED]", "session"=>{"name"=>"laksjdfh", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "laksjdfh"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:40:47 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"laksjdfh", "password"=>"[FILTERED]", "session"=>{"name"=>"laksjdfh", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "laksjdfh"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:40:47 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"laksjdfh", "password"=>"[FILTERED]", "session"=>{"name"=>"laksjdfh", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "laksjdfh"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:40:58 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobb", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobb", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobb"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:41:00 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobb", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobb", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobb"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:41:00 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobb", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobb", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobb"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:41:00 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobb", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobb", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobb"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:42:19 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bo", "password"=>"[FILTERED]", "session"=>{"name"=>"Bo", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bo"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 08:50:15 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 659)
+
+
+Started POST "/login" for ::1 at 2020-03-09 09:07:36 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby b", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby b", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 659)
+
+
+Started POST "/login" for ::1 at 2020-03-09 09:09:53 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 09:10:43 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"B", "password"=>"[FILTERED]", "session"=>{"name"=>"B", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "B"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 09:11:59 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 09:13:07 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 09:13:32 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobb", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobb", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobb"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 09:14:17 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bo", "password"=>"[FILTERED]", "session"=>{"name"=>"Bo", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bo"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 09:15:08 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bo", "password"=>"[FILTERED]", "session"=>{"name"=>"Bo", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bo"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 09:15:45 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bo", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bo", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bo"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 09:16:42 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bo", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bo", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bo"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 09:17:07 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby ob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby ob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby ob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 09:17:32 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bo", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bo", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bo"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 09:17:49 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bo", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bo", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bo"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 09:18:17 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 236ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 889)
+
+
+Started POST "/login" for ::1 at 2020-03-09 09:19:16 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 641)
+
+
+Started POST "/login" for ::1 at 2020-03-09 09:28:47 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobb", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobb", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobb"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 659)
+
+
+Started POST "/login" for ::1 at 2020-03-09 09:29:37 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobb", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobb", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobb"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 12ms (Views: 7.8ms | ActiveRecord: 0.2ms | Allocations: 644)
+
+
+Started POST "/signup" for ::1 at 2020-03-09 09:33:46 -0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "user"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 317ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 4572)
+
+
+Started POST "/signup" for ::1 at 2020-03-09 09:36:33 -0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "user"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 251ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 3077)
+
+
+Started POST "/signup" for ::1 at 2020-03-09 09:36:44 -0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "user"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 3845)
+
+
+Started POST "/signup" for ::1 at 2020-03-09 09:37:18 -0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "user"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 3769)
+
+
+Started POST "/signup" for ::1 at 2020-03-09 09:42:14 -0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "user"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 248ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 3076)
+
+
+Started POST "/signup" for ::1 at 2020-03-09 09:51:01 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "user"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 3769)
+
+
+Started POST "/signup" for ::1 at 2020-03-09 09:51:39 -0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Bobb", "password"=>"[FILTERED]", "user"=>{"name"=>"Bobb", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobb"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (5.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Bobb"], ["password_digest", "$2a$12$vwYBsRss37ZUsrWjcLN25uGtS.n1Gn2gGrE3GxKiyZvMDLhYLMAOG"], ["created_at", "2020-03-09 12:51:40.051111"], ["updated_at", "2020-03-09 12:51:40.051111"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 274ms (Views: 0.1ms | ActiveRecord: 13.9ms | Allocations: 5138)
+
+
+Started POST "/login" for ::1 at 2020-03-09 09:56:28 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 243ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 907)
+
+
+Started POST "/signup" for ::1 at 2020-03-09 09:56:40 -0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"a", "password"=>"[FILTERED]", "user"=>{"name"=>"a", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "a"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "a"], ["password_digest", "$2a$12$x5Y90JAsfzobxoQQ9VaHTemxf6N.413/ofdqmO1r3246hmLYZtGxe"], ["created_at", "2020-03-09 12:56:41.118297"], ["updated_at", "2020-03-09 12:56:41.118297"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 259ms (Views: 0.1ms | ActiveRecord: 7.6ms | Allocations: 5295)
+
+
+Started POST "/signup" for ::1 at 2020-03-09 09:58:30 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"b", "password"=>"[FILTERED]", "user"=>{"name"=>"b", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "b"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "b"], ["password_digest", "$2a$12$bfhdevxi.zjG9AHs.NgKwucWM84gffjAcIvP7XXBsqqcy7jW3MuTW"], ["created_at", "2020-03-09 12:58:31.026290"], ["updated_at", "2020-03-09 12:58:31.026290"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 268ms (Views: 0.1ms | ActiveRecord: 9.8ms | Allocations: 8981)
+
+
+  [1m[35m (11.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Destroy (8.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 9]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Destroy (10.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 8]]
+Started POST "/login" for ::1 at 2020-03-09 10:06:07 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"a", "password"=>"[FILTERED]", "session"=>{"name"=>"a", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "a"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 804)
+
+
+Started POST "/login" for ::1 at 2020-03-09 10:34:26 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 243ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 916)
+
+
+Started POST "/login" for ::1 at 2020-03-09 10:38:06 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 241ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 888)
+
+

@@ -36,7 +36,8 @@ class SessionsController < ApplicationController
         token = Auth.create_token({:name=> user.name, :id=> user.id})
         render json: {token: token, package: {name: user.name, id: user.id}}
       else
-        render json: {message: "Login Failed, Please Try Again!"}
+        
+        render json: {error: "Login Failed: Name and/or Password are incorrect.  Please try again!"}
       end
     end
   

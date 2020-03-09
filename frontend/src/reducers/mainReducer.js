@@ -3,8 +3,9 @@
 export default function mainReducer(
     state = {
       user: {
-        loggedIn: true,
+        loggedIn: false,
         name: '',
+        slug:'',
         id: ''
       },
       items: [],
@@ -24,14 +25,14 @@ export default function mainReducer(
       case 'SET_USER':
         return{
           ...state,
-          user:{...state.user, name: action.payload.name, id: action.payload.id, loggedIn: true}
+          user:{...state.user, name: action.payload.name, id: action.payload.id, slug: action.payload.slug, loggedIn: true}
         }
       
       case 'LOG_OUT':
         window.localStorage.token = undefined
       return{
         ...state,
-        user:{...state.user, name: "", id:"", loggedIn: false }
+        user:{...state.user, name: "", id:"", slug:"", loggedIn: false }
       }
  
     default:

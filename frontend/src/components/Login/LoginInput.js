@@ -9,7 +9,7 @@ class LoginInput extends Component {
 
    
     render() {
-        const {trackChange, Signup, Login, passwordState, nameState} = this.props
+        const {trackChange, Signup, Login, passwordState, error, nameState} = this.props
         return(
             <>
             <h1 className="font-semibold pb-2 my-2 text-xl"> Welcome to Brickit!</h1>
@@ -26,6 +26,7 @@ class LoginInput extends Component {
                     <input  type="password" onChange={trackChange} value={passwordState} name="password" id="login-password" className="submit-btn" />
                 </label>
             </div>
+            {error}
             <div className="flex justify-between">
             <SubmitBtn btnName="LOG IN" btnAction={Login}/>
             <SubmitBtn btnName="SIGN UP" btnAction={Signup}/>
