@@ -67,4 +67,10 @@ Monday March 2nd:
     -> list component in response to selected theme.
     -> 
 
-
+=> build routes as follows:
+   -> http://localhost:3000/ -> landingpage Container
+   -> http://localhost:3000/login -> loginContainer
+   -> http://localhost:3000/user -> UserContainer ***HOLDS THE NAVBAR*** ***IS RESTRICTED TO LOGGED-IN USERS***
+        -> http://localhost:3000/user/jgrantps/dashboard -> nested Dashboardcontainer
+        -> http://localhost:3000/user/jgrantps/catalogue -> nested CatalogueContainer
+        -> http://localhost:3000/user/jgrantps/community -> nested CommunityContainer

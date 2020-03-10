@@ -8,13 +8,14 @@ import Kits from './components/kits'
 import LoginContainer from './containers/LoginContainer'
 import DashboardContainer from './containers/DashboardContainer'
 import LandingPage from './components/LandingPage'
+import UserContainer from './containers/UserContainer'
 
-import NavContainer from './containers/NavContainer';
-
-import {HideDashboard} from './components/routes/hideDashboard'
+import {PrivateUser} from './components/routes/privateUser'
 import {HideLogin} from './components/routes/hideLogin'
-
-
+import {HideWelcome} from './components/routes/hideWelcome'
+import LogoutRoutine from './containers/LogoutRoutine'
+import communityContainer from './containers/CommunityContainer';
+import NavContainer from './containers/NavContainer';
 
 
 class App extends Component { 
@@ -25,13 +26,16 @@ class App extends Component {
     const {loggedIn,slug, name} = this.props
     return(
       <div className="App">
-        <NavContainer/>
+        
+       
         <Switch>
-        <Route exact path="/" component={LandingPage} />
-        <HideLogin exact path='/login' loggedIn={loggedIn} slug={slug} component={LoginContainer} />
-        <HideDashboard path="/user/" loggedIn={loggedIn} slug={slug} component={DashboardContainer} />
-        <Route path="*" component= {() => "404 NOT FOUND"} />
+          
+        <HideWelcome exact path="/" loggedIn={loggedIn} slug={slug} component={LandingPage} />
+        <HideLogin exact path='/login' loggedIn={loggedIn} params={this.props.params} slug={slug} component={LoginContainer} />
+        <Route path="/logout" component={LogoutRoutine}/>
+        <PrivateUser exact path={`/user/${slug}`} loggedIn={loggedIn} params={this.props.params} slug={slug} component={UserContainer} />
         </Switch>
+        
       </div>
     ) 
   }

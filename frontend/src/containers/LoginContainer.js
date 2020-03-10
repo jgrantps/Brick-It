@@ -91,12 +91,11 @@ class LoginContainer extends Component {
    
     render() {
         return(
-            <div className="entry-modal flex w-xl" id="sign-in">
-                <div className="bg-white rounded-lg flex flex-col px-6 shadow">
+            <div className="entry-modal  h-full mt-12 flex justify-center align-center w-xl" id="sign-in">
+                <div className="bg-white rounded-lg bg-gray-100 flex flex-col px-6 shadow">
                     <LoginInput passwordState={this.state.password} error={this.state.errors} nameState={this.state.name} Signup={this.handleOnSignup} Login={this.handleOnLogin} trackChange={this.handleOnChange}/>
                     <LoginOauth />
-                {/* </div> */}
-            </div>
+                </div>
             </div>
         )
     }

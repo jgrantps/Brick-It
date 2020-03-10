@@ -1,33 +1,56 @@
 import React, { Component } from 'react';
-import {Route} from 'react-router-dom'
+import {Route, useRouteMatch} from 'react-router-dom'
 import { Link } from 'react-router-dom';
 import CatalogueContainer from '../containers/CatalogueContainer'
 import CollectionsContainer from '../containers/CollectionsContainer'
 import LogoutRoutine from '../containers/LogoutRoutine'
 import {connect} from 'react-redux'
 import LoginContainer from '../containers/LoginContainer';
+import communityContainer from './CommunityContainer'
 
 class NavContainer extends Component {
-    
-    logInLogOut= (loggedIn) => {
+    logInLogOut= (loggedIn, name) => {
         if (loggedIn) {
-            return <Link to="/logout">Logout</Link>
+            return (
+                <>
+                <span className="leading-tight text-sm">Logged In as</span> <span className="underline font-bold mr-4">{name}</span>
+                <Link to="/logout">Logout</Link>
+                </>)
         } else {
             return <Link to="/login">Login</Link>
         }   
     }
-    render() {
-        const {loggedIn, name} = this.props
-        
-        return(
-            <div className="navBarr">
-               {this.logInLogOut(loggedIn)}
-            <Link to="/themes">Catalogue</Link>
-            <Link to="/myCollection">My Collection</Link>
+    
+    accessInternals= (loggedIn) => {
+        const {props:{match:{path}}} =  this.props
+        if (loggedIn) {
+            return(
+                <>
+            <Link to={`${path}/collection`}>My Collection</Link>
+            <Link to={`${path}/catalogue`}>Catalogue</Link>
+            <Link to={`${path}/community`}>Community</Link>
 
-            <Route path="/themes" component={CatalogueContainer}/>
-            <Route path="/myCollection" component={CollectionsContainer}/>
-            <Route path="/logout" component={LogoutRoutine}/>
+            </>
+            )
+        }
+    }
+    render() {
+        
+        const {loggedIn, name, props:{match:{path}}} = this.props
+        return(
+            <div className="flex absolute h-12 bg-blue-200 w-full items-center justify-around px-16">
+                    <div className="title">
+                    {this.logInLogOut(loggedIn, name)}
+                    </div>
+                    {this.accessInternals(loggedIn)}
+            
+
+            
+            {/* <Route path={`${window.location.pathname}/community`} component={communityContainer} /> */}
+            <Route path={`${path}/catalogue`} component={CatalogueContainer}/>
+            <Route path={`${path}/collection`} component={CollectionsContainer}/>
+            
+
             </div>
         )
     }
