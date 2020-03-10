@@ -11524,3 +11524,31 @@ Processing by SessionsController#create as */*
 Completed 200 OK in 240ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 906)
 
 
+Started GET "/auth/github" for ::1 at 2020-03-10 12:41:52 -0300
+Started GET "/auth/github/callback?code=f21aed2a682d0e3eb95b&state=d5b172410e6098cb7e8a478e82414da0e21688474432fe1c" for ::1 at 2020-03-10 12:41:53 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"f21aed2a682d0e3eb95b", "state"=>"d5b172410e6098cb7e8a478e82414da0e21688474432fe1c", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Redirected to http://localhost:3000/login/github/?token=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7Im5hbWUiOiJqZ3JhbnRwcyIsImlkIjo1fX0.MUt_o3fD69IFV2F5Dv4C1qyAucwB1qY5QPLtugwT-5o&name=jgrantps&id=5
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 698)
+
+
+Started POST "/login" for ::1 at 2020-03-10 12:49:17 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 235ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 906)
+
+
+Started POST "/login" for ::1 at 2020-03-10 14:27:22 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 246ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 906)
+
+

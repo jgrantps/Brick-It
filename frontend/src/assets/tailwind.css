@@ -10,6 +10,14 @@
     @apply bg-gray-200;
   }
 
+.theme-letter {
+  @apply px-2 py-1 m-2 w-10 justify-center flex border rounded text-lg font-bold;
+}
+
+.theme-letter:hover {
+  @apply bg-blue-100 border-black cursor-pointer;
+}
+
   .error-msg {
     @apply bg-red-300 leading-tight px-2  py-2 border-2 border-red-900 rounded-lg;
   }

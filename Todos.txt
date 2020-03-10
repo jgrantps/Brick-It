@@ -58,6 +58,15 @@ Monday March 2nd:
 
 
 
+=> :)) build routes as follows:
+   -> :) http://localhost:3000/ -> landingpage Container
+   -> :) http://localhost:3000/login -> loginContainer
+   -> :) http://localhost:3000/jgrantps -> UserContainer ***HOLDS THE NAVBAR*** ***IS RESTRICTED TO LOGGED-IN USERS***
+        -> :) http://localhost:3000/jgrantps/collection -> nested CollectionContainer
+        -> :) http://localhost:3000/jgrantps/catalogue -> nested CatalogueContainer
+        -> :) http://localhost:3000/jgrantps/community -> nested CommunityContainer
+
+
     Rebrickable API lego Themes:
         => Alphabetical sorting, with:
         => Filter for each letter
@@ -66,11 +75,3 @@ Monday March 2nd:
  => render Kit:
     -> list component in response to selected theme.
     -> 
-
-=> build routes as follows:
-   -> http://localhost:3000/ -> landingpage Container
-   -> http://localhost:3000/login -> loginContainer
-   -> http://localhost:3000/user -> UserContainer ***HOLDS THE NAVBAR*** ***IS RESTRICTED TO LOGGED-IN USERS***
-        -> http://localhost:3000/user/jgrantps/dashboard -> nested Dashboardcontainer
-        -> http://localhost:3000/user/jgrantps/catalogue -> nested CatalogueContainer
-        -> http://localhost:3000/user/jgrantps/community -> nested CommunityContainer

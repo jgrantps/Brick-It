@@ -622,6 +622,27 @@ video {
   background-color: #edf2f7;
 }
 
+.theme-letter {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  margin: 0.5rem;
+  width: 2.5rem;
+  justify-content: center;
+  display: flex;
+  border-width: 1px;
+  border-radius: 0.25rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.theme-letter:hover {
+  background-color: #ebf8ff;
+  border-color: #000;
+  cursor: pointer;
+}
+
 .error-msg {
   background-color: #feb2b2;
   line-height: 1.25;
