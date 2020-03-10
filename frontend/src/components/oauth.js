@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
-
-import api from '../classes/adapters';
-import {setUser} from '../actions/authentications'
+import service from '../classes/service'
 
 import { connect } from 'react-redux';
-import service from '../classes/service'
-import { Redirect, Link, Route } from 'react-router-dom';
+import {setUser} from '../actions/authentications'
+import { Redirect} from 'react-router-dom';
 
 class Oauth extends Component {
 

@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
+import NavContainer from './NavContainer'
 
 class CatalogueContainer extends Component {
     render() {
+        const {userId} = this.props.match.params
         return(
-            <div>
-                <h2>this is the catalogue</h2>
+            <>
+            <NavContainer props={this.props} />
+            <div className="pt-12">
+                <h2>this is the CATALOGUE from the User {userId}</h2>
             </div>
+            </>
         
         )
     }

@@ -1,5 +1,4 @@
 import React from 'react';
-import auth from '../../classes/auth'
 import {Route, Redirect} from 'react-router-dom';
 
 //REDIRECTS USER FROM LOGIN TO THE DASHBOARD IF THEY'RE ALREADY LOGGED IN.
