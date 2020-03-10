@@ -6,7 +6,7 @@ import {Route, Redirect} from 'react-router-dom';
     return (
       <Route {...rest} render={(props) => {
         //if condition is met, render first or second componenet
-          if (rest.loggedIn) {
+          if (rest.loggedIn && (props.match.params.userId === rest.slug)) {
             return <Component   { ...props} {...rest} />;
           } else {
           //  return <h2>you are forbiden!!</h2>
@@ -22,7 +22,7 @@ import {Route, Redirect} from 'react-router-dom';
     return (
       <Route {...rest} render={(props) => {
         //if condition is met, render first or second componenet
-          if (rest.loggedIn) {
+          if (rest.loggedIn && (props.match.params.userId === rest.slug)) {
             return <Component   { ...props} {...rest} />;
           } else {
           //  return <h2>you are forbiden!!</h2>
@@ -38,7 +38,7 @@ import {Route, Redirect} from 'react-router-dom';
     return (
       <Route {...rest} render={(props) => {
         //if condition is met, render first or second componenet
-          if (rest.loggedIn) {
+          if (rest.loggedIn && (props.match.params.userId === rest.slug)) {
             return <Component   { ...props} {...rest} />;
           } else {
           //  return <h2>you are forbiden!!</h2>
@@ -53,7 +53,7 @@ import {Route, Redirect} from 'react-router-dom';
     return (
       <Route {...rest} render={(props) => {
         //if condition is met, render first or second componenet
-          if (rest.loggedIn) {
+          if (rest.loggedIn && (props.match.params.userId === rest.slug)) {
             return <Component   { ...props} {...rest} />;
           } else {
           //  return <h2>you are forbiden!!</h2>
