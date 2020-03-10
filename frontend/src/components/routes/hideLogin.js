@@ -7,12 +7,13 @@ export const HideLogin = ({component: Component, ...rest}) => {
     return (
         //DISPLAY LOGIN
       <Route {...rest} render={(props) => {
-        //IF USER IS LOGGED IN, REDIRECT TO THE '/APP' DASHBOARD PAGE.
+        
+        //IF USER IS LOGGED IN, REDIRECT TO THE '/USER/JGRANTPS' USER PAGE.
           if (rest.loggedIn) {
-              return <Redirect to={{pathname: `/user/${rest.slug}`, state: {from: props.location}}} />
+              return <Redirect to={{pathname: `/${rest.slug}`, state: {from: props.location}}} />
         } else {
             //IF USER IS NOT LOGGED IN, RENDER THE LOGIN COMPONENT AS REQUESTED.
-            return <Component   { ...props} {...rest} />;
+            return <Component   { ...props} {...rest}/>;
           }
         }}
       />

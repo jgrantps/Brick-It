@@ -18,18 +18,19 @@ class NavContainer extends Component {
                 </>)
         } else {
             return <Link to="/login">Login</Link>
-        }   
+        }     
     }
     
     accessInternals= (loggedIn) => {
-        const {props:{match:{path}}} =  this.props
+        const {props:{match:{url}}} =  this.props
         if (loggedIn) {
             return(
                 <>
-            <Link to={`${path}/collection`}>My Collection</Link>
-            <Link to={`${path}/catalogue`}>Catalogue</Link>
-            <Link to={`${path}/community`}>Community</Link>
-
+            <Link to={`${url}/collection`}>My Collection</Link>
+            <Link to={`${url}/catalogue`}>Catalogue</Link>
+            <Link to={`${url}/community`}>Community</Link>
+            {/* <Route to={`${path}/community`} component={communityContainer} /> */}
+            
             </>
             )
         }
@@ -46,9 +47,9 @@ class NavContainer extends Component {
             
 
             
-            {/* <Route path={`${window.location.pathname}/community`} component={communityContainer} /> */}
+            {/* <Route path={`${path}/community`} component={communityContainer} />
             <Route path={`${path}/catalogue`} component={CatalogueContainer}/>
-            <Route path={`${path}/collection`} component={CollectionsContainer}/>
+            <Route path={`${path}/collection`} component={CollectionsContainer}/> */}
             
 
             </div>

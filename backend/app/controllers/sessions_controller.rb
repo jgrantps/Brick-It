@@ -12,14 +12,14 @@ class SessionsController < ApplicationController
         # if already a user in the db.
         token = Auth.create_token({:name=> user.name, :id=> user.id})     
         # pass token to frontend as param to be stored in window.localstorage.token
-        redirect_to "http://localhost:3000/login/github/?token=#{token}"
+        redirect_to "http://localhost:3000/login/github/?token=#{token}&name=#{user.name}&id=#{user.id}"
       else
         user = User.new(:name => oauth_username, :password => SecureRandom.base36)
         # creates a new user based on GitHub credentials.
         if user.save
           token = Auth.create_token({:name=> user.name, :id=> user.id})
           # pass token to frontend as param to be stored in window.localstorage.token
-          redirect_to "http://localhost:3000/login/github/?token=#{token}"
+          redirect_to "http://localhost:3000/login/github/?token=#{token}&name=#{user.name}&id=#{user.id}"
         else
           # pass error to frontend as param to be processed accordingly.
           redirect_to "http://localhost:3000/login/github/?token=error"
