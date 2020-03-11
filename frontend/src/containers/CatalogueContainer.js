@@ -8,7 +8,7 @@ import { Kit } from '../classes/kits';
 
 
 class CatalogueContainer extends Component {
-debugger
+
     state = {
         themeList: [],
         kitList: {}
@@ -16,6 +16,9 @@ debugger
     componentDidMount() {
         this.fetchAllThemes();
         }
+    componentDidUpdate() {
+
+    }
 
     handleOnSubmit = (e) => {
         e.preventDefault()
@@ -42,26 +45,28 @@ debugger
     //CAPTURE AND PROCESS SELECTED THEME TO RETREIVE KITS.
     handleSelectTheme = e => {
         e.preventDefault()
-
-        let theme = Theme.allIncludedThemes.find(theme => theme.api_id == e.target.id)
         
+        let theme = Theme.allIncludedThemes.find(theme => theme.api_id == e.target.id)
         if (theme) {
             api.fetchThemedKits(theme.api_id)
             .then(resp=> this.loadKits(resp, theme.api_id))
         }
     }
-
-    convertThemeToTile = (theme) => {
-        return <ThemeTile   key={theme.api_id} handleSelectTheme={this.handleSelectTheme} theme={theme} children={theme.children}/>
+    
+    convertThemeToTile = (theme, kits) => {
+        
+        return <ThemeTile key={theme.api_id} handleSelectTheme={this.handleSelectTheme} theme={theme} children={theme.children} kits={this.state.kitList}/>
     }
     render() {
         let themeList = this.state.themeList.map(theme => this.convertThemeToTile(theme))    
+        console.log(this.state.kitList)
         return(
             <>
             <NavContainer props={this.props} />
             <div id="theme-wrapper" className="pt-12">
                 <ThemeUI handleOnSubmit={this.handleOnSubmit} />
                 {themeList}
+            
             </div>
             </>
         )
@@ -83,9 +88,11 @@ debugger
         let kitCollection = []
         data.results.map(kit => {
            let newKit = new Kit(kit)
+           
             kitCollection.push(newKit)
         })
         this.setState({...this.state, kitList: {...this.state.kitList, [theme_id]: [...kitCollection] }})
+
     }
     
 }
