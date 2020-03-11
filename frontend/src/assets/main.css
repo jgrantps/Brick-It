@@ -655,6 +655,24 @@ video {
   border-radius: 0.5rem;
 }
 
+.theme-tile {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  justify-content: center;
+  border-width: 2px;
+  border-color: #a0aec0;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: #bee3f8;
+}
+
+.theme-tile:hover {
+  background-color: #ebf8ff;
+  border-color: #4a5568;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

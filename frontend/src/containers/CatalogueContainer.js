@@ -4,13 +4,14 @@ import api from '../classes/adapters';
 import { Theme } from '../classes/themes';
 import ThemeUI from '../components/Catalogue/themeUI'
 import ThemeTile from '../components/Catalogue/themeTile'
-import ThemeList from '../components/Catalogue/themeList'
+import { Kit } from '../classes/kits';
 
 
 class CatalogueContainer extends Component {
-
+debugger
     state = {
-        themeList: []
+        themeList: [],
+        kitList: {}
     }
     componentDidMount() {
         this.fetchAllThemes();
@@ -19,10 +20,11 @@ class CatalogueContainer extends Component {
     handleOnSubmit = (e) => {
         e.preventDefault()
         let letter = e.target.id;
-        let ThemeArray = Theme.allIncludedThemes;
-        let sortedThemes = ThemeArray.sort(function(a, b) {
-            var nameA = a.name.toUpperCase(); // ignore upper and lowercase
-            var nameB = b.name.toUpperCase(); // ignore upper and lowercase
+        let CollectionArray = Theme.allIncludedThemes.filter(theme => ( theme.children.length > 0 ));
+        
+        let sortedCollection = CollectionArray.sort(function(a, b) {
+            var nameA = a.name.toUpperCase();
+            var nameB = b.name.toUpperCase();
             if (nameA < nameB) {
               return -1;
             }
@@ -32,32 +34,39 @@ class CatalogueContainer extends Component {
             return 0;
           });
 
-        let specifiedThemes = sortedThemes.filter(theme => theme.name[0] == letter)
-        //ARRAY OF SPECIFIED THEMES
-        this.setState({themeList: [...specifiedThemes]})
+        let specifiedCollection = sortedCollection.filter(theme => theme.name[0] == letter)
+        //STORE COLLECTION OF SPECIFIED THEMES IN LOCAL COMPONENT STATE TO RENDER.
+        this.setState({...this.state, themeList: [...specifiedCollection]})
+    }
+
+    //CAPTURE AND PROCESS SELECTED THEME TO RETREIVE KITS.
+    handleSelectTheme = e => {
+        e.preventDefault()
+
+        let theme = Theme.allIncludedThemes.find(theme => theme.api_id == e.target.id)
+        
+        if (theme) {
+            api.fetchThemedKits(theme.api_id)
+            .then(resp=> this.loadKits(resp, theme.api_id))
+        }
     }
 
     convertThemeToTile = (theme) => {
-        return <ThemeTile name={theme.name} id={theme.id}/>
+        return <ThemeTile   key={theme.api_id} handleSelectTheme={this.handleSelectTheme} theme={theme} children={theme.children}/>
     }
-    
-    
     render() {
-    let themeId = this.state.themeList.map(theme => this.convertThemeToTile(theme))
-        
-    return(
-        <>
-        <NavContainer props={this.props} />
-        <div id="theme-wrapper" className="pt-12">
-            <ThemeUI handleOnSubmit={this.handleOnSubmit} />
-            {/* <ThemeList themeids={themeId} /> */}
-            {themeId}
-        </div>
-        </>
-        )}
+        let themeList = this.state.themeList.map(theme => this.convertThemeToTile(theme))    
+        return(
+            <>
+            <NavContainer props={this.props} />
+            <div id="theme-wrapper" className="pt-12">
+                <ThemeUI handleOnSubmit={this.handleOnSubmit} />
+                {themeList}
+            </div>
+            </>
+        )
+    }
 //OUTSIDE OF RENDER
-
-
     fetchAllThemes = () => {
         api.retrieveThemes()
         .then(resp => this.loadThemes(resp))
@@ -68,8 +77,16 @@ class CatalogueContainer extends Component {
             //ASSIGN REBRICKABLE API_ID TO A SPECIFIED ID ATTRIBUTE; DEFAULT ID SET TO 'UNDEFINED'.
             let formattedTheme = {...theme, api_id: theme.id}
             new Theme(formattedTheme)})
-            //returns array of THEME objects to be sorted.
-        }    
+        }
+        
+    loadKits = (data, theme_id) => {
+        let kitCollection = []
+        data.results.map(kit => {
+           let newKit = new Kit(kit)
+            kitCollection.push(newKit)
+        })
+        this.setState({...this.state, kitList: {...this.state.kitList, [theme_id]: [...kitCollection] }})
+    }
     
 }
 export default CatalogueContainer;

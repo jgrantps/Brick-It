@@ -9,7 +9,7 @@ import CatalogueContainer from '../containers/CatalogueContainer'
 import CollectionContainer from './CollectionContainer'
 import CommunityContainer from './CommunityContainer'
 
-class NavContainer extends Component {
+class NewNav extends Component {
     logInLogOut= (loggedIn, name) => {
         if (loggedIn) {
             return (
@@ -22,36 +22,22 @@ class NavContainer extends Component {
         }     
     }
     
-    accessInternals= (loggedIn) => {
-        const {props:{match:{url}}} =  this.props
-        const {userId} = this.props.props.computedMatch.params
-        
-        if (loggedIn) {
-            return(
-                <>
-              
-            <Link to={`/${userId}/collection`}>My Collection</Link>
-            <Link to={`/${userId}/catalogue`}>Catalogue</Link>
-            <Link to={`/${userId}/community`}>Community</Link>
 
-            
-            </>
-            )
-        }
-    }
+    
     render() {
         
-        const {loggedIn, name, props:{match:{url}}} = this.props
+        const {loggedIn, name, slug} = this.props
         return(
             <div className="flex absolute h-12 bg-blue-200 w-full items-center justify-around px-16">
                 <div className="title">
-                    {this.logInLogOut(loggedIn, name)}
+                {this.logInLogOut(loggedIn, name)}
                 </div>
-                {this.accessInternals(loggedIn)}
-                
-                {/* <Route exact path={`/${url}/community`} component={CommunityContainer} />
-                <Route exact path={`/${url}/catalogue`} component ={CatalogueContainer} />
-                <Route exact path={`/${url}/collection`} component={CollectionContainer} /> */}
+        
+                <Link to={`/${slug}/collection`}>My Collection</Link>
+                <Link to={`/${slug}/catalogue`}>Catalogue</Link>
+                <Link to={`/${slug}/community`}>Community</Link>
+                    
+               
             
             </div>
             
@@ -66,7 +52,8 @@ class NavContainer extends Component {
 
 const mapStateToProps = (state) => ({
         name: state.user.name,
+        slug: state.user.slug,
         loggedIn: state.user.loggedIn
         })
 
-export default connect(mapStateToProps)(NavContainer);
+export default connect(mapStateToProps)(NewNav);

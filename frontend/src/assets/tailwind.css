@@ -18,8 +18,16 @@
   @apply bg-blue-100 border-black cursor-pointer;
 }
 
-  .error-msg {
-    @apply bg-red-300 leading-tight px-2  py-2 border-2 border-red-900 rounded-lg;
-  }
+.error-msg {
+  @apply bg-red-300 leading-tight px-2  py-2 border-2 border-red-900 rounded-lg;
+}
+
+.theme-tile {
+  @apply flex flex-col cursor-pointer justify-center border-2 border-gray-500 rounded-lg p-4 m-4 bg-blue-200;
+}
+
+.theme-tile:hover {
+  @apply bg-blue-100 border-gray-700;
+}
 
 @tailwind utilities;

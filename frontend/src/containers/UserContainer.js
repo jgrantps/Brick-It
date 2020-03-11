@@ -1,26 +1,22 @@
 import React, { Component } from 'react';
-import {Route, Switch, Link} from 'react-router-dom'
-import {connect} from 'react-redux';
+import  {Switch, Route} from 'react-router-dom';
+
 import NavContainer from './NavContainer'
 
-import CommunityContainer from './CommunityContainer';
-import CatalogueContainer from './CatalogueContainer';
-import CollectionContainer from './CollectionContainer';
+
+
+
 
 class UserContainer extends Component {
     render() {
-        const {match:{url}} =  this.props
+        
+        const { name, slug, match:{url}} =  this.props
         return(
-            
             <>
-           <NavContainer props={this.props} />
-
+           <NavContainer props={this.props} />   
             <div id="user-container" className="user pt-12">
-           
-                
-          
-
-                <h2>welcome to the user container</h2>
+                <h2>welcome {name}!</h2>
+                <h2>Please select from the above Menu.</h2>
             </div>
             </>
         )

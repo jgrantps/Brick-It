@@ -8,7 +8,7 @@ import LoginContainer from './containers/LoginContainer'
 import LandingPage from './components/LandingPage'
 import UserContainer from './containers/UserContainer'
 
-import {PrivateUser, PrivateCommunity, PrivateCollection, PrivateCatalogue} from './components/routes/privateUser'
+import {PrivateUser} from './components/routes/privateUser'
 import {HideLogin} from './components/routes/hideLogin'
 import {HideWelcome} from './components/routes/hideWelcome'
 import LogoutRoutine from './containers/LogoutRoutine'
@@ -20,7 +20,13 @@ import CatalogueContainer from './containers/CatalogueContainer';
 class App extends Component { 
   
   render() {
+    
     const {loggedIn,slug, name} = this.props
+
+    // let pageRoutes = [[CommunityContainer, "community"], [CollectionContainer, "collection"], [CatalogueContainer, "catalogue"]].map(element => {      
+    //   return <PrivateUser exact path={`/:userId/${element[1]}`} loggedIn={loggedIn} params={this.props.params} slug={slug} component={element[0]} />
+    // })
+
     return(
       <div className="App">
         
@@ -31,10 +37,13 @@ class App extends Component {
         <Oauth path="/login/github/" component={Oauth} />
         <HideLogin exact path='/login' bar="bazz" loggedIn={loggedIn} params={this.props.params} slug={slug} component={LoginContainer} />
         <Route path="/logout" component={LogoutRoutine}/>
-        <PrivateUser exact path={`/:userId`} foo="bar" loggedIn={loggedIn} params={this.props.params} slug={slug} component={UserContainer} />
-        <PrivateCommunity exact path={`/:userId/community`} foo="bar" loggedIn={loggedIn} params={this.props.params} slug={slug} component={CommunityContainer} />
-        <PrivateCollection exact path={`/:userId/collection`} foo="bar" loggedIn={loggedIn} params={this.props.params} slug={slug} component={CollectionContainer} />
-        <PrivateCatalogue exact path={`/:userId/catalogue`} foo="bar" loggedIn={loggedIn} params={this.props.params} slug={slug} component={CatalogueContainer} />
+        <PrivateUser exact path={`/:userId`} foo="bar" loggedIn={loggedIn} name={name} params={this.props.params} slug={slug} component={UserContainer} /> 
+        
+        <PrivateUser exact path={`/:userId/community`} loggedIn={loggedIn} params={this.props.params} slug={slug} component={CommunityContainer} />
+        <PrivateUser exact path={`/:userId/collection`} loggedIn={loggedIn} params={this.props.params} slug={slug} component={CollectionContainer} />
+        <PrivateUser exact path={`/:userId/catalogue`} loggedIn={loggedIn} params={this.props.params} slug={slug} component={CatalogueContainer} />
+           
+      
         </Switch>
         
       </div>

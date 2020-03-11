@@ -12,6 +12,19 @@ export class Theme {
         includedThemes.push(this);
     }
 
+    get parent() {
+        if (this.parent_id){
+            return includedThemes.find(theme => theme.api_id === this.parent_id)
+        } else {
+            return "No Parent"
+        }
+    }
+
+    get children() {
+        return includedThemes.filter(theme => theme.parent_id === this.api_id)
+    }
+    
+
     static get allIncludedThemes() {
         return includedThemes;
     }
