@@ -11667,3 +11667,14 @@ Processing by SessionsController#create as */*
 Completed 200 OK in 234ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 906)
 
 
+Started GET "/auth/github" for ::1 at 2020-03-11 17:01:49 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/github/callback?code=c6dfba985fc32980c928&state=730abb308b70d32a25c9bb6464399b7df8b5b948fec3fb6f" for ::1 at 2020-03-11 17:01:50 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"c6dfba985fc32980c928", "state"=>"730abb308b70d32a25c9bb6464399b7df8b5b948fec3fb6f", "provider"=>"github"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jgrantps"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Redirected to http://localhost:3000/login/github/?token=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7Im5hbWUiOiJqZ3JhbnRwcyIsImlkIjo1fX0.MUt_o3fD69IFV2F5Dv4C1qyAucwB1qY5QPLtugwT-5o&name=jgrantps&id=5
+Completed 302 Found in 7ms (ActiveRecord: 1.2ms | Allocations: 716)
+
+

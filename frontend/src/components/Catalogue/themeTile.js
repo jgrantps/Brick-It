@@ -10,6 +10,7 @@ class ThemeTile extends Component {
         let displayChildren = children.map(child => {
             return(
                 <>
+                <div className="flex flex-col justify-center">
                 <button key={child.api_id} className="theme-tile" id={child.api_id} onClick={handleSelectTheme}>
                     <h2 className="text-lg text-gray-700 pb-2 pointer-events-none">
                        {child.name}
@@ -17,6 +18,7 @@ class ThemeTile extends Component {
                     <h3 className="text-black font-light leading-tight text-xs pointer-events-none">BROWSE SETS</h3> 
                 </button>
                 <KitWrapper key={child.api_id} kits={kits[child.api_id]} child={child} />
+                </div>
                 </>
             )
         })
@@ -26,7 +28,7 @@ class ThemeTile extends Component {
             <>
             <div className="flex border-b-2 flex-col p-4 w-auto">
                 <h1 className="text-xl font-bold">{theme.name}</h1>
-                <div className="flex flex-wrap">
+                <div className="flex flex-wrap items-start">
                     {displayChildren}
                     
                 </div>

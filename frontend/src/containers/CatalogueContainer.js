@@ -16,9 +16,7 @@ class CatalogueContainer extends Component {
     componentDidMount() {
         this.fetchAllThemes();
         }
-    componentDidUpdate() {
-
-    }
+    
 
     handleOnSubmit = (e) => {
         e.preventDefault()

@@ -23,10 +23,7 @@ class App extends Component {
     
     const {loggedIn,slug, name} = this.props
 
-    // let pageRoutes = [[CommunityContainer, "community"], [CollectionContainer, "collection"], [CatalogueContainer, "catalogue"]].map(element => {      
-    //   return <PrivateUser exact path={`/:userId/${element[1]}`} loggedIn={loggedIn} params={this.props.params} slug={slug} component={element[0]} />
-    // })
-
+    
     return(
       <div className="App">
         
