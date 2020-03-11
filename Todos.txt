@@ -68,6 +68,7 @@ Monday March 2nd:
 
 
     Rebrickable API lego Themes:
+
         => Alphabetical sorting, with:
         => Filter for each letter
         => Search based on state.
@@ -75,3 +76,5 @@ Monday March 2nd:
  => render Kit:
     -> list component in response to selected theme.
     -> 
+
+    cataloguecontainer holds

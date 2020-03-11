@@ -3,17 +3,20 @@ import NavContainer from './NavContainer'
 import api from '../classes/adapters';
 import { Theme } from '../classes/themes';
 import ThemeUI from '../components/Catalogue/themeUI'
+import ThemeTile from '../components/Catalogue/themeTile'
 import ThemeList from '../components/Catalogue/themeList'
 
 
-
 class CatalogueContainer extends Component {
+
+    state = {
+        themeList: []
+    }
     componentDidMount() {
         this.fetchAllThemes();
-        
         }
 
-    handleThemes = (e) => {
+    handleOnSubmit = (e) => {
         e.preventDefault()
         let letter = e.target.id;
         let ThemeArray = Theme.allIncludedThemes;
@@ -30,28 +33,25 @@ class CatalogueContainer extends Component {
           });
 
         let specifiedThemes = sortedThemes.filter(theme => theme.name[0] == letter)
-        return this.displayThemes(specifiedThemes);
-    }
-
-    displayThemes = (specifiedThemes) => {
-        specifiedThemes.map(theme => {
-            this.convertThemeToTile(theme)
-        })
+        //ARRAY OF SPECIFIED THEMES
+        this.setState({themeList: [...specifiedThemes]})
     }
 
     convertThemeToTile = (theme) => {
-        return <ThemeList name={theme.name} id={theme.id}/>
+        return <ThemeTile name={theme.name} id={theme.id}/>
     }
     
     
     render() {
+    let themeId = this.state.themeList.map(theme => this.convertThemeToTile(theme))
         
     return(
         <>
         <NavContainer props={this.props} />
         <div id="theme-wrapper" className="pt-12">
-            <ThemeUI handleOnSubmit={this.handleThemes} />
-            <ThemeList />
+            <ThemeUI handleOnSubmit={this.handleOnSubmit} />
+            {/* <ThemeList themeids={themeId} /> */}
+            {themeId}
         </div>
         </>
         )}
@@ -67,9 +67,8 @@ class CatalogueContainer extends Component {
         data.results.map(theme => { 
             //ASSIGN REBRICKABLE API_ID TO A SPECIFIED ID ATTRIBUTE; DEFAULT ID SET TO 'UNDEFINED'.
             let formattedTheme = {...theme, api_id: theme.id}
-            
             new Theme(formattedTheme)})
-            console.log(Theme.allIncludedThemes); //returns array of THEME objects to be sorted.
+            //returns array of THEME objects to be sorted.
         }    
     
 }
