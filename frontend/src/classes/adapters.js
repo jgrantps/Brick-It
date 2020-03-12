@@ -45,7 +45,7 @@ class ApiAdapter {
 
     //RETRIEVE ALL KITS FOR SPECIFIED THEME
     fetchThemedKits(id) {
-        return fetch(`${this.rebrickableBaseUrl}/sets/?theme_id=${id}`, this.rebrickableAuth)
+        return fetch(`${this.rebrickableBaseUrl}sets/?theme_id=${id}`, this.rebrickableAuth)
         .then(r => r.json())
     }
         

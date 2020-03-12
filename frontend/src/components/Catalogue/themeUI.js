@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import LetterBtn from './letterBtn'
+import uuid from 'react-uuid'
 
 class ThemeUI extends Component {
     
     processLetters = (letter) => {
       const  {handleOnSubmit} = this.props
-        return <LetterBtn key={letter} letter={letter} handleOnLetterSubmit={handleOnSubmit}/>
+        return <LetterBtn key={uuid()} letter={letter} handleOnLetterSubmit={handleOnSubmit}/>
     };
     
     render() {

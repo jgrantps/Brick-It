@@ -77,4 +77,9 @@ Monday March 2nd:
     -> list component in response to selected theme.
     -> 
 
-    cataloguecontainer holds
+    cataloguecontainer => renders collection of <ThemeTile /> components
+        ThemeTile component performs DOUBLE DUTY for being the Theme presentation component as well as the in-situ Kit Container.
+        Each <ThemeTile /> component renders the selection of <KitContainer /> components.
+        
+
+        key={uuid()}

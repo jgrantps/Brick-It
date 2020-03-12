@@ -1,15 +1,17 @@
 import React, {Component} from 'react'
-import KitWrapper from '../../components/Kits/kitwrapper'
+import KitContainer from '../Kits/KitContainer'
+import uuid from 'react-uuid'
 
 class ThemeTile extends Component {
 
     
     render() {
+    
         const {handleSelectTheme, theme, children, kits} = this.props
         
         let displayChildren = children.map(child => {
             return(
-                <>
+                <div key={uuid()}>
                 <div className="flex flex-col justify-center">
                 <button key={child.api_id} className="theme-tile" id={child.api_id} onClick={handleSelectTheme}>
                     <h2 className="text-lg text-gray-700 pb-2 pointer-events-none">
@@ -17,9 +19,9 @@ class ThemeTile extends Component {
                     </h2>
                     <h3 className="text-black font-light leading-tight text-xs pointer-events-none">BROWSE SETS</h3> 
                 </button>
-                <KitWrapper key={child.api_id} kits={kits[child.api_id]} child={child} />
+                <KitContainer key={uuid()} kits={kits[child.api_id]} child={child} />
                 </div>
-                </>
+                </div>
             )
         })
 

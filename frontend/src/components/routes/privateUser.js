@@ -1,5 +1,6 @@
 import React from 'react';
 import {Route, Redirect} from 'react-router-dom';
+import uuid from 'react-uuid'
 
 //REDIRECTS THE USER FROM INTERNAL SIGHT TO LOGIN IF THEY'RE NOT LOGGED IN.
  export const PrivateUser = ({component: Component, ...rest}) => {

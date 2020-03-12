@@ -5,7 +5,7 @@ import { Theme } from '../classes/themes';
 import ThemeUI from '../components/Catalogue/themeUI'
 import ThemeTile from '../components/Catalogue/themeTile'
 import { Kit } from '../classes/kits';
-
+import uuid from 'react-uuid'
 
 class CatalogueContainer extends Component {
 
@@ -51,13 +51,12 @@ class CatalogueContainer extends Component {
         }
     }
     
-    convertThemeToTile = (theme, kits) => {
+    convertThemeToTile = (theme) => {
         
-        return <ThemeTile key={theme.api_id} handleSelectTheme={this.handleSelectTheme} theme={theme} children={theme.children} kits={this.state.kitList}/>
+        return <ThemeTile key={uuid()} handleSelectTheme={this.handleSelectTheme} theme={theme} children={theme.children} kits={this.state.kitList}/>
     }
     render() {
         let themeList = this.state.themeList.map(theme => this.convertThemeToTile(theme))    
-        console.log(this.state.kitList)
         return(
             <>
             <NavContainer props={this.props} />
