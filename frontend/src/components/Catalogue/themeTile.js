@@ -17,10 +17,8 @@ class ThemeTile extends Component {
         children.map(theme => 
             api.fetchKitsForTheme(theme.api_id)
             .then(resp=> this.loadKits(resp, theme.api_id))
-            )
+        )
     }
-
-    
 
     loadKits = (data, theme_id) => {
         let kitCollection = []
@@ -33,8 +31,7 @@ class ThemeTile extends Component {
         }
     }
 
-
-    loadKitsinContainer = (event) => {
+    setContainerToRender = (event) => {
         this.setState({...this.state,  render: event.target.id})
     }
 
@@ -43,7 +40,6 @@ class ThemeTile extends Component {
             case `${child}`: return <KitContainer key={uuid()} kits={this.state.kits[child]} />
             default: return null
         }
-
     }
    
     render() {
@@ -53,9 +49,8 @@ class ThemeTile extends Component {
             return(
                 <div key={uuid()}>
                     <div className="flex flex-col justify-center">   
-                        <SelectThemeBtn key={uuid()} child={child} handlOnClick={this.loadKitsinContainer} />
-                        {this.renderContainer(child.api_id)}
-                        
+                        <SelectThemeBtn key={uuid()} child={child} handlOnClick={this.setContainerToRender} />
+                        {this.renderContainer(child.api_id)}  
                     </div>
                 </div>
             )
@@ -67,7 +62,6 @@ class ThemeTile extends Component {
                 <h1 className="text-xl font-bold">{theme.name}</h1>
                 <div className="flex flex-wrap items-start">
                     {displayChildren}
-                    
                 </div>
             </div>
             </>

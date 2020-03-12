@@ -1,15 +1,16 @@
 import React from 'react'
 
-const KitForm = ({publicState, selectPublic, submitForm}) => {
+const KitForm = ({publicState, kitId, selectPublic, submitForm}) => {
     
     return (
-        <form onSubmit={submitForm} >
+        <form  onSubmit={submitForm} >
             <div className="form-check">
                 <label>
                     <input
                     type="radio"
                     name="react-tips"
                     value= "false"
+                    selected = {kitId}
                     checked={ publicState === "false"}
                     onChange={selectPublic}
                     className="form-check-input"
@@ -23,6 +24,7 @@ const KitForm = ({publicState, selectPublic, submitForm}) => {
                     <input
                     type="radio"
                     name="react-tips"
+                    selected ={kitId}
                     value= "true"
                     checked={publicState === "true"}
                     onChange={selectPublic}
