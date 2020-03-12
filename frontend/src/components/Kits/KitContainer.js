@@ -7,7 +7,6 @@ import uuid from 'react-uuid'
 class KitContainer extends Component {
 
   state = {
-    public: "false"
   }
 
   submitSelection = e => {
@@ -16,9 +15,14 @@ class KitContainer extends Component {
   }
 
   changePublic = (e) => {
-    
     e.preventDefault()
-    this.setState({public: e.target.value})
+  }
+
+  addState = (id) => {
+    this.setState({
+      ...this.state,
+      id: {public: false}
+    })
   }
 
   //BUILD OUT KITDISPLAY TO INCLUDE SELECTION SUBMISSION FUNCTIONALITY.
@@ -41,9 +45,7 @@ class KitContainer extends Component {
       }
         return(
             <>
-            
                 {kitDisplay}
-            
             </>
         )
     }

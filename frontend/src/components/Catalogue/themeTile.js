@@ -1,30 +1,65 @@
 import React, {Component} from 'react'
 import KitContainer from '../Kits/KitContainer'
+import { Kit } from '../../classes/kits';
+import api from '../../classes/adapters'
 import uuid from 'react-uuid'
+import SelectThemeBtn from '../Buttons/SelectThemeBtn'
 
 class ThemeTile extends Component {
+    state = {
+        kits:{},
+        render:""
+    }
+
+    componentDidMount() {
+        const {theme:{children}} = this.props
+        
+        children.map(theme => 
+            api.fetchKitsForTheme(theme.api_id)
+            .then(resp=> this.loadKits(resp, theme.api_id))
+            )
+    }
 
     
+
+    loadKits = (data, theme_id) => {
+        let kitCollection = []
+         if (data.results){
+             data.results.map(kit => {
+                let newKit = new Kit(kit)
+                 kitCollection.push(newKit)
+             })
+             this.setState({...this.state, kits: {...this.state.kits, [theme_id]: [...kitCollection]}})
+        }
+    }
+
+
+    loadKitsinContainer = (event) => {
+        this.setState({...this.state,  render: event.target.id})
+    }
+
+    renderContainer = (child) => {
+        switch(this.state.render) {
+            case `${child}`: return <KitContainer key={uuid()} kits={this.state.kits[child]} />
+            default: return null
+        }
+
+    }
+   
     render() {
-    
-        const {handleSelectTheme, theme, children, kits} = this.props
+        const {theme, children} = this.props
         
         let displayChildren = children.map(child => {
             return(
                 <div key={uuid()}>
-                <div className="flex flex-col justify-center">
-                <button key={child.api_id} className="theme-tile" id={child.api_id} onClick={handleSelectTheme}>
-                    <h2 className="text-lg text-gray-700 pb-2 pointer-events-none">
-                       {child.name}
-                    </h2>
-                    <h3 className="text-black font-light leading-tight text-xs pointer-events-none">BROWSE SETS</h3> 
-                </button>
-                <KitContainer key={uuid()} kits={kits[child.api_id]} child={child} />
-                </div>
+                    <div className="flex flex-col justify-center">   
+                        <SelectThemeBtn key={uuid()} child={child} handlOnClick={this.loadKitsinContainer} />
+                        {this.renderContainer(child.api_id)}
+                        
+                    </div>
                 </div>
             )
         })
-
 
         return(
             <>

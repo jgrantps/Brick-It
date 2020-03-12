@@ -7,7 +7,11 @@ import { Redirect} from 'react-router-dom';
 
 class Oauth extends Component {
 
-render () {
+
+
+
+
+    render () {
     let queryString=window.location.search
     let urlParam = new URLSearchParams(queryString) 
     let newtoken = urlParam.get('token')
