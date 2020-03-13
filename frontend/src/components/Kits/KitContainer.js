@@ -3,7 +3,7 @@ import { Kit } from '../../classes/kits';
 import KitTitle from '../Kits/kitTitle'
 import KitForm from './kitForm';
 import uuid from 'react-uuid'
-
+import api from '../../classes/adapters'
 class KitContainer extends Component {
 
   state = {
@@ -12,11 +12,16 @@ class KitContainer extends Component {
 
   submitSelection = e => {
     e.preventDefault();
+    let kit = Kit.allIncludedKits.find(k => k.set_num === e.target.selected)
+    
+    debugger
     //POST SELECTION TO THE USER BACKEND API!!
+    api.sendSelection(kit.set_num, window.localStorage.token)
   }
 
   selectPublic = (e) => {
     e.preventDefault()
+    debugger
     this.setState({...this.state, kitInfo: {...this.state.kitInfo, [e.target.selected]: e.target.value}})
   }
 

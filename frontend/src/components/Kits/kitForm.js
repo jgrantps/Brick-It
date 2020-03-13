@@ -3,7 +3,7 @@ import React from 'react'
 const KitForm = ({publicState, kitId, selectPublic, submitForm}) => {
     
     return (
-        <form  onSubmit={submitForm} >
+        <form  selected={kitId} onSubmit={submitForm} >
             <div className="form-check">
                 <label>
                     <input
