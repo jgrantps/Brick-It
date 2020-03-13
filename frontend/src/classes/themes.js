@@ -28,4 +28,9 @@ export class Theme {
     static get allIncludedThemes() {
         return includedThemes;
     }
+
+    static get clearCache() {
+        includedThemes = [];
+        return includedThemes;
+    }
 }

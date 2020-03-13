@@ -77,7 +77,7 @@ class ApiAdapter {
 
     // Retrieve specific SELECTION from DB --> GET request to selections#show
     fetchSelection(id, token) {
-        return fetch(`${this.baseUrl}/selections/${id}`, this.getConfig(token))
+    return fetch(`${this.baseUrl}/selections/${id}`, this.getConfig(token))
         .then(resp => resp.json())
     }
 

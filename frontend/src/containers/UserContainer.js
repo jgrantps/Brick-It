@@ -3,10 +3,6 @@ import  {Switch, Route} from 'react-router-dom';
 
 import NavContainer from './NavContainer'
 
-
-
-
-
 class UserContainer extends Component {
     render() {
         

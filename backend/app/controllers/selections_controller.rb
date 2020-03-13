@@ -1,5 +1,6 @@
 class SelectionsController < ApplicationController
     def create
+        byebug
         selection = Selection.new(selections_params)
         if selection.save
             options = {

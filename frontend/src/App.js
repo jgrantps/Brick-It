@@ -21,7 +21,7 @@ class App extends Component {
   
   render() {
     
-    const {loggedIn,slug, name} = this.props
+    const {loggedIn ,slug, name} = this.props
 
     
     return(
@@ -34,7 +34,7 @@ class App extends Component {
         <Oauth path="/login/github/" component={Oauth} />
         <HideLogin exact path='/login' bar="bazz" loggedIn={loggedIn} params={this.props.params} slug={slug} component={LoginContainer} />
         <Route path="/logout" component={LogoutRoutine}/>
-        <PrivateUser exact path={`/:userId`} foo="bar" loggedIn={loggedIn} name={name} params={this.props.params} slug={slug} component={UserContainer} /> 
+        <PrivateUser exact path={`/:userId`} loggedIn={loggedIn} name={name} params={this.props.params} slug={slug} component={UserContainer} /> 
         
         <PrivateUser exact path={`/:userId/community`} loggedIn={loggedIn} params={this.props.params} slug={slug} component={CommunityContainer} />
         <PrivateUser exact path={`/:userId/collection`} loggedIn={loggedIn} params={this.props.params} slug={slug} component={CollectionContainer} />

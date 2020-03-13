@@ -22,4 +22,9 @@ export class Kit {
         return includedKits; 
     }
 
+    static get clearCache() {
+        includedKits = [];
+        return includedKits;
+    }
+
 }

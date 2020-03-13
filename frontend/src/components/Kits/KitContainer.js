@@ -14,14 +14,14 @@ class KitContainer extends Component {
     e.preventDefault();
     let kit = Kit.allIncludedKits.find(k => k.set_num === e.target.selected)
     
-    debugger
+    
     //POST SELECTION TO THE USER BACKEND API!!
-    api.sendSelection(kit.set_num, window.localStorage.token)
+    api.sendSelection(this.state.kitInfo, window.localStorage.token)
   }
 
   selectPublic = (e) => {
     e.preventDefault()
-    debugger
+    
     this.setState({...this.state, kitInfo: {...this.state.kitInfo, [e.target.selected]: e.target.value}})
   }
 

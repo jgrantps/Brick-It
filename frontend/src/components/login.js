@@ -44,11 +44,13 @@ class Login extends Component {
     //LOG USER OUT
     handleOnLogOut = event => {
         event.preventDefault()
-        
+        Theme.clearCache
+        Kit.clearCache
         api.Logout(window.localStorage.token)
         .then(resp => {
+
             window.localStorage.removeItem('token')
-            console.log(resp)
+            
         })
         .catch(err => console.log(err))
     }
