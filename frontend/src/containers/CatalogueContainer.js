@@ -39,7 +39,8 @@ class CatalogueContainer extends Component {
     //CAPTURE AND PROCESS SELECTED THEME TO RETREIVE KITS.
     
     convertThemeToTile = (theme) => {
-        return <ThemeTile key={uuid()}  theme={theme} children={theme.children} kits={this.state.kitList}/>
+        
+        return <ThemeTile key={uuid()}  sessionProps={this.props} theme={theme} children={theme.children} kits={this.state.kitList}/>
     }
     
     render() {

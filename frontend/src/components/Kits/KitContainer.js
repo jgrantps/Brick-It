@@ -38,7 +38,7 @@ class KitContainer extends Component {
     .catch(err => console.log(err))
   }
 
-  handleSelection = (resp, props) => {
+  handleSelection = (resp ) => {
     let selectionKitInfo = resp.included[0].attributes
     let selectionTheme = resp.included[0].attributes.theme
     
@@ -54,6 +54,7 @@ class KitContainer extends Component {
     let selectionPayload = {selection: selection, kit: selectionKit, theme: selectionTheme}
     this.props.addSelection(selectionPayload)
     
+  debugger
     
       
   }
