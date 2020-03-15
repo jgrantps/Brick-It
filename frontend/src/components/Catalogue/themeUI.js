@@ -15,16 +15,12 @@ class ThemeUI extends Component {
         
         
         return (
-            <>
-            <div className="flex align-center justify-center">
-               <div className="flex flex-col w-2/3 justify-center">
-                   <h1 className="text-center text-2xl font-bold py-4">Browse Collection of Available Themes:</h1>
-                    <div className="flex flex-wrap justify-center">
-                        {formattedLetters}
-                    </div>
-                   </div> 
+            <div className="theme-selection-ui">
+                <h1 className="theme-selection-title">Browse Collection of Available Themes:</h1>
+                <div className="theme-selection-wrapper">
+                    {formattedLetters}
+                </div> 
             </div>
-            </>
         )
     }
 }

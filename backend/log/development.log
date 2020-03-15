@@ -12060,3 +12060,1308 @@ Processing by SessionsController#create as */*
 Completed 200 OK in 239ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 889)
 
 
+Started POST "/login" for ::1 at 2020-03-13 12:16:30 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 256ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 891)
+
+
+Started POST "/selections" for ::1 at 2020-03-13 12:23:39 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SelectionsController#create as */*
+  Parameters: {"_json"=>"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7Im5hbWUiOiJCb2JieSBib2IiLCJpZCI6NH19.b-omSUT-aWo-VJj7cN06Qf288IN1W6fQ98bo_ebbBRo", "selection"=>{}}
+Filter chain halted as :signed_in? rendered or redirected
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 122)
+
+
+Started POST "/selections" for ::1 at 2020-03-13 12:25:33 -0300
+Processing by SelectionsController#create as */*
+  Parameters: {"_json"=>"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7Im5hbWUiOiJCb2JieSBib2IiLCJpZCI6NH19.b-omSUT-aWo-VJj7cN06Qf288IN1W6fQ98bo_ebbBRo", "selection"=>{}}
+Filter chain halted as :signed_in? rendered or redirected
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 122)
+
+
+Started POST "/selections" for ::1 at 2020-03-13 12:33:30 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SelectionsController#create as */*
+  Parameters: {"_json"=>"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7Im5hbWUiOiJCb2JieSBib2IiLCJpZCI6NH19.b-omSUT-aWo-VJj7cN06Qf288IN1W6fQ98bo_ebbBRo", "selection"=>{}}
+Completed 500 Internal Server Error in 69544ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 123573)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/application_controller.rb:21:in `current_user'
+app/controllers/application_controller.rb:12:in `signed_in?'
+Started POST "/selections" for ::1 at 2020-03-13 12:35:31 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SelectionsController#create as */*
+  Parameters: {"_json"=>"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7Im5hbWUiOiJCb2JieSBib2IiLCJpZCI6NH19.b-omSUT-aWo-VJj7cN06Qf288IN1W6fQ98bo_ebbBRo", "selection"=>{}}
+Filter chain halted as :signed_in? rendered or redirected
+Completed 200 OK in 251273ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 3265)
+
+
+Started POST "/selections" for ::1 at 2020-03-13 12:39:46 -0300
+Processing by SelectionsController#create as */*
+  Parameters: {"75951-1"=>"false", "selection"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+[31mUnpermitted parameters: :75951-1, :selection[0m
+Completed 500 Internal Server Error in 33894155ms (ActiveRecord: 1.4ms | Allocations: 27174)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 1)):
+  
+app/controllers/selections_controller.rb:38:in `selections_params'
+app/controllers/selections_controller.rb:4:in `create'
+Started POST "/selections" for ::1 at 2020-03-15 07:43:17 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SelectionsController#create as */*
+  Parameters: {"set_num"=>"75951-1", "setToPublic"=>"true", "selection"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+[31mUnpermitted parameters: :set_num, :setToPublic, :selection[0m
+Completed 500 Internal Server Error in 296413ms (ActiveRecord: 0.4ms | Allocations: 12015)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 1)):
+  
+app/controllers/selections_controller.rb:38:in `selections_params'
+app/controllers/selections_controller.rb:4:in `create'
+Started POST "/selections" for ::1 at 2020-03-15 07:48:23 -0300
+Processing by SelectionsController#create as */*
+  Parameters: {"kit"=>{"name"=>"Newt's Case of Magical Creatures", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/75952-1/16043.jpg", "theme_id"=>667, "set_num"=>"75952-1", "year"=>2018, "num_parts"=>694, "set_url"=>"https://rebrickable.com/sets/75952-1/newts-case-of-magical-creatures/", "last_modified_dt"=>"2018-11-05T20:06:02.167005Z"}, "isPublic"=>"true", "selection"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_user'
+[31mUnpermitted parameters: :kit, :isPublic, :selection[0m
+Completed 500 Internal Server Error in 370306ms (ActiveRecord: 0.3ms | Allocations: 9683)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 1)):
+  
+app/controllers/selections_controller.rb:38:in `selections_params'
+app/controllers/selections_controller.rb:4:in `create'
+  [1m[35m (11.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200228165019)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "password" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200228165019"]]
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateSelections (20200228165433)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "selections" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" varchar, "kit_id" varchar, "public" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200228165433"]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateComments (20200228165456)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "selection_id" varchar, "user_id" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200228165456"]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateKits (20200228165526)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "kits" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "set_num" varchar, "name" varchar, "description" varchar, "theme_id" varchar, "set_img_url" varchar, "year" integer, "set_url" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200228165526"]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateThemes (20200228165542)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "themes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "api_id" varchar, "name" varchar, "description" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200228165542"]]
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddImageurlToKit (20200304110851)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "kits" ADD "image_url" varchar[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200304110851"]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-03-15 10:56:51.351942"], ["updated_at", "2020-03-15 10:56:51.351942"]]
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/login" for ::1 at 2020-03-15 07:57:21 -0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 40ms (Views: 0.8ms | ActiveRecord: 1.7ms | Allocations: 4535)
+
+
+Started POST "/signup" for ::1 at 2020-03-15 07:57:31 -0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "user"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Bobby bob"], ["password_digest", "$2a$12$GyJzRe1Pz0c0I5GCP.EHoe4IrvefSUyqrcdQYIJfPJMk5Mn8ghw5K"], ["created_at", "2020-03-15 10:57:32.142257"], ["updated_at", "2020-03-15 10:57:32.142257"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 294ms (Views: 0.2ms | ActiveRecord: 9.7ms | Allocations: 17667)
+
+
+Started POST "/selections" for ::1 at 2020-03-15 07:58:21 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SelectionsController#create as */*
+  Parameters: {"kit"=>{"name"=>"Grindelwald's Escape", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/75951-1/17148.jpg", "theme_id"=>667, "set_num"=>"75951-1", "year"=>2018, "num_parts"=>132, "set_url"=>"https://rebrickable.com/sets/75951-1/grindelwalds-escape/", "last_modified_dt"=>"2018-08-28T22:06:58.299546Z"}, "isPublic"=>"false", "selection"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+[31mUnpermitted parameters: :kit, :isPublic, :selection[0m
+Started POST "/login" for ::1 at 2020-03-15 08:13:12 -0300
+Completed 500 Internal Server Error in 889999ms (ActiveRecord: 2.3ms | Allocations: 47374)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 1)):
+  
+app/controllers/selections_controller.rb:38:in `selections_params'
+app/controllers/selections_controller.rb:4:in `create'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 251ms (Views: 0.2ms | ActiveRecord: 1.5ms | Allocations: 7182)
+
+
+Started POST "/login" for ::1 at 2020-03-15 08:13:18 -0300
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 241ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 907)
+
+
+Started POST "/selections" for ::1 at 2020-03-15 09:17:39 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SelectionsController#create as */*
+  Parameters: {"kit"=>{"name"=>"Newt's Case of Magical Creatures", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/75952-1/16043.jpg", "theme_id"=>667, "set_num"=>"75952-1", "year"=>2018, "num_parts"=>694, "set_url"=>"https://rebrickable.com/sets/75952-1/newts-case-of-magical-creatures/", "last_modified_dt"=>"2018-11-05T20:06:02.167005Z"}, "isPublic"=>"true", "selection"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+[31mUnpermitted parameters: :kit, :isPublic, :selection[0m
+Completed 500 Internal Server Error in 738415ms (ActiveRecord: 0.9ms | Allocations: 4537)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 1)):
+  
+app/controllers/selections_controller.rb:38:in `selections_params'
+app/controllers/selections_controller.rb:4:in `create'
+Started POST "/selections" for ::1 at 2020-03-15 09:30:13 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SelectionsController#create as */*
+  Parameters: {"kit"=>{"name"=>"Newt's Case of Magical Creatures", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/75952-1/16043.jpg", "theme_id"=>667, "set_num"=>"75952-1", "year"=>2018, "num_parts"=>694, "set_url"=>"https://rebrickable.com/sets/75952-1/newts-case-of-magical-creatures/", "last_modified_dt"=>"2018-11-05T20:06:02.167005Z"}, "isPublic"=>"true", "selection"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+[31mUnpermitted parameters: :kit, :isPublic, :selection[0m
+[31mUnpermitted parameters: :kit, :isPublic, :selection[0m
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 2.3ms | Allocations: 8162)
+
+
+  
+ArgumentError (wrong number of arguments (given 7, expected 1)):
+  
+app/controllers/selections_controller.rb:43:in `selection_kit_params'
+app/controllers/selections_controller.rb:7:in `create'
+Started POST "/selections" for ::1 at 2020-03-15 09:31:34 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SelectionsController#create as */*
+  Parameters: {"kit"=>{"name"=>"Newt's Case of Magical Creatures", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/75952-1/16043.jpg", "theme_id"=>667, "set_num"=>"75952-1", "year"=>2018, "num_parts"=>694, "set_url"=>"https://rebrickable.com/sets/75952-1/newts-case-of-magical-creatures/", "last_modified_dt"=>"2018-11-05T20:06:02.167005Z"}, "isPublic"=>"true", "selection"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+[31mUnpermitted parameters: :kit, :isPublic, :selection[0m
+[31mUnpermitted parameters: :kit, :isPublic, :selection[0m
+[31mUnpermitted parameters: :kit, :isPublic, :selection[0m
+[31mUnpermitted parameters: :kit, :isPublic, :selection[0m
+[31mUnpermitted parameters: :kit, :isPublic, :selection[0m
+[31mUnpermitted parameters: :kit, :isPublic, :selection[0m
+Completed 500 Internal Server Error in 220275ms (ActiveRecord: 1.9ms | Allocations: 37955)
+
+
+  
+ArgumentError (wrong number of arguments (given 7, expected 1)):
+  
+app/controllers/selections_controller.rb:43:in `selection_kit_params'
+app/controllers/selections_controller.rb:8:in `create'
+Started POST "/selections" for ::1 at 2020-03-15 09:35:20 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SelectionsController#create as */*
+  Parameters: {"kit"=>{"name"=>"Newt's Case of Magical Creatures", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/75952-1/16043.jpg", "theme_id"=>667, "set_num"=>"75952-1", "year"=>2018, "num_parts"=>694, "set_url"=>"https://rebrickable.com/sets/75952-1/newts-case-of-magical-creatures/", "last_modified_dt"=>"2018-11-05T20:06:02.167005Z"}, "isPublic"=>"true", "selection"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+[31mUnpermitted parameters: :kit, :selection[0m
+[31mUnpermitted parameters: :kit, :isPublic, :selection[0m
+Completed 500 Internal Server Error in 98719ms (ActiveRecord: 2.2ms | Allocations: 85491)
+
+
+  
+NameError (undefined local variable or method `specific_selection_param' for #<SelectionsController:0x00007fffca357f88>):
+  
+app/controllers/selections_controller.rb:7:in `create'
+Started POST "/selections" for ::1 at 2020-03-15 09:37:03 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SelectionsController#create as */*
+  Parameters: {"kit"=>{"name"=>"Newt's Case of Magical Creatures", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/75952-1/16043.jpg", "theme_id"=>667, "set_num"=>"75952-1", "year"=>2018, "num_parts"=>694, "set_url"=>"https://rebrickable.com/sets/75952-1/newts-case-of-magical-creatures/", "last_modified_dt"=>"2018-11-05T20:06:02.167005Z"}, "isPublic"=>"false", "selection"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+[31mUnpermitted parameters: :kit, :selection[0m
+Completed 500 Internal Server Error in 47487ms (ActiveRecord: 2.4ms | Allocations: 83884)
+
+
+  
+NameError (undefined local variable or method `specific_selection_param' for #<SelectionsController:0x00007f5f9c168ae8>):
+  
+app/controllers/selections_controller.rb:7:in `create'
+Started POST "/selections" for ::1 at 2020-03-15 09:38:02 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/mnt/c/Users/Peter/flatiron_labs/current_lab/brick-it/backend/app/controllers/selections_controller.rb:43: syntax error, unexpected ',', expecting =>
+...ection).require(:kit => {:name, :set_img_url, :theme_id, :se...
+...                              ^
+/mnt/c/Users/Peter/flatiron_labs/current_lab/brick-it/backend/app/controllers/selections_controller.rb:50: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/selections_controller.rb:43: syntax error, unexpected ',', expecting =>
+app/controllers/selections_controller.rb:50: syntax error, unexpected end-of-input, expecting end
+app/controllers/selections_controller.rb:43: syntax error, unexpected ',', expecting =>
+app/controllers/selections_controller.rb:50: syntax error, unexpected end-of-input, expecting end
+Started POST "/selections" for ::1 at 2020-03-15 09:39:15 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SelectionsController#create as */*
+  Parameters: {"kit"=>{"name"=>"Furno Bike", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/7158-1/1594.jpg", "theme_id"=>402, "set_num"=>"7158-1", "year"=>2010, "num_parts"=>165, "set_url"=>"https://rebrickable.com/sets/7158-1/furno-bike/", "last_modified_dt"=>"2011-09-18T14:00:00Z"}, "isPublic"=>"true", "selection"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+[31mUnpermitted parameters: :kit, :selection[0m
+Completed 500 Internal Server Error in 65207ms (ActiveRecord: 1.7ms | Allocations: 84656)
+
+
+  
+NameError (undefined local variable or method `specific_selection_param' for #<SelectionsController:0x00007f5f9051f080>):
+  
+app/controllers/selections_controller.rb:7:in `create'
+Started POST "/selections" for ::1 at 2020-03-15 09:40:31 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SelectionsController#create as */*
+  Parameters: {"kit"=>{"name"=>"Grindelwald's Escape", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/75951-1/17148.jpg", "theme_id"=>667, "set_num"=>"75951-1", "year"=>2018, "num_parts"=>132, "set_url"=>"https://rebrickable.com/sets/75951-1/grindelwalds-escape/", "last_modified_dt"=>"2018-08-28T22:06:58.299546Z"}, "isPublic"=>"false", "selection"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+[31mUnpermitted parameters: :kit, :selection[0m
+Completed 500 Internal Server Error in 45155ms (ActiveRecord: 2.2ms | Allocations: 84333)
+
+
+  
+NameError (undefined local variable or method `specific_selection_param' for #<SelectionsController:0x00007f5f9c19fe80>):
+  
+app/controllers/selections_controller.rb:7:in `create'
+Started POST "/selections" for ::1 at 2020-03-15 09:41:19 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SelectionsController#create as */*
+  Parameters: {"kit"=>{"name"=>"Grindelwald's Escape", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/75951-1/17148.jpg", "theme_id"=>667, "set_num"=>"75951-1", "year"=>2018, "num_parts"=>132, "set_url"=>"https://rebrickable.com/sets/75951-1/grindelwalds-escape/", "last_modified_dt"=>"2018-08-28T22:06:58.299546Z"}, "isPublic"=>"false", "selection"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+[31mUnpermitted parameters: :kit, :isPublic, :selection[0m
+Completed 500 Internal Server Error in 75219ms (ActiveRecord: 2.5ms | Allocations: 86454)
+
+
+  
+NameError (undefined local variable or method `specific_selection_param' for #<SelectionsController:0x00007fffc820cdd8>):
+  
+app/controllers/selections_controller.rb:7:in `create'
+Started POST "/selections" for ::1 at 2020-03-15 09:43:19 -0300
+Processing by SelectionsController#create as */*
+  Parameters: {"kit"=>{"name"=>"Grindelwald's Escape", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/75951-1/17148.jpg", "theme_id"=>667, "set_num"=>"75951-1", "year"=>2018, "num_parts"=>132, "set_url"=>"https://rebrickable.com/sets/75951-1/grindelwalds-escape/", "last_modified_dt"=>"2018-08-28T22:06:58.299546Z"}, "isPublic"=>"false", "selection"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+[31mUnpermitted parameters: :kit, :isPublic, :selection[0m
+[31mUnpermitted parameters: :kit, :isPublic, :selection[0m
+Completed 500 Internal Server Error in 216968ms (ActiveRecord: 0.3ms | Allocations: 84000)
+
+
+  
+NameError (undefined local variable or method `specific_selection_param' for #<SelectionsController:0x00007f5fac2c8928>):
+  
+app/controllers/selections_controller.rb:7:in `create'
+Started POST "/selections" for ::1 at 2020-03-15 09:47:01 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SelectionsController#create as */*
+  Parameters: {"kit"=>{"name"=>"Grindelwald's Escape", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/75951-1/17148.jpg", "theme_id"=>667, "set_num"=>"75951-1", "year"=>2018, "num_parts"=>132, "set_url"=>"https://rebrickable.com/sets/75951-1/grindelwalds-escape/", "last_modified_dt"=>"2018-08-28T22:06:58.299546Z"}, "isPublic"=>"false", "selection"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+[31mUnpermitted parameter: :last_modified_dt[0m
+[31mUnpermitted parameter: :last_modified_dt[0m
+[31mUnpermitted parameter: :last_modified_dt[0m
+[31mUnpermitted parameter: :last_modified_dt[0m
+Completed 500 Internal Server Error in 417416ms (ActiveRecord: 3.3ms | Allocations: 463506)
+
+
+  
+NameError (undefined local variable or method `specific_selection_param' for #<SelectionsController:0x00007f5f9026b488>):
+  
+app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200228165019)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "password" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200228165019"]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateSelections (20200228165433)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "selections" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" varchar, "kit_id" varchar, "public" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200228165433"]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateComments (20200228165456)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "selection_id" varchar, "user_id" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200228165456"]]
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateKits (20200228165526)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "kits" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "set_img_url" varchar, "theme_id" varchar, "set_num" varchar, "year" integer, "num_parts" integer, "set_url" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200228165526"]]
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateThemes (20200228165542)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "themes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "api_id" varchar, "name" varchar, "description" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200228165542"]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddImageurlToKit (20200304110851)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "kits" ADD "image_url" varchar[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200304110851"]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-03-15 12:54:47.124101"], ["updated_at", "2020-03-15 12:54:47.124101"]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/login" for ::1 at 2020-03-15 09:55:57 -0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 19ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 4535)
+
+
+Started POST "/signup" for ::1 at 2020-03-15 09:55:59 -0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "user"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Bobby bob"], ["password_digest", "$2a$12$FO3sLMYfshdaK6bWBpwI8uHYjeT2g2IXJRPbM.3pAaL17up/wcBee"], ["created_at", "2020-03-15 12:55:59.557314"], ["updated_at", "2020-03-15 12:55:59.557314"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 286ms (Views: 0.2ms | ActiveRecord: 9.2ms | Allocations: 17665)
+
+
+Started POST "/selections" for ::1 at 2020-03-15 09:56:10 -0300
+Processing by SelectionsController#create as */*
+  Parameters: {"kit"=>{"name"=>"Newt's Case of Magical Creatures", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/75952-1/16043.jpg", "theme_id"=>667, "set_num"=>"75952-1", "year"=>2018, "num_parts"=>694, "set_url"=>"https://rebrickable.com/sets/75952-1/newts-case-of-magical-creatures/", "last_modified_dt"=>"2018-11-05T20:06:02.167005Z"}, "isPublic"=>"false", "selection"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+[31mUnpermitted parameters: :num_parts, :last_modified_dt[0m
+[31mUnpermitted parameters: :num_parts, :last_modified_dt[0m
+Completed 500 Internal Server Error in 96821ms (ActiveRecord: 1.8ms | Allocations: 439555)
+
+
+  
+NameError (undefined local variable or method `specific_selection_param' for #<SelectionsController:0x00007f259c0b9ed8>):
+  
+app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (11.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200228165019)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "password" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200228165019"]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateSelections (20200228165433)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "selections" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" varchar, "kit_id" varchar, "public" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200228165433"]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateComments (20200228165456)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "selection_id" varchar, "user_id" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200228165456"]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateKits (20200228165526)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "kits" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "set_img_url" varchar, "theme_id" varchar, "set_num" varchar, "year" integer, "num_parts" integer, "set_url" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200228165526"]]
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateThemes (20200228165542)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "themes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "api_id" varchar, "name" varchar, "description" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200228165542"]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-03-15 12:58:19.866020"], ["updated_at", "2020-03-15 12:58:19.866020"]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/login" for ::1 at 2020-03-15 09:58:43 -0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 4535)
+
+
+Started POST "/signup" for ::1 at 2020-03-15 09:58:45 -0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "user"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Bobby bob"], ["password_digest", "$2a$12$a35jXzn9CnNGwqbliYbz1OscugQbeRT2junTMw3icMBwZnvJmznMC"], ["created_at", "2020-03-15 12:58:45.445727"], ["updated_at", "2020-03-15 12:58:45.445727"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 281ms (Views: 0.2ms | ActiveRecord: 8.9ms | Allocations: 16983)
+
+
+Started POST "/selections" for ::1 at 2020-03-15 09:58:52 -0300
+Processing by SelectionsController#create as */*
+  Parameters: {"kit"=>{"name"=>"Grindelwald's Escape", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/75951-1/17148.jpg", "theme_id"=>667, "set_num"=>"75951-1", "year"=>2018, "num_parts"=>132, "set_url"=>"https://rebrickable.com/sets/75951-1/grindelwalds-escape/", "last_modified_dt"=>"2018-08-28T22:06:58.299546Z"}, "isPublic"=>"true", "selection"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+[31mUnpermitted parameters: :kit, :selection[0m
+[31mUnpermitted parameters: :kit, :selection[0m
+[31mUnpermitted parameters: :kit, :selection[0m
+Completed 500 Internal Server Error in 182358ms (ActiveRecord: 0.8ms | Allocations: 203072)
+
+
+  
+NameError (undefined local variable or method `specific_selection_param' for #<SelectionsController:0x00007fc00001cdc8>):
+  
+app/controllers/selections_controller.rb:7:in `create'
+Started POST "/selections" for ::1 at 2020-03-15 10:02:02 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SelectionsController#create as */*
+  Parameters: {"kit"=>{"name"=>"Grindelwald's Escape", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/75951-1/17148.jpg", "theme_id"=>667, "set_num"=>"75951-1", "year"=>2018, "num_parts"=>132, "set_url"=>"https://rebrickable.com/sets/75951-1/grindelwalds-escape/", "last_modified_dt"=>"2018-08-28T22:06:58.299546Z"}, "isPublic"=>"true", "selection"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+[31mUnpermitted parameters: :kit, :selection[0m
+[31mUnpermitted parameters: :num_parts, :last_modified_dt[0m
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."name" = ? AND "kits"."set_img_url" = ? AND "kits"."theme_id" = ? AND "kits"."set_num" = ? AND "kits"."year" = ? AND "kits"."set_url" = ? LIMIT ?[0m  [["name", "Grindelwald's Escape"], ["set_img_url", "https://cdn.rebrickable.com/media/sets/75951-1/17148.jpg"], ["theme_id", "667"], ["set_num", "75951-1"], ["year", 2018], ["set_url", "https://rebrickable.com/sets/75951-1/grindelwalds-escape/"], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[36mTheme Load (0.1ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 667], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+Completed 200 OK in 156294ms (Views: 0.2ms | ActiveRecord: 5.1ms | Allocations: 48295)
+
+
+Started POST "/selections" for ::1 at 2020-03-15 10:06:13 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SelectionsController#create as */*
+  Parameters: {"kit"=>{"name"=>"Grindelwald's Escape", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/75951-1/17148.jpg", "theme_id"=>667, "set_num"=>"75951-1", "year"=>2018, "num_parts"=>132, "set_url"=>"https://rebrickable.com/sets/75951-1/grindelwalds-escape/", "last_modified_dt"=>"2018-08-28T22:06:58.299546Z"}, "isPublic"=>"true", "selection"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+[31mUnpermitted parameters: :kit, :selection[0m
+[31mUnpermitted parameters: :num_parts, :last_modified_dt[0m
+  [1m[36mKit Load (1.1ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."name" = ? AND "kits"."set_img_url" = ? AND "kits"."theme_id" = ? AND "kits"."set_num" = ? AND "kits"."year" = ? AND "kits"."set_url" = ? LIMIT ?[0m  [["name", "Grindelwald's Escape"], ["set_img_url", "https://cdn.rebrickable.com/media/sets/75951-1/17148.jpg"], ["theme_id", "667"], ["set_num", "75951-1"], ["year", 2018], ["set_url", "https://rebrickable.com/sets/75951-1/grindelwalds-escape/"], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[36mTheme Load (0.1ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 667], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+[31mUnpermitted parameters: :num_parts, :last_modified_dt[0m
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."name" = ? AND "kits"."set_img_url" = ? AND "kits"."theme_id" = ? AND "kits"."set_num" = ? AND "kits"."year" = ? AND "kits"."set_url" = ? LIMIT ?[0m  [["name", "Grindelwald's Escape"], ["set_img_url", "https://cdn.rebrickable.com/media/sets/75951-1/17148.jpg"], ["theme_id", "667"], ["set_num", "75951-1"], ["year", 2018], ["set_url", "https://rebrickable.com/sets/75951-1/grindelwalds-escape/"], ["LIMIT", 1]]
+  ↳ (byebug):1:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `create'
+  [1m[36mTheme Load (0.2ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 667], ["LIMIT", 1]]
+  ↳ (byebug):1:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ (byebug):1:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/selections" for ::1 at 2020-03-15 10:14:58 -0300
+  ↳ app/controllers/selections_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/selections_controller.rb:10:in `create'
+Completed 200 OK in 524972ms (Views: 0.2ms | ActiveRecord: 8.1ms | Allocations: 48599)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SelectionsController#create as */*
+  Parameters: {"kit"=>{"name"=>"Drop Ship", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/7160-1/3853.jpg", "theme_id"=>402, "set_num"=>"7160-1", "year"=>2010, "num_parts"=>393, "set_url"=>"https://rebrickable.com/sets/7160-1/drop-ship/", "last_modified_dt"=>"2016-04-23T11:56:30.548561Z"}, "isPublic"=>"false", "theme"=>{}, "selection"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+[31mUnpermitted parameters: :kit, :theme, :selection[0m
+[31mUnpermitted parameters: :num_parts, :last_modified_dt[0m
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."name" = ? AND "kits"."set_img_url" = ? AND "kits"."theme_id" = ? AND "kits"."set_num" = ? AND "kits"."year" = ? AND "kits"."set_url" = ? LIMIT ?[0m  [["name", "Drop Ship"], ["set_img_url", "https://cdn.rebrickable.com/media/sets/7160-1/3853.jpg"], ["theme_id", "402"], ["set_num", "7160-1"], ["year", 2010], ["set_url", "https://rebrickable.com/sets/7160-1/drop-ship/"], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[36mTheme Load (0.1ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 402], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+[31mUnpermitted parameters: :num_parts, :last_modified_dt[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:11:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:11:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/selections_controller.rb:11:in `create'
+Completed 200 OK in 5425ms (Views: 0.2ms | ActiveRecord: 5.4ms | Allocations: 32500)
+
+
+Started POST "/selections" for ::1 at 2020-03-15 10:15:54 -0300
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SelectionsController#create as */*
+  Parameters: {"kit"=>{"name"=>"Drop Ship", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/7160-1/3853.jpg", "theme_id"=>402, "set_num"=>"7160-1", "year"=>2010, "num_parts"=>393, "set_url"=>"https://rebrickable.com/sets/7160-1/drop-ship/", "last_modified_dt"=>"2016-04-23T11:56:30.548561Z"}, "isPublic"=>"true", "theme"=>{}, "selection"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+[31mUnpermitted parameters: :kit, :theme, :selection[0m
+[31mUnpermitted parameters: :num_parts, :last_modified_dt[0m
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."name" = ? AND "kits"."set_img_url" = ? AND "kits"."theme_id" = ? AND "kits"."set_num" = ? AND "kits"."year" = ? AND "kits"."set_url" = ? LIMIT ?[0m  [["name", "Drop Ship"], ["set_img_url", "https://cdn.rebrickable.com/media/sets/7160-1/3853.jpg"], ["theme_id", "402"], ["set_num", "7160-1"], ["year", 2010], ["set_url", "https://rebrickable.com/sets/7160-1/drop-ship/"], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[36mTheme Load (0.1ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 402], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+[31mUnpermitted parameters: :num_parts, :last_modified_dt[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `create'
+  [1m[36mTheme Load (0.3ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 402], ["LIMIT", 1]]
+  ↳ (byebug):1:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ (byebug):1:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:11:in `create'
+Started POST "/selections" for ::1 at 2020-03-15 10:37:21 -0300
+Started POST "/selections" for ::1 at 2020-03-15 10:37:21 -0300
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:11:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started POST "/selections" for ::1 at 2020-03-15 10:37:21 -0300
+  ↳ app/controllers/selections_controller.rb:11:in `create'
+Processing by SelectionsController#create as */*
+Processing by SelectionsController#create as */*
+Completed 200 OK in 1287427ms (Views: 0.2ms | ActiveRecord: 5.4ms | Allocations: 85210)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  Parameters: {"kit"=>{"name"=>"Surge 2.0", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/2141-1/5972.jpg", "theme_id"=>401, "set_num"=>"2141-1", "year"=>2011, "num_parts"=>30, "set_url"=>"https://rebrickable.com/sets/2141-1/surge-20/", "last_modified_dt"=>"2011-09-18T14:00:00Z"}, "isPublic"=>"true", "theme"=>{"api_id"=>401, "parent_id"=>400, "name"=>"Heroes"}, "selection"=>{}}
+  Parameters: {"kit"=>{"name"=>"Furno Bike", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/7158-1/1594.jpg", "theme_id"=>402, "set_num"=>"7158-1", "year"=>2010, "num_parts"=>165, "set_url"=>"https://rebrickable.com/sets/7158-1/furno-bike/", "last_modified_dt"=>"2011-09-18T14:00:00Z"}, "isPublic"=>"true", "theme"=>{}, "selection"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Processing by SelectionsController#create as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  Parameters: {"kit"=>{"name"=>"Furno Bike", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/7158-1/1594.jpg", "theme_id"=>402, "set_num"=>"7158-1", "year"=>2010, "num_parts"=>165, "set_url"=>"https://rebrickable.com/sets/7158-1/furno-bike/", "last_modified_dt"=>"2011-09-18T14:00:00Z"}, "isPublic"=>"true", "theme"=>{}, "selection"=>{}}
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+[31mUnpermitted parameters: :kit, :theme, :selection[0m
+[31mUnpermitted parameters: :num_parts, :last_modified_dt[0m
+[31mUnpermitted parameters: :kit, :theme, :selection[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."name" = ? AND "kits"."set_img_url" = ? AND "kits"."theme_id" = ? AND "kits"."set_num" = ? AND "kits"."year" = ? AND "kits"."set_url" = ? LIMIT ?[0m  [["name", "Surge 2.0"], ["set_img_url", "https://cdn.rebrickable.com/media/sets/2141-1/5972.jpg"], ["theme_id", "401"], ["set_num", "2141-1"], ["year", 2011], ["set_url", "https://rebrickable.com/sets/2141-1/surge-20/"], ["LIMIT", 1]]
+[31mUnpermitted parameters: :num_parts, :last_modified_dt[0m
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[36mKit Load (0.4ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."name" = ? AND "kits"."set_img_url" = ? AND "kits"."theme_id" = ? AND "kits"."set_num" = ? AND "kits"."year" = ? AND "kits"."set_url" = ? LIMIT ?[0m  [["name", "Furno Bike"], ["set_img_url", "https://cdn.rebrickable.com/media/sets/7158-1/1594.jpg"], ["theme_id", "402"], ["set_num", "7158-1"], ["year", 2010], ["set_url", "https://rebrickable.com/sets/7158-1/furno-bike/"], ["LIMIT", 1]]
+[31mUnpermitted parameters: :kit, :theme, :selection[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+[31mUnpermitted parameters: :num_parts, :last_modified_dt[0m
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKit Load (0.4ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."name" = ? AND "kits"."set_img_url" = ? AND "kits"."theme_id" = ? AND "kits"."set_num" = ? AND "kits"."year" = ? AND "kits"."set_url" = ? LIMIT ?[0m  [["name", "Furno Bike"], ["set_img_url", "https://cdn.rebrickable.com/media/sets/7158-1/1594.jpg"], ["theme_id", "402"], ["set_num", "7158-1"], ["year", 2010], ["set_url", "https://rebrickable.com/sets/7158-1/furno-bike/"], ["LIMIT", 1]]
+  [1m[36mTheme Load (0.2ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 401], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[36mTheme Load (0.3ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 402], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTheme Load (0.4ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 402], ["LIMIT", 1]]
+[31mUnpermitted parameters: :num_parts, :last_modified_dt[0m
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[31mUnpermitted parameters: :num_parts, :last_modified_dt[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/selections_controller.rb:11:in `create'
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :num_parts, :last_modified_dt[0m
+  ↳ app/controllers/selections_controller.rb:11:in `create'
+  ↳ app/controllers/selections_controller.rb:11:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/selections_controller.rb:11:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/selections_controller.rb:11:in `create'
+Completed 200 OK in 2608ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 70881)
+
+
+  ↳ app/controllers/selections_controller.rb:11:in `create'
+Completed 200 OK in 2609ms (Views: 0.1ms | ActiveRecord: 1.7ms | Allocations: 70789)
+
+
+  ↳ app/controllers/selections_controller.rb:11:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:11:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/selections_controller.rb:11:in `create'
+Completed 200 OK in 2604ms (Views: 0.1ms | ActiveRecord: 1.6ms | Allocations: 72050)
+
+
+Started POST "/selections" for ::1 at 2020-03-15 10:37:47 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SelectionsController#create as */*
+  Parameters: {"kit"=>{"name"=>"Drop Ship", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/7160-1/3853.jpg", "theme_id"=>402, "set_num"=>"7160-1", "year"=>2010, "num_parts"=>393, "set_url"=>"https://rebrickable.com/sets/7160-1/drop-ship/", "last_modified_dt"=>"2016-04-23T11:56:30.548561Z"}, "isPublic"=>"true", "theme"=>{"api_id"=>402, "parent_id"=>400, "name"=>"Vehicles"}, "selection"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+[31mUnpermitted parameters: :kit, :theme, :selection[0m
+Completed 500 Internal Server Error in 164ms (ActiveRecord: 1.9ms | Allocations: 79506)
+
+
+  
+NameError (undefined local variable or method `selected_kit' for #<SelectionsController:0x00007fddf803b2d0>
+Did you mean?  selection_theme):
+  
+app/controllers/selections_controller.rb:10:in `create'
+Started POST "/selections" for ::1 at 2020-03-15 10:39:37 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SelectionsController#create as */*
+  Parameters: {"kit"=>{"name"=>"Newt's Case of Magical Creatures", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/75952-1/16043.jpg", "theme_id"=>667, "set_num"=>"75952-1", "year"=>2018, "num_parts"=>694, "set_url"=>"https://rebrickable.com/sets/75952-1/newts-case-of-magical-creatures/", "last_modified_dt"=>"2018-11-05T20:06:02.167005Z"}, "isPublic"=>"true", "theme"=>{"api_id"=>667, "parent_id"=>246, "name"=>"Fantastic Beasts"}, "selection"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+[31mUnpermitted parameters: :kit, :theme, :selection[0m
+[31mUnpermitted parameters: :num_parts, :last_modified_dt[0m
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."name" = ? AND "kits"."set_img_url" = ? AND "kits"."theme_id" = ? AND "kits"."set_num" = ? AND "kits"."year" = ? AND "kits"."set_url" = ? LIMIT ?[0m  [["name", "Newt's Case of Magical Creatures"], ["set_img_url", "https://cdn.rebrickable.com/media/sets/75952-1/16043.jpg"], ["theme_id", "667"], ["set_num", "75952-1"], ["year", 2018], ["set_url", "https://rebrickable.com/sets/75952-1/newts-case-of-magical-creatures/"], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[36mTheme Load (0.1ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 667], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+[31mUnpermitted parameters: :num_parts, :last_modified_dt[0m
+Completed 500 Internal Server Error in 225ms (ActiveRecord: 4.8ms | Allocations: 95936)
+
+
+  
+NameError (undefined local variable or method `selections_theme_params' for #<SelectionsController:0x00007fffbb374ea8>
+Did you mean?  selection_theme_params
+               selection_kit_params):
+  
+app/controllers/selections_controller.rb:12:in `create'
+Started POST "/selections" for ::1 at 2020-03-15 10:40:37 -0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SelectionsController#create as */*
+  Parameters: {"kit"=>{"name"=>"Fighter Plane Attack", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/7198-1/1241.jpg", "theme_id"=>266, "set_num"=>"7198-1", "year"=>2009, "num_parts"=>384, "set_url"=>"https://rebrickable.com/sets/7198-1/fighter-plane-attack/", "last_modified_dt"=>"2016-04-23T11:59:33.453723Z"}, "isPublic"=>"true", "theme"=>{"api_id"=>266, "parent_id"=>264, "name"=>"Last Crusade"}, "selection"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+[31mUnpermitted parameters: :kit, :theme, :selection[0m
+[31mUnpermitted parameters: :num_parts, :last_modified_dt[0m
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."name" = ? AND "kits"."set_img_url" = ? AND "kits"."theme_id" = ? AND "kits"."set_num" = ? AND "kits"."year" = ? AND "kits"."set_url" = ? LIMIT ?[0m  [["name", "Fighter Plane Attack"], ["set_img_url", "https://cdn.rebrickable.com/media/sets/7198-1/1241.jpg"], ["theme_id", "266"], ["set_num", "7198-1"], ["year", 2009], ["set_url", "https://rebrickable.com/sets/7198-1/fighter-plane-attack/"], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[36mTheme Load (0.1ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 266], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+[31mUnpermitted parameters: :num_parts, :last_modified_dt[0m
+[31mUnpermitted parameter: :parent_id[0m
+Completed 500 Internal Server Error in 40555ms (ActiveRecord: 4.6ms | Allocations: 148736)
+
+
+  
+NameError (undefined local variable or method `selection' for #<SelectionsController:0x00007fffe305b6b8>
+Did you mean?  select):
+  
+app/controllers/selections_controller.rb:14:in `create'
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200228165019)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "password" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200228165019"]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateSelections (20200228165433)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "selections" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" varchar, "kit_id" varchar, "public" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200228165433"]]
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateComments (20200228165456)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "selection_id" varchar, "user_id" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200228165456"]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateKits (20200228165526)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "kits" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "set_img_url" varchar, "theme_id" varchar, "set_num" varchar, "year" integer, "num_parts" integer, "set_url" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200228165526"]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateThemes (20200228165542)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "themes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "api_id" varchar, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200228165542"]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-03-15 13:41:41.418475"], ["updated_at", "2020-03-15 13:41:41.418475"]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/login" for ::1 at 2020-03-15 10:42:07 -0300
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "session"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:34:in `create'
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 4535)
+
+
+Started POST "/signup" for ::1 at 2020-03-15 10:42:08 -0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Bobby bob", "password"=>"[FILTERED]", "user"=>{"name"=>"Bobby bob", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Bobby bob"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Bobby bob"], ["password_digest", "$2a$12$Rilc70HzuCgM0w5hDOQU1udxNxXkVLPgd50QpWBpEi9E6foTGfnbW"], ["created_at", "2020-03-15 13:42:09.207269"], ["updated_at", "2020-03-15 13:42:09.207269"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 281ms (Views: 0.1ms | ActiveRecord: 11.5ms | Allocations: 13720)
+
+
+Started POST "/selections" for ::1 at 2020-03-15 10:42:17 -0300
+Processing by SelectionsController#create as */*
+  Parameters: {"kit"=>{"name"=>"Fighter Plane Attack", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/7198-1/1241.jpg", "theme_id"=>266, "set_num"=>"7198-1", "year"=>2009, "num_parts"=>384, "set_url"=>"https://rebrickable.com/sets/7198-1/fighter-plane-attack/", "last_modified_dt"=>"2016-04-23T11:59:33.453723Z"}, "isPublic"=>"true", "theme"=>{"api_id"=>266, "parent_id"=>264, "name"=>"Last Crusade"}, "selection"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+[31mUnpermitted parameters: :kit, :theme, :selection[0m
+[31mUnpermitted parameters: :num_parts, :last_modified_dt[0m
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."name" = ? AND "kits"."set_img_url" = ? AND "kits"."theme_id" = ? AND "kits"."set_num" = ? AND "kits"."year" = ? AND "kits"."set_url" = ? LIMIT ?[0m  [["name", "Fighter Plane Attack"], ["set_img_url", "https://cdn.rebrickable.com/media/sets/7198-1/1241.jpg"], ["theme_id", "266"], ["set_num", "7198-1"], ["year", 2009], ["set_url", "https://rebrickable.com/sets/7198-1/fighter-plane-attack/"], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[36mTheme Load (0.2ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 266], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+[31mUnpermitted parameters: :num_parts, :last_modified_dt[0m
+[31mUnpermitted parameter: :parent_id[0m
+Completed 500 Internal Server Error in 1076158ms (ActiveRecord: 3.6ms | Allocations: 140814)
+
+
+  
+NameError (undefined local variable or method `selection' for #<SelectionsController:0x00007fffdc4f1440>
+Did you mean?  select):
+  
+app/controllers/selections_controller.rb:14:in `create'
+Started POST "/selections" for ::1 at 2020-03-15 11:01:10 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SelectionsController#create as */*
+  Parameters: {"kit"=>{"name"=>"Fighter Plane Attack", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/7198-1/1241.jpg", "theme_id"=>266, "set_num"=>"7198-1", "year"=>2009, "num_parts"=>384, "set_url"=>"https://rebrickable.com/sets/7198-1/fighter-plane-attack/", "last_modified_dt"=>"2016-04-23T11:59:33.453723Z"}, "isPublic"=>"false", "theme"=>{"api_id"=>266, "parent_id"=>264, "name"=>"Last Crusade"}, "selection"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+[31mUnpermitted parameters: :kit, :theme, :selection[0m
+[31mUnpermitted parameter: :parent_id[0m
+  [1m[36mTheme Load (0.3ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."name" = ? AND "themes"."api_id" = ? LIMIT ?[0m  [["name", "Last Crusade"], ["api_id", "266"], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[36mTheme Create (1.0ms)[0m  [1m[32mINSERT INTO "themes" ("api_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["api_id", "266"], ["name", "Last Crusade"], ["created_at", "2020-03-15 14:01:10.552026"], ["updated_at", "2020-03-15 14:01:10.552026"]]
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+[31mUnpermitted parameters: :num_parts, :last_modified_dt[0m
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."name" = ? AND "kits"."set_img_url" = ? AND "kits"."theme_id" = ? AND "kits"."set_num" = ? AND "kits"."year" = ? AND "kits"."set_url" = ? LIMIT ?[0m  [["name", "Fighter Plane Attack"], ["set_img_url", "https://cdn.rebrickable.com/media/sets/7198-1/1241.jpg"], ["theme_id", "266"], ["set_num", "7198-1"], ["year", 2009], ["set_url", "https://rebrickable.com/sets/7198-1/fighter-plane-attack/"], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[36mTheme Load (0.3ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 266], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:12:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:12:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/selections_controller.rb:12:in `create'
+Completed 200 OK in 146ms (Views: 0.3ms | ActiveRecord: 16.4ms | Allocations: 44550)
+
+
+Started POST "/selections" for ::1 at 2020-03-15 11:01:32 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SelectionsController#create as */*
+  Parameters: {"kit"=>{"name"=>"Fighter Plane Attack", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/7198-1/1241.jpg", "theme_id"=>266, "set_num"=>"7198-1", "year"=>2009, "num_parts"=>384, "set_url"=>"https://rebrickable.com/sets/7198-1/fighter-plane-attack/", "last_modified_dt"=>"2016-04-23T11:59:33.453723Z"}, "isPublic"=>"false", "theme"=>{"api_id"=>266, "parent_id"=>264, "name"=>"Last Crusade"}, "selection"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+[31mUnpermitted parameters: :kit, :theme, :selection[0m
+[31mUnpermitted parameter: :parent_id[0m
+  [1m[36mTheme Load (0.3ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."name" = ? AND "themes"."api_id" = ? LIMIT ?[0m  [["name", "Last Crusade"], ["api_id", "266"], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+[31mUnpermitted parameters: :num_parts, :last_modified_dt[0m
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."name" = ? AND "kits"."set_img_url" = ? AND "kits"."theme_id" = ? AND "kits"."set_num" = ? AND "kits"."year" = ? AND "kits"."set_url" = ? LIMIT ?[0m  [["name", "Fighter Plane Attack"], ["set_img_url", "https://cdn.rebrickable.com/media/sets/7198-1/1241.jpg"], ["theme_id", "266"], ["set_num", "7198-1"], ["year", 2009], ["set_url", "https://rebrickable.com/sets/7198-1/fighter-plane-attack/"], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[36mTheme Load (0.3ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 266], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:12:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:12:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/selections_controller.rb:12:in `create'
+Completed 200 OK in 323835ms (Views: 0.2ms | ActiveRecord: 6.3ms | Allocations: 40801)
+
+
+Started POST "/selections" for ::1 at 2020-03-15 11:07:08 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SelectionsController#create as */*
+  Parameters: {"kit"=>{"name"=>"Temple of the Crystal Skull", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/7627-1/5934.jpg", "theme_id"=>265, "set_num"=>"7627-1", "year"=>2008, "num_parts"=>930, "set_url"=>"https://rebrickable.com/sets/7627-1/temple-of-the-crystal-skull/", "last_modified_dt"=>"2016-04-23T12:01:57.222842Z"}, "isPublic"=>"true", "theme"=>{"api_id"=>265, "parent_id"=>264, "name"=>"Kingdom of the Crystal Skull"}, "selection"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+[31mUnpermitted parameters: :kit, :theme, :selection[0m
+[31mUnpermitted parameter: :parent_id[0m
+  [1m[36mTheme Load (0.2ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."name" = ? AND "themes"."api_id" = ? LIMIT ?[0m  [["name", "Kingdom of the Crystal Skull"], ["api_id", "265"], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[36mTheme Create (1.5ms)[0m  [1m[32mINSERT INTO "themes" ("api_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["api_id", "265"], ["name", "Kingdom of the Crystal Skull"], ["created_at", "2020-03-15 14:07:08.595219"], ["updated_at", "2020-03-15 14:07:08.595219"]]
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+[31mUnpermitted parameters: :num_parts, :last_modified_dt[0m
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."name" = ? AND "kits"."set_img_url" = ? AND "kits"."theme_id" = ? AND "kits"."set_num" = ? AND "kits"."year" = ? AND "kits"."set_url" = ? LIMIT ?[0m  [["name", "Temple of the Crystal Skull"], ["set_img_url", "https://cdn.rebrickable.com/media/sets/7627-1/5934.jpg"], ["theme_id", "265"], ["set_num", "7627-1"], ["year", 2008], ["set_url", "https://rebrickable.com/sets/7627-1/temple-of-the-crystal-skull/"], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[36mTheme Load (0.4ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 265], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:10:in `create'
+  [1m[36mKit Create (1.9ms)[0m  [1m[32mINSERT INTO "kits" ("name", "set_img_url", "theme_id", "set_num", "year", "set_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Temple of the Crystal Skull"], ["set_img_url", "https://cdn.rebrickable.com/media/sets/7627-1/5934.jpg"], ["theme_id", "2"], ["set_num", "7627-1"], ["year", 2008], ["set_url", "https://rebrickable.com/sets/7627-1/temple-of-the-crystal-skull/"], ["created_at", "2020-03-15 14:07:08.658485"], ["updated_at", "2020-03-15 14:07:08.658485"]]
+  ↳ app/controllers/selections_controller.rb:10:in `create'
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/selections_controller.rb:10:in `create'
+[31mUnpermitted parameter: :parent_id[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[36mKit Load (0.1ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[36mSelection Create (1.2ms)[0m  [1m[32mINSERT INTO "selections" ("user_id", "kit_id", "public", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "1"], ["kit_id", "1"], ["public", 1], ["created_at", "2020-03-15 14:08:24.279252"], ["updated_at", "2020-03-15 14:08:24.279252"]]
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+Completed 500 Internal Server Error in 76047ms (ActiveRecord: 31.5ms | Allocations: 132466)
+
+
+  
+NoMethodError (undefined method `description' for #<Kit:0x00007f21d02458f8>):
+  
+app/controllers/selections_controller.rb:18:in `create'
+Started POST "/selections" for ::1 at 2020-03-15 11:12:28 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SelectionsController#create as */*
+  Parameters: {"kit"=>{"name"=>"Lost Tomb", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/7621-1/14251.jpg", "theme_id"=>267, "set_num"=>"7621-1", "year"=>2008, "num_parts"=>277, "set_url"=>"https://rebrickable.com/sets/7621-1/lost-tomb/", "last_modified_dt"=>"2016-09-02T06:28:37.025233Z"}, "isPublic"=>"false", "theme"=>{"api_id"=>267, "parent_id"=>264, "name"=>"Raiders of the Lost Ark"}, "selection"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+[31mUnpermitted parameters: :kit, :theme, :selection[0m
+[31mUnpermitted parameter: :parent_id[0m
+  [1m[36mTheme Load (0.2ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."name" = ? AND "themes"."api_id" = ? LIMIT ?[0m  [["name", "Raiders of the Lost Ark"], ["api_id", "267"], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[36mTheme Create (1.5ms)[0m  [1m[32mINSERT INTO "themes" ("api_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["api_id", "267"], ["name", "Raiders of the Lost Ark"], ["created_at", "2020-03-15 14:12:28.741262"], ["updated_at", "2020-03-15 14:12:28.741262"]]
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+[31mUnpermitted parameters: :num_parts, :last_modified_dt[0m
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."name" = ? AND "kits"."set_img_url" = ? AND "kits"."theme_id" = ? AND "kits"."set_num" = ? AND "kits"."year" = ? AND "kits"."set_url" = ? LIMIT ?[0m  [["name", "Lost Tomb"], ["set_img_url", "https://cdn.rebrickable.com/media/sets/7621-1/14251.jpg"], ["theme_id", "267"], ["set_num", "7621-1"], ["year", 2008], ["set_url", "https://rebrickable.com/sets/7621-1/lost-tomb/"], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[36mTheme Load (0.3ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 267], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:10:in `create'
+  [1m[36mKit Create (1.2ms)[0m  [1m[32mINSERT INTO "kits" ("name", "set_img_url", "theme_id", "set_num", "year", "set_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Lost Tomb"], ["set_img_url", "https://cdn.rebrickable.com/media/sets/7621-1/14251.jpg"], ["theme_id", "3"], ["set_num", "7621-1"], ["year", 2008], ["set_url", "https://rebrickable.com/sets/7621-1/lost-tomb/"], ["created_at", "2020-03-15 14:12:28.803169"], ["updated_at", "2020-03-15 14:12:28.803169"]]
+  ↳ app/controllers/selections_controller.rb:10:in `create'
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/selections_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[36mKit Load (0.1ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[36mSelection Create (1.2ms)[0m  [1m[32mINSERT INTO "selections" ("user_id", "kit_id", "public", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "1"], ["kit_id", "2"], ["public", 0], ["created_at", "2020-03-15 14:13:55.426230"], ["updated_at", "2020-03-15 14:13:55.426230"]]
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[35m (7.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+Completed 200 OK in 87047ms (Views: 13.2ms | ActiveRecord: 31.9ms | Allocations: 106351)
+
+
+Started POST "/selections" for ::1 at 2020-03-15 11:16:18 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SelectionsController#create as */*
+  Parameters: {"kit"=>{"name"=>"Temple of Doom", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/7199-1/8186.jpg", "theme_id"=>268, "set_num"=>"7199-1", "year"=>2009, "num_parts"=>652, "set_url"=>"https://rebrickable.com/sets/7199-1/temple-of-doom/", "last_modified_dt"=>"2016-04-23T11:59:34.785572Z"}, "isPublic"=>"true", "theme"=>{"api_id"=>268, "parent_id"=>264, "name"=>"Temple of Doom"}, "selection"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+[31mUnpermitted parameters: :kit, :theme, :selection[0m
+[31mUnpermitted parameter: :parent_id[0m
+  [1m[36mTheme Load (0.2ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."name" = ? AND "themes"."api_id" = ? LIMIT ?[0m  [["name", "Temple of Doom"], ["api_id", "268"], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[36mTheme Create (1.5ms)[0m  [1m[32mINSERT INTO "themes" ("api_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["api_id", "268"], ["name", "Temple of Doom"], ["created_at", "2020-03-15 14:16:18.423710"], ["updated_at", "2020-03-15 14:16:18.423710"]]
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+[31mUnpermitted parameters: :num_parts, :last_modified_dt[0m
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."name" = ? AND "kits"."set_img_url" = ? AND "kits"."theme_id" = ? AND "kits"."set_num" = ? AND "kits"."year" = ? AND "kits"."set_url" = ? LIMIT ?[0m  [["name", "Temple of Doom"], ["set_img_url", "https://cdn.rebrickable.com/media/sets/7199-1/8186.jpg"], ["theme_id", "268"], ["set_num", "7199-1"], ["year", 2009], ["set_url", "https://rebrickable.com/sets/7199-1/temple-of-doom/"], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[36mTheme Load (0.4ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 268], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:10:in `create'
+  [1m[36mKit Create (1.5ms)[0m  [1m[32mINSERT INTO "kits" ("name", "set_img_url", "theme_id", "set_num", "year", "set_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Temple of Doom"], ["set_img_url", "https://cdn.rebrickable.com/media/sets/7199-1/8186.jpg"], ["theme_id", "4"], ["set_num", "7199-1"], ["year", 2009], ["set_url", "https://rebrickable.com/sets/7199-1/temple-of-doom/"], ["created_at", "2020-03-15 14:16:18.553735"], ["updated_at", "2020-03-15 14:16:18.553735"]]
+  ↳ app/controllers/selections_controller.rb:10:in `create'
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/selections_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[36mSelection Create (1.0ms)[0m  [1m[32mINSERT INTO "selections" ("user_id", "kit_id", "public", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "1"], ["kit_id", "3"], ["public", 1], ["created_at", "2020-03-15 14:16:18.618503"], ["updated_at", "2020-03-15 14:16:18.618503"]]
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+Completed 200 OK in 309ms (Views: 2.5ms | ActiveRecord: 29.9ms | Allocations: 65995)
+
+
+Started POST "/selections" for ::1 at 2020-03-15 11:19:13 -0300
+Processing by SelectionsController#create as */*
+  Parameters: {"kit"=>{"name"=>"Pirates Ambush", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/6249-1/8510.jpg", "theme_id"=>148, "set_num"=>"6249-1", "year"=>1997, "num_parts"=>159, "set_url"=>"https://rebrickable.com/sets/6249-1/pirates-ambush/", "last_modified_dt"=>"2016-04-23T11:50:15.537376Z"}, "isPublic"=>"false", "theme"=>{"api_id"=>148, "parent_id"=>147, "name"=>"Pirates I"}, "selection"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+[31mUnpermitted parameters: :kit, :theme, :selection[0m
+[31mUnpermitted parameter: :parent_id[0m
+  [1m[36mTheme Load (0.2ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."name" = ? AND "themes"."api_id" = ? LIMIT ?[0m  [["name", "Pirates I"], ["api_id", "148"], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[36mTheme Create (1.4ms)[0m  [1m[32mINSERT INTO "themes" ("api_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["api_id", "148"], ["name", "Pirates I"], ["created_at", "2020-03-15 14:19:13.887758"], ["updated_at", "2020-03-15 14:19:13.887758"]]
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+[31mUnpermitted parameters: :num_parts, :last_modified_dt[0m
+  [1m[36mKit Load (0.3ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."name" = ? AND "kits"."set_img_url" = ? AND "kits"."theme_id" = ? AND "kits"."set_num" = ? AND "kits"."year" = ? AND "kits"."set_url" = ? LIMIT ?[0m  [["name", "Pirates Ambush"], ["set_img_url", "https://cdn.rebrickable.com/media/sets/6249-1/8510.jpg"], ["theme_id", "148"], ["set_num", "6249-1"], ["year", 1997], ["set_url", "https://rebrickable.com/sets/6249-1/pirates-ambush/"], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[36mTheme Load (0.2ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 148], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:10:in `create'
+  [1m[36mKit Create (1.1ms)[0m  [1m[32mINSERT INTO "kits" ("name", "set_img_url", "theme_id", "set_num", "year", "set_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pirates Ambush"], ["set_img_url", "https://cdn.rebrickable.com/media/sets/6249-1/8510.jpg"], ["theme_id", "5"], ["set_num", "6249-1"], ["year", 1997], ["set_url", "https://rebrickable.com/sets/6249-1/pirates-ambush/"], ["created_at", "2020-03-15 14:19:13.927315"], ["updated_at", "2020-03-15 14:19:13.927315"]]
+  ↳ app/controllers/selections_controller.rb:10:in `create'
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/selections_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[36mKit Load (0.1ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[36mSelection Create (1.0ms)[0m  [1m[32mINSERT INTO "selections" ("user_id", "kit_id", "public", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "1"], ["kit_id", "4"], ["public", 0], ["created_at", "2020-03-15 14:19:13.999122"], ["updated_at", "2020-03-15 14:19:13.999122"]]
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+Completed 200 OK in 147ms (Views: 0.7ms | ActiveRecord: 27.6ms | Allocations: 43246)
+
+
+Started POST "/selections" for ::1 at 2020-03-15 11:42:04 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SelectionsController#create as */*
+  Parameters: {"kit"=>{"name"=>"Transformer 10V", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/45517-1/13257.jpg", "theme_id"=>518, "set_num"=>"45517-1", "year"=>2016, "num_parts"=>1, "set_url"=>"https://rebrickable.com/sets/45517-1/transformer-10v/", "last_modified_dt"=>"2019-10-06T06:57:11.327203Z"}, "isPublic"=>"true", "theme"=>{"api_id"=>518, "parent_id"=>507, "name"=>"Mindstorms"}, "selection"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+[31mUnpermitted parameters: :kit, :theme, :selection[0m
+[31mUnpermitted parameter: :parent_id[0m
+  [1m[36mTheme Load (0.3ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."name" = ? AND "themes"."api_id" = ? LIMIT ?[0m  [["name", "Mindstorms"], ["api_id", "518"], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[36mTheme Create (1.2ms)[0m  [1m[32mINSERT INTO "themes" ("api_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["api_id", "518"], ["name", "Mindstorms"], ["created_at", "2020-03-15 14:42:04.537737"], ["updated_at", "2020-03-15 14:42:04.537737"]]
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+[31mUnpermitted parameters: :num_parts, :last_modified_dt[0m
+  [1m[36mKit Load (0.6ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."name" = ? AND "kits"."set_img_url" = ? AND "kits"."theme_id" = ? AND "kits"."set_num" = ? AND "kits"."year" = ? AND "kits"."set_url" = ? LIMIT ?[0m  [["name", "Transformer 10V"], ["set_img_url", "https://cdn.rebrickable.com/media/sets/45517-1/13257.jpg"], ["theme_id", "518"], ["set_num", "45517-1"], ["year", 2016], ["set_url", "https://rebrickable.com/sets/45517-1/transformer-10v/"], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[36mTheme Load (0.3ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 518], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:10:in `create'
+  [1m[36mKit Create (1.3ms)[0m  [1m[32mINSERT INTO "kits" ("name", "set_img_url", "theme_id", "set_num", "year", "set_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Transformer 10V"], ["set_img_url", "https://cdn.rebrickable.com/media/sets/45517-1/13257.jpg"], ["theme_id", "6"], ["set_num", "45517-1"], ["year", 2016], ["set_url", "https://rebrickable.com/sets/45517-1/transformer-10v/"], ["created_at", "2020-03-15 14:42:04.668732"], ["updated_at", "2020-03-15 14:42:04.668732"]]
+  ↳ app/controllers/selections_controller.rb:10:in `create'
+  [1m[35m (9.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/selections_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[36mSelection Create (1.0ms)[0m  [1m[32mINSERT INTO "selections" ("user_id", "kit_id", "public", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "1"], ["kit_id", "5"], ["public", 1], ["created_at", "2020-03-15 14:42:04.720350"], ["updated_at", "2020-03-15 14:42:04.720350"]]
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+Completed 200 OK in 222ms (Views: 0.6ms | ActiveRecord: 30.4ms | Allocations: 43121)
+
+
+Started POST "/selections" for ::1 at 2020-03-15 11:47:21 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SelectionsController#create as */*
+  Parameters: {"kit"=>{"name"=>"Lagoon Lock-Up", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/6267-1/9042.jpg", "theme_id"=>151, "set_num"=>"6267-1", "year"=>1991, "num_parts"=>194, "set_url"=>"https://rebrickable.com/sets/6267-1/lagoon-lock-up/", "last_modified_dt"=>"2014-06-24T20:57:14.842368Z"}, "isPublic"=>"false", "theme"=>{"api_id"=>151, "parent_id"=>148, "name"=>"Imperial Soldiers"}, "selection"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+[31mUnpermitted parameters: :kit, :theme, :selection[0m
+[31mUnpermitted parameter: :parent_id[0m
+  [1m[36mTheme Load (0.2ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."name" = ? AND "themes"."api_id" = ? LIMIT ?[0m  [["name", "Imperial Soldiers"], ["api_id", "151"], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[36mTheme Create (1.3ms)[0m  [1m[32mINSERT INTO "themes" ("api_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["api_id", "151"], ["name", "Imperial Soldiers"], ["created_at", "2020-03-15 14:47:22.185853"], ["updated_at", "2020-03-15 14:47:22.185853"]]
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+[31mUnpermitted parameters: :num_parts, :last_modified_dt[0m
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."name" = ? AND "kits"."set_img_url" = ? AND "kits"."theme_id" = ? AND "kits"."set_num" = ? AND "kits"."year" = ? AND "kits"."set_url" = ? LIMIT ?[0m  [["name", "Lagoon Lock-Up"], ["set_img_url", "https://cdn.rebrickable.com/media/sets/6267-1/9042.jpg"], ["theme_id", "151"], ["set_num", "6267-1"], ["year", 1991], ["set_url", "https://rebrickable.com/sets/6267-1/lagoon-lock-up/"], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[36mTheme Load (0.3ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 151], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:10:in `create'
+  [1m[36mKit Create (1.2ms)[0m  [1m[32mINSERT INTO "kits" ("name", "set_img_url", "theme_id", "set_num", "year", "set_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Lagoon Lock-Up"], ["set_img_url", "https://cdn.rebrickable.com/media/sets/6267-1/9042.jpg"], ["theme_id", "7"], ["set_num", "6267-1"], ["year", 1991], ["set_url", "https://rebrickable.com/sets/6267-1/lagoon-lock-up/"], ["created_at", "2020-03-15 14:47:22.261767"], ["updated_at", "2020-03-15 14:47:22.261767"]]
+  ↳ app/controllers/selections_controller.rb:10:in `create'
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/selections_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[36mKit Load (0.1ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[36mSelection Create (1.1ms)[0m  [1m[32mINSERT INTO "selections" ("user_id", "kit_id", "public", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "1"], ["kit_id", "6"], ["public", 0], ["created_at", "2020-03-15 14:47:22.327956"], ["updated_at", "2020-03-15 14:47:22.327956"]]
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+Completed 200 OK in 221ms (Views: 2.9ms | ActiveRecord: 29.8ms | Allocations: 65574)
+
+
+Started POST "/selections" for ::1 at 2020-03-15 11:48:52 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SelectionsController#create as */*
+  Parameters: {"kit"=>{"name"=>"Armada Flagship", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/6291-1/10059.jpg", "theme_id"=>149, "set_num"=>"6291-1", "year"=>2001, "num_parts"=>291, "set_url"=>"https://rebrickable.com/sets/6291-1/armada-flagship/", "last_modified_dt"=>"2018-05-12T08:06:06.805011Z"}, "isPublic"=>"true", "theme"=>{"api_id"=>149, "parent_id"=>148, "name"=>"Imperial Armada"}, "selection"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+[31mUnpermitted parameters: :kit, :theme, :selection[0m
+[31mUnpermitted parameter: :parent_id[0m
+  [1m[36mTheme Load (0.2ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."name" = ? AND "themes"."api_id" = ? LIMIT ?[0m  [["name", "Imperial Armada"], ["api_id", "149"], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[36mTheme Create (1.4ms)[0m  [1m[32mINSERT INTO "themes" ("api_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["api_id", "149"], ["name", "Imperial Armada"], ["created_at", "2020-03-15 14:48:53.100823"], ["updated_at", "2020-03-15 14:48:53.100823"]]
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+[31mUnpermitted parameters: :num_parts, :last_modified_dt[0m
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."name" = ? AND "kits"."set_img_url" = ? AND "kits"."theme_id" = ? AND "kits"."set_num" = ? AND "kits"."year" = ? AND "kits"."set_url" = ? LIMIT ?[0m  [["name", "Armada Flagship"], ["set_img_url", "https://cdn.rebrickable.com/media/sets/6291-1/10059.jpg"], ["theme_id", "149"], ["set_num", "6291-1"], ["year", 2001], ["set_url", "https://rebrickable.com/sets/6291-1/armada-flagship/"], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[36mTheme Load (0.3ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 149], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:10:in `create'
+  [1m[36mKit Create (1.5ms)[0m  [1m[32mINSERT INTO "kits" ("name", "set_img_url", "theme_id", "set_num", "year", "set_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Armada Flagship"], ["set_img_url", "https://cdn.rebrickable.com/media/sets/6291-1/10059.jpg"], ["theme_id", "8"], ["set_num", "6291-1"], ["year", 2001], ["set_url", "https://rebrickable.com/sets/6291-1/armada-flagship/"], ["created_at", "2020-03-15 14:48:53.176174"], ["updated_at", "2020-03-15 14:48:53.176174"]]
+  ↳ app/controllers/selections_controller.rb:10:in `create'
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/selections_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[36mKit Load (0.1ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[36mSelection Create (1.0ms)[0m  [1m[32mINSERT INTO "selections" ("user_id", "kit_id", "public", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "1"], ["kit_id", "7"], ["public", 1], ["created_at", "2020-03-15 14:48:53.240710"], ["updated_at", "2020-03-15 14:48:53.240710"]]
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[35m (8.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+Completed 500 Internal Server Error in 207ms (ActiveRecord: 32.8ms | Allocations: 64309)
+
+
+  
+NoMethodError (undefined method `to_sym' for {:kit=>[:theme]}:Hash
+Did you mean?  to_s
+               to_set):
+  
+app/controllers/selections_controller.rb:18:in `new'
+app/controllers/selections_controller.rb:18:in `create'
+Started POST "/selections" for ::1 at 2020-03-15 11:52:34 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SelectionsController#create as */*
+  Parameters: {"kit"=>{"name"=>"Armada Sentry", "set_img_url"=>"https://cdn.rebrickable.com/media/sets/6244-1/4229.jpg", "theme_id"=>149, "set_num"=>"6244-1", "year"=>1996, "num_parts"=>74, "set_url"=>"https://rebrickable.com/sets/6244-1/armada-sentry/", "last_modified_dt"=>"2014-12-01T21:20:59.759288Z"}, "isPublic"=>"true", "theme"=>{"api_id"=>149, "parent_id"=>148, "name"=>"Imperial Armada"}, "selection"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+[31mUnpermitted parameters: :kit, :theme, :selection[0m
+[31mUnpermitted parameter: :parent_id[0m
+  [1m[36mTheme Load (0.2ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."name" = ? AND "themes"."api_id" = ? LIMIT ?[0m  [["name", "Imperial Armada"], ["api_id", "149"], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:7:in `create'
+[31mUnpermitted parameters: :num_parts, :last_modified_dt[0m
+  [1m[36mKit Load (0.2ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."name" = ? AND "kits"."set_img_url" = ? AND "kits"."theme_id" = ? AND "kits"."set_num" = ? AND "kits"."year" = ? AND "kits"."set_url" = ? LIMIT ?[0m  [["name", "Armada Sentry"], ["set_img_url", "https://cdn.rebrickable.com/media/sets/6244-1/4229.jpg"], ["theme_id", "149"], ["set_num", "6244-1"], ["year", 1996], ["set_url", "https://rebrickable.com/sets/6244-1/armada-sentry/"], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[36mTheme Load (0.3ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 149], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/selections_controller.rb:8:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:10:in `create'
+  [1m[36mKit Create (1.4ms)[0m  [1m[32mINSERT INTO "kits" ("name", "set_img_url", "theme_id", "set_num", "year", "set_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Armada Sentry"], ["set_img_url", "https://cdn.rebrickable.com/media/sets/6244-1/4229.jpg"], ["theme_id", "8"], ["set_num", "6244-1"], ["year", 1996], ["set_url", "https://rebrickable.com/sets/6244-1/armada-sentry/"], ["created_at", "2020-03-15 14:52:35.024260"], ["updated_at", "2020-03-15 14:52:35.024260"]]
+  ↳ app/controllers/selections_controller.rb:10:in `create'
+  [1m[35m (7.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/selections_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[36mKit Load (0.1ms)[0m  [1m[34mSELECT "kits".* FROM "kits" WHERE "kits"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[36mSelection Create (1.0ms)[0m  [1m[32mINSERT INTO "selections" ("user_id", "kit_id", "public", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "1"], ["kit_id", "8"], ["public", 1], ["created_at", "2020-03-15 14:52:35.088613"], ["updated_at", "2020-03-15 14:52:35.088613"]]
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/selections_controller.rb:14:in `create'
+  [1m[36mTheme Load (0.3ms)[0m  [1m[34mSELECT "themes".* FROM "themes" WHERE "themes"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/selections_controller.rb:18:in `create'
+Completed 200 OK in 179ms (Views: 17.9ms | ActiveRecord: 22.2ms | Allocations: 57610)
+
+

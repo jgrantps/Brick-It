@@ -8,9 +8,9 @@ class ApplicationController < ActionController::API
       end
     
     def signed_in?
-        !!current_user
-      end
-
+      !!current_user
+    end
+    
     def current_user
       token = request.env["HTTP_AUTHORIZATION"]
       

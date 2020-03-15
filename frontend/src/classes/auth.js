@@ -1,3 +1,5 @@
+//DEPRICATED - DELETE!!!
+
 class Auth {
 
     constructor() {

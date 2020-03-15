@@ -681,6 +681,30 @@ video {
   border-color: #4a5568;
 }
 
+.theme-selection-ui {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-left: 16rem;
+  padding-right: 16rem;
+}
+
+.theme-selection-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.theme-selection-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

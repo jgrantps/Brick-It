@@ -36,21 +36,25 @@ class ThemeTile extends Component {
     }
 
     renderContainer = (child) => {
-        switch(this.state.render) {
-            case `${child}`: return <KitContainer key={uuid()} kits={this.state.kits[child]} />
-            default: return null
+
+        if (this.state.kits[child] != undefined) {
+            switch(this.state.render) {
+                case `${child}`: return  this.state.kits[child].map(kit  => <div className="kit-dropdown"><KitContainer key={uuid()} theme={child} kit={kit} /></div>)
+                default: return null
+            }
         }
     }
    
     render() {
         const {theme, children} = this.props
-        
+        //DISPLAY THE CHILDREN THEMES OF THE MAIN PARENT THEME
         let displayChildren = children.map(child => {
+            
             return(
                 <div key={uuid()}>
                     <div className="flex flex-col justify-center">   
                         <SelectThemeBtn key={uuid()} child={child} handlOnClick={this.setContainerToRender} />
-                        {this.renderContainer(child.api_id)}  
+                        {this.renderContainer(child.api_id)}   
                     </div>
                 </div>
             )

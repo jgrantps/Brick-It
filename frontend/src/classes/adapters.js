@@ -15,14 +15,14 @@ class ApiAdapter {
         }
         
         //CONFIGURATION OBJECT FOR POST REQUESTS TO LOCAL API.
-        this.postConfig = (formData= '', token=undefined, method="POST") =>{
+        this.postConfig = (conficPackage= '', token=undefined, method="POST") =>{
             return ({  
                 method: method,
                 headers: {
                     "Content-Type": "application/json",
                     "Authorization": token
                 },
-                body: JSON.stringify(formData)
+                body: JSON.stringify(conficPackage)
             })
         }
         
@@ -82,8 +82,9 @@ class ApiAdapter {
     }
 
     //Send specific SELECTION to DB --> POST request to selection#create
-    sendSelection(id, token) {
-        return fetch(`${this.baseUrl}/selections`, this.postConfig(token))
+    sendSelection(conficPackage, token) {
+        return fetch(`${this.baseUrl}/selections`, this.postConfig(conficPackage, token))
+        .then(r => r.json())
     }
 
 

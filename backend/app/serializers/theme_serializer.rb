@@ -1,4 +1,4 @@
 class ThemeSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :name, :description
+  attributes :name, :api_id
 end
