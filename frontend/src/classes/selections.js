@@ -12,9 +12,12 @@ export class Selection {
         
         var selectedKit;
         this.id = selectionData.data.id
-        this.user_id = selectionData.included[2].id
-        this.kit_id = selectionData.data.relationships.kit.data.id
+        this.user_id = selectionData.data.attributes.user_id
+        this.kit_id = selectionData.data.attributes.kit_id
+
         // make sure ***selectionData.kit*** is a completely serialized object.
+
+
         this.kit = (selectedKit = Kit.allIncludedKits.find(
                     kit => kit.id == selectionData.included[0].id) ? 
                     selectedKit : new Kit(kitData))

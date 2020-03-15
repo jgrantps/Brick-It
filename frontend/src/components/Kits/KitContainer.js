@@ -1,10 +1,19 @@
-import React, { Component } from 'react';
-import { Kit } from '../../classes/kits';
-import { Theme } from '../../classes/themes'
-import KitTitle from '../Kits/kitTitle'
-import KitForm from './kitForm';
+import React, { Component, Redirect } from 'react';
+import {connect} from 'react-redux'
 import uuid from 'react-uuid'
 import api from '../../classes/adapters'
+
+import { Kit } from '../../classes/kits';
+import { Selection } from '../../classes/selections';
+import { Theme } from '../../classes/themes'
+import {addSelection} from '../../actions/adjusterSelections'
+
+
+import KitTitle from '../Kits/kitTitle'
+import KitForm from './kitForm';
+
+
+
 class KitContainer extends Component {
 
   state = {
@@ -25,9 +34,31 @@ class KitContainer extends Component {
     }
     //POST SELECTION TO THE USER BACKEND API!!
     api.sendSelection(configPackage, window.localStorage.token)
-    .then(resp => console.log(resp))
+    .then(resp => this.handleSelection(resp, this.props))
     .catch(err => console.log(err))
   }
+
+  handleSelection = (resp, props) => {
+    let selectionKitInfo = resp.included[0].attributes
+    let selectionTheme = resp.included[0].attributes.theme
+    let selectionInfo = null;
+    
+    
+    let reifiedKitList = [...Kit.allIncludedKits]
+    let i = reifiedKitList.find( kit => kit.set_num == selectionKitInfo.set_num)
+    let selectionKit = ( i ? i : new Kit(selectionKitInfo))
+    
+
+    
+    let selection = new Selection(resp)
+    let selectionPayload = {selection: selection, kit: selectionKit, theme: selectionTheme}
+    this.props.addSelection(selectionPayload)
+    
+    
+      
+  }
+
+
 
   selectPublic = (e) => {
     e.preventDefault()
@@ -36,7 +67,6 @@ class KitContainer extends Component {
 
   //BUILD OUT KITDISPLAY TO INCLUDE SELECTION SUBMISSION FUNCTIONALITY.
   render() {
-    // debugger
     const { kit } = this.props
       return(
           <>
@@ -50,4 +80,14 @@ class KitContainer extends Component {
       )
   }
 }
-export default KitContainer;
+
+const mapDispatchToProps = dispatch => {
+  return {
+    addSelection: (selectionData => {
+      dispatch(addSelection(selectionData))
+    })
+  }
+}
+
+
+export default connect(null, mapDispatchToProps)(KitContainer);

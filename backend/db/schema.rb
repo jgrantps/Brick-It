@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_02_28_165542) do
     t.integer "year"
     t.integer "num_parts"
     t.string "set_url"
+    t.string "last_modified_dt"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -1,3 +1,5 @@
+import { Kit } from './kits';
+
 class Services {
  slugify(string) {
         const a = 'àáâäæãåāăąçćčđďèéêëēėęěğǵḧîïíīįìłḿñńǹňôöòóœøōõőṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż·/_,:;'
@@ -33,6 +35,10 @@ class Services {
           return undefined
         }
       }
+
+      
+        
+
 }
 
 let service = new Services;

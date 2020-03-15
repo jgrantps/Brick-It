@@ -11,6 +11,8 @@ export class Kit {
         this.num_parts = kitData.num_parts;
         this.set_url = kitData.set_url;
         this.last_modified_dt = kitData.last_modified_dt;
+
+        
         this.save();
     }
 

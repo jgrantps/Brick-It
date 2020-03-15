@@ -39,7 +39,7 @@ class ThemeTile extends Component {
 
         if (this.state.kits[child] != undefined) {
             switch(this.state.render) {
-                case `${child}`: return  this.state.kits[child].map(kit  => <div className="kit-dropdown"><KitContainer key={uuid()} theme={child} kit={kit} /></div>)
+                case `${child}`: return  this.state.kits[child].map(kit  => <div key = {uuid()} className="kit-dropdown"><KitContainer key={uuid()} theme={child} kit={kit} /></div>)
                 default: return null
             }
         }

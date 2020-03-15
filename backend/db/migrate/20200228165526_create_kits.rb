@@ -8,6 +8,7 @@ class CreateKits < ActiveRecord::Migration[6.0]
       t.integer :year
       t.integer :num_parts
       t.string :set_url
+      t.string :last_modified_dt
 
       t.timestamps
     end
