@@ -14,7 +14,7 @@ export class Selection {
         this.id = selectionData.data.id
         this.user_id = selectionData.data.attributes.user_id
         this.kit_id = selectionData.data.attributes.kit_id
-
+        this.public = selectionData.data.attributes.public
         // make sure ***selectionData.kit*** is a completely serialized object.
 
 

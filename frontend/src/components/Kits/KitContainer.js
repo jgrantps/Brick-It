@@ -41,7 +41,7 @@ class KitContainer extends Component {
   handleSelection = (resp, props) => {
     let selectionKitInfo = resp.included[0].attributes
     let selectionTheme = resp.included[0].attributes.theme
-    let selectionInfo = null;
+    
     
     
     let reifiedKitList = [...Kit.allIncludedKits]
