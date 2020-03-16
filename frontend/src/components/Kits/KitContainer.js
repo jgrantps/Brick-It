@@ -77,6 +77,7 @@ class KitContainer extends Component {
   //BUILD OUT KIT DISPLAY TO INCLUDE SELECTION SUBMISSION FUNCTIONALITY.
   render() {
     const { kit } = this.props
+    debugger
       return(
           <>
              <div key={uuid()}>

@@ -9,6 +9,7 @@ export default function mainReducer(
         id: ''
       },
       selections: [],
+      kits: [],
     },
     action
   ) {
@@ -25,19 +26,26 @@ export default function mainReducer(
       return{
         ...state,
         user: {...state.user, name: "", id:"", slug:"", loggedIn: false },
-        selections: []
+        selections: [],
+        kits: []
 
       }
 
       case 'ADD_SELECTION':
     //EXAMPLE::::    state.selections =  [{theme456: [{selection1: {"specific Kit 1"}}, {selection2: {"specific kit 2"}}]}, {theme871: [{selection33: {"specific Kit 1"}}, {selection25: "{specific kit 2"}}]}]
-
       let themeId = action.payload.theme.api_id
       return {
         ...state, selections: [
           ...state.selections, {[themeId]:  {...action.payload.kit, selectionId: action.payload.selection.id, public: action.payload.selection.public}}
         ]
       }
+
+      case 'ADD_KIT':
+      let kitThemeId = action.payload[0].theme_id
+        return {
+          ...state, kits: [...state.kits, {[kitThemeId]: [...action.payload]}]
+           
+        }
  
     default:
       return state;

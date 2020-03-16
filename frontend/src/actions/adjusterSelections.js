@@ -4,3 +4,10 @@ export const addSelection = (selectionData) => {
         payload: selectionData
     }
 }
+
+export const addKits = (kitsData) => {
+    return {
+        type: 'ADD_KIT',
+        payload: kitsData
+    }
+}

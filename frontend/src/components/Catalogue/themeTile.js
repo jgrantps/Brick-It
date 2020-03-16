@@ -4,62 +4,62 @@ import { Kit } from '../../classes/kits';
 import api from '../../classes/adapters'
 import uuid from 'react-uuid'
 import SelectThemeBtn from '../Buttons/SelectThemeBtn'
+import {connect} from 'react-redux'
+import {addKits} from '../../actions/adjusterSelections'
 
 class ThemeTile extends Component {
     state = {
-        kits:{},
         render:""
     }
 
     componentDidMount() {
-        const {theme:{children}} = this.props
-        
+        const {theme:{children}, kits} = this.props
+
         children.map(child => {
-            let preloadedKits = Kit.allIncludedKits.filter(kit => kit.theme_id === child.api_id)
-           
+            var storedThemeList;
+           kits.length > 0 ? storedThemeList = kits.map(theme => Object.keys(theme)[0]) : storedThemeList = []
             
-            if (preloadedKits.length != 0) {
-                this.setState({...this.state, kits: {...this.state.kits, [child.api_id]: [...preloadedKits]}})
+            if (storedThemeList.find(theme => theme == child.api_id)) {
+               return null
             } else {
                 api.fetchKitsForTheme(child.api_id)
                 .then(resp=> this.loadKits(resp, child.api_id))
             }
-            
-            
-        })
+        })       
     }
-
+    
     loadKits = (data, theme_id) => {
-        let kitCollection = []
-        console.log("data:", data, "theme_id:",  theme_id)
-        
+        var newKit; 
+        var payload;
 
-        if (data.results.length == 0){
-             kitCollection.push(["no data"])
-        } else {
-            data.results.map(kit => {
-                let newKit = new Kit(kit)
-                kitCollection.push(newKit)
-            })
-        }
+            if  (data.results == undefined || data.results.length == 0) {
+                newKit= {theme_id: theme_id, description: "no data"}
+                new Kit(newKit)
+            } else {
+                data.results.map(kit => {
+                    
+                    newKit = new Kit(kit)
+                })    
+            }
+           payload = Kit.allIncludedKits.filter(kit => kit.theme_id === theme_id)
            
-        this.setState({...this.state, kits: {...this.state.kits, [theme_id]: [...kitCollection]}})
-        
-    }
+           return this.props.addKits(payload);
+        }
+    
 
     setContainerToRender = (event) => {
         this.setState({...this.state,  render: event.target.id})
     }
 
-    renderContainer = (child) => {
+    // renderContainer = (child) => {
 
-        if (this.state.kits[child] != undefined) {
-            switch(this.state.render) {
-                case `${child}`: return  this.state.kits[child].map(kit  => <div key = {uuid()} className="kit-dropdown"><KitContainer key={uuid()} sessionProps={this.props.sessionProps} theme={child} kit={kit} /></div>)
-                default: return null
-            }
-        }
-    }
+    //     if (this.state.kits[child] != undefined) {
+    //         switch(this.state.render) {
+    //             case `${child}`: return  this.state.kits[child].map(kit  => <div key = {uuid()} className="kit-dropdown"><KitContainer key={uuid()} sessionProps={this.props.sessionProps} theme={child} kit={kit} /></div>)
+    //             default: return null
+    //         }
+    //     }
+    // }
    
     render() {
         const {theme, children} = this.props
@@ -70,7 +70,7 @@ class ThemeTile extends Component {
                 <div key={uuid()}>
                     <div className="flex flex-col justify-center">   
                         <SelectThemeBtn key={uuid()} child={child} handlOnClick={this.setContainerToRender} />
-                        {this.renderContainer(child.api_id)}   
+                        {/* {this.renderContainer(child.api_id)}    */}
                     </div>
                 </div>
             )
@@ -88,4 +88,17 @@ class ThemeTile extends Component {
         )
     }
 }
-export default ThemeTile;
+
+const mapDispatchToProps = dispatch => {
+    return {
+        addKits: (kitData => {
+            dispatch(addKits(kitData))
+        })
+    }
+}
+
+const mapStateToProps = (state) => {
+    return { kits: state.kits }
+  }
+
+export default connect(mapStateToProps, mapDispatchToProps)(ThemeTile);
