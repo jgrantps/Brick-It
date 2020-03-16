@@ -74,17 +74,30 @@ class KitContainer extends Component {
     this.setState({ ...this.state, setToPublic: e.target.value })
   }
 
+  revealForm = () => {
+    const { kit } = this.props
+    
+    if (kit.description == "no data") {
+      return null
+    } else {
+     
+      return <KitForm key={uuid()}  kitId={kit.set_num} publicState={this.state.setToPublic} selectPublic={this.selectPublic} submitForm={this.submitSelection} />
+    } 
+  }
+  
+
   //BUILD OUT KIT DISPLAY TO INCLUDE SELECTION SUBMISSION FUNCTIONALITY.
   render() {
     const { kit } = this.props
-    debugger
+  
       return(
           <>
              <div key={uuid()}>
              {this.renderRedirect()}
               <div  id={kit.set_num} className="kit-dropdown-btn px-4">
-                <KitTitle key={uuid()} name={kit.name} />
-                <KitForm key={uuid()}  kitId={kit.set_num} publicState={this.state.setToPublic} selectPublic={this.selectPublic} submitForm={this.submitSelection} />
+                <KitTitle key={uuid()} name={kit.name} description={kit.description}/>
+                {/* <KitForm key={uuid()}  kitId={kit.set_num} publicState={this.state.setToPublic} selectPublic={this.selectPublic} submitForm={this.submitSelection} /> */}
+                {this.revealForm()}
               </div>
             </div>
           </>

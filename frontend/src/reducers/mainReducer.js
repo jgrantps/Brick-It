@@ -41,6 +41,7 @@ export default function mainReducer(
       }
 
       case 'ADD_KIT':
+        
       let kitThemeId = action.payload[0].theme_id
         return {
           ...state, kits: [...state.kits, {[kitThemeId]: [...action.payload]}]
