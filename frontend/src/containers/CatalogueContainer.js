@@ -31,8 +31,10 @@ class CatalogueContainer extends Component {
             return 0;
         });
         
-        let specifiedCollection = sortedCollection.filter(theme => theme.name[0] == letter)
         //STORE COLLECTION OF SPECIFIED THEMES IN LOCAL COMPONENT STATE TO RENDER.
+        let specifiedCollection = sortedCollection.filter(theme => theme.name[0] == letter)
+       let ee = [...specifiedCollection]
+       
         this.setState({...this.state, themeList: [...specifiedCollection]})
     }
     
@@ -63,16 +65,19 @@ class CatalogueContainer extends Component {
     }
     
     fetchAllThemes = () => {
-        api.retrieveThemes()
-        .then(resp => this.loadThemes(resp))
+        if (Theme.allIncludedThemes.length == 0) {
+            api.retrieveThemes()
+            .then(resp => this.loadThemes(resp))
+        }
     }
     
-    loadThemes = (data) => {
+    //ASSIGN REBRICKABLE API_ID TO A SPECIFIED ID ATTRIBUTE; DEFAULT ID SET TO 'UNDEFINED'.
+    loadThemes = (data) =>  {
         data.results.map(theme => { 
-            //ASSIGN REBRICKABLE API_ID TO A SPECIFIED ID ATTRIBUTE; DEFAULT ID SET TO 'UNDEFINED'.
-            let formattedTheme = {...theme, api_id: theme.id}
-            new Theme(formattedTheme)})
-        }
+           let formattedTheme = {...theme, api_id: theme.id}
+           new Theme(formattedTheme);
+        })
+    }
     
 }
 export default CatalogueContainer;

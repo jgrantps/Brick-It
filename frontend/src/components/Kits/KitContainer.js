@@ -1,5 +1,6 @@
-import React, { Component, Redirect } from 'react';
+import React, { Component } from 'react';
 import {connect} from 'react-redux'
+import {Redirect} from 'react-router-dom'
 import uuid from 'react-uuid'
 import api from '../../classes/adapters'
 
@@ -18,7 +19,8 @@ class KitContainer extends Component {
 
   state = {
     set_num: this.props.kit.set_num,
-    setToPublic: "false"
+    setToPublic: "false",
+    redirect: false
    
   }
 
@@ -34,29 +36,35 @@ class KitContainer extends Component {
     }
     //POST SELECTION TO THE USER BACKEND API!!
     api.sendSelection(configPackage, window.localStorage.token)
-    .then(resp => this.handleSelection(resp, this.props))
+    .then(resp => this.handleSelection(resp))
     .catch(err => console.log(err))
   }
 
-  handleSelection = (resp ) => {
+    //ADD RECEIVE CONFIRMEDSELECTION FROM BACKEN API, ADD TO STATE, AND REDIRECT TO COLLECTIONS PAGE.
+  handleSelection = (resp) => {
     let selectionKitInfo = resp.included[0].attributes
     let selectionTheme = resp.included[0].attributes.theme
-    
-    
-    
+
     let reifiedKitList = [...Kit.allIncludedKits]
     let i = reifiedKitList.find( kit => kit.set_num == selectionKitInfo.set_num)
     let selectionKit = ( i ? i : new Kit(selectionKitInfo))
-    
 
-    
     let selection = new Selection(resp)
     let selectionPayload = {selection: selection, kit: selectionKit, theme: selectionTheme}
     this.props.addSelection(selectionPayload)
-    
-  debugger
-    
-      
+
+    this.setRedirect()    
+
+  }
+
+  setRedirect = () => {
+    this.setState({...this.state, redirect: true})
+  }
+
+  renderRedirect = () => {
+    if (this.state.redirect) {  
+    return <Redirect to="collection" />
+    }
   }
 
 
@@ -66,12 +74,13 @@ class KitContainer extends Component {
     this.setState({ ...this.state, setToPublic: e.target.value })
   }
 
-  //BUILD OUT KITDISPLAY TO INCLUDE SELECTION SUBMISSION FUNCTIONALITY.
+  //BUILD OUT KIT DISPLAY TO INCLUDE SELECTION SUBMISSION FUNCTIONALITY.
   render() {
     const { kit } = this.props
       return(
           <>
              <div key={uuid()}>
+             {this.renderRedirect()}
               <div  id={kit.set_num} className="kit-dropdown-btn px-4">
                 <KitTitle key={uuid()} name={kit.name} />
                 <KitForm key={uuid()}  kitId={kit.set_num} publicState={this.state.setToPublic} selectPublic={this.selectPublic} submitForm={this.submitSelection} />

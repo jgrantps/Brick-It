@@ -14,21 +14,37 @@ class ThemeTile extends Component {
     componentDidMount() {
         const {theme:{children}} = this.props
         
-        children.map(theme => 
-            api.fetchKitsForTheme(theme.api_id)
-            .then(resp=> this.loadKits(resp, theme.api_id))
-        )
+        children.map(child => {
+            let preloadedKits = Kit.allIncludedKits.filter(kit => kit.theme_id === child.api_id)
+           
+            
+            if (preloadedKits.length != 0) {
+                this.setState({...this.state, kits: {...this.state.kits, [child.api_id]: [...preloadedKits]}})
+            } else {
+                api.fetchKitsForTheme(child.api_id)
+                .then(resp=> this.loadKits(resp, child.api_id))
+            }
+            
+            
+        })
     }
 
     loadKits = (data, theme_id) => {
         let kitCollection = []
-         if (data.results){
-             data.results.map(kit => {
+        console.log("data:", data, "theme_id:",  theme_id)
+        
+
+        if (data.results.length == 0){
+             kitCollection.push(["no data"])
+        } else {
+            data.results.map(kit => {
                 let newKit = new Kit(kit)
-                 kitCollection.push(newKit)
-             })
-             this.setState({...this.state, kits: {...this.state.kits, [theme_id]: [...kitCollection]}})
+                kitCollection.push(newKit)
+            })
         }
+           
+        this.setState({...this.state, kits: {...this.state.kits, [theme_id]: [...kitCollection]}})
+        
     }
 
     setContainerToRender = (event) => {

@@ -1,9 +1,19 @@
 import React, { Component } from 'react'
 import NavContainer from './NavContainer'
+import api from '../classes/adapters'
 
 class CollectionContainer extends Component {
 
+
+    componentDidMount() {
+        api.fetchAllSelections(window.localStorage.token)
+        .then(resp =>  null)
+    }
+
+
+
     render() {
+        
     const {userId} = this.props.match.params    
         return(
             <>

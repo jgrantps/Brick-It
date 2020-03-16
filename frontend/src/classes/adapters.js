@@ -81,9 +81,14 @@ class ApiAdapter {
         .then(resp => resp.json())
     }
 
+    fetchAllSelections(token) {
+        return fetch(`http://localhost:3001/selections`, this.getConfig(token))
+            .then(resp => resp.json())
+    }
+
     //Send specific SELECTION to DB --> POST request to selection#create
-    sendSelection(conficPackage, token) {
-        return fetch(`${this.baseUrl}/selections`, this.postConfig(conficPackage, token))
+    sendSelection(configPackage, token) {
+        return fetch(`${this.baseUrl}/selections`, this.postConfig(configPackage, token))
         .then(r => r.json())
     }
 
