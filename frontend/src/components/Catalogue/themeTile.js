@@ -14,38 +14,15 @@ class ThemeTile extends Component {
 
     componentDidMount() {
         const {theme:{children}, kits} = this.props
-
-        children.map(child => {
-            var storedThemeList;
-           kits.length > 0 ? storedThemeList = kits.map(theme => Object.keys(theme)[0]) : storedThemeList = []
-            
-            if (storedThemeList.find(theme => theme == child.api_id)) {
-               return null
-            } else {
-                api.fetchKitsForTheme(child.api_id)
-                .then(resp=> this.loadKits(resp, child.api_id))
-            }
-        })       
+        this.props.addKits(children, kits)
     }
     
-    loadKits = (data, theme_id) => {
-        var newKit; 
-        var payload;
 
-            if  (data.results == undefined || data.results.length == 0) {
-                newKit= {theme_id: theme_id, description: "no data"}
-                new Kit(newKit)
-            } else {
-                data.results.map(kit => {
-                    
-                    newKit = new Kit(kit)
-                })    
-            }
-           payload = Kit.allIncludedKits.filter(kit => kit.theme_id === theme_id)
-           
-           return this.props.addKits(payload);
+    loadingSignal = () => {
+        if (this.props.loading){
+            return <h1 className="text-2xl">I AM LOADING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</h1>
         }
-    
+    }
 
     setContainerToRender = (event) => {
         this.setState({...this.state,  render: event.target.id})
@@ -68,6 +45,7 @@ class ThemeTile extends Component {
             
             return(
                 <div key={uuid()}>
+                    {this.loadingSignal()}
                     <div className="flex flex-col justify-center">   
                         <SelectThemeBtn key={uuid()} child={child} handlOnClick={this.setContainerToRender} />
                         {this.renderContainer(child.api_id)}   
@@ -91,14 +69,14 @@ class ThemeTile extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        addKits: (kitData => {
-            dispatch(addKits(kitData))
+        addKits: ((children, kits) => {
+            dispatch(addKits(children, kits))
         })
     }
 }
 
 const mapStateToProps = (state) => {
-    return { kits: state.kits }
+    return { kits: state.kits, loading: state.loading }
   }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ThemeTile);

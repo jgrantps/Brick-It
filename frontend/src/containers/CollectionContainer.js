@@ -16,8 +16,6 @@ class CollectionContainer extends Component {
         //FETCH ALL SELECTIONS FROM THE USER'S DATABASE.
         if (collection.length < 1) {
             this.props.addAllSelections()
-            // api.fetchAllSelections(window.localStorage.token)
-            // .then(resp =>  this.handleFetchPayload(resp))
         }
         
     }

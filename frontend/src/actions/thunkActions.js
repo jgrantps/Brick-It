@@ -1,3 +1,4 @@
+import {Kit} from '../classes/kits'
 class Thunk {
 
     handleFetchPayload(payload) {
@@ -15,6 +16,35 @@ class Thunk {
     filterPayload(payload, theme) {
         return  payload.filter(selection => selection.included[1].attributes.api_id == theme)
       }
+
+      loadKits(data, theme_id) {
+        var newKit; 
+        var payload;
+
+            if  (data.results == undefined || data.results.length == 0) {
+                newKit= {theme_id: theme_id, description: "no data"}
+                new Kit(newKit)
+            } else {
+                data.results.map(kit => {
+                    
+                    newKit = new Kit(kit)
+                })    
+            }
+           payload = Kit.allIncludedKits.filter(kit => kit.theme_id === theme_id)
+           return payload;
+        //    return this.props.addKits(payload);
+        }
+    
+
+
+
+
+
+
+
+
+
+
 }
 
 let thunkAction = new Thunk

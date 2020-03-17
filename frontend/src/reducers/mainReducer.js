@@ -43,7 +43,7 @@ export default function mainReducer(
       case 'ADD_KIT': 
       let kitThemeId = action.payload[0].theme_id
       return {
-        ...state, kits: [...state.kits, {[kitThemeId]: [...action.payload]}]    
+        ...state, loading: false, kits: [...state.kits, {[kitThemeId]: [...action.payload]}]    
       }
 
       //ADD COMMENT TO SPECIFIC SELECTION FROM USER COLLECTION
@@ -52,8 +52,12 @@ export default function mainReducer(
         ...state
       }
 
+      case 'SET_LOAD_TO_FALSE':
+        return{
+          ...state, loading: false
+        }
+
       case 'LOADING_SELECTIONS':
-        
         console.log('LOADING SELECTION SIGNALLLLLL')
       return{
         ...state, loading: true
