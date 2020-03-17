@@ -46,9 +46,6 @@ class LoginContainer extends Component {
                 let verifiedUserCredentials={name: resp.package.name, id: resp.package.id, slug: service.slugify(resp.package.name)}
                 window.localStorage.setItem('token', resp.token)
                 this.props.setUser(verifiedUserCredentials) 
-                
-                
-                 
             }else{
                //HANDLE ERRORS:
                 this.setErrorMessage(resp.error)

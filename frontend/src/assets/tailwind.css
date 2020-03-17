@@ -46,5 +46,9 @@
   @apply flex flex-wrap justify-center;
 }
 
+.unit-tile {
+  @apply bg-white rounded-lg bg-gray-100 flex flex-col px-6 shadow;
+}
+
 
 @tailwind utilities;

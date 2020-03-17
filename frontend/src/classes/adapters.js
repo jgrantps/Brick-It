@@ -1,6 +1,7 @@
 class ApiAdapter {
 
     constructor() { 
+        this.backend = "http://localhost:3001" 
         this.baseUrl = "http://localhost:3001" 
         this.rebrickableBaseUrl = "https://rebrickable.com/api/v3/lego/"
         
@@ -15,14 +16,14 @@ class ApiAdapter {
         }
         
         //CONFIGURATION OBJECT FOR POST REQUESTS TO LOCAL API.
-        this.postConfig = (conficPackage= '', token=undefined, method="POST") =>{
+        this.postConfig = (configPackage= '', token=undefined, method="POST") =>{
             return ({  
                 method: method,
                 headers: {
                     "Content-Type": "application/json",
                     "Authorization": token
                 },
-                body: JSON.stringify(conficPackage)
+                body: JSON.stringify(configPackage)
             })
         }
         
@@ -82,13 +83,20 @@ class ApiAdapter {
     }
 
     fetchAllSelections(token) {
-        return fetch(`http://localhost:3001/selections`, this.getConfig(token))
+        // return fetch(`http://localhost:3001/selections`, this.getConfig(token))
+        return fetch(`${this.backend}/selections`, this.getConfig(token))
             .then(resp => resp.json())
     }
 
     //Send specific SELECTION to DB --> POST request to selection#create
     sendSelection(configPackage, token) {
         return fetch(`${this.baseUrl}/selections`, this.postConfig(configPackage, token))
+        .then(r => r.json())
+    }
+
+    subitComment(configPackage, token) {
+        
+        return fetch(`${this.backend}/comments`, this.postConfig(configPackage, token))
         .then(r => r.json())
     }
 

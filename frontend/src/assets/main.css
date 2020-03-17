@@ -705,6 +705,17 @@ video {
   justify-content: center;
 }
 
+.unit-tile {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  background-color: #f7fafc;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

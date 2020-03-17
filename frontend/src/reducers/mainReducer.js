@@ -55,8 +55,9 @@ export default function mainReducer(
         }
 
         case 'LOAD_USER_SELECTIONS_FROM_DB':
+         
           return{
-            ...state
+            ...state, collection: [...action.payload]
           }
  
     default:
