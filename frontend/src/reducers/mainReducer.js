@@ -27,8 +27,8 @@ export default function mainReducer(
         ...state,
         user: {...state.user, name: "", id:"", slug:"", loggedIn: false },
         selections: [],
-        kits: []
-
+        kits: [],
+        collection: []
       }
 
       case 'ADD_SELECTION':
@@ -47,6 +47,17 @@ export default function mainReducer(
           ...state, kits: [...state.kits, {[kitThemeId]: [...action.payload]}]
            
         }
+
+      case 'ADD_COLLECTION_COMMENT':
+        //ADD COMMENT TO SPECIFIC SELECTION FROM USER COLLECTION
+        return{
+          ...state
+        }
+
+        case 'LOAD_USER_SELECTIONS_FROM_DB':
+          return{
+            ...state
+          }
  
     default:
       return state;

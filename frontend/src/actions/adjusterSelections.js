@@ -11,3 +11,17 @@ export const addKits = (kitsData) => {
         payload: kitsData
     }
 }
+
+export const addCollectionComment = (commentData) => {
+    return {
+        type: 'ADD_COLLECTION_COMMENT',
+        payload: commentData
+    }
+}
+
+export const addAllSelections = (selectionPayload) => {
+    return {
+        type: 'LOAD_USER_SELECTIONS_FROM_DB',
+        payload: selectionPayload
+    }
+}

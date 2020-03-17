@@ -5,8 +5,7 @@ class KitsController < ApplicationController
         byebug
     end
 
-    def index
-                
+    def index       
         render json: Kit.all
     end
 
