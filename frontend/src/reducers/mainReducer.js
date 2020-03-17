@@ -52,13 +52,12 @@ export default function mainReducer(
         ...state
       }
 
-      case 'SET_LOAD_TO_FALSE':
+      case 'SET_LOADING_TO_FALSE':
         return{
           ...state, loading: false
         }
 
       case 'LOADING_SELECTIONS':
-        console.log('LOADING SELECTION SIGNALLLLLL')
       return{
         ...state, loading: true
       }

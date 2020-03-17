@@ -14,12 +14,6 @@ export const addCollectionComment = (commentData) => {
     }
 }
 
-// export const addKits = (kitsData) => {
-//     return {
-//         type: 'ADD_KIT',
-//         payload: kitsData
-//     }
-// }
 
 export const addKits = (children, kits) => {
     
@@ -29,7 +23,7 @@ export const addKits = (children, kits) => {
             var storedThemeList;
            kits.length > 0 ? storedThemeList = kits.map(theme => Object.keys(theme)[0]) : storedThemeList = []    
             if (storedThemeList.find(theme => theme == child.api_id)) {
-               dispatch({type: 'SET_LOAD_TO_FALSE'})
+               dispatch({type: 'SET_LOADING_TO_FALSE'})
             } else {
                 api.fetchKitsForTheme(child.api_id)
                 .then(resp => { dispatch({ type: 'ADD_KIT', payload: thunkAction.loadKits(resp, child.api_id)}) })
@@ -39,8 +33,6 @@ export const addKits = (children, kits) => {
 }
 
 
-
-// CollectionContainer.handleFetchPayload
 export const addAllSelections = () => {
     return (dispatch) => {
     dispatch({type: 'LOADING_SELECTIONS'})              //1

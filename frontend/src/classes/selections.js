@@ -17,7 +17,7 @@ export class Selection {
         this.public = selectionData.data.attributes.public
         // make sure ***selectionData.kit*** is a completely serialized object.
 
-
+        // this.comment = selectionData.comment
         this.kit = (selectedKit = Kit.allIncludedKits.find(
                     kit => kit.id == selectionData.included[0].id) ? 
                     selectedKit : new Kit(kitData))

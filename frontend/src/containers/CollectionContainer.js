@@ -16,22 +16,7 @@ class CollectionContainer extends Component {
         //FETCH ALL SELECTIONS FROM THE USER'S DATABASE.
         if (collection.length < 1) {
             this.props.addAllSelections()
-        }
-        
-    }
-
-    // MAP FETCHED SELECTIONS TO REDUX AND COLLECTION CONTAINER COMPONENTS.
-    handleFetchPayload = (payload) => {
-        var reduxPayload = []
-        var payloadThemes = []
-        payload.map(selection => payloadThemes.push(selection.included[1].attributes.api_id))
-        let uniquePayloadThemes = [...new Set(payloadThemes)];
-        
-        uniquePayloadThemes.map(theme => {
-            reduxPayload.push({[theme]: this.filterPayload(payload, theme)})
-        })
-        // this.props.addAllSelections(reduxPayload)
-       return reduxPayload;
+        }   
     }
         
     filterPayload = (payload, theme) => {

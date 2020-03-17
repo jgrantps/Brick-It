@@ -17,7 +17,7 @@ class CatalogueContainer extends Component {
         e.preventDefault()
 
         let letter = e.target.id;
-        let CollectionArray = Theme.allIncludedThemes.filter(theme => ( theme.children.length > 0 ));
+        let CollectionArray = Theme.allIncludedThemes.filter(theme => (theme.children.length > 0 ));
         
         let sortedCollection = CollectionArray.sort(function(a, b) {
             var nameA = a.name.toUpperCase();
