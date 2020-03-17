@@ -1,3 +1,5 @@
+import thunkAction from '../actions/thunkActions'
+import api from '../classes/adapters'
 export const addSelection = (selectionData) => {
     return {
         type: 'ADD_SELECTION',
@@ -19,9 +21,16 @@ export const addCollectionComment = (commentData) => {
     }
 }
 
-export const addAllSelections = (selectionPayload) => {
-    return {
-        type: 'LOAD_USER_SELECTIONS_FROM_DB',
-        payload: selectionPayload
-    }
+// CollectionContainer.handleFetchPayload
+export const addAllSelections = () => {
+  
+    return (dispatch) => {
+    dispatch({type: 'LOADING_SELECTIONS'})
+        api.fetchAllSelections(window.localStorage.token)
+        .then(resp =>{
+              dispatch({type: 'LOAD_USER_SELECTIONS_FROM_DB',
+                      payload: thunkAction.handleFetchPayload(resp)
+                    })
+            })  
+        }
 }

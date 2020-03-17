@@ -1,17 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
+import { createStore, compose, applyMiddleware} from 'redux';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import mainReducer from './reducers/mainReducer';
+import thunk from 'redux-thunk';
 import './assets/main.css'
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import service from './classes/service'
 
 const persistedState = service.loadFromLocalStorage();
+// const middleware = applyMiddleware(thunk)
+const combinedMiddleware = compose(applyMiddleware(thunk), composeWithDevTools())
 
-const store = createStore(mainReducer, persistedState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+// const store = createStore(mainReducer, persistedState, applyMiddleware(thunk))
+const store = createStore(mainReducer, persistedState, combinedMiddleware)
+
 
 store.subscribe(()=> service.saveToLocalStorage(store.getState()))
 

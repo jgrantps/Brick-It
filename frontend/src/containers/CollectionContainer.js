@@ -15,9 +15,9 @@ class CollectionContainer extends Component {
         const { collection } = this.props
         //FETCH ALL SELECTIONS FROM THE USER'S DATABASE.
         if (collection.length < 1) {
-            
-            api.fetchAllSelections(window.localStorage.token)
-            .then(resp =>  this.handleFetchPayload(resp))
+            this.props.addAllSelections()
+            // api.fetchAllSelections(window.localStorage.token)
+            // .then(resp =>  this.handleFetchPayload(resp))
         }
         
     }
@@ -32,12 +32,18 @@ class CollectionContainer extends Component {
         uniquePayloadThemes.map(theme => {
             reduxPayload.push({[theme]: this.filterPayload(payload, theme)})
         })
-        this.props.addAllSelections(reduxPayload)
-       
+        // this.props.addAllSelections(reduxPayload)
+       return reduxPayload;
     }
         
     filterPayload = (payload, theme) => {
       return  payload.filter(selection => selection.included[1].attributes.api_id == theme)
+    }
+
+    loadingSignal = () => {
+        if (this.props.loading){
+            return <h1 className="text-2xl">I AM LOADING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</h1>
+        }
     }
 
 
@@ -56,6 +62,7 @@ class CollectionContainer extends Component {
             <NavContainer props={this.props} />
             <div className="pt-12">
                 <h2>Recent Selections:</h2>
+                {this.loadingSignal()}
                 <div className="flex bg-blue-500">
                 {currentSelections}
                 </div>
@@ -69,20 +76,16 @@ class CollectionContainer extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        addCollectionComment: (commentData => {
-          dispatch(addCollectionComment(commentData))
-        }),
-
-        addAllSelections: (selectionPayload => {
-            dispatch(addAllSelections(selectionPayload))
-        })
+        addCollectionComment: (commentData) => {dispatch(addCollectionComment(commentData))},
+        addAllSelections: () => {dispatch(addAllSelections())}
       }
 }
 
 const mapStateToProps = (state) => {
     return {
         collection: state.collection,
-        selection: state.selections
+        selection: state.selections,
+        loading: state.loading
     }
 }
 

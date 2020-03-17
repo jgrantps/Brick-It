@@ -8,6 +8,7 @@ export default function mainReducer(
         slug:'',
         id: ''
       },
+      loading: false,
       selections: [],
       kits: [],
     },
@@ -16,13 +17,13 @@ export default function mainReducer(
     switch (action.type) {
 
       case 'SET_USER':
-        return{
-          ...state,
-          user:{...state.user, name: action.payload.name, id: action.payload.id, slug: action.payload.slug, loggedIn: true}
-        }
+      return{
+        ...state,
+        user:{...state.user, name: action.payload.name, id: action.payload.id, slug: action.payload.slug, loggedIn: true}
+      }
       
       case 'LOG_OUT':
-        window.localStorage.token = undefined
+      window.localStorage.token = undefined
       return{
         ...state,
         user: {...state.user, name: "", id:"", slug:"", loggedIn: false },
@@ -32,7 +33,6 @@ export default function mainReducer(
       }
 
       case 'ADD_SELECTION':
-    //EXAMPLE::::    state.selections =  [{theme456: [{selection1: {"specific Kit 1"}}, {selection2: {"specific kit 2"}}]}, {theme871: [{selection33: {"specific Kit 1"}}, {selection25: "{specific kit 2"}}]}]
       let themeId = action.payload.theme.api_id
       return {
         ...state, selections: [
@@ -40,25 +40,33 @@ export default function mainReducer(
         ]
       }
 
-      case 'ADD_KIT':
-        
+      case 'ADD_KIT': 
       let kitThemeId = action.payload[0].theme_id
-        return {
-          ...state, kits: [...state.kits, {[kitThemeId]: [...action.payload]}]
-           
-        }
+      return {
+        ...state, kits: [...state.kits, {[kitThemeId]: [...action.payload]}]    
+      }
 
+      //ADD COMMENT TO SPECIFIC SELECTION FROM USER COLLECTION
       case 'ADD_COLLECTION_COMMENT':
-        //ADD COMMENT TO SPECIFIC SELECTION FROM USER COLLECTION
-        return{
-          ...state
-        }
+      return{
+        ...state
+      }
 
-        case 'LOAD_USER_SELECTIONS_FROM_DB':
-         
-          return{
-            ...state, collection: [...action.payload]
-          }
+      case 'LOADING_SELECTIONS':
+        
+        console.log('LOADING SELECTION SIGNALLLLLL')
+      return{
+        ...state, loading: true
+      }
+
+      case 'LOAD_USER_SELECTIONS_FROM_DB': 
+      
+      return{
+        ...state, loading: false, collection: [...action.payload]
+      }
+
+
+        
  
     default:
       return state;
