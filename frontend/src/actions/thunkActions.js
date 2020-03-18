@@ -4,7 +4,8 @@ class Thunk {
     handleFetchPayload(payload) {
         var reduxPayload = []
         var payloadThemes = []
-        payload.map(selection => payloadThemes.push(selection.included[1].attributes.api_id))
+        // debugger
+        payload.map(selection => payloadThemes.push(selection.included[2].attributes.api_id))
         let uniquePayloadThemes = [...new Set(payloadThemes)];
         
         uniquePayloadThemes.map(theme => {
@@ -14,7 +15,8 @@ class Thunk {
     }
 
     filterPayload(payload, theme) {
-        return  payload.filter(selection => selection.included[1].attributes.api_id == theme)
+        // debugger
+        return  payload.filter(selection => selection.included[2].attributes.api_id == theme)
       }
 
       loadKits(data, theme_id) {

@@ -38,6 +38,7 @@ export const addAllSelections = () => {
     dispatch({type: 'LOADING_SELECTIONS'})              //1
     api.fetchAllSelections(window.localStorage.token)   //2...
     .then(resp =>{
+        console.log(resp)
             dispatch({type: 'LOAD_USER_SELECTIONS_FROM_DB',
                     payload: thunkAction.handleFetchPayload(resp)
                 })

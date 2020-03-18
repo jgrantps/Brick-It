@@ -27,16 +27,18 @@ class SelectionsController < ApplicationController
             include: [:user, :kit, :'kit.theme', :comments]
         }
 
+        # serialized_package = SelectionSerializer.new(collection.first, options)
+        # render json: serialized_package
+        
         serialized_package = []
-
         collection.each do |selection| 
             unit = SelectionSerializer.new(selection, options)
             serialized_package.push(unit)
         end
-
+# byebug
         
         if serialized_package.empty?
-            rentder json: {"message": "You currently have no selections"}
+            render json: {"message": "You currently have no selections"}
         else
             # byebug
             render json: serialized_package

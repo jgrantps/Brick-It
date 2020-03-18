@@ -63,7 +63,7 @@ export default function mainReducer(
       }
 
       case 'LOAD_USER_SELECTIONS_FROM_DB': 
-      
+      debugger
       return{
         ...state, loading: false, collection: [...action.payload]
       }
