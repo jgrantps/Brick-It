@@ -3,14 +3,13 @@ import { connect } from 'react-redux'
 import NavContainer from './NavContainer'
 import api from '../classes/adapters'
 
-import {addCollectionComment, addAllSelections} from '../actions/adjusterSelections'
+import { addAllSelections } from '../actions/adjusterSelections'
 import SelectionWrapper from '../components/Selection/SelectionWrapper'
 import CollectionWrapper from '../components/Collection/CollectionWrapper'
 
 
 
 class CollectionContainer extends Component {
-
 
     componentDidMount() {
         const { collection } = this.props
@@ -30,24 +29,18 @@ class CollectionContainer extends Component {
         }
     }
 
-    
-
-
-
-
-    render() {
+    render() { 
+        const {userId} = this.props.match.params  
         
-    const {userId} = this.props.match.params  
-    
-    let currentSelections = this.props.selection.map(selection => {
-        return <SelectionWrapper selection={selection} />
-    })
-     
-    let loadedCollection = this.props.collection.map(theme => {
-        return <CollectionWrapper theme ={theme} />
-    })
-    
-    return(
+        let currentSelections = this.props.selection.map(selection => {
+            return <SelectionWrapper selection={selection} />
+        })
+        
+        let loadedCollection = this.props.collection.map(theme => {
+            return <CollectionWrapper theme ={theme} />
+        })
+        
+        return(
             <>
             <NavContainer props={this.props} />
             <div className="pt-12">
@@ -62,14 +55,12 @@ class CollectionContainer extends Component {
                 </div>
             </div>
             </>
-        
         )
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        addCollectionComment: (commentData) => {dispatch(addCollectionComment(commentData))},
         addAllSelections: () => {dispatch(addAllSelections())}
       }
 }

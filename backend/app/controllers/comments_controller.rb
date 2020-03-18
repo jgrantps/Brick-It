@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
         comment = Comment.new(:user_id => current_user.id, :selection_id => commentParams[:selection_id], :comment => commentParams[:comment])
         if comment.save
             options = {
-                include: [:user, :selection]
+                include: [:user, :selection, :'selection.kit', :'selection.kit.theme']
             }
 
             render json: CommentSerializer.new(comment, options)

@@ -15,8 +15,7 @@ export const addCollectionComment = (commentData) => {
 }
 
 
-export const addKits = (children, kits) => {
-    
+export const addKits = (children, kits) => {  
     return (dispatch) => {
         dispatch({type: 'LOADING_SELECTIONS'})              //1
         children.map(child => {                             //2...
@@ -38,10 +37,23 @@ export const addAllSelections = () => {
     dispatch({type: 'LOADING_SELECTIONS'})              //1
     api.fetchAllSelections(window.localStorage.token)   //2...
     .then(resp =>{
-        console.log(resp)
             dispatch({type: 'LOAD_USER_SELECTIONS_FROM_DB',
                     payload: thunkAction.handleFetchPayload(resp)
                 })
         })  
     }
 }
+
+export const loadComment = (commentPayload) => {
+    return (dispatch) => {
+        dispatch({type: 'LOADING_COMMENTS'})
+        api.subitComment(commentPayload, window.localStorage.token)
+        .then(resp => {
+            dispatch({type:'ADD_SELECTION_COMMENT',
+            payload: thunkAction.formatComment(resp)
+            })
+        })
+    }
+}
+
+// .catch(err => console.log(err))

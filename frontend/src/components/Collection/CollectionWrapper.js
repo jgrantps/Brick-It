@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import uuid from 'react-uuid'
 import { TitleHeading, SelectionImage } from '../Elements/Elements'
+import CommentContainer from '../../containers/CommentContainer'
 
 class CollectionWrapper extends Component {
     
@@ -25,18 +26,19 @@ class CollectionWrapper extends Component {
         const {theme} = this.props
         let themeId = Object.keys(theme)[0]
         let themeTitle = theme[themeId][0].included.find(e => e.type == 'theme').attributes.name
+        
         let kitCollection  = theme[themeId].map(unit =>{
             const {attributes: { kit, public: isPublic, comments}} = unit.data
-       let classColor = this.setClass(isPublic) 
+            let classColor = this.setClass(isPublic) 
+            
             return (
                 <div className={classColor}>
                     <TitleHeading name={kit.name} />
                     {this.publicTag(isPublic)}
                     <SelectionImage name={kit.name} image={kit.set_img_url} />
+                    <CommentContainer comments={comments}/>
                 </div>
             )
-            
-            
         })
 
         
