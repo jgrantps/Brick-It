@@ -5,9 +5,7 @@ import {SelectionImage} from './SelectionImage'
 import CommentContainer from '../../containers/CommentContainer'
 
 const SelectionWrapper = (props) => {
-    let theme = Object.keys(props.selection)[0]
-    let selection = props.selection[theme];
-    
+    const {selection} = props
 return (
     <div key={uuid()} className=" rounded-lg bg-gray-100 w-1/3 flex flex-col m-4 px-6 shadow">
         <SelectionTitle name={selection.name} />

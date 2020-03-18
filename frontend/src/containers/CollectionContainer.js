@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import NavContainer from './NavContainer'
-import api from '../classes/adapters'
-
+import uuid from 'react-uuid'
 import { addAllSelections } from '../actions/adjusterSelections'
 import SelectionWrapper from '../components/Selection/SelectionWrapper'
 import CollectionWrapper from '../components/Collection/CollectionWrapper'
+import {Theme} from '../classes/themes'
 
 
 
@@ -32,8 +32,19 @@ class CollectionContainer extends Component {
     render() { 
         const {userId} = this.props.match.params  
         
-        let currentSelections = this.props.selection.map(selection => {
-            return <SelectionWrapper selection={selection} />
+        let currentSelections = this.props.selection.map(theme => {
+            let specificTheme = Theme.allIncludedThemes.find(themeInstance => themeInstance.api_id == Object.keys(theme)[0])
+            debugger
+
+            let selectionSet = theme[specificTheme.api_id].map(selection => <SelectionWrapper selection={selection} /> )
+
+            return (
+                <>
+                <div key={uuid()}>{specificTheme.name}</div>
+                {selectionSet}
+                </>
+            )
+            
         })
         
         let loadedCollection = this.props.collection.map(theme => {
