@@ -4,7 +4,7 @@ import api from '../classes/adapters'
 
 
 export default class CommentContainer extends Component {
-    debugger
+    
     state= {
         comment: ""
     }
@@ -24,7 +24,7 @@ export default class CommentContainer extends Component {
     }
 
     formatComment = (resp) => {
-        // debugger
+    
         let comment = resp.data.attributes.comment
         let userName = resp.data.attributes.user.name
         let commentId = resp.data.id

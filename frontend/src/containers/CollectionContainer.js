@@ -4,7 +4,8 @@ import NavContainer from './NavContainer'
 import api from '../classes/adapters'
 
 import {addCollectionComment, addAllSelections} from '../actions/adjusterSelections'
-import SelectionWrapper from '../components/Collection/SelectionWrapper'
+import SelectionWrapper from '../components/Selection/SelectionWrapper'
+import CollectionWrapper from '../components/Collection/CollectionWrapper'
 
 
 
@@ -29,6 +30,8 @@ class CollectionContainer extends Component {
         }
     }
 
+    
+
 
 
 
@@ -39,7 +42,12 @@ class CollectionContainer extends Component {
     let currentSelections = this.props.selection.map(selection => {
         return <SelectionWrapper selection={selection} />
     })
-       
+     
+    let loadedCollection = this.props.collection.map(theme => {
+        debugger
+        return <CollectionWrapper theme ={theme} />
+    })
+    
     return(
             <>
             <NavContainer props={this.props} />
@@ -47,9 +55,12 @@ class CollectionContainer extends Component {
                 <h2>Recent Selections:</h2>
                 {this.loadingSignal()}
                 <div className="flex bg-blue-500">
-                {currentSelections}
+                    {currentSelections}
                 </div>
-                <h2>this is the COLLECTION from the User {userId}</h2>
+                <div className="bg-green-300">
+                    <h2>this is the COLLECTION from the User {userId}</h2>
+                    {loadedCollection}
+                </div>
             </div>
             </>
         

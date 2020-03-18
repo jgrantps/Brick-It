@@ -5,18 +5,21 @@ class Thunk {
         var reduxPayload = []
         var payloadThemes = []
         // debugger
-        payload.map(selection => payloadThemes.push(selection.included[2].attributes.api_id))
+        // payload.map(selection => payloadThemes.push(selection.included[2].attributes.api_id))
+        payload.map(selection => payloadThemes.push(selection.included.find(i => i.type == 'theme').attributes.api_id))
         let uniquePayloadThemes = [...new Set(payloadThemes)];
         
         uniquePayloadThemes.map(theme => {
             reduxPayload.push({[theme]: this.filterPayload(payload, theme)})
+            
         })
        return reduxPayload;
     }
 
     filterPayload(payload, theme) {
-        // debugger
-        return  payload.filter(selection => selection.included[2].attributes.api_id == theme)
+        debugger
+        // return  payload.filter(selection => selection.included[2].attributes.api_id == theme)
+        return  payload.filter(selection => selection.included.find(i=> i.type == "theme").attributes.api_id == theme)
       }
 
       loadKits(data, theme_id) {
