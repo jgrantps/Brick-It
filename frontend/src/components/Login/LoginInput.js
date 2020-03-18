@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {TextField} from '../../components/Elements/Elements'
 import SubmitBtn from '../Buttons/SubmitBtn'
 
 class LoginInput extends Component {
@@ -18,12 +19,12 @@ class LoginInput extends Component {
             <div className="my-2 my-2">
                 <label className="font-semibold flex flex-col">
                     Username:
-                    <input type="text" onChange={trackChange} value={nameState} name="name" id="login-name" className="submit-btn"/>
+                    <TextField type="text" trackChange={trackChange} name="name" value={nameState} />
                 </label>
 
                 <label className="font-semibold flex flex-col">
                     Password:
-                    <input  type="password" onChange={trackChange} value={passwordState} name="password" id="login-password" className="submit-btn" />
+                    <TextField type="password" trackChange={trackChange} name="password" value={passwordState} />
                 </label>
             </div>
             {error}

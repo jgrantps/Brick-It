@@ -44,7 +44,6 @@ class CollectionContainer extends Component {
     })
      
     let loadedCollection = this.props.collection.map(theme => {
-        debugger
         return <CollectionWrapper theme ={theme} />
     })
     

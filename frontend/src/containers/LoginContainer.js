@@ -19,6 +19,7 @@ class LoginContainer extends Component {
    //RECORDS USERNAME AND PASSWORD KEYSTROKES
    handleOnChange = event => {
        const {name, value} = event.target
+       debugger
        this.setState({
            [name]: value
         })
