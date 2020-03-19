@@ -9,8 +9,10 @@ export default function mainReducer(
         id: ''
       },
       loading: false,
+      collectionLoaded: false,
       selections: [],
       kits: [],
+      collection: []
     },
     action
   ) {
@@ -27,6 +29,7 @@ export default function mainReducer(
       return{
         ...state,
         user: {...state.user, name: "", id:"", slug:"", loggedIn: false },
+        collectionLoaded: false,
         selections: [],
         kits: [],
         collection: []
@@ -36,10 +39,6 @@ export default function mainReducer(
       var confirmedOtherSelections
       let themeId = action.payload.theme.api_id
       let themeSelections = state.selections.find(theme=> Object.keys(theme)[0] == themeId )
-      let otherSelections = state.selections.filter(theme => Object.keys(theme)[0] != themeId)
-      otherSelections == [] ? confirmedOtherSelections = null : confirmedOtherSelections = otherSelections
-      
-      
       
       if (themeSelections) {
         let themeSelectionContents = themeSelections[themeId]
@@ -65,7 +64,7 @@ export default function mainReducer(
       case 'ADD_SELECTION_COMMENT':
         let theme = state.selections.find(e => Object.keys(e)[0] == action.payload.theme_api_id)
        
-        debugger
+        
       return{
         ...state, loading: false
       }
@@ -81,19 +80,16 @@ export default function mainReducer(
       }
 
       case 'LOADING_COMMENTS':
-        debugger
+        
         return{
           ...state, loading: true
         }
 
       case 'LOAD_USER_SELECTIONS_FROM_DB': 
       return{
-        ...state, loading: false, collection: [...action.payload]
+        ...state, loading: false, collectionLoaded: true, collection: [...action.payload]
       }
 
-
-        
- 
     default:
       return state;
   }

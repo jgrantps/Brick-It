@@ -1,5 +1,6 @@
 import thunkAction from '../actions/thunkActions'
 import api from '../classes/adapters'
+
 export const addSelection = (selectionData) => {
     return {
         type: 'ADD_SELECTION',
@@ -34,8 +35,8 @@ export const addKits = (children, kits) => {
 
 export const addAllSelections = () => {
     return (dispatch) => {
-    dispatch({type: 'LOADING_SELECTIONS'})              //1
-    api.fetchAllSelections(window.localStorage.token)   //2...
+    dispatch({type: 'LOADING_SELECTIONS'})              
+    api.fetchAllSelections(window.localStorage.token)   
     .then(resp =>{
             dispatch({type: 'LOAD_USER_SELECTIONS_FROM_DB',
                     payload: thunkAction.handleFetchPayload(resp)

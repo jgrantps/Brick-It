@@ -2,21 +2,26 @@ import {Kit} from '../classes/kits'
 class Thunk {
 
     handleFetchPayload(payload) {
+        
         var reduxPayload = []
         var payloadThemes = []
-        
+        if (payload.message == "You currently have no selections") {
+            return [];
+        } else {
+        //EXTRACT ARRAY OF THEMES RELATING TO THE PAYLOAD SELECTIONS
         payload.map(selection => payloadThemes.push(selection.included.find(i => i.type == 'theme').attributes.api_id))
+        }
+        //FILTER OUT DUPLICATES FROM THEME ARRAY 
         let uniquePayloadThemes = [...new Set(payloadThemes)];
-        
-        uniquePayloadThemes.map(theme => {
-            reduxPayload.push({[theme]: this.filterPayload(payload, theme)})
-            
-        })
-       return reduxPayload;
+        //lOAD EACH THEME WITH ARRAY OF ASSOCIATED SELECTIONS.
+        uniquePayloadThemes.map(theme => {reduxPayload.push({[theme]: this.filterPayload(payload, theme)})})
+        return reduxPayload;
     }
 
-    filterPayload(payload, theme) { 
-        return  payload.filter(selection => selection.included.find(i=> i.type == "theme").attributes.api_id == theme)
+    filterPayload(payload, theme) {  
+        //FILTER BULK PAYLOAD ACCORDING TO SPECIFIC THEME.       
+        let  filteredPayload =  payload.filter(selection => selection.included.find(i=> i.type == "theme").attributes.api_id == theme)     
+        return  filteredPayload
     }
 
     loadKits(data, theme_id) {
@@ -44,7 +49,7 @@ class Thunk {
         let commentId = resp.data.id
         let commentTheme = resp.included.find(e=> e.type == "theme").attributes.api_id
         let commentPackage = {comment: comment, userName: userName, selectionId: selectionId, theme_api_id: commentTheme, commentId: commentId}
-        debugger
+        
         return commentPackage
     }
     
