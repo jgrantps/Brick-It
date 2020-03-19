@@ -8,18 +8,28 @@ class Thunk {
         if (payload.message == "You currently have no selections") {
             return [];
         } else {
+        //EXTRACT ARRAY OF THEMES RELATING TO THE PAYLOAD SELECTIONS
         payload.map(selection => payloadThemes.push(selection.included.find(i => i.type == 'theme').attributes.api_id))
         }
+        //FILTER OUT DUPLICATES FROM THEME ARRAY 
         let uniquePayloadThemes = [...new Set(payloadThemes)];
-        
+        //lOAD EACH THEME WITH ARRAY OF ASSOCIATED SELECTIONS.
         uniquePayloadThemes.map(theme => {reduxPayload.push({[theme]: this.filterPayload(payload, theme, reduxSelection)})})
         return reduxPayload;
     }
 
     filterPayload(payload, theme, reduxSelection) { 
         
-        // let prefiltered = payload.filter(selection => selection.data.id != )
-        return  payload.filter(selection => selection.included.find(i=> i.type == "theme").attributes.api_id == theme)
+        // let reduxSelectionSetNum = ((reduxSelection.length == 0) ? "null" : "I'm not empty")
+        let reduxSelectionSetNum = ((reduxSelection.length == 0) ? "null" : Object.values(reduxSelection[0])[0][0].set_num)
+        
+        let  preFilteredPayload =  payload.filter(selection => selection.included.find(i=> i.type == "theme").attributes.api_id == theme)
+        
+        let filteredPayload = preFilteredPayload.filter(selection => selection.data.attributes.kit.set_num != reduxSelectionSetNum)
+        debugger
+
+        return  filteredPayload
+        // return  payload.filter(selection => selection.included.find(i=> i.type == "theme").attributes.api_id == theme)
     }
 
     loadKits(data, theme_id) {

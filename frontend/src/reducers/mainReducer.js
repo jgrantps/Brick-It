@@ -9,6 +9,7 @@ export default function mainReducer(
         id: ''
       },
       loading: false,
+      collectionLoaded: false,
       selections: [],
       kits: [],
       collection: []
@@ -28,6 +29,7 @@ export default function mainReducer(
       return{
         ...state,
         user: {...state.user, name: "", id:"", slug:"", loggedIn: false },
+        collectionLoaded: false,
         selections: [],
         kits: [],
         collection: []
@@ -91,11 +93,13 @@ export default function mainReducer(
       case 'LOAD_USER_SELECTIONS_FROM_DB': 
       //Redux selection Id: Object.values(state.selections[0])[0][0].selectionId ::> "13"
       //action.payload selection Id: Object.values(action.payload[0])[0][0].data.id ::> "13"
-      let filteredSelections = action.payload.filter(selection => Object.values(selection)[0][0].data.id != Object.values(state.selections[0])[0][0].selectionId)
+      
+      // let filteredSelections = action.payload.filter(selection => Object.values(selection)[0][0].data.id != Object.values(state.selections[0])[0][0].selectionId)
+      // let filteredSelections = action.payload.filter(selection => Object.values(selection)[0][0].data.id != Object.values(state.selections[0])[0][0].selectionId)
 
       
       return{
-        ...state, loading: false, collection: [...filteredSelections]
+        ...state, loading: false, collectionLoaded: true, collection: [...action.payload]
       }
 
     default:

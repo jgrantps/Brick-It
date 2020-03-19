@@ -10,15 +10,6 @@ import {Theme} from '../classes/themes'
 
 
 class CollectionContainer extends Component {
-
-    componentDidMount() {
-        const { collection, selection } = this.props
-        //FETCH ALL SELECTIONS FROM THE USER'S DATABASE.
-        if (collection.length == []) {
-            
-            this.props.addAllSelections(selection)
-        }   
-    }
         
     filterPayload = (payload, theme) => {
       return  payload.filter(selection => selection.included[1].attributes.api_id == theme)
@@ -88,7 +79,8 @@ const mapStateToProps = (state) => {
     return {
         collection: state.collection,
         selection: state.selections,
-        loading: state.loading
+        loading: state.loading,
+        collectionLoaded: state.collectionLoaded
     }
 }
 
