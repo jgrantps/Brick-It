@@ -39,9 +39,7 @@ class CollectionWrapper extends Component {
                     <CommentContainer comments={comments}/>
                 </div>
             )
-        })
-
-        
+        })        
 
         return(
             <div key={uuid()}>

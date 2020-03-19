@@ -1,7 +1,7 @@
 import {Kit} from '../classes/kits'
 class Thunk {
 
-    handleFetchPayload(payload, reduxSelection) {
+    handleFetchPayload(payload) {
         
         var reduxPayload = []
         var payloadThemes = []
@@ -14,22 +14,14 @@ class Thunk {
         //FILTER OUT DUPLICATES FROM THEME ARRAY 
         let uniquePayloadThemes = [...new Set(payloadThemes)];
         //lOAD EACH THEME WITH ARRAY OF ASSOCIATED SELECTIONS.
-        uniquePayloadThemes.map(theme => {reduxPayload.push({[theme]: this.filterPayload(payload, theme, reduxSelection)})})
+        uniquePayloadThemes.map(theme => {reduxPayload.push({[theme]: this.filterPayload(payload, theme)})})
         return reduxPayload;
     }
 
-    filterPayload(payload, theme, reduxSelection) { 
-        
-        // let reduxSelectionSetNum = ((reduxSelection.length == 0) ? "null" : "I'm not empty")
-        let reduxSelectionSetNum = ((reduxSelection.length == 0) ? "null" : Object.values(reduxSelection[0])[0][0].set_num)
-        
-        let  preFilteredPayload =  payload.filter(selection => selection.included.find(i=> i.type == "theme").attributes.api_id == theme)
-        
-        let filteredPayload = preFilteredPayload.filter(selection => selection.data.attributes.kit.set_num != reduxSelectionSetNum)
-        debugger
-
+    filterPayload(payload, theme) {  
+        //FILTER BULK PAYLOAD ACCORDING TO SPECIFIC THEME.       
+        let  filteredPayload =  payload.filter(selection => selection.included.find(i=> i.type == "theme").attributes.api_id == theme)     
         return  filteredPayload
-        // return  payload.filter(selection => selection.included.find(i=> i.type == "theme").attributes.api_id == theme)
     }
 
     loadKits(data, theme_id) {

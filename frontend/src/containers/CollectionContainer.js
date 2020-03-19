@@ -11,9 +11,9 @@ import {Theme} from '../classes/themes'
 
 class CollectionContainer extends Component {
         
-    filterPayload = (payload, theme) => {
-      return  payload.filter(selection => selection.included[1].attributes.api_id == theme)
-    }
+    // filterPayload = (payload, theme) => {
+    //   return  payload.filter(selection => selection.included[1].attributes.api_id == theme)
+    // }
 
     loadingSignal = () => {
         if (this.props.loading){

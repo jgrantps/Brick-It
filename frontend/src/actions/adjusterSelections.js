@@ -33,14 +33,13 @@ export const addKits = (children, kits) => {
 }
 
 
-export const addAllSelections = (reduxSelection) => {
+export const addAllSelections = () => {
     return (dispatch) => {
-    dispatch({type: 'LOADING_SELECTIONS'})              //1
-    api.fetchAllSelections(window.localStorage.token)   //2...
+    dispatch({type: 'LOADING_SELECTIONS'})              
+    api.fetchAllSelections(window.localStorage.token)   
     .then(resp =>{
-        
             dispatch({type: 'LOAD_USER_SELECTIONS_FROM_DB',
-                    payload: thunkAction.handleFetchPayload(resp, reduxSelection)
+                    payload: thunkAction.handleFetchPayload(resp)
                 })
         })  
     }

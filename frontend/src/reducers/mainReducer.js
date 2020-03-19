@@ -39,11 +39,6 @@ export default function mainReducer(
       var confirmedOtherSelections
       let themeId = action.payload.theme.api_id
       let themeSelections = state.selections.find(theme=> Object.keys(theme)[0] == themeId )
-      let otherSelections = state.selections.filter(theme => Object.keys(theme)[0] != themeId)
-      otherSelections == [] ? confirmedOtherSelections = null : confirmedOtherSelections = otherSelections
-      
-      
-      
       
       if (themeSelections) {
         let themeSelectionContents = themeSelections[themeId]
@@ -91,13 +86,6 @@ export default function mainReducer(
         }
 
       case 'LOAD_USER_SELECTIONS_FROM_DB': 
-      //Redux selection Id: Object.values(state.selections[0])[0][0].selectionId ::> "13"
-      //action.payload selection Id: Object.values(action.payload[0])[0][0].data.id ::> "13"
-      
-      // let filteredSelections = action.payload.filter(selection => Object.values(selection)[0][0].data.id != Object.values(state.selections[0])[0][0].selectionId)
-      // let filteredSelections = action.payload.filter(selection => Object.values(selection)[0][0].data.id != Object.values(state.selections[0])[0][0].selectionId)
-
-      
       return{
         ...state, loading: false, collectionLoaded: true, collection: [...action.payload]
       }

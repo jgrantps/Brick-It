@@ -9,12 +9,18 @@ import NavContainer from './NavContainer'
 class UserContainer extends Component {
 
     componentDidMount() {
-        const { collectionLoaded, selection } = this.props
+        const { collectionLoaded } = this.props
         //FETCH ALL SELECTIONS FROM THE USER'S DATABASE.
-        
         if (!collectionLoaded) {
-            this.props.addAllSelections(selection)
+            this.props.addAllSelections()
         }   
+    }
+    
+    loadingSignal = () => {
+        const { loading } = this.props
+        if (loading){
+            return <h1 className="text-2xl">I AM LOADING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</h1>
+        }
     }
 
     render() {
@@ -26,6 +32,7 @@ class UserContainer extends Component {
              
             <div id="user-container" className="user pt-12">
                 <h2>welcome {name}!</h2>
+                {this.loadingSignal()}
                 <h2>Please select from the above Menu.</h2>
             </div>
             </>
@@ -35,7 +42,7 @@ class UserContainer extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        addAllSelections: (reduxSelection) => {dispatch(addAllSelections(reduxSelection))}
+        addAllSelections: () => {dispatch(addAllSelections())}
       }
 }
 
