@@ -11,6 +11,7 @@ export default function mainReducer(
       loading: false,
       selections: [],
       kits: [],
+      collection: []
     },
     action
   ) {
@@ -41,6 +42,7 @@ export default function mainReducer(
       
       
       
+      
       if (themeSelections) {
         let themeSelectionContents = themeSelections[themeId]
         let selectionPackage = [{[themeId]: [...themeSelectionContents, {...action.payload.kit, selectionId: action.payload.selection.id, public: action.payload.selection.public}]}, ...confirmedOtherSelections]
@@ -65,7 +67,7 @@ export default function mainReducer(
       case 'ADD_SELECTION_COMMENT':
         let theme = state.selections.find(e => Object.keys(e)[0] == action.payload.theme_api_id)
        
-        debugger
+        
       return{
         ...state, loading: false
       }
@@ -81,19 +83,21 @@ export default function mainReducer(
       }
 
       case 'LOADING_COMMENTS':
-        debugger
+        
         return{
           ...state, loading: true
         }
 
       case 'LOAD_USER_SELECTIONS_FROM_DB': 
+      //Redux selection Id: Object.values(state.selections[0])[0][0].selectionId ::> "13"
+      //action.payload selection Id: Object.values(action.payload[0])[0][0].data.id ::> "13"
+      let filteredSelections = action.payload.filter(selection => Object.values(selection)[0][0].data.id != Object.values(state.selections[0])[0][0].selectionId)
+
+      
       return{
-        ...state, loading: false, collection: [...action.payload]
+        ...state, loading: false, collection: [...filteredSelections]
       }
 
-
-        
- 
     default:
       return state;
   }

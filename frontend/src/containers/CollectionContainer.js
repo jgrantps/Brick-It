@@ -12,10 +12,11 @@ import {Theme} from '../classes/themes'
 class CollectionContainer extends Component {
 
     componentDidMount() {
-        const { collection } = this.props
+        const { collection, selection } = this.props
         //FETCH ALL SELECTIONS FROM THE USER'S DATABASE.
-        if (collection.length < 1) {
-            this.props.addAllSelections()
+        if (collection.length == []) {
+            
+            this.props.addAllSelections(selection)
         }   
     }
         
@@ -34,16 +35,23 @@ class CollectionContainer extends Component {
         
         let currentSelections = this.props.selection.map(theme => {
             let specificTheme = Theme.allIncludedThemes.find(themeInstance => themeInstance.api_id == Object.keys(theme)[0])
-            debugger
-
-            let selectionSet = theme[specificTheme.api_id].map(selection => <SelectionWrapper selection={selection} /> )
-
-            return (
-                <>
-                <div key={uuid()}>{specificTheme.name}</div>
-                {selectionSet}
-                </>
-            )
+            
+            if (specificTheme) {
+                let selectionSet = theme[specificTheme.api_id].map(selection => <SelectionWrapper selection={selection} /> )
+    
+                return (
+                    <>
+                    <div key={uuid()}>{specificTheme.name}</div>
+                    {selectionSet}
+                    </>
+                )
+            }else{
+                return(
+                    <div>
+                        <h2>Please Make a Selection!</h2>
+                    </div>
+                )
+            }
             
         })
         
@@ -72,7 +80,7 @@ class CollectionContainer extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        addAllSelections: () => {dispatch(addAllSelections())}
+        addAllSelections: (reduxSelection) => {dispatch(addAllSelections(reduxSelection))}
       }
 }
 

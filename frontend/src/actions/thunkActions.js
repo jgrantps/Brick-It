@@ -1,21 +1,24 @@
 import {Kit} from '../classes/kits'
 class Thunk {
 
-    handleFetchPayload(payload) {
+    handleFetchPayload(payload, reduxSelection) {
+        
         var reduxPayload = []
         var payloadThemes = []
-        
+        if (payload.message == "You currently have no selections") {
+            return [];
+        } else {
         payload.map(selection => payloadThemes.push(selection.included.find(i => i.type == 'theme').attributes.api_id))
+        }
         let uniquePayloadThemes = [...new Set(payloadThemes)];
         
-        uniquePayloadThemes.map(theme => {
-            reduxPayload.push({[theme]: this.filterPayload(payload, theme)})
-            
-        })
-       return reduxPayload;
+        uniquePayloadThemes.map(theme => {reduxPayload.push({[theme]: this.filterPayload(payload, theme, reduxSelection)})})
+        return reduxPayload;
     }
 
-    filterPayload(payload, theme) { 
+    filterPayload(payload, theme, reduxSelection) { 
+        
+        // let prefiltered = payload.filter(selection => selection.data.id != )
         return  payload.filter(selection => selection.included.find(i=> i.type == "theme").attributes.api_id == theme)
     }
 
@@ -44,7 +47,7 @@ class Thunk {
         let commentId = resp.data.id
         let commentTheme = resp.included.find(e=> e.type == "theme").attributes.api_id
         let commentPackage = {comment: comment, userName: userName, selectionId: selectionId, theme_api_id: commentTheme, commentId: commentId}
-        debugger
+        
         return commentPackage
     }
     
