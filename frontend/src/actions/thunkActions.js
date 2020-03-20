@@ -18,6 +18,17 @@ class Thunk {
         return verifiedUserCredentials;
     }
 
+    handleLoginErrors(fetch) {
+        //HANDLE ERRORS:
+        var ary=[]
+        fetch.main.name ? ary.push(fetch.main.name[0]) : console.log(null)
+        fetch.main.password ? ary.push(fetch.main.password[0]) : console.log(null) 
+
+        let msg = ary.join(", ")
+        return msg
+    }
+
+
     handleFetchPayload(payload) {
         
         var reduxPayload = []
@@ -69,16 +80,6 @@ class Thunk {
         
         return commentPackage
     }
-    
-
-
-
-
-
-
-
-
-
 
 }
 

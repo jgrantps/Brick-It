@@ -3,6 +3,7 @@ const initialState = {
     slug: '',
     id: '',
     errors: null,
+    errorThrown: false,
     loggedIn: false,
     loggingIn: false
 }
@@ -19,7 +20,12 @@ export default function userReducer(
 
         case 'THROW_LOGIN_ERROR':
             return{
-                ...state, loggedIn: false, loggingIn: false, errors: action.payload
+                ...state, loggedIn: false, loggingIn: false, errors: action.payload, errorThrown: false
+            }
+        
+        case 'COMPLETE_LOGIN_THROW':
+            return{
+                ...state, errorThrown: true
             }
         
 

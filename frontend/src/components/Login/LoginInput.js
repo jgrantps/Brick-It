@@ -8,15 +8,14 @@ class LoginInput extends Component {
         name: "",
         password: ""
     }
-    
-    errorMsg = () => {
-        const {errors} = this.props
-        if (errors) {
-            return(
-                <h2 className="error-msg">{errors}</h2>
-                )
-            }
+
+    loadingErrors = () => {
+
+        const {errors, errorThrown} = this.props
+        if (errors && !errorThrown) {
+            return <h2 className="error-msg">{errors}</h2>
         }
+    }
         
     loadingMsg = () => {
         const {loggingIn} = this.props
@@ -27,10 +26,10 @@ class LoginInput extends Component {
         }
     }
 
-
-
-
-   
+    
+    
+    
+    
     render() {
         const {trackChange, Signup, Login, passwordState, nameState} = this.props
         
@@ -50,7 +49,9 @@ class LoginInput extends Component {
                     <TextField type="password" trackChange={trackChange} name="password" value={passwordState} />
                 </label>
             </div>
-            {this.errorMsg()}
+            {/* <h2 id="login-errors" className="hidden">{this.props.errors}</h2> */}
+            
+            {this.loadingErrors()}
             {this.loadingMsg()}
             <div className="flex justify-between">
             <SubmitBtn btnName="LOG IN" btnAction={Login}/>
@@ -64,6 +65,7 @@ class LoginInput extends Component {
 const mapStateToProps = (state) => {
     return{
         errors: state.user.errors,
+        errorThrown: state.user.errorThrown,
         loggingIn: state.user.loggingIn
     }
 }

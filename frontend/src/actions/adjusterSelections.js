@@ -79,19 +79,11 @@ export const addAllSelections = () => {
         api.fetchAllSelections(window.localStorage.token)   
         .then(resp =>{
             dispatch({type: 'LOAD_USER_SELECTIONS_FROM_DB',
-            payload: thunkAction.handleFetchPayload(resp)
-        })
-    })  
+                payload: thunkAction.handleFetchPayload(resp)
+            })
+        })  
+    }
 }
-}
-
-
-
-
-
-
-
-
 
 
 export const loadLogin = (userInfo) => {
@@ -105,7 +97,7 @@ export const loadLogin = (userInfo) => {
                     payload: thunkAction.handleLoginCredentials(resp)
                 })
             }else{
-                debugger
+                setTimeout(() => {dispatch({ type:'COMPLETE_LOGIN_THROW', payload: null })}, 2000)
                 dispatch({
                     type: 'THROW_LOGIN_ERROR',
                     payload: resp.error
@@ -116,6 +108,7 @@ export const loadLogin = (userInfo) => {
     }
 }
 
+
 export const loadSignup = (userInfo) => {
     return (dispatch) => {
         dispatch({type: 'LOADING_USER'})
@@ -124,28 +117,18 @@ export const loadSignup = (userInfo) => {
             if (resp.token){
                 window.localStorage.setItem('token', resp.token)
                 dispatch({type: 'SET_USER',
-                    payload: thunkAction.handleLoginCredentials(resp)
-                })
-            }else{
+                payload: thunkAction.handleLoginCredentials(resp)
+            })
+        }else{
+                setTimeout(() => {dispatch({ type:'COMPLETE_LOGIN_THROW', payload: null })}, 2000)
                 dispatch({
                     type: 'THROW_LOGIN_ERROR',
-                    payload: resp.error
+                    payload: `Signup failed: ${thunkAction.handleLoginErrors(resp)}` 
                 })
             }
         })
     }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 export const loadThemes = () => {
     return (dispatch) => {
