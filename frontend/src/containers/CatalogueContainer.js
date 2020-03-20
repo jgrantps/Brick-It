@@ -13,7 +13,7 @@ import uuid from 'react-uuid'
 class CatalogueContainer extends Component {
 
     state = {
-        themeList: []
+        childrenList: []
     }
 
     loadingSignal = () => {
@@ -23,47 +23,27 @@ class CatalogueContainer extends Component {
     }
     
     handleLetterSelect = (e) => {
-        const {themes} = this.props
+        const {themes: {parents}} = this.props
         e.preventDefault()
-        let letter = e.target.id;
-        let CollectionArray = []
-        themes.map(theme => {
-            let parentArray = service.filterChildren(theme, themes)
-            if (parentArray.length > 0) {
-                CollectionArray.push((themes.find(theme => theme.api_id == parentArray[0].parent_id)))
-            }
-        });
-
-        
-        let sortedCollection = CollectionArray.sort(function(a, b) {
-            var nameA = a.name.toUpperCase();
-            var nameB = b.name.toUpperCase();
-            if (nameA < nameB) {
-                return -1;
-            }
-            if (nameA > nameB) {
-                return 1;
-            }
-            return 0;
-        });
-        
+        let letter = e.target.id; 
         //STORE COLLECTION OF SPECIFIED THEMES IN LOCAL COMPONENT STATE TO RENDER.
-        let specifiedCollection = sortedCollection.filter(theme => theme.name[0] == letter)
+        let specifiedCollection = parents.filter(theme => theme.name[0] == letter)
               
     
         this.setState({
-            themeList: [...specifiedCollection]
+            childrenList: [...specifiedCollection]
         })
     }
     
     //CAPTURE AND PROCESS SELECTED THEME TO RETREIVE KITS.
-    convertThemeToTile = (theme) => {
-        return <ThemeTile key={uuid()}  sessionProps={this.props} theme={theme} children={service.filterChildren(theme, this.props.themes)} />
+    convertThemeToTile = (parent) => {
+        let themeChildren = service.findChildrenThemes(parent, this.props.themes.body )
+        return <ThemeTile key={uuid()}  sessionProps={this.props} theme={parent} children={themeChildren} />
     }
     
     render() {
         
-        let collectedThemes = this.state.themeList.map(theme => this.convertThemeToTile(theme))    
+        let collectedThemes = this.state.childrenList.map(theme => this.convertThemeToTile(theme))    
         return(
             <>
             <NavContainer props={this.props} />
@@ -94,7 +74,7 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = (state) => {
     return {
-        themes: state.themes,
+        themes: state.themes.body,
         loading: state.loading   
     }
 }

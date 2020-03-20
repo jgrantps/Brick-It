@@ -120,14 +120,15 @@ export const loadSignup = (userInfo) => {
                 payload: thunkAction.handleLoginCredentials(resp)
             })
         }else{
-                setTimeout(() => {dispatch({ type:'COMPLETE_LOGIN_THROW' })}, 2000)
-                dispatch({
-                    type: 'THROW_LOGIN_ERROR',
-                    payload: `Signup failed: ${thunkAction.handleLoginErrors(resp)}` 
-                })
-            }
-        })
-    }
+            setTimeout(() => {dispatch({ type:'COMPLETE_LOGIN_THROW' })}, 2000)
+            dispatch({
+                type: 'THROW_LOGIN_ERROR',
+                payload: `Signup failed: ${thunkAction.handleLoginErrors(resp)}` 
+            })
+        }
+    })
+    .catch(err => console.log(err))
+}
 }
 
 export const loadThemes = () => {
@@ -138,7 +139,11 @@ export const loadThemes = () => {
             dispatch({type: 'LOAD_THEMES',
                 payload: thunkAction.formatThemes(resp)
             })
+            dispatch({type: 'LOAD_THEME_PARENTS',
+                payload: thunkAction.formatThemeParents()
+            })
         })
+        .catch(err => console.log(err))
     }
 }
 
@@ -152,6 +157,7 @@ export const loadComment = (commentPayload) => {
                 payload: thunkAction.formatComment(resp)
             })
         })
+        .catch(err => console.log(err))
     }
 }
 

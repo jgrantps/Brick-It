@@ -13,6 +13,44 @@ class Thunk {
     }
 
 
+    formatThemeParents() {
+        let themes = Theme.allIncludedThemes;
+        let CollectionArray = [];
+        themes.map(theme => {
+            
+            let parentArray = service.findChildrenThemes(theme, themes)
+            if (parentArray.length > 0) {
+                CollectionArray.push((themes.find(theme => theme.api_id == parentArray[0].parent_id)))
+            }
+        });
+
+        let sortedCollection = CollectionArray.sort(function(a, b) {
+            var nameA = a.name.toUpperCase();
+            var nameB = b.name.toUpperCase();
+            if (nameA < nameB) {
+                return -1;
+            }
+            if (nameA > nameB) {
+                return 1;
+            }
+            return 0;
+        });
+        
+        //STORE COLLECTION OF SPECIFIED THEMES IN LOCAL COMPONENT STATE TO RENDER.
+        return sortedCollection
+        // let specifiedCollection = sortedCollection.filter(theme => theme.name[0] == letter)
+
+    }
+
+
+
+
+
+
+
+
+
+
     handleLoginCredentials(fetch) {
         let verifiedUserCredentials={name: fetch.package.name, id: fetch.package.id, slug: service.slugify(fetch.package.name)}
         return verifiedUserCredentials;

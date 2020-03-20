@@ -36,8 +36,8 @@ class Services {
     }
   }
 
-  filterChildren(specificTheme, themes) {
-     let children = themes.filter(theme => theme.parent_id === specificTheme.api_id)
+  findChildrenThemes(parent, themes) {
+     let children = themes.filter(theme => theme.parent_id === parent.api_id)
      return children
   }
 

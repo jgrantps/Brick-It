@@ -12,6 +12,7 @@ export default function kitsReducer(
             return{
                 ...state, loading: true
             }
+            
         case 'ADD_KIT':
         let kitThemeId = action.payload[0].theme_id
         return{
