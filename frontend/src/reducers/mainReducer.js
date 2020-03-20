@@ -100,10 +100,10 @@ export default function mainReducer(
           ...state, loading: true
         }
 
-      case 'LOAD_USER_SELECTIONS_FROM_DB': 
-      return{
-        ...state, loading: false, collectionLoaded: true, collection: [...action.payload]
-      }
+      // case 'LOAD_USER_SELECTIONS_FROM_DB': 
+      // return{
+      //   ...state, loading: false, collectionLoaded: true, collection: [...action.payload]
+      // }
 
     default:
       return state;

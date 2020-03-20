@@ -28,6 +28,12 @@ export default function selectionsReducer(
     //       ]
     //     }
     //   }
+
+    case 'LOAD_USER_SELECTIONS_FROM_DB': 
+    return{
+      ...state, loading: false, Loaded: true, body: [...action.payload]
+    }
+
     default: 
         return state
     }

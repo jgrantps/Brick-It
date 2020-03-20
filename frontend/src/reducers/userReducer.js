@@ -28,7 +28,6 @@ export default function userReducer(
                 ...state, errorThrown: true
             }
         
-
         case 'SET_USER':
         return{
              name: action.payload.name, slug: action.payload.slug, id: action.payload.id, loggedIn: true, loggingIn: false, errors: null

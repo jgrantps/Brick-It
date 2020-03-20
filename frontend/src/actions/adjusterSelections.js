@@ -73,12 +73,12 @@ export const addKits = (children) => {
 // }
 
 
-export const addAllSelections = () => {
+export const loadUserCollection = () => {
     return (dispatch) => {
-        dispatch({type: 'LOADING_SELECTIONS'})              
+        dispatch({type: 'LOADING_COLLECTION'})              
         api.fetchAllSelections(window.localStorage.token)   
         .then(resp =>{
-            dispatch({type: 'LOAD_USER_SELECTIONS_FROM_DB',
+            dispatch({type: 'LOAD_USER_COLLECTION_FROM_DB',
                 payload: thunkAction.handleFetchPayload(resp)
             })
         })  
@@ -97,7 +97,7 @@ export const loadLogin = (userInfo) => {
                     payload: thunkAction.handleLoginCredentials(resp)
                 })
             }else{
-                setTimeout(() => {dispatch({ type:'COMPLETE_LOGIN_THROW', payload: null })}, 2000)
+                setTimeout(() => {dispatch({ type:'COMPLETE_LOGIN_THROW' })}, 2000)
                 dispatch({
                     type: 'THROW_LOGIN_ERROR',
                     payload: resp.error
@@ -120,7 +120,7 @@ export const loadSignup = (userInfo) => {
                 payload: thunkAction.handleLoginCredentials(resp)
             })
         }else{
-                setTimeout(() => {dispatch({ type:'COMPLETE_LOGIN_THROW', payload: null })}, 2000)
+                setTimeout(() => {dispatch({ type:'COMPLETE_LOGIN_THROW' })}, 2000)
                 dispatch({
                     type: 'THROW_LOGIN_ERROR',
                     payload: `Signup failed: ${thunkAction.handleLoginErrors(resp)}` 

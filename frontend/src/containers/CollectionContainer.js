@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import NavContainer from './NavContainer'
 import uuid from 'react-uuid'
-import { addAllSelections } from '../actions/adjusterSelections'
+// import { addAllSelections } from '../actions/adjusterSelections'
 import SelectionWrapper from '../components/Selection/SelectionWrapper'
 import CollectionWrapper from '../components/Collection/CollectionWrapper'
 import {Theme} from '../classes/themes'
@@ -66,7 +66,7 @@ class CollectionContainer extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        addAllSelections: (reduxSelection) => {dispatch(addAllSelections(reduxSelection))}
+        // addAllSelections: (reduxSelection) => {dispatch(addAllSelections(reduxSelection))}
       }
 }
 

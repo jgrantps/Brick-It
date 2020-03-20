@@ -3,7 +3,7 @@ import  {Switch, Route} from 'react-router-dom';
 import { connect } from 'react-redux';
 
 
-import { addAllSelections } from '../actions/adjusterSelections'
+import { loadUserCollection } from '../actions/adjusterSelections'
 import NavContainer from './NavContainer'
 
 class UserContainer extends Component {
@@ -12,7 +12,7 @@ class UserContainer extends Component {
         const { collectionLoaded } = this.props
         //FETCH ALL SELECTIONS FROM THE USER'S DATABASE.
         if (!collectionLoaded) {
-            this.props.addAllSelections()
+            this.props.loadUserCollection()
         }   
     }
     
@@ -42,7 +42,7 @@ class UserContainer extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        addAllSelections: () => {dispatch(addAllSelections())}
+        loadUserCollection: () => {dispatch(loadUserCollection())}
       }
 }
 
