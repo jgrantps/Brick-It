@@ -1,5 +1,5 @@
 const initialState = {
-    selections: [],
+    body: [],
     loading: false,
     loaded: false
 }
@@ -10,7 +10,7 @@ export default function selectionsReducer(
     switch(action.type){
         case 'ADD_SELECTION':
             //DUMMY STATE FOR TESTING
-            return {...state, loading: true, selections:["event was fired!"]}
+            return {...state, loading: true, body:["event was fired!"]}
     //   var confirmedOtherSelections
     //   let themeId = action.payload.theme.api_id
     //   let themeSelections = state.selections.find(theme=> Object.keys(theme)[0] == themeId )

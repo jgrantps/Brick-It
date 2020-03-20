@@ -38,15 +38,15 @@ export default function mainReducer(
       //   collection: []
       // }
 
-      case 'LOAD_THEMES':
-      return{
-        ...state, loading: false, themes: [...action.payload]
-      }
+      // case 'LOAD_THEMES':
+      // return{
+      //   ...state, loading: false, themes: [...action.payload]
+      // }
 
-      case 'LOADING_THEMES':
-        return{
-          ...state, loading: true
-        }
+      // case 'LOADING_THEMES':
+      //   return{
+      //     ...state, loading: true
+      //   }
 
 
       // case 'ADD_SELECTION':

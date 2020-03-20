@@ -86,14 +86,75 @@ export const addAllSelections = () => {
 }
 
 
+
+
+
+
+
+
+
+
+export const loadLogin = (userInfo) => {
+    return (dispatch) => {
+        dispatch({type: 'LOADING_USER'})
+        api.Login(userInfo)
+        .then(resp => {
+            if (resp.token){
+                window.localStorage.setItem('token', resp.token)
+                dispatch({type: 'SET_USER',
+                    payload: thunkAction.handleLoginCredentials(resp)
+                })
+            }else{
+                debugger
+                dispatch({
+                    type: 'THROW_LOGIN_ERROR',
+                    payload: resp.error
+                })
+            }
+        })
+        .catch(err => console.log(err))
+    }
+}
+
+export const loadSignup = (userInfo) => {
+    return (dispatch) => {
+        dispatch({type: 'LOADING_USER'})
+        api.Signup(userInfo)
+        .then(resp => {
+            if (resp.token){
+                window.localStorage.setItem('token', resp.token)
+                dispatch({type: 'SET_USER',
+                    payload: thunkAction.handleLoginCredentials(resp)
+                })
+            }else{
+                dispatch({
+                    type: 'THROW_LOGIN_ERROR',
+                    payload: resp.error
+                })
+            }
+        })
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 export const loadThemes = () => {
     return (dispatch) => {
         dispatch({type: 'LOADING_THEMES'})
         api.retrieveThemes()
         .then(resp => {
             dispatch({type: 'LOAD_THEMES',
-            payload: thunkAction.formatThemes(resp)})
-            
+                payload: thunkAction.formatThemes(resp)
+            })
         })
     }
 }
@@ -105,10 +166,10 @@ export const loadComment = (commentPayload) => {
         api.subitComment(commentPayload, window.localStorage.token)
         .then(resp => {
             dispatch({type:'ADD_SELECTION_COMMENT',
-            payload: thunkAction.formatComment(resp)
+                payload: thunkAction.formatComment(resp)
+            })
         })
-    })
-}
+    }
 }
 
 // .catch(err => console.log(err))

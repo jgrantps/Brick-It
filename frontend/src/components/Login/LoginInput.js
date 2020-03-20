@@ -1,16 +1,39 @@
 import React, { Component } from 'react'
 import {TextField} from '../../components/Elements/Elements'
 import SubmitBtn from '../Buttons/SubmitBtn'
+import { connect } from 'react-redux'
 
 class LoginInput extends Component {
     state = {
         name: "",
         password: ""
     }
+    
+    errorMsg = () => {
+        const {errors} = this.props
+        if (errors) {
+            return(
+                <h2 className="error-msg">{errors}</h2>
+                )
+            }
+        }
+        
+    loadingMsg = () => {
+        const {loggingIn} = this.props
+        if (loggingIn) {
+            return(
+            <h2 className="error-msg">PATIENCE! LOGGING YOU IN NOW!!</h2>
+            )
+        }
+    }
+
+
+
 
    
     render() {
-        const {trackChange, Signup, Login, passwordState, error, nameState} = this.props
+        const {trackChange, Signup, Login, passwordState, nameState} = this.props
+        
         return(
             <>
             <h1 className="font-semibold pb-2 my-2 text-xl"> Welcome to Brickit!</h1>
@@ -27,7 +50,8 @@ class LoginInput extends Component {
                     <TextField type="password" trackChange={trackChange} name="password" value={passwordState} />
                 </label>
             </div>
-            {error}
+            {this.errorMsg()}
+            {this.loadingMsg()}
             <div className="flex justify-between">
             <SubmitBtn btnName="LOG IN" btnAction={Login}/>
             <SubmitBtn btnName="SIGN UP" btnAction={Signup}/>
@@ -37,4 +61,11 @@ class LoginInput extends Component {
     }
 }
 
-export default LoginInput;
+const mapStateToProps = (state) => {
+    return{
+        errors: state.user.errors,
+        loggingIn: state.user.loggingIn
+    }
+}
+
+export default connect(mapStateToProps)(LoginInput);

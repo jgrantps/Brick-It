@@ -1,5 +1,5 @@
 const initialState = {
-    themesPayload: [],
+    body: [],
     loading: false,
     loaded: false
     };
@@ -14,7 +14,7 @@ export default function themesReducer (state = initialState, action) {
         case 'LOAD_THEMES':
            debugger
             return{
-                ...state, loading: false, loaded: true, themesPayload: [...action.payload]
+                ...state, loading: false, loaded: true, body: [...action.payload]
             }
         default:
             return state;

@@ -1,4 +1,5 @@
 import {Kit} from '../classes/kits'
+import service from '../classes/service'
 import {Theme} from '../classes/themes'
 class Thunk {
 
@@ -9,6 +10,12 @@ class Thunk {
             new Theme(formattedTheme);
         })
         return(Theme.allIncludedThemes)   
+    }
+
+
+    handleLoginCredentials(fetch) {
+        let verifiedUserCredentials={name: fetch.package.name, id: fetch.package.id, slug: service.slugify(fetch.package.name)}
+        return verifiedUserCredentials;
     }
 
     handleFetchPayload(payload) {
