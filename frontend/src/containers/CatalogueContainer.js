@@ -17,7 +17,7 @@ class CatalogueContainer extends Component {
     }
 
     loadingSignal = () => {
-        if (this.props.loading){
+        if (this.props.themes.loading){
             return <h1 className="text-2xl">I AM LOADING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</h1>
         }
     }
@@ -79,7 +79,7 @@ class CatalogueContainer extends Component {
     //OUTSIDE OF RENDER
     
     componentDidMount() {
-        if (this.props.themes.length == 0){
+        if (!this.props.themes.loaded && !this.props.themes.loading){
             this.props.loadThemes();
         }
     }   
