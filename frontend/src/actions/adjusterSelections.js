@@ -1,4 +1,5 @@
 import thunkAction from '../actions/thunkActions'
+
 import api from '../classes/adapters'
 
 export const addSelection = (selectionData) => {
@@ -15,35 +16,88 @@ export const addCollectionComment = (commentData) => {
     }
 }
 
+export const addKits = (children) => {  
 
-export const addKits = (children, kits) => {  
-    return (dispatch) => {
+    return (dispatch, getState) => {
+        const state = getState()
+        const {kits} = state
+     
         dispatch({type: 'LOADING_SELECTIONS'})              //1
-        children.map(child => {                             //2...
-            var storedThemeList;
-           kits.length > 0 ? storedThemeList = kits.map(theme => Object.keys(theme)[0]) : storedThemeList = []    
-            if (storedThemeList.find(theme => theme == child.api_id)) {
-               dispatch({type: 'SET_LOADING_TO_FALSE'})
-            } else {
+        
+        //CHILDREN ARE IE:::    TEMPLE OF DOOM -- LAST CRUSADE -- RAIDERS OF THE LOST ARK -- KINGDOM OF THE CRYSTAL SKULL
+        children.map(child => {  
+            let existingKits = kits.find(kit => Object.keys(kit)[0] == child.api_id)
+            let loaded = false
+            if (loaded) {
+                debugger                        //IE TEMPLE OF DOOM
+                dispatch({type: 'SET_LOADING_TO_FALSE'})
+            }else{
+                debugger
                 api.fetchKitsForTheme(child.api_id)
-                .then(resp => { dispatch({ type: 'ADD_KIT', payload: thunkAction.loadKits(resp, child.api_id)}) })
+                .then(resp => { 
+                    dispatch({ type: 'ADD_KIT', payload: thunkAction.loadKits(resp, child.api_id)})
+                    return loaded = true;
+                })
             }
         })
     }
 }
 
 
+
+
+
+
+// export const addKits = (children) => {  
+
+//     return (dispatch, getState) => {
+//         const state = getState()
+//         const {kits} = state
+     
+//         dispatch({type: 'LOADING_SELECTIONS'})              //1
+        
+//         //CHILDREN ARE IE:::    TEMPLE OF DOOM -- LAST CRUSADE -- RAIDERS OF THE LOST ARK -- KINGDOM OF THE CRYSTAL SKULL
+//         children.map(child => {  
+//             let existingKits = kits.find(kit => Object.keys(kit)[0] == child.api_id)
+//                                     //IE TEMPLE OF DOOM
+//             if (existingKits && Object.values(existingKits).length > 0) {
+//                 debugger                        //IE TEMPLE OF DOOM
+//                 dispatch({type: 'SET_LOADING_TO_FALSE'})
+//             }else{
+//                 debugger
+//                 api.fetchKitsForTheme(child.api_id)
+//                 .then(resp => { dispatch({ type: 'ADD_KIT', payload: thunkAction.loadKits(resp, child.api_id)})})
+//             }
+//         })
+//     }
+// }
+
+
 export const addAllSelections = () => {
     return (dispatch) => {
-    dispatch({type: 'LOADING_SELECTIONS'})              
-    api.fetchAllSelections(window.localStorage.token)   
-    .then(resp =>{
+        dispatch({type: 'LOADING_SELECTIONS'})              
+        api.fetchAllSelections(window.localStorage.token)   
+        .then(resp =>{
             dispatch({type: 'LOAD_USER_SELECTIONS_FROM_DB',
-                    payload: thunkAction.handleFetchPayload(resp)
-                })
-        })  
+            payload: thunkAction.handleFetchPayload(resp)
+        })
+    })  
+}
+}
+
+
+export const loadThemes = () => {
+    return (dispatch) => {
+        dispatch({type: 'LOADING_THEMES'})
+        api.retrieveThemes()
+        .then(resp => {
+            dispatch({type: 'LOAD_THEMES',
+            payload: thunkAction.formatThemes(resp)})
+            
+        })
     }
 }
+
 
 export const loadComment = (commentPayload) => {
     return (dispatch) => {
@@ -52,9 +106,27 @@ export const loadComment = (commentPayload) => {
         .then(resp => {
             dispatch({type:'ADD_SELECTION_COMMENT',
             payload: thunkAction.formatComment(resp)
-            })
         })
-    }
+    })
+}
 }
 
 // .catch(err => console.log(err))
+
+
+
+
+// children.map(child => {                             //2...
+//     var storedThemeList;
+//     kits.length > 0 ? storedThemeList = kits.map(theme => Object.keys(theme)[0]) : storedThemeList = []    
+//     if (storedThemeList.find(theme => theme == child.api_id)) {
+//         dispatch({type: 'SET_LOADING_TO_FALSE'})
+//     } else {
+//         debugger
+//         api.fetchKitsForTheme(child.api_id)
+//         .then(resp => { 
+//             testie.push(thunkAction.loadKits(resp,child.api_id))
+//             dispatch({ type: 'ADD_KIT', payload: thunkAction.loadKits(resp, child.api_id)}) 
+//         })
+//     }
+// })

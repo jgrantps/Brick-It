@@ -1,5 +1,15 @@
 import {Kit} from '../classes/kits'
+import {Theme} from '../classes/themes'
 class Thunk {
+
+
+    formatThemes(data) {
+        data.results.map(theme => { 
+            let formattedTheme = {...theme, api_id: theme.id}
+            new Theme(formattedTheme);
+        })
+        return(Theme.allIncludedThemes)   
+    }
 
     handleFetchPayload(payload) {
         
@@ -27,7 +37,7 @@ class Thunk {
     loadKits(data, theme_id) {
     var newKit; 
     var payload;
-
+        //ADDS 
         if  (data.results == undefined || data.results.length == 0) {
             newKit= {theme_id: theme_id, description: "no data"}
             new Kit(newKit)

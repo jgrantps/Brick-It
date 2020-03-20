@@ -23,7 +23,6 @@ export class Theme {
     get children() {
         return includedThemes.filter(theme => theme.parent_id === this.api_id)
     }
-    
 
     static get allIncludedThemes() {
         return includedThemes;

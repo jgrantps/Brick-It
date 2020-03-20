@@ -5,41 +5,48 @@ import api from '../../classes/adapters'
 import uuid from 'react-uuid'
 import SelectThemeBtn from '../Buttons/SelectThemeBtn'
 import {connect} from 'react-redux'
-import {addKits} from '../../actions/adjusterSelections'
+import {addKits, adKits} from '../../actions/adjusterSelections'
 
 class ThemeTile extends Component {
     state = {
-        render:""
+        render:"",
+        loaded: false
+
     }
 
     componentDidMount() {
-        const {theme:{children}, kits} = this.props
-        this.props.addKits(children, kits)
+        // const {children} = this.props
+    //    if (!this.state.loaded){
+           this.props.addKits(this.props.children)
+        //    return this.setState({...this.state, loaded: true})
+        
     }
     
-
+    
     loadingSignal = () => {
         if (this.props.loading){
             return <h1 className="text-2xl">I AM LOADING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</h1>
         }
     }
-
+    
     setContainerToRender = (event) => {
         this.setState({...this.state,  render: event.target.id})
     }
-
+    
     renderContainer = (child) => {
         const {kits} = this.props
-    
-            switch(this.state.render) {
-                case `${child}`: return kits.find(theme => Object.keys(theme)[0] == child)[child].map(kit  => <div key = {uuid()} className="kit-dropdown"><KitContainer key={uuid()} sessionProps={this.props.sessionProps} theme={child} kit={kit} /></div>)
-                default: return null
-            }
+        
+        switch(this.state.render) {
+            case `${child}`: return kits.find(theme => Object.keys(theme)[0] == child)[child].map(kit  => <div key = {uuid()} className="kit-dropdown"><KitContainer key={uuid()} sessionProps={this.props.sessionProps} theme={child} kit={kit} /></div>)
+            default: return null
+        }
         
     }
-   
+    
     render() {
+        
         const {theme, children} = this.props
+        
         //DISPLAY THE CHILDREN THEMES OF THE MAIN PARENT THEME
         let displayChildren = children.map(child => {
             
@@ -69,14 +76,17 @@ class ThemeTile extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        addKits: ((children, kits) => {
-            dispatch(addKits(children, kits))
+        addKits: ((children) => {
+            dispatch(addKits(children))
         })
     }
 }
 
 const mapStateToProps = (state) => {
-    return { kits: state.kits, loading: state.loading }
+    return { 
+        kits: state.kits, 
+        loading: state.loading 
+    }
   }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ThemeTile);

@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
 import NavContainer from './NavContainer'
-import api from '../classes/adapters';
+import { loadThemes } from '../actions/adjusterSelections'
+import service from '../classes/service'
 import { Theme } from '../classes/themes';
 import ThemeUI from '../components/Catalogue/themeUI'
 import ThemeTile from '../components/Catalogue/themeTile'
-import { Kit } from '../classes/kits';
+
 import uuid from 'react-uuid'
 
 class CatalogueContainer extends Component {
@@ -12,12 +15,25 @@ class CatalogueContainer extends Component {
     state = {
         themeList: []
     }
+
+    loadingSignal = () => {
+        if (this.props.loading){
+            return <h1 className="text-2xl">I AM LOADING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</h1>
+        }
+    }
     
     handleLetterSelect = (e) => {
+        const {themes} = this.props
         e.preventDefault()
-
         let letter = e.target.id;
-        let CollectionArray = Theme.allIncludedThemes.filter(theme => (theme.children.length > 0 ));
+        let CollectionArray = []
+        themes.map(theme => {
+            let parentArray = service.filterChildren(theme, themes)
+            if (parentArray.length > 0) {
+                CollectionArray.push((themes.find(theme => theme.api_id == parentArray[0].parent_id)))
+            }
+        });
+
         
         let sortedCollection = CollectionArray.sort(function(a, b) {
             var nameA = a.name.toUpperCase();
@@ -33,26 +49,28 @@ class CatalogueContainer extends Component {
         
         //STORE COLLECTION OF SPECIFIED THEMES IN LOCAL COMPONENT STATE TO RENDER.
         let specifiedCollection = sortedCollection.filter(theme => theme.name[0] == letter)
-       let ee = [...specifiedCollection]
-       
-        this.setState({...this.state, themeList: [...specifiedCollection]})
+              
+    
+        this.setState({
+            themeList: [...specifiedCollection]
+        })
     }
     
     //CAPTURE AND PROCESS SELECTED THEME TO RETREIVE KITS.
-    
     convertThemeToTile = (theme) => {
-        
-        return <ThemeTile key={uuid()}  sessionProps={this.props} theme={theme} children={theme.children} kits={this.state.kitList}/>
+        return <ThemeTile key={uuid()}  sessionProps={this.props} theme={theme} children={service.filterChildren(theme, this.props.themes)} />
     }
     
     render() {
-        let themeList = this.state.themeList.map(theme => this.convertThemeToTile(theme))    
+        
+        let collectedThemes = this.state.themeList.map(theme => this.convertThemeToTile(theme))    
         return(
             <>
             <NavContainer props={this.props} />
             <div id="theme-wrapper" className="pt-12">
+                {this.loadingSignal()}
                 <ThemeUI handleOnSubmit={this.handleLetterSelect} />
-                {themeList}
+                {collectedThemes}
             
             </div>
             </>
@@ -61,23 +79,24 @@ class CatalogueContainer extends Component {
     //OUTSIDE OF RENDER
     
     componentDidMount() {
-        this.fetchAllThemes();
-    }
-    
-    fetchAllThemes = () => {
-        if (Theme.allIncludedThemes.length == 0) {
-            api.retrieveThemes()
-            .then(resp => this.loadThemes(resp))
+        if (this.props.themes.length == 0){
+            this.props.loadThemes();
         }
-    }
-    
-    //ASSIGN REBRICKABLE API_ID TO A SPECIFIED ID ATTRIBUTE; DEFAULT ID SET TO 'UNDEFINED'.
-    loadThemes = (data) =>  {
-        data.results.map(theme => { 
-           let formattedTheme = {...theme, api_id: theme.id}
-           new Theme(formattedTheme);
-        })
-    }
-    
+    }   
 }
-export default CatalogueContainer;
+
+const mapDispatchToProps = dispatch => {
+    return {
+        loadThemes: () => {dispatch(loadThemes())}
+      }
+}
+
+
+const mapStateToProps = (state) => {
+    return {
+        themes: state.themes,
+        loading: state.loading   
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CatalogueContainer);

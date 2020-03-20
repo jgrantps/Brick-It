@@ -12,28 +12,42 @@ export default function mainReducer(
       collectionLoaded: false,
       selections: [],
       kits: [],
-      collection: []
+      collection: [],
+      themes: []
     },
     action
   ) {
     switch (action.type) {
 
-      case 'SET_USER':
-      return{
-        ...state,
-        user:{...state.user, name: action.payload.name, id: action.payload.id, slug: action.payload.slug, loggedIn: true}
-      }
+      // case 'SET_USER':
+      // return{
+      //   ...state,
+      //   user:{...state.user, name: action.payload.name, id: action.payload.id, slug: action.payload.slug, loggedIn: true}
+      // }
       
-      case 'LOG_OUT':
-      window.localStorage.token = undefined
+      // case 'LOG_OUT':
+      // window.localStorage.token = undefined
+      // return{
+      //   ...state,
+      //   user: {...state.user, name: "", id:"", slug:"", loggedIn: false },
+      //   collectionLoaded: false,
+      //   themes: [],
+      //   loading: false,
+      //   selections: [],
+      //   kits: [],
+      //   collection: []
+      // }
+
+      case 'LOAD_THEMES':
       return{
-        ...state,
-        user: {...state.user, name: "", id:"", slug:"", loggedIn: false },
-        collectionLoaded: false,
-        selections: [],
-        kits: [],
-        collection: []
+        ...state, loading: false, themes: [...action.payload]
       }
+
+      case 'LOADING_THEMES':
+        return{
+          ...state, loading: true
+        }
+
 
       case 'ADD_SELECTION':
       var confirmedOtherSelections
@@ -56,6 +70,7 @@ export default function mainReducer(
 
       case 'ADD_KIT': 
       let kitThemeId = action.payload[0].theme_id
+      debugger
       return {
         ...state, loading: false, kits: [...state.kits, {[kitThemeId]: [...action.payload]}]    
       }

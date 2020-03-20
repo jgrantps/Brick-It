@@ -10,10 +10,6 @@ import {Theme} from '../classes/themes'
 
 
 class CollectionContainer extends Component {
-        
-    // filterPayload = (payload, theme) => {
-    //   return  payload.filter(selection => selection.included[1].attributes.api_id == theme)
-    // }
 
     loadingSignal = () => {
         if (this.props.loading){
@@ -26,7 +22,6 @@ class CollectionContainer extends Component {
         
         let currentSelections = this.props.selection.map(theme => {
             let specificTheme = Theme.allIncludedThemes.find(themeInstance => themeInstance.api_id == Object.keys(theme)[0])
-            
             if (specificTheme) {
                 let selectionSet = theme[specificTheme.api_id].map(selection => <SelectionWrapper selection={selection} /> )
     
@@ -56,7 +51,7 @@ class CollectionContainer extends Component {
             <div className="pt-12">
                 <h2>Recent Selections:</h2>
                 {this.loadingSignal()}
-                <div className="flex bg-blue-500">
+                <div className="flex flex-wrap  border-2 m-2 bg-blue-500">
                     {currentSelections}
                 </div>
                 <div className="bg-green-300">

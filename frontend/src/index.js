@@ -4,7 +4,8 @@ import { createStore, compose, applyMiddleware} from 'redux';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import mainReducer from './reducers/mainReducer';
+// import mainReducer from './reducers/mainReducer';
+import rootReducer from './reducers/rootReducer';
 import thunk from 'redux-thunk';
 import './assets/main.css'
 import App from './App';
@@ -16,7 +17,7 @@ const persistedState = service.loadFromLocalStorage();
 const combinedMiddleware = compose(applyMiddleware(thunk), composeWithDevTools())
 
 // const store = createStore(mainReducer, persistedState, applyMiddleware(thunk))
-const store = createStore(mainReducer, persistedState, combinedMiddleware)
+const store = createStore(rootReducer, persistedState, combinedMiddleware)
 
 
 store.subscribe(()=> service.saveToLocalStorage(store.getState()))
