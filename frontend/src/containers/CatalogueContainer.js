@@ -23,11 +23,12 @@ class CatalogueContainer extends Component {
     }
     
     handleLetterSelect = (e) => {
-        const {themes: {parents}} = this.props
+        const {themes} = this.props
         e.preventDefault()
         let letter = e.target.id; 
         //STORE COLLECTION OF SPECIFIED THEMES IN LOCAL COMPONENT STATE TO RENDER.
-        let specifiedCollection = parents.filter(theme => theme.name[0] == letter)
+        debugger
+        let specifiedCollection = themes.parents.filter(theme => theme.name[0] == letter)
               
     
         this.setState({
@@ -74,7 +75,7 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = (state) => {
     return {
-        themes: state.themes.body,
+        themes: state.themes,
         loading: state.loading   
     }
 }

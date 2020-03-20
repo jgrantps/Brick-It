@@ -22,14 +22,14 @@ export const addKits = (children) => {
         const state = getState()
         const {kits} = state
      
-        dispatch({type: 'LOADING_SELECTIONS'})              //1
-        
+        dispatch({type: 'LOADING_KITS'})              //1
+        debugger
         //CHILDREN ARE IE:::    TEMPLE OF DOOM -- LAST CRUSADE -- RAIDERS OF THE LOST ARK -- KINGDOM OF THE CRYSTAL SKULL
         children.map(child => {  
-            let existingKits = kits.find(kit => Object.keys(kit)[0] == child.api_id)
+            let existingKits = kits.body.find(kit => Object.keys(kit)[0] == child.api_id)
             let loaded = false
             if (loaded) {
-                debugger                        //IE TEMPLE OF DOOM
+                // debugger                        //IE TEMPLE OF DOOM
                 dispatch({type: 'SET_LOADING_TO_FALSE'})
             }else{
                 debugger
