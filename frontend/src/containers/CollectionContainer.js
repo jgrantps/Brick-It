@@ -17,30 +17,32 @@ class CollectionContainer extends Component {
         }
     }
 
-    render() { 
-        const {userId} = this.props.match.params  
-        
-        let currentSelections = this.props.selections.body.map(theme => {
-            let specificTheme = Theme.allIncludedThemes.find(themeInstance => themeInstance.api_id == Object.keys(theme)[0])
-            if (specificTheme) {
+    currentSelections = () => {
+
+        if (this.props.selections.body.length > 0) {
+            this.props.selections.body.map(theme => {
+                let specificTheme = this.props.themes.body.find(themeInstance => themeInstance.api_id == Object.keys(theme)[0])
                 let selectionSet = theme[specificTheme.api_id].map(selection => <SelectionWrapper selection={selection} /> )
-    
                 return (
                     <>
                     <div key={uuid()}>{specificTheme.name}</div>
                     {selectionSet}
                     </>
                 )
-            }else{
-                return(
-                    <div>
-                        <h2>Please Make a Selection!</h2>
-                    </div>
-                )
-            }
-            
-        })
-        
+            })
+        } else {
+            return (
+                <>
+                <h2>Please Make a Selection!</h2>
+                </>
+            )   
+        }
+    }
+                
+                
+    render() { 
+        const {userId} = this.props.match.params 
+
         let loadedCollection = this.props.collection.body.map(theme => {
             return <CollectionWrapper theme ={theme} />
         })
@@ -52,7 +54,7 @@ class CollectionContainer extends Component {
                 <h2>Recent Selections:</h2>
                 {this.loadingSignal()}
                 <div className="flex flex-wrap  border-2 m-2 bg-blue-500">
-                    {currentSelections}
+                    {this.currentSelections()}
                 </div>
                 <div className="bg-green-300">
                     <h2>this is the COLLECTION from the User {userId}</h2>
@@ -74,7 +76,9 @@ const mapStateToProps = (state) => {
     return {
         collection: state.collection,
         selections: state.selections,
+        themes: state.themes,
         loading: state.loading,
+
         collectionLoaded: state.collectionLoaded
     }
 }
