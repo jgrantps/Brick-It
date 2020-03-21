@@ -26,18 +26,17 @@ class KitContainer extends Component {
 
 
   submitSelection = e => {
+    const {themes, addSelection} = this.props
+    
     e.preventDefault();
-    let kitTheme = Theme.allIncludedThemes.find(e => e.api_id === this.props.theme)
+    let kitTheme = themes.body.find(e => e.api_id === this.props.theme)
     let configPackage = {
       kit: {...this.props.kit},
       isPublic: this.state.setToPublic,
       theme: {...kitTheme}
-      
     }
-    //POST SELECTION TO THE USER BACKEND API!!
-    api.sendSelection(configPackage, window.localStorage.token)
-    .then(resp => this.handleSelection(resp))
-    .catch(err => console.log(err))
+    addSelection(configPackage)
+    this.setRedirect()    
   }
 
     //ADD RECEIVE CONFIRMEDSELECTION FROM BACKEN API, ADD TO STATE, AND REDIRECT TO COLLECTIONS PAGE.
@@ -102,6 +101,13 @@ class KitContainer extends Component {
 
 }
 
+const mapStateToProps = (state) => {
+  return {
+    themes: state.themes,
+    kits: state.kits
+  }
+}
+
 const mapDispatchToProps = dispatch => {
   return {
     addSelection: (selectionData => {
@@ -111,4 +117,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-export default connect(null, mapDispatchToProps)(KitContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(KitContainer);

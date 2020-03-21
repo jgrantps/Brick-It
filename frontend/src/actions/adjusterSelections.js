@@ -3,11 +3,21 @@ import thunkAction from '../actions/thunkActions'
 import api from '../classes/adapters'
 
 export const addSelection = (selectionData) => {
-    return {
-        type: 'ADD_SELECTION',
-        payload: selectionData
+    debugger
+    return (dispatch) => {
+        dispatch({type: 'LOADING_SELECTION'})              
+        api.sendSelection(selectionData, window.localStorage.token)
+        .then(resp => {
+            dispatch({type: 'ADD_SELECTION',
+                payload: thunkAction.formatSelectionData(selectionData)
+            })
+        })
+        .catch(err => console.log(err))
     }
 }
+
+
+
 
 export const addCollectionComment = (commentData) => {
     return {
@@ -25,46 +35,17 @@ export const addKits = (children) => {
         dispatch({type: 'LOADING_KITS'})              //1
         children.map(child => {  
             let existingKits = kits.body.find(kit => Object.keys(kit)[0] == child.api_id)
-                
-                if (!existingKits){
-                    api.fetchKitsForTheme(child.api_id)
-                    .then(resp => { 
-                        dispatch({ type: 'ADD_KIT', payload: thunkAction.loadKits(resp, child.api_id)})
-                    })
-                }
+            
+            if (!existingKits){
+                api.fetchKitsForTheme(child.api_id)
+                .then(resp => { 
+                    dispatch({ type: 'ADD_KIT', payload: thunkAction.loadKits(resp, child.api_id)})
+                })
+                .catch(err => console.log(err))
+            }
         })
     }
 }
-
-
-
-
-
-
-// export const addKits = (children) => {  
-
-//     return (dispatch, getState) => {
-//         const state = getState()
-//         const {kits} = state
-     
-//         dispatch({type: 'LOADING_SELECTIONS'})              //1
-        
-//         //CHILDREN ARE IE:::    TEMPLE OF DOOM -- LAST CRUSADE -- RAIDERS OF THE LOST ARK -- KINGDOM OF THE CRYSTAL SKULL
-//         children.map(child => {  
-//             let existingKits = kits.find(kit => Object.keys(kit)[0] == child.api_id)
-//                                     //IE TEMPLE OF DOOM
-//             if (existingKits && Object.values(existingKits).length > 0) {
-//                 debugger                        //IE TEMPLE OF DOOM
-//                 dispatch({type: 'SET_LOADING_TO_FALSE'})
-//             }else{
-//                 debugger
-//                 api.fetchKitsForTheme(child.api_id)
-//                 .then(resp => { dispatch({ type: 'ADD_KIT', payload: thunkAction.loadKits(resp, child.api_id)})})
-//             }
-//         })
-//     }
-// }
-
 
 export const loadUserCollection = () => {
     return (dispatch) => {

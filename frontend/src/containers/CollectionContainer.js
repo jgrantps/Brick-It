@@ -20,7 +20,7 @@ class CollectionContainer extends Component {
     render() { 
         const {userId} = this.props.match.params  
         
-        let currentSelections = this.props.selection.map(theme => {
+        let currentSelections = this.props.selections.body.map(theme => {
             let specificTheme = Theme.allIncludedThemes.find(themeInstance => themeInstance.api_id == Object.keys(theme)[0])
             if (specificTheme) {
                 let selectionSet = theme[specificTheme.api_id].map(selection => <SelectionWrapper selection={selection} /> )
@@ -41,7 +41,7 @@ class CollectionContainer extends Component {
             
         })
         
-        let loadedCollection = this.props.collection.map(theme => {
+        let loadedCollection = this.props.collection.body.map(theme => {
             return <CollectionWrapper theme ={theme} />
         })
         
@@ -73,7 +73,7 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = (state) => {
     return {
         collection: state.collection,
-        selection: state.selections,
+        selections: state.selections,
         loading: state.loading,
         collectionLoaded: state.collectionLoaded
     }

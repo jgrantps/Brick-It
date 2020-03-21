@@ -1,6 +1,7 @@
 import {Kit} from '../classes/kits'
 import service from '../classes/service'
 import {Theme} from '../classes/themes'
+import {Selection} from '../classes/selections'
 class Thunk {
 
 
@@ -38,11 +39,20 @@ class Thunk {
         
         //STORE COLLECTION OF SPECIFIED THEMES IN LOCAL COMPONENT STATE TO RENDER.
         return sortedCollection
-        // let specifiedCollection = sortedCollection.filter(theme => theme.name[0] == letter)
-
     }
 
-
+    formatSelectionData = ({kit, isPublic, theme}) => {
+        let reifiedKitList = [...Kit.allIncludedKits]
+        // let i = reifiedKitList.find( unit => unit.set_num == kit.set_num)
+        let i = Kit.allIncludedKits.find( unit => unit.set_num == kit.set_num)
+        debugger
+        let confirmedKit = ( i ? i : new Kit(kit))
+    
+        let selection = new Selection({kit, isPublic, theme})
+        let selectionPayload = {selection: selection, kit: confirmedKit, theme: theme}
+        
+        return selectionPayload
+      }
 
 
 
