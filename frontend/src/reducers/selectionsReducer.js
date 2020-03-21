@@ -15,11 +15,19 @@ export default function selectionsReducer(
             }
 
         case 'ADD_SELECTION':
-            debugger
             console.log(action.payload)
+            let themeId = action.payload.theme.api_id
+            let otherSelections = state.body.filter(theme => Object.keys(theme)[0] != themeId)
+            let confirmedOtherSelections = !!otherSelections ? otherSelections : []
             
+            let ee = state.body.find(theme => Object.keys(theme)[0] == themeId) 
+            let specificThemeCurrentList = !!ee ? Object.values(ee)[0] : []
+        let rebuiltSelectionList =  [{...action.payload.kit}, ...specificThemeCurrentList]
+        debugger
             
-            return {...state, loading: false, body:[...action.payload]}
+            return {...state, loading: false, body:
+                [ ...confirmedOtherSelections, {[themeId]: [...rebuiltSelectionList]} ]
+            }
 
 
     //   var confirmedOtherSelections

@@ -41,14 +41,15 @@ class Thunk {
         return sortedCollection
     }
 
-    formatSelectionData = ({kit, isPublic, theme}) => {
+    formatSelectionData = (resp) => {
+        const {kit, isPublic, theme} = resp
         let reifiedKitList = [...Kit.allIncludedKits]
         // let i = reifiedKitList.find( unit => unit.set_num == kit.set_num)
         let i = Kit.allIncludedKits.find( unit => unit.set_num == kit.set_num)
         debugger
         let confirmedKit = ( i ? i : new Kit(kit))
     
-        let selection = new Selection({kit, isPublic, theme})
+        let selection = new Selection(resp)
         let selectionPayload = {selection: selection, kit: confirmedKit, theme: theme}
         
         return selectionPayload

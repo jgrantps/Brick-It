@@ -3,13 +3,14 @@ import thunkAction from '../actions/thunkActions'
 import api from '../classes/adapters'
 
 export const addSelection = (selectionData) => {
-    debugger
+    
     return (dispatch) => {
         dispatch({type: 'LOADING_SELECTION'})              
         api.sendSelection(selectionData, window.localStorage.token)
         .then(resp => {
             dispatch({type: 'ADD_SELECTION',
-                payload: thunkAction.formatSelectionData(selectionData)
+                // payload: thunkAction.formatSelectionData(selectionData)
+                payload: selectionData
             })
         })
         .catch(err => console.log(err))
