@@ -23,6 +23,11 @@ export default function themesReducer (state = initialState, action) {
                 ...state, loading: false, loaded: true, parents: [...action.payload]
             }
 
+        case 'LOG_OUT':
+            return{
+                ...initialState
+            }
+
         default:
             return state;
     }

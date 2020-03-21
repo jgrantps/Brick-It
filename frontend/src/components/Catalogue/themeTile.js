@@ -15,10 +15,11 @@ class ThemeTile extends Component {
     }
 
     componentDidMount() {
-        // const {children} = this.props
-    //    if (!this.state.loaded){
+      
+       if (!this.state.loaded){
            this.props.addKits(this.props.children)
-        //    return this.setState({...this.state, loaded: true})
+           return this.setState({...this.state, loaded: true})
+       }
         
     }
     
@@ -36,8 +37,9 @@ class ThemeTile extends Component {
     renderContainer = (child) => {
         const {kits} = this.props
         
+        
         switch(this.state.render) {
-            case `${child}`: return kits.find(theme => Object.keys(theme)[0] == child)[child].map(kit  => <div key = {uuid()} className="kit-dropdown"><KitContainer key={uuid()} sessionProps={this.props.sessionProps} theme={child} kit={kit} /></div>)
+            case `${child}`: return kits.body.find(theme => Object.keys(theme)[0] == child)[child].map(kit  => <div key = {uuid()} className="kit-dropdown"><KitContainer key={uuid()} sessionProps={this.props.sessionProps} theme={child} kit={kit} /></div>)
             default: return null
         }
         

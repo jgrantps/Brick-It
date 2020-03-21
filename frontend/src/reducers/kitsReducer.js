@@ -19,6 +19,11 @@ export default function kitsReducer(
             ...state, loaded: true, loading: false, body:[...state.body, {[kitThemeId]: [...action.payload]}], 
         }
 
+        case 'LOG_OUT':
+            return{
+                ...initialState
+            }
+
 
         default:
             return state

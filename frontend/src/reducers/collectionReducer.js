@@ -19,6 +19,11 @@ export default function collectionReducer(
         ...state, loading: false, loaded: true, body: [...action.payload]
     }
 
+    case 'LOG_OUT':
+        return{
+            ...initialState
+        }
+
     default: 
         return state
     }

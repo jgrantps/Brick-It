@@ -27,7 +27,6 @@ class CatalogueContainer extends Component {
         e.preventDefault()
         let letter = e.target.id; 
         //STORE COLLECTION OF SPECIFIED THEMES IN LOCAL COMPONENT STATE TO RENDER.
-        debugger
         let specifiedCollection = themes.parents.filter(theme => theme.name[0] == letter)
               
     
