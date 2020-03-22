@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
                 include: [:user, :selection, :'selection.kit', :'selection.kit.theme']
             }
 
-            render json: CommentSerializer.new(comment, options)
+            render json: CommentSerializer.new(comment)
         else
             render json: {main: comment.errors.as_json(full_messages: true), reason: "error!"}
         end

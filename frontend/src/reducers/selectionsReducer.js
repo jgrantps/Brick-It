@@ -14,25 +14,24 @@ export default function selectionsReducer(
             }
 
         case 'ADD_SELECTION':
+            debugger
             let themeId = action.payload.theme.api_id
             let otherSelections = state.body.filter(theme => Object.keys(theme)[0] != themeId)
             
-            let ee = state.body.find(theme => Object.keys(theme)[0] == themeId) 
-            let specificThemeCurrentList = !!ee ? Object.values(ee)[0] : []
+            let existingList = state.body.find(theme => Object.keys(theme)[0] == themeId) 
+            let specificThemeCurrentList = !!existingList ? Object.values(existingList)[0] : []
             let rebuiltThemeList =  [{...action.payload.kit}, ...specificThemeCurrentList]
-        
             
             return {...state, loading: false, body:
                 [ ...otherSelections, {[themeId]: [...rebuiltThemeList]} ]
             }
 
-    case 'LOG_OUT':
-        return{
-            ...initialState
+        case 'LOG_OUT':
+            return{
+                ...initialState
+            }
+
+        default: 
+            return state
         }
-
-    default: 
-        return state
-    }
-
 }

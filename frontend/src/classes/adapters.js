@@ -82,7 +82,7 @@ class ApiAdapter {
         .then(resp => resp.json())
     }
 
-    //Retrieve all SELECTIONS from 
+    //Retrieve all SELECTIONS from User's DB and add to Collection Store.
     fetchAllSelections(token) {
         // return fetch(`http://localhost:3001/selections`, this.getConfig(token))
         return fetch(`${this.backend}/selections`, this.getConfig(token))

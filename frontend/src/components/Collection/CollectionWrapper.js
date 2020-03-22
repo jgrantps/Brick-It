@@ -36,7 +36,7 @@ class CollectionWrapper extends Component {
                     <TitleHeading name={kit.name} />
                     {this.publicTag(isPublic)}
                     <SelectionImage name={kit.name} image={kit.set_img_url} />
-                    <CommentContainer comments={comments}/>
+                    <CommentContainer currentSelection={unit.data}/>
                 </div>
             )
         })        
@@ -52,7 +52,11 @@ class CollectionWrapper extends Component {
 
 const mapStateToProps = state => {
     return {
-        collection: state.collection
+        collection: state.collection,
+        selections: state.selections,
+        kits: state.kits,
+        themes: state.themes,
+        comments: state.comments
     }
 }
 export default connect(mapStateToProps)(CollectionWrapper);

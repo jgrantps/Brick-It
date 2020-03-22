@@ -37,24 +37,7 @@ class KitContainer extends Component {
     }
     addSelection(configPackage)
     this.setRedirect()    
-  }
-
-    //ADD RECEIVE CONFIRMEDSELECTION FROM BACKEN API, ADD TO STATE, AND REDIRECT TO COLLECTIONS PAGE.
-  handleSelection = (resp) => {
-    let selectionKitInfo = resp.included[0].attributes
-    let selectionTheme = resp.included[0].attributes.theme
-
-    let reifiedKitList = [...Kit.allIncludedKits]
-    let i = reifiedKitList.find( kit => kit.set_num == selectionKitInfo.set_num)
-    let selectionKit = ( i ? i : new Kit(selectionKitInfo))
-
-    let selection = new Selection(resp)
-    let selectionPayload = {selection: selection, kit: selectionKit, theme: selectionTheme}
-    
-    this.props.addSelection(selectionPayload)
-    this.setRedirect()    
-
-  }
+  }  
 
   selectPublic = (e) => {
     e.preventDefault()
@@ -70,7 +53,6 @@ class KitContainer extends Component {
       return <KitForm key={uuid()}  kitId={kit.set_num} publicState={this.state.setToPublic} selectPublic={this.selectPublic} submitForm={this.submitSelection} />
     } 
   }
-  
   
   //BUILD OUT KIT DISPLAY TO INCLUDE SELECTION SUBMISSION FUNCTIONALITY.
   render() {

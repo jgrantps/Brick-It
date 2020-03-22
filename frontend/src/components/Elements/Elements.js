@@ -1,5 +1,6 @@
 import React from 'react'
 import uuid from 'react-uuid'
+import DeleteComment from '../../assets/images/deleteCommentSVG'
 
 export const TitleHeading = (props) => {
     return <h2 className="font-bold leading-tight text-xl">{props.name}</h2>
@@ -20,16 +21,13 @@ export  const SelectionPrompt = (props) => {
         </div>
         )
     }
+
+// export const CommentList = (props) => {
+//     props.comments.map(comment => {
+//         return <p className="leading-tight font-bold text-sm">{comment.comment}</p>
+//     })
+// }
     
-    // export const CommentList = (props) => {
-        //     if (props.comments) {
-            //         props.comments.map(comment => {  
-                //             return <p className="leading-tight font-bold text-sm">{comment.comment}</p>
-                //         })
-                //     } else {
-                    //         return <p className="leading-tight font-bold text-sm">Be The First To Comment!</p>
-                    //     }
-                    // }
                     
 export const SelectThemeBtn = ({child, handlOnClick}) => {
     return (
@@ -47,5 +45,18 @@ export const SubmitBtn = (props) => {
 }
 
 export const CommentList = (props) => {
-    return <p className="leading-tight font-bold text-sm">{props.comment}</p>
+    const {comment, handleOnDelete} = props
+    debugger
+    return (
+        <div className="flex border justify-between rounded-lg m-1 px-2 ">
+            <div className=" flex flex-col">
+                <h2>{comment.comment}</h2>
+                <h3 className="font-bold">| {comment.user.name}</h3>
+            </div>
+            <button className="" onClick={handleOnDelete}>
+                
+                <DeleteComment />
+            </button>
+        </div>
+    )
 }

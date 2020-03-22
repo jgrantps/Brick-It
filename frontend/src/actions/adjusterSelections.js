@@ -2,23 +2,6 @@ import thunkAction from '../actions/thunkActions'
 
 import api from '../classes/adapters'
 
-export const addSelection = (selectionData) => {
-    
-    return (dispatch) => {
-        dispatch({type: 'LOADING_SELECTION'})              
-        api.sendSelection(selectionData, window.localStorage.token)
-        .then(resp => {
-            debugger
-            dispatch({type: 'ADD_SELECTION',
-                payload: thunkAction.formatSelectionData(resp, selectionData)
-                // payload: selectionData
-            })
-        })
-        .catch(err => console.log(err))
-    }
-}
-
-
 
 
 export const addCollectionComment = (commentData) => {
@@ -29,11 +12,10 @@ export const addCollectionComment = (commentData) => {
 }
 
 export const addKits = (children) => {  
-
     return (dispatch, getState) => {
         const state = getState()
         const {kits} = state
-     
+        
         dispatch({type: 'LOADING_KITS'})              //1
         children.map(child => {  
             let existingKits = kits.body.find(kit => Object.keys(kit)[0] == child.api_id)
@@ -41,13 +23,31 @@ export const addKits = (children) => {
             if (!existingKits){
                 api.fetchKitsForTheme(child.api_id)
                 .then(resp => { 
-                    dispatch({ type: 'ADD_KIT', payload: thunkAction.loadKits(resp, child.api_id)})
+                    dispatch({ type: 'ADD_KIT', 
+                        payload: thunkAction.loadKits(resp, child.api_id)
+                    })
                 })
                 .catch(err => console.log(err))
             }
         })
     }
 }
+
+export const addSelection = (selectionData) => {
+    return (dispatch) => {
+        dispatch({type: 'LOADING_SELECTION'})              
+        api.sendSelection(selectionData, window.localStorage.token)
+        .then(resp => {
+            debugger
+            dispatch({type: 'ADD_SELECTION',
+                payload: thunkAction.formatSelectionData(resp)
+            })
+        })
+        .catch(err => console.log(err))
+    }
+}
+
+
 
 export const loadUserCollection = () => {
     return (dispatch) => {
@@ -129,30 +129,10 @@ export const loadComment = (commentPayload) => {
         dispatch({type: 'LOADING_COMMENTS'})
         api.subitComment(commentPayload, window.localStorage.token)
         .then(resp => {
-            dispatch({type:'ADD_SELECTION_COMMENT',
-                payload: thunkAction.formatComment(resp)
+            dispatch({type:'LOAD_NEW_COMMENT',
+                payload: resp.data.attributes
             })
         })
         .catch(err => console.log(err))
     }
 }
-
-// .catch(err => console.log(err))
-
-
-
-
-// children.map(child => {                             //2...
-//     var storedThemeList;
-//     kits.length > 0 ? storedThemeList = kits.map(theme => Object.keys(theme)[0]) : storedThemeList = []    
-//     if (storedThemeList.find(theme => theme == child.api_id)) {
-//         dispatch({type: 'SET_LOADING_TO_FALSE'})
-//     } else {
-//         debugger
-//         api.fetchKitsForTheme(child.api_id)
-//         .then(resp => { 
-//             testie.push(thunkAction.loadKits(resp,child.api_id))
-//             dispatch({ type: 'ADD_KIT', payload: thunkAction.loadKits(resp, child.api_id)}) 
-//         })
-//     }
-// })

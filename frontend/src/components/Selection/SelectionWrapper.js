@@ -12,7 +12,7 @@ return (
        
         <TitleHeading name={selection.name} />
         <SelectionImage image={selection.set_img_url} alt={selection.name} />
-        <CommentContainer selection={selection} />
+        <CommentContainer currentSelection={selection} />
     </div>
 )
 }

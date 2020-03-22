@@ -20,42 +20,42 @@ class CommentContainer extends Component {
 
     handleSubmit = event => {
         event.preventDefault()
-        debugger
-
-        let commentPayload = {selection_comment: {selection_id: this.props.selection.selectionId, comment: this.state.comment}}
-        this.props.loadComment(commentPayload)
-        // debugger
+        let commentPayload = {selection_comment: {selection_id: this.props.currentSelection.id, comment: this.state.comment}}
+        this.props.loadComment(commentPayload) 
     }
 
-    // formatComment = (resp) => {
-    //     let comment = resp.data.attributes.comment
-    //     let userName = resp.included.find(e=>e.type == "user").attributes.name
-    //     let selectionId = resp.included.find(e=>e.type == "selection").id
-    //     let commentId = resp.data.id
-    //     let commentPackage = {comment: comment, userName: userName, selectionId: selectionId, commentId: commentId}
-    //     this.props.loadComment(commentPackage)
-    //     debugger
-    // }
+    handleDeleteComment = (e) =>{
+        debugger
+        e.preventDefault()
+        console.log("yay I'm deleted!!!")
+    }
 
-    validateCommentList = (comments) => {
+    localCommentList = () => {
+
+        let localComments = this.props.comments.body.filter(comment => comment.selection.id == this.props.currentSelection.id)
         
-        if (comments == undefined || comments.length < 1)  { 
-            return this.filterComments({comment: "Be The First To Comment"})
-        } else {
-            // return    comments.map(comment => this.filterComments(comment)) //TEST OUT TO SEE IF WE CAN AVOID FILTERCOMMENTS..
-            return   comments.map(comment => <CommentList comment={comment.comment}/>)
-        }
+
+
+       return  localComments.map(comment => {
+           return <CommentList comment={comment} handleOnDelete={this.handleDeleteComment} />
+            //  return(
+            //      <div className="comment">
+            //         <h2>{comment.comment}</h2>
+            //         <h3>by {comment.user.name}</h3>
+            //      </>
+            //      ) 
+
+         })  
     }
 
     filterComments = (comment) => {
-        if (comment) {return <CommentList comment={comment.comment}/>}
+        if (comment) {return <CommentList comment={comment.comment} />}
     } 
 
     render() {
-        let renderCommentList = this.validateCommentList(this.props.comments)  
         return(
             <>
-            {renderCommentList}
+            {this.localCommentList()}
             
             <CommentInput trackChange={this.trackChange} commentState={this.state.comment} handleSubmit={this.handleSubmit}/>
            </>
@@ -70,9 +70,10 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = state => {
     return {
-        selections: state.selection,
+        selections: state.selections,
         kits: state.kits,
-        collection: state.collection
+        collection: state.collection,
+        comments: state.comments
     }
 }
 

@@ -41,27 +41,51 @@ class Thunk {
         return sortedCollection
     }
 
-    formatSelectionData = (resp, selectionData) => {
+    formatSelectionData = (resp) => {
         debugger
-        const {kit, isPublic, theme} = selectionData
-        let reifiedKitList = [...Kit.allIncludedKits]
-        // let i = reifiedKitList.find( unit => unit.set_num == kit.set_num)
-        let i = Kit.allIncludedKits.find( unit => unit.set_num == kit.set_num)
+        let selectionId = resp.data.id
+        let selectionUserId = resp.data.attributes.user.id
+        let selectionKitId = resp.data.attributes.kit.id
+        let selectionKitSetNum = resp.data.attributes.kit.set_num
+        let selectionIsPublic = resp.data.attributes.public;
+        let selectionTheme = resp.included.find(e => e.type == 'theme').attributes
+        // let selectionComments = resp.data.attributes.comments
+        let selectionKit = resp.data.attributes.kit
+        let augmentedSelectionKit = {...selectionKit, theme_api_id: selectionTheme.api_id}
+        
+        
         debugger
-        let confirmedKit = ( i ? i : new Kit(kit))
+        
     
-        let selection = new Selection(resp)
-        let selectionPayload = {selection: selection, kit: confirmedKit, theme: theme}
+        let selection = {id: selectionId, user_id: selectionUserId, kit_id: selectionKitId, public: selectionIsPublic, kit_set_num: selectionKitSetNum}
+        let selectionPayload = {selection: selection, kit: augmentedSelectionKit, theme: selectionTheme}
         
         return selectionPayload
       }
 
 
-
-
-
-
-
+    handleFetchPayload(payload) {
+        debugger
+        var reduxPayload = []
+        var payloadThemes = []
+        if (payload.message == "You currently have no selections") {
+            return [];
+        } else {
+        //EXTRACT ARRAY OF THEMES RELATING TO THE PAYLOAD SELECTIONS
+            payload.map(selection => payloadThemes.push(selection.included.find(i => i.type == 'theme').attributes.api_id))
+        }
+        //FILTER OUT DUPLICATES FROM THEME ARRAY 
+        let uniquePayloadThemes = [...new Set(payloadThemes)];
+        //lOAD EACH THEME WITH ARRAY OF ASSOCIATED SELECTIONS.
+        uniquePayloadThemes.map(theme => {reduxPayload.push({[theme]: this.filterPayload(payload, theme)})})
+        return reduxPayload;
+    }
+    
+    filterPayload(payload, theme) {  
+        //FILTER BULK PAYLOAD ACCORDING TO SPECIFIC THEME.       
+        let  filteredPayload =  payload.filter(selection => selection.included.find(i=> i.type == "theme").attributes.api_id == theme)     
+        return  filteredPayload
+    }
 
     handleLoginCredentials(fetch) {
         let verifiedUserCredentials={name: fetch.package.name, id: fetch.package.id, slug: service.slugify(fetch.package.name)}
@@ -79,28 +103,6 @@ class Thunk {
     }
 
 
-    handleFetchPayload(payload) {
-        
-        var reduxPayload = []
-        var payloadThemes = []
-        if (payload.message == "You currently have no selections") {
-            return [];
-        } else {
-        //EXTRACT ARRAY OF THEMES RELATING TO THE PAYLOAD SELECTIONS
-        payload.map(selection => payloadThemes.push(selection.included.find(i => i.type == 'theme').attributes.api_id))
-        }
-        //FILTER OUT DUPLICATES FROM THEME ARRAY 
-        let uniquePayloadThemes = [...new Set(payloadThemes)];
-        //lOAD EACH THEME WITH ARRAY OF ASSOCIATED SELECTIONS.
-        uniquePayloadThemes.map(theme => {reduxPayload.push({[theme]: this.filterPayload(payload, theme)})})
-        return reduxPayload;
-    }
-
-    filterPayload(payload, theme) {  
-        //FILTER BULK PAYLOAD ACCORDING TO SPECIFIC THEME.       
-        let  filteredPayload =  payload.filter(selection => selection.included.find(i=> i.type == "theme").attributes.api_id == theme)     
-        return  filteredPayload
-    }
 
     loadKits(data, theme_id) {
     var newKit; 
@@ -120,7 +122,7 @@ class Thunk {
     }
 
     formatComment(resp){
-
+debugger
         let comment = resp.data.attributes.comment
         let userName = resp.included.find(e=>e.type == "user").attributes.name
         let selectionId = resp.included.find(e=>e.type == "selection").id
