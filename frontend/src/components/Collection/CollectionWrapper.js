@@ -32,7 +32,7 @@ class CollectionWrapper extends Component {
             let classColor = this.setClass(isPublic) 
             
             return (
-                <div className={classColor}>
+                <div key={uuid()} className={classColor}>
                     <TitleHeading name={kit.name} />
                     {this.publicTag(isPublic)}
                     <SelectionImage name={kit.name} image={kit.set_img_url} />

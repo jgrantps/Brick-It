@@ -1,5 +1,6 @@
 import React from 'react';
-import SubmitBtn from '../Buttons/SubmitBtn'
+
+import {SubmitBtn} from '../Elements/Elements'
 import { TextField } from '../Elements/Elements';
 
 export const CommentInput = (props) => {

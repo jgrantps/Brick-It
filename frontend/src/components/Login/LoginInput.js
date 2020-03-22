@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {TextField} from '../../components/Elements/Elements'
-import SubmitBtn from '../Buttons/SubmitBtn'
+import {SubmitBtn} from '../Elements/Elements'
+
 import { connect } from 'react-redux'
 
 class LoginInput extends Component {

@@ -2,10 +2,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import NavContainer from './NavContainer'
 import uuid from 'react-uuid'
-// import { addAllSelections } from '../actions/adjusterSelections'
+
 import SelectionWrapper from '../components/Selection/SelectionWrapper'
 import CollectionWrapper from '../components/Collection/CollectionWrapper'
-import {Theme} from '../classes/themes'
+import { SelectionPrompt, TitleHeading } from '../components/Elements/Elements'
+
 
 
 
@@ -17,36 +18,42 @@ class CollectionContainer extends Component {
         }
     }
 
-    currentSelections = () => {
-
-        if (this.props.selections.body.length > 0) {
-            this.props.selections.body.map(theme => {
-                let specificTheme = this.props.themes.body.find(themeInstance => themeInstance.api_id == Object.keys(theme)[0])
-                let selectionSet = theme[specificTheme.api_id].map(selection => <SelectionWrapper selection={selection} /> )
-                return (
-                    <>
-                    <div key={uuid()}>{specificTheme.name}</div>
-                    {selectionSet}
-                    </>
-                )
-            })
-        } else {
+selectionSet = () => {
+    
+   return( this.props.selections.body.map(theme => {
+       
+       let specificTheme = this.props.themes.body.find(themeInstance => themeInstance.api_id == Object.keys(theme)[0])
+       return(theme[specificTheme.api_id].map(selection => {
+        
+       
             return (
-                <>
-                <h2>Please Make a Selection!</h2>
-                </>
+                <div key={uuid()} className="flex flex-col w-auto">
+                    <TitleHeading name={specificTheme.name} />
+                    <SelectionWrapper  selection={selection} /> 
+                </div>
+            )
+        }))
+    }))
+}    
+
+currentSelections = () => {
+
+    if (this.props.selections.body.length > 0) {
+        return this.selectionSet()              
+    } else { 
+        return (
+            <SelectionPrompt prompt="Please Make A Selection" />
             )   
         }
+            
     }
-                
-                
+
     render() { 
         const {userId} = this.props.match.params 
 
         let loadedCollection = this.props.collection.body.map(theme => {
-            return <CollectionWrapper theme ={theme} />
+            return <CollectionWrapper key={uuid()} theme ={theme} />
         })
-        
         return(
             <>
             <NavContainer props={this.props} />
@@ -54,7 +61,9 @@ class CollectionContainer extends Component {
                 <h2>Recent Selections:</h2>
                 {this.loadingSignal()}
                 <div className="flex flex-wrap  border-2 m-2 bg-blue-500">
+                   
                     {this.currentSelections()}
+                    
                 </div>
                 <div className="bg-green-300">
                     <h2>this is the COLLECTION from the User {userId}</h2>

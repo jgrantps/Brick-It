@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
     def create
+        byebug
         comment = Comment.new(:user_id => current_user.id, :selection_id => commentParams[:selection_id], :comment => commentParams[:comment])
         if comment.save
             options = {

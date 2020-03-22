@@ -19,6 +19,7 @@ class CommentContainer extends Component {
     }
 
     handleSubmit = event => {
+        debugger
         event.preventDefault()
         let commentPayload = {selection_comment: {selection_id: this.props.selection.selectionId, comment: this.state.comment}}
         this.props.loadComment(commentPayload)
@@ -66,4 +67,12 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(CommentContainer);
+const mapStateToProps = state => {
+    return {
+        selections: state.selection,
+        kits: state.kits,
+        collection: state.collection
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CommentContainer);

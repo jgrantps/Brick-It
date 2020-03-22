@@ -1,14 +1,16 @@
 import React from 'react'
 import uuid from 'react-uuid'
-import {SelectionTitle} from './SelectionTitle'
-import {SelectionImage} from './SelectionImage'
+
 import CommentContainer from '../../containers/CommentContainer'
+import {SelectionImage, TitleHeading} from '../Elements/Elements'
 
 const SelectionWrapper = (props) => {
     const {selection} = props
 return (
-    <div key={uuid()} className=" rounded-lg bg-gray-100 w-1/3 flex flex-col m-4 px-6 shadow">
-        <SelectionTitle name={selection.name} />
+
+    <div key={uuid()} className=" rounded-lg bg-gray-100 w-auto flex flex-col m-4 px-6 shadow">
+       
+        <TitleHeading name={selection.name} />
         <SelectionImage image={selection.set_img_url} alt={selection.name} />
         <CommentContainer selection={selection} />
     </div>

@@ -3,7 +3,7 @@ import KitContainer from '../Kits/KitContainer'
 import { Kit } from '../../classes/kits';
 import api from '../../classes/adapters'
 import uuid from 'react-uuid'
-import SelectThemeBtn from '../Buttons/SelectThemeBtn'
+import {SelectThemeBtn} from '../Elements/Elements'
 import {connect} from 'react-redux'
 import {addKits, adKits} from '../../actions/adjusterSelections'
 
