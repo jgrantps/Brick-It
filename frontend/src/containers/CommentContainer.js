@@ -19,8 +19,9 @@ class CommentContainer extends Component {
     }
 
     handleSubmit = event => {
-        debugger
         event.preventDefault()
+        debugger
+
         let commentPayload = {selection_comment: {selection_id: this.props.selection.selectionId, comment: this.state.comment}}
         this.props.loadComment(commentPayload)
         // debugger

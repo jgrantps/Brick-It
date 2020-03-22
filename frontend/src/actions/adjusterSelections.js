@@ -8,9 +8,10 @@ export const addSelection = (selectionData) => {
         dispatch({type: 'LOADING_SELECTION'})              
         api.sendSelection(selectionData, window.localStorage.token)
         .then(resp => {
+            debugger
             dispatch({type: 'ADD_SELECTION',
-                // payload: thunkAction.formatSelectionData(selectionData)
-                payload: selectionData
+                payload: thunkAction.formatSelectionData(resp, selectionData)
+                // payload: selectionData
             })
         })
         .catch(err => console.log(err))
