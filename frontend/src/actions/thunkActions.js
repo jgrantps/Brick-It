@@ -137,6 +137,11 @@ class Thunk {
         return filteredComments;
     }
 
+    filterDeleteComment(resp){
+        //return only the commentId as provided by the backend resp.
+        
+    }
+
 }
 
 let thunkAction = new Thunk

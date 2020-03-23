@@ -4,7 +4,7 @@ import api from '../classes/adapters'
 
 import {CommentInput} from '../components/Comments/CommentInput'
 import { CommentList } from '../components/Elements/Elements';
-import { loadComment } from '../actions/adjusterSelections'
+import { loadComment, deleteComment } from '../actions/adjusterSelections'
 
 
 class CommentContainer extends Component {
@@ -25,28 +25,17 @@ class CommentContainer extends Component {
     }
 
     handleDeleteComment = (e) =>{
-        debugger
         e.preventDefault()
         console.log("yay I'm deleted!!!")
         console.log(`please delete comment number: ${e.target.id}`)
+        this.props.deleteComment(e.target.id)
     }
 
     localCommentList = () => {
-
         let localComments = this.props.comments.body.filter(comment => comment.selection.id == this.props.currentSelection.id)
-        
-
-
        return  localComments.map(comment => {
            return <CommentList comment={comment} handleOnDelete={this.handleDeleteComment} />
-            //  return(
-            //      <div className="comment">
-            //         <h2>{comment.comment}</h2>
-            //         <h3>by {comment.user.name}</h3>
-            //      </>
-            //      ) 
-
-         })  
+        })  
     }
 
     filterComments = (comment) => {
@@ -65,7 +54,9 @@ class CommentContainer extends Component {
 }
 
 const mapDispatchToProps = dispatch => {
-   return {loadComment: (commentPayload) => {dispatch(loadComment(commentPayload))}
+   return {
+       loadComment: (commentPayload) => {dispatch(loadComment(commentPayload))},
+       deleteComment: (commentPayload) => {dispatch(deleteComment(commentPayload))}
     }
 }
 

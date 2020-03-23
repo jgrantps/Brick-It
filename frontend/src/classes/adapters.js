@@ -27,6 +27,18 @@ class ApiAdapter {
             })
         }
         
+        //CONFIGURATION OBJECT FOR DELETE REQUESTS TO LOCAL API.
+        this.deleteConfig = (configPackage= '', token=undefined, method="DELETE") =>{
+            return ({  
+                method: method,
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": token
+                },
+                body: JSON.stringify(configPackage)
+            })
+        }
+        
         //AUTHENTICATION KEY FOR REBRICKABLE API FETCH REQUESTS.
         this.rebrickableAuth = {
             method: "GET", 
@@ -102,6 +114,11 @@ class ApiAdapter {
 
     fetchUserComments(token) {
         return fetch(`${this.backend}/comments`, this.getConfig(token))
+            .then(resp => resp.json())
+    }
+
+    deleteComment(configPackage, token) {
+        return fetch(`${this.baseUrl}/comments/${configPackage}`, this.deleteConfig(configPackage, token))
             .then(resp => resp.json())
     }
 

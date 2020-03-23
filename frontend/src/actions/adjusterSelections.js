@@ -149,3 +149,16 @@ export const loadUserComments = () => {
         .catch(err => console.log(err))
     }
 }
+
+export const deleteComment = (commentPayload) => {
+    return (dispatch) => {
+        dispatch({type: 'LOADING_COMMENTS'})
+        api.deleteComment(commentPayload, window.localStorage.token)
+        .then(resp =>{
+            dispatch({type: 'DELETE_COMMENT',
+                payload: thunkAction.filterDeleteComment(resp)
+            })
+        })
+        .catch(err => console.log(err))
+    }
+}

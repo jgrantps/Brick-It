@@ -37,12 +37,17 @@ class CommentsController < ApplicationController
     end
 
     def destroy
+        byebug
     end
 
     private
 
     def commentParams
         params.require(:selection_comment).permit(:selection_id, :comment) 
+    end
+
+    def delete_params
+        params.permit(:id)
     end
     
 end
