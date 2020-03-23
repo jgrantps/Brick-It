@@ -6,18 +6,18 @@ import {loadUserComments} from '../actions/adjusterSelections'
 
 import SelectionWrapper from '../components/Selection/SelectionWrapper'
 import CollectionWrapper from '../components/Collection/CollectionWrapper'
-import { SelectionPrompt, TitleHeading } from '../components/Elements/Elements'
+import { SelectionPrompt, TitleHeading, LoadingSignal } from '../components/Elements/Elements'
 
 
 
 
 class CollectionContainer extends Component {
 
-    loadingSignal = () => {
-        if (this.props.loading){
-            return <h1 className="text-2xl">I AM LOADING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</h1>
-        }
-    }
+    // loadingSignal = () => {
+    //     if (this.props.loading){
+    //         return <h1 className="text-2xl">I AM LOADING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</h1>
+    //     }
+    // }
 
 
     componentDidMount() {
@@ -37,7 +37,7 @@ selectionSet = () => {
        
             return (
                 <div key={uuid()} className="flex flex-col w-auto">
-                    <TitleHeading name={specificTheme.name} headingClass="font-bold leading-tight text-xl"/>
+                    <TitleHeading name={specificTheme.name} headingClass="collection-theme-title"/>
                     <SelectionWrapper  selection={selection} /> 
                 </div>
             )
@@ -68,7 +68,8 @@ currentSelections = () => {
             <NavContainer props={this.props} />
             <div className="pt-12">
                 <h2 className="text-4xl border-b-2 border-gray-700 mx-8 mb-4">Recent Selections:</h2>
-                {this.loadingSignal()}
+                {/* {this.loadingSignal()} */}
+                {LoadingSignal(this.props)}
                 <div className="flex flex-wrap  bg-blue-100">
                     {this.currentSelections()}
                     

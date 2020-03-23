@@ -3,6 +3,7 @@ import uuid from 'react-uuid'
 import DeleteComment from '../../assets/images/deleteCommentSVG'
 import service from '../../classes/service'
 import CommentContainer from '../../containers/CommentContainer'
+import loading from '../../assets/images/loading.gif'
 
 export const TitleHeading = (props) => {
     return <h2 className={props.headingClass}>{props.name}</h2>
@@ -56,7 +57,6 @@ export const CommentList = (props) => {
 
 export const TileWrapper = (props) => {
     const {unit,comments, isPublic} = props
-    debugger
     return(
         <div key={uuid()} className={isPublic ? "rounded-lg bg-gray-500 flex flex-col m-4 px-6 shadow" : "rounded-lg bg-blue-500  flex flex-col m-4 px-6 shadow"}>
         {service.publicTag(isPublic)}
@@ -65,4 +65,27 @@ export const TileWrapper = (props) => {
         <CommentContainer currentSelection={comments}/>
     </div> 
     )
+}
+
+const loadingGiphy = require("../../assets/images/loading.gif")
+
+export const LoadingSignal = (props) => {
+    if (props) {
+        // return <h1 className="text-2xl">I AM LOADING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</h1>
+
+        return (
+            <div className="flex justify-center w-auto">
+
+            <div 
+            className="flex flex-col justify-center items-stretch w-48 h-48 " 
+            style={ {
+                backgroundImage: `url("${loadingGiphy}")`,
+                backgroundPosition: 'center',
+                
+            }}>
+                <p className="flex justify-center  text-sm">one moment please</p>
+            </div>
+            </div>
+        )
+    }
 }

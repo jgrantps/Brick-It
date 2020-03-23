@@ -7,6 +7,7 @@ import service from '../classes/service'
 import { Theme } from '../classes/themes';
 import ThemeUI from '../components/Catalogue/themeUI'
 import ThemeTile from '../components/Catalogue/themeTile'
+import {LoadingSignal} from '../components/Elements/Elements'
 
 import uuid from 'react-uuid'
 
@@ -16,11 +17,11 @@ class CatalogueContainer extends Component {
         childrenList: []
     }
 
-    loadingSignal = () => {
-        if (this.props.themes.loading){
-            return <h1 className="text-2xl">I AM LOADING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</h1>
-        }
-    }
+    // loadingSignal = () => {
+    //     if (this.props.themes.loading){
+    //         return <h1 className="text-2xl">I AM LOADING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</h1>
+    //     }
+    // }
     
     handleLetterSelect = (e) => {
         const {themes} = this.props
@@ -47,10 +48,11 @@ class CatalogueContainer extends Component {
         return(
             <>
             <NavContainer props={this.props} />
-            <div id="theme-wrapper" className="pt-12">
-                {this.loadingSignal()}
+            <div id="flex flex-col justify-center w-auto" className="pt-12">
                 <ThemeUI handleOnSubmit={this.handleLetterSelect} />
                 {collectedThemes}
+                {LoadingSignal(!this.props.themes.loading)}
+
             
             </div>
             </>
