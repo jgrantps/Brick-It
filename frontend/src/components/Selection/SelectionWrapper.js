@@ -1,20 +1,19 @@
-import React from 'react'
+import React, { Component } from 'react'
 import uuid from 'react-uuid'
 
-import CommentContainer from '../../containers/CommentContainer'
-import {SelectionImage, TitleHeading} from '../Elements/Elements'
 
-const SelectionWrapper = (props) => {
-    const {selection} = props
-return (
+import {TileWrapper} from '../Elements/Elements'
 
-    <div key={uuid()} className=" rounded-lg bg-gray-100 w-auto flex flex-col m-4 px-6 shadow">
-       
-        <TitleHeading name={selection.name} />
-        <SelectionImage image={selection.set_img_url} alt={selection.name} />
-        <CommentContainer currentSelection={selection} />
-    </div>
-)
+class SelectionWrapper extends Component {
+    
+    render () {
+        const {selection} = this.props
+        return (
+            <div key={uuid()} >
+                <TileWrapper unit={selection.kit} comments={selection.selection} isPublic={selection.selection.public}/>
+            </div>
+        )
+    }
 }
 
 export default SelectionWrapper; 

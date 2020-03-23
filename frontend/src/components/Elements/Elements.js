@@ -1,9 +1,11 @@
 import React from 'react'
 import uuid from 'react-uuid'
 import DeleteComment from '../../assets/images/deleteCommentSVG'
+import service from '../../classes/service'
+import CommentContainer from '../../containers/CommentContainer'
 
 export const TitleHeading = (props) => {
-    return <h2 className="font-bold leading-tight text-xl">{props.name}</h2>
+    return <h2 className={props.headingClass}>{props.name}</h2>
 }
 
 export const SelectionImage = (props) => {
@@ -21,13 +23,6 @@ export  const SelectionPrompt = (props) => {
         </div>
         )
     }
-
-// export const CommentList = (props) => {
-//     props.comments.map(comment => {
-//         return <p className="leading-tight font-bold text-sm">{comment.comment}</p>
-//     })
-// }
-    
                     
 export const SelectThemeBtn = ({child, handlOnClick}) => {
     return (
@@ -50,11 +45,24 @@ export const CommentList = (props) => {
     return (
         <div key={uuid()} className="flex border justify-between rounded-lg m-1 px-2 ">
             <div className=" flex flex-col">
+                <h3 className="font-bold">{comment.user.name}:</h3>
                 <h2>{comment.comment}</h2>
-                <h3 className="font-bold">| {comment.user.name}</h3>
             </div>
             <button id={comment.id}   className="pointer-events-auto z-20" onClick={handleOnClick}>
                 <DeleteComment /> </button>
         </div>
+    )
+}
+
+export const TileWrapper = (props) => {
+    const {unit,comments, isPublic} = props
+    debugger
+    return(
+        <div key={uuid()} className={isPublic ? "rounded-lg bg-gray-500 flex flex-col m-4 px-6 shadow" : "rounded-lg bg-blue-500  flex flex-col m-4 px-6 shadow"}>
+        {service.publicTag(isPublic)}
+        <SelectionImage name={unit.name} image={unit.set_img_url} />
+        <TitleHeading name={unit.name} />
+        <CommentContainer currentSelection={comments}/>
+    </div> 
     )
 }

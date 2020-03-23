@@ -20,7 +20,8 @@ export default function selectionsReducer(
             
             let existingList = state.body.find(theme => Object.keys(theme)[0] == themeId) 
             let specificThemeCurrentList = !!existingList ? Object.values(existingList)[0] : []
-            let rebuiltThemeList =  [{...action.payload.kit}, ...specificThemeCurrentList]
+            let rebuiltThemeList =  [{...action.payload}, ...specificThemeCurrentList]
+            // let rebuiltThemeList =  [{...action.payload.kit}, ...specificThemeCurrentList]
             
             return {...state, loading: false, body:
                 [ ...otherSelections, {[themeId]: [...rebuiltThemeList]} ]

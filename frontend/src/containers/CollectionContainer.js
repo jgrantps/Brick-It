@@ -37,7 +37,7 @@ selectionSet = () => {
        
             return (
                 <div key={uuid()} className="flex flex-col w-auto">
-                    <TitleHeading name={specificTheme.name} />
+                    <TitleHeading name={specificTheme.name} headingClass="font-bold leading-tight text-xl"/>
                     <SelectionWrapper  selection={selection} /> 
                 </div>
             )
@@ -67,15 +67,13 @@ currentSelections = () => {
             <>
             <NavContainer props={this.props} />
             <div className="pt-12">
-                <h2>Recent Selections:</h2>
+                <h2 className="text-4xl border-b-2 border-gray-700 mx-8 mb-4">Recent Selections:</h2>
                 {this.loadingSignal()}
-                <div className="flex flex-wrap  border-2 m-2 bg-blue-500">
-                   
+                <div className="flex flex-wrap  bg-blue-100">
                     {this.currentSelections()}
                     
                 </div>
-                <div className="bg-green-300">
-                    <h2>this is the COLLECTION from the User {userId}</h2>
+                <div>
                     {loadedCollection}
                 </div>
             </div>

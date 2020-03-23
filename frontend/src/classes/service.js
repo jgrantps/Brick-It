@@ -1,3 +1,4 @@
+import React from 'react'
 import { Kit } from './kits';
 
 class Services {
@@ -39,6 +40,20 @@ class Services {
   findChildrenThemes(parent, themes) {
      let children = themes.filter(theme => theme.parent_id === parent.api_id)
      return children
+  }
+
+  publicTag(isPublic) {
+    if (isPublic){
+        return (
+            <div>
+                <h2 className="text-green-700 font-bold">PUBLIC</h2>
+            </div>
+        )
+    }
+  }
+
+  setPublicClass(isPublic=false){
+    return isPublic ? "rounded-lg bg-gray-500 flex flex-col m-4 px-6 shadow" : "rounded-lg bg-green-100  flex flex-col m-4 px-6 shadow"
   }
 
       
