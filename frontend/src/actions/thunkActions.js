@@ -1,7 +1,7 @@
 import {Kit} from '../classes/kits'
 import service from '../classes/service'
 import {Theme} from '../classes/themes'
-import {Selection} from '../classes/selections'
+
 class Thunk {
 
 
@@ -42,19 +42,18 @@ class Thunk {
     }
 
     formatSelectionData = (resp) => {
-        debugger
         let selectionId = resp.data.id
         let selectionUserId = resp.data.attributes.user.id
         let selectionKitId = resp.data.attributes.kit.id
         let selectionKitSetNum = resp.data.attributes.kit.set_num
         let selectionIsPublic = resp.data.attributes.public;
         let selectionTheme = resp.included.find(e => e.type == 'theme').attributes
-        // let selectionComments = resp.data.attributes.comments
+        
         let selectionKit = resp.data.attributes.kit
         let augmentedSelectionKit = {...selectionKit, theme_api_id: selectionTheme.api_id}
         
         
-        debugger
+
         
     
         let selection = {id: selectionId, user_id: selectionUserId, kit_id: selectionKitId, public: selectionIsPublic, kit_set_num: selectionKitSetNum}
@@ -122,7 +121,6 @@ class Thunk {
     }
 
     formatComment(resp){
-debugger
         let comment = resp.data.attributes.comment
         let userName = resp.included.find(e=>e.type == "user").attributes.name
         let selectionId = resp.included.find(e=>e.type == "selection").id
@@ -131,6 +129,12 @@ debugger
         let commentPackage = {comment: comment, userName: userName, selectionId: selectionId, theme_api_id: commentTheme, commentId: commentId}
         
         return commentPackage
+    }
+
+    filterCommentPayload(resp){
+        let filteredComments = []
+        resp.map(unit => filteredComments.push(unit.data.attributes))
+        return filteredComments;
     }
 
 }

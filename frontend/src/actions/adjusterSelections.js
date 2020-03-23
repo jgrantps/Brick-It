@@ -136,3 +136,16 @@ export const loadComment = (commentPayload) => {
         .catch(err => console.log(err))
     }
 }
+
+export const loadUserComments = () => {
+    return (dispatch) => {
+        dispatch({type: 'LOADING_USER_COMMENTS'})
+        api.fetchUserComments(window.localStorage.token)
+        .then(resp => {
+            dispatch({type: 'LOAD_USER_COMMENTS',
+                payload: thunkAction.filterCommentPayload(resp)
+            })
+        })
+        .catch(err => console.log(err))
+    }
+}

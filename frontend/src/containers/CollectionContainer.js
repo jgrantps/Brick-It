@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import NavContainer from './NavContainer'
 import uuid from 'react-uuid'
+import {loadUserComments} from '../actions/adjusterSelections'
 
 import SelectionWrapper from '../components/Selection/SelectionWrapper'
 import CollectionWrapper from '../components/Collection/CollectionWrapper'
@@ -15,6 +16,14 @@ class CollectionContainer extends Component {
     loadingSignal = () => {
         if (this.props.loading){
             return <h1 className="text-2xl">I AM LOADING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</h1>
+        }
+    }
+
+
+    componentDidMount() {
+        const {comments} = this.props
+        if (!comments.bulkLoad) {
+            this.props.loadUserComments()
         }
     }
 
@@ -77,7 +86,7 @@ currentSelections = () => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        // addAllSelections: (reduxSelection) => {dispatch(addAllSelections(reduxSelection))}
+        loadUserComments: () => {dispatch(loadUserComments())}
       }
 }
 
@@ -86,9 +95,9 @@ const mapStateToProps = (state) => {
         collection: state.collection,
         selections: state.selections,
         themes: state.themes,
-        loading: state.loading,
+        comments: state.comments,
+        kits: state.kits
 
-        collectionLoaded: state.collectionLoaded
     }
 }
 

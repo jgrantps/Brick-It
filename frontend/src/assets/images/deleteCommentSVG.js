@@ -9,14 +9,19 @@ const DeleteComment = ({
     height="24",
     // viewBox="0 0 24 24",
     width="24",
+    id,
+    onClick
 
 }) => (
    <svg
+   id = {id}
+   onClick={onClick}
    xmlns = {xmlns}
    viewBox= {viewBox}
    height={height} 
 //    viewBox={viewBox} 
    width={width}
+   className="pointer-events-none"
 >
 <path d="M29.5 51a1 1 0 001-1V17a1 1 0 10-2 0v33a1 1 0 001 1zM19.5 51a1 1 0 001-1V17a1 1 0 10-2 0v33a1 1 0 001 1zM39.5 51a1 1 0 001-1V17a1 1 0 10-2 0v33a1 1 0 001 1z"
 fill={fill} 

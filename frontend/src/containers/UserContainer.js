@@ -9,16 +9,17 @@ import NavContainer from './NavContainer'
 class UserContainer extends Component {
 
     componentDidMount() {
-        const { collectionLoaded } = this.props
+        const { collection } = this.props
+
         //FETCH ALL SELECTIONS FROM THE USER'S DATABASE.
-        if (!collectionLoaded) {
+        if (!collection.loaded) {
             this.props.loadUserCollection()
         }   
     }
     
     loadingSignal = () => {
-        const { loading } = this.props
-        if (loading){
+        const { collection } = this.props
+        if (collection.loading){
             return <h1 className="text-2xl">I AM LOADING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</h1>
         }
     }
@@ -51,7 +52,6 @@ const mapStateToProps = (state) => {
         collection: state.collection,
         selection: state.selections,
         loading: state.loading,
-        collectionLoaded: state.collectionLoaded
     }
 }
 

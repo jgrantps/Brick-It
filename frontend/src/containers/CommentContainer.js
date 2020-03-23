@@ -28,6 +28,7 @@ class CommentContainer extends Component {
         debugger
         e.preventDefault()
         console.log("yay I'm deleted!!!")
+        console.log(`please delete comment number: ${e.target.id}`)
     }
 
     localCommentList = () => {

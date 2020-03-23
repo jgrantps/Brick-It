@@ -1,5 +1,6 @@
 const initialState = {
     body: [],
+    bulkLoad: false,
     loading: false,
     loaded: false
 }
@@ -9,29 +10,32 @@ export default function commentReducer(
     action) {
     switch(action.type){
         case 'LOADING_COMMENT':
-            
-            return{
-                ...state, loading: true, loaded: false
-            }
+        return{
+            ...state, loading: true, loaded: false
+        }
         
-        case 'LOAD_NEW_COMMENT':
+        case 'LOADING_USER_COMMENTS':
+        return{
+            ...state, loading: true, loaded: false
+        }
             
-            return{
-                ...state, loading: false, loaded: true, body: [...state.body, action.payload]
-            }
-
         case 'LOAD_USER_COMMENTS':
-            return{
-                ...state, loading: false, loaded: true
-            }
+            debugger
+        return{
+            ...state, loading: false, loaded: true, bulkLoad: true, body: [...state.body, ...action.payload]
+        }
 
-
+        case 'LOAD_NEW_COMMENT':
+        return{
+            ...state, loading: false, loaded: true, body: [...state.body, action.payload]
+        }    
 
         case 'LOG_OUT':
-            return{
-                ...initialState
+        return{
+            ...initialState
         }
-       default:
+
+        default:
            return state; 
-    }
+        }
     }

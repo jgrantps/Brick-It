@@ -100,6 +100,11 @@ class ApiAdapter {
         .then(r => r.json())
     }
 
+    fetchUserComments(token) {
+        return fetch(`${this.backend}/comments`, this.getConfig(token))
+            .then(resp => resp.json())
+    }
+
 
 }
 
