@@ -20,7 +20,6 @@ export default function commentReducer(
         }
             
         case 'LOAD_USER_COMMENTS':
-            debugger
         return{
             ...state, loading: false, loaded: true, bulkLoad: true, body: [...state.body, ...action.payload]
         }
@@ -31,11 +30,10 @@ export default function commentReducer(
         }  
         
         case 'DELETE_COMMENT':
-           //action.payload is to ONLY BE the comment id.
-            let newBody = state.body.filter(comment => comment.id !== action.payload)
-            return{
-                ...state, loading: false, loaded: true, body: [...newBody]
-            }
+        let newBody = state.body.filter(comment => comment.id !== action.payload)
+        return{
+            ...state, loading: false, loaded: true, body: [...newBody]
+        }
 
         case 'LOG_OUT':
         return{

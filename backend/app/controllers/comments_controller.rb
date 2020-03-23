@@ -37,7 +37,13 @@ class CommentsController < ApplicationController
     end
 
     def destroy
-        byebug
+        comment = Comment.find(delete_params[:id])
+        if comment.user == current_user
+            comment.destroy 
+            render json:{"message": "Deleted", "deleted_id": comment.id}
+        else
+            render json: {"message": "Only a comment's author is allowed to delete a comment."}
+        end
     end
 
     private

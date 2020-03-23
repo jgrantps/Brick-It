@@ -4,7 +4,6 @@ import {Theme} from '../classes/themes'
 
 class Thunk {
 
-
     formatThemes(data) {
         data.results.map(theme => { 
             let formattedTheme = {...theme, api_id: theme.id}
@@ -12,7 +11,6 @@ class Thunk {
         })
         return(Theme.allIncludedThemes)   
     }
-
 
     formatThemeParents() {
         let themes = Theme.allIncludedThemes;
@@ -51,10 +49,6 @@ class Thunk {
         
         let selectionKit = resp.data.attributes.kit
         let augmentedSelectionKit = {...selectionKit, theme_api_id: selectionTheme.api_id}
-        
-        
-
-        
     
         let selection = {id: selectionId, user_id: selectionUserId, kit_id: selectionKitId, public: selectionIsPublic, kit_set_num: selectionKitSetNum}
         let selectionPayload = {selection: selection, kit: augmentedSelectionKit, theme: selectionTheme}
@@ -64,7 +58,6 @@ class Thunk {
 
 
     handleFetchPayload(payload) {
-        debugger
         var reduxPayload = []
         var payloadThemes = []
         if (payload.message == "You currently have no selections") {
@@ -138,8 +131,10 @@ class Thunk {
     }
 
     filterDeleteComment(resp){
+        let deletedComment = resp.deleted_id
+        return deletedComment
         //return only the commentId as provided by the backend resp.
-        
+
     }
 
 }

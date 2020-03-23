@@ -45,15 +45,15 @@ export const SubmitBtn = (props) => {
 }
 
 export const CommentList = (props) => {
-    const {comment, handleOnDelete} = props
+    const {comment, handleOnClick} = props
     // debugger
     return (
-        <div className="flex border justify-between rounded-lg m-1 px-2 ">
+        <div key={uuid()} className="flex border justify-between rounded-lg m-1 px-2 ">
             <div className=" flex flex-col">
                 <h2>{comment.comment}</h2>
                 <h3 className="font-bold">| {comment.user.name}</h3>
             </div>
-            <button id={comment.id}   className="pointer-events-auto z-20" onClick={handleOnDelete}>
+            <button id={comment.id}   className="pointer-events-auto z-20" onClick={handleOnClick}>
                 <DeleteComment /> </button>
         </div>
     )
