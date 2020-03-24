@@ -10,7 +10,7 @@ export const TitleHeading = (props) => {
 }
 
 export const SelectionImage = (props) => {
-    return <img src={props.image} alt={props.name} width='242' height='142'/>
+    return <img src={props.image} alt={props.name} className="h-32 w-full object-cover"/>
 }
 
 export const TextField = (props) => {
@@ -42,15 +42,17 @@ export const SubmitBtn = (props) => {
 
 export const CommentList = (props) => {
     const {comment, handleOnClick} = props
-    // debugger
+
     return (
-        <div key={uuid()} className="flex border justify-between rounded-lg m-1 px-2 ">
+        <div key={uuid()} className="flex border-b justify-between m-1 px-2 py-1">
             <div className=" flex flex-col">
                 <h3 className="font-bold">{comment.user.name}:</h3>
                 <h2>{comment.comment}</h2>
             </div>
-            <button id={comment.id}   className="pointer-events-auto z-20" onClick={handleOnClick}>
-                <DeleteComment /> </button>
+            <button id={comment.id}   className="trash-can-wrapper" onClick={handleOnClick}>
+            <svg className="trash-can" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M6 2l2-2h4l2 2h4v2H2V2h4zM3 6h14l-1 14H4L3 6zm5 2v10h1V8H8zm3 0v10h1V8h-1z"/></svg>
+                {/* <DeleteComment />  */}
+            </button>
         </div>
     )
 }
@@ -58,7 +60,7 @@ export const CommentList = (props) => {
 export const TileWrapper = (props) => {
     const {unit,comments, isPublic} = props
     return(
-        <div key={uuid()} className={isPublic ? "rounded-lg bg-gray-500 flex flex-col m-4 px-6 shadow" : "rounded-lg bg-blue-500  flex flex-col m-4 px-6 shadow"}>
+        <div key={uuid()} className={isPublic ? "bg-gray-100 w-130 flex flex-col m-4 px-6 " : "flex flex-col w-64 m-4 px-6 "}>
         {service.publicTag(isPublic)}
         <SelectionImage name={unit.name} image={unit.set_img_url} />
         <TitleHeading name={unit.name} />
@@ -74,16 +76,16 @@ export const LoadingSignal = (props) => {
         // return <h1 className="text-2xl">I AM LOADING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</h1>
 
         return (
-            <div className="flex justify-center w-auto">
+            <div className="flex  justify-center w-auto">
 
             <div 
-            className="flex flex-col justify-center items-stretch w-48 h-48 " 
+            className="flex flex-col  items-stretch w-48 h-48 " 
             style={ {
                 backgroundImage: `url("${loadingGiphy}")`,
                 backgroundPosition: 'center',
                 
             }}>
-                <p className="flex justify-center  text-sm">one moment please</p>
+                <p className="flex text-center  justify-center pt-4 text-sm">one moment please</p>
             </div>
             </div>
         )

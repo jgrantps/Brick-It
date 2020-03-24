@@ -51,7 +51,7 @@ class CatalogueContainer extends Component {
             <div id="flex flex-col justify-center w-auto" className="pt-12">
                 <ThemeUI handleOnSubmit={this.handleLetterSelect} />
                 {collectedThemes}
-                {LoadingSignal(!this.props.themes.loading)}
+                {LoadingSignal(this.props.themes.loading)}
 
             
             </div>

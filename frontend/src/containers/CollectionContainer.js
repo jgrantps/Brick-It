@@ -63,13 +63,15 @@ currentSelections = () => {
         let loadedCollection = this.props.collection.body.map(theme => {
             return <CollectionWrapper key={uuid()} theme ={theme} />
         })
+        debugger
         return(
             <>
             <NavContainer props={this.props} />
             <div className="pt-12">
                 <h2 className="text-4xl border-b-2 border-gray-700 mx-8 mb-4">Recent Selections:</h2>
                 {/* {this.loadingSignal()} */}
-                {LoadingSignal(this.props)}
+                
+                {LoadingSignal(this.props.selections.loading)}
                 <div className="flex flex-wrap  bg-blue-100">
                     {this.currentSelections()}
                     

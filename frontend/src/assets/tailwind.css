@@ -54,5 +54,24 @@
   @apply font-bold leading-tight uppercase py-4 text-2xl;
 }
 
+.catalogue-main-wrapper {
+
+}
+
+.trash-can {
+  @apply fill-current h-5 w-5 pointer-events-none my-2;
+}
+
+
+.trash-can-wrapper {
+  @apply pointer-events-auto z-20 py-2;
+}
+
+.trash-can-wrapper:hover {
+  @apply text-red-800;
+}
+
+
+
 
 @tailwind utilities;
