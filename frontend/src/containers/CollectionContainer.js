@@ -63,7 +63,7 @@ currentSelections = () => {
         let loadedCollection = this.props.collection.body.map(theme => {
             return <CollectionWrapper key={uuid()} theme ={theme} />
         })
-        debugger
+        
         return(
             <>
             <NavContainer props={this.props} />

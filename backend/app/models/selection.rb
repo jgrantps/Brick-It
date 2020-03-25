@@ -3,6 +3,7 @@ class Selection < ApplicationRecord
     belongs_to :kit
     has_many :comments
 
-    scope :specific_to, -> (name) {where("user_id: ?", name.id)}
+    scope :specific_to, -> (name) {where("user_id: ?", name.id)}\
+    scope :public, -> { where(public: true) }
 
 end

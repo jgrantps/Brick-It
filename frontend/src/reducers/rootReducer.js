@@ -6,6 +6,7 @@ import kitsReducer from "./kitsReducer"
 import themesReducer from "./themesReducer"
 import selectionsReducer from "./selectionsReducer"
 import commentReducer from "./commentReducer"
+import communityReducer from "./communityReducer"
 
  
 const rootReducer = combineReducers({
@@ -15,7 +16,8 @@ const rootReducer = combineReducers({
   themes: themesReducer,
   kits: kitsReducer,
   collection: collectionReducer,
-  comments: commentReducer
+  comments: commentReducer,
+  community: communityReducer
 });
  
 export default rootReducer;

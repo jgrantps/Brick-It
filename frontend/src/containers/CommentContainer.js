@@ -19,7 +19,6 @@ class CommentContainer extends Component {
     }
 
     handleSubmit = event => {
-        debugger
         event.preventDefault()
         let commentPayload = {selection_comment: {selection_id: this.props.currentSelection.id, comment: this.state.comment}}
         this.props.loadComment(commentPayload) 
@@ -35,7 +34,8 @@ class CommentContainer extends Component {
     localCommentList = () => {
         let localComments = this.props.comments.body.filter(comment => comment.selection.id == this.props.currentSelection.id)
        return  localComments.map(comment => {
-           return <CommentList comment={comment} handleOnClick={this.handleDeleteComment} />
+           debugger
+           return <CommentList comment={comment} user={this.props.user} handleOnClick={this.handleDeleteComment} />
         })  
     }
 
@@ -46,9 +46,9 @@ class CommentContainer extends Component {
     render() {
         return(
             <>
-            {this.localCommentList()}
             
             <CommentInput trackChange={this.trackChange} commentState={this.state.comment} handleSubmit={this.handleSubmit}/>
+            {this.localCommentList()}
            </>
         )
     }
@@ -66,7 +66,8 @@ const mapStateToProps = state => {
         selections: state.selections,
         kits: state.kits,
         collection: state.collection,
-        comments: state.comments
+        comments: state.comments,
+        user: state.user
     }
 }
 

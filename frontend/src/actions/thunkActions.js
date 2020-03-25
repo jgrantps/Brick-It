@@ -137,6 +137,10 @@ class Thunk {
 
     }
 
+    filterCommunityPayload(resp) {
+        return "still need to build this!"
+    }
+
 }
 
 let thunkAction = new Thunk

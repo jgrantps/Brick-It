@@ -161,3 +161,16 @@ export const deleteComment = (commentPayload) => {
         .catch(err => console.log(err))
     }
 }
+
+export const loadCommunityComments = () => {
+    return (dispatch) => {
+        dispatch({type: 'LOADING_COMMUNITY_COMMENTS'})
+        api.fetchCommunityComments(window.localStorage.token)
+        .then(resp => {
+            dispatch({type: 'LOAD_COMMUNITY_COMMENTS',
+                payload: thunkAction.filteryCommunityPayload(resp)
+            })
+        })
+        .catch(err => console.log(err))
+    }
+}

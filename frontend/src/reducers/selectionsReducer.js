@@ -14,7 +14,6 @@ export default function selectionsReducer(
             }
 
         case 'ADD_SELECTION':
-            debugger
             let themeId = action.payload.theme.api_id
             let otherSelections = state.body.filter(theme => Object.keys(theme)[0] != themeId)
             

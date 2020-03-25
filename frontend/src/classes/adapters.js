@@ -122,6 +122,11 @@ class ApiAdapter {
             .then(resp => resp.json())
     }
 
+    fetchCommunityComments(token) {
+        return fetch(`${this.backend}/community`, this.getConfig(token))
+        .then(resp => resp.json())
+    }
+
 
 }
 
