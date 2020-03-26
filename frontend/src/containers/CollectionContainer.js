@@ -13,13 +13,6 @@ import { SelectionPrompt, TitleHeading, LoadingSignal } from '../components/Elem
 
 class CollectionContainer extends Component {
 
-    // loadingSignal = () => {
-    //     if (this.props.loading){
-    //         return <h1 className="text-2xl">I AM LOADING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</h1>
-    //     }
-    // }
-
-
     componentDidMount() {
         const {comments} = this.props
         if (!comments.bulkLoad) {
@@ -69,7 +62,7 @@ currentSelections = () => {
             <NavContainer props={this.props} />
             <div className="pt-12">
                 <h2 className="text-4xl border-b-2 border-gray-700 mx-8 mb-4">Recent Selections:</h2>
-                {/* {this.loadingSignal()} */}
+               
                 
                 {LoadingSignal(this.props.selections.loading)}
                 <div className="flex flex-wrap  bg-blue-100">

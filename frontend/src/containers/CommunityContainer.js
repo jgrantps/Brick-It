@@ -8,6 +8,7 @@ class CommunityContainer extends Component {
     
     componentDidMount() {
         const {community} = this.props
+        debugger
         if (!community.bulkload) {
             this.props.loadCommunityComments()
         }
@@ -33,7 +34,8 @@ const mapStateToProps = (state) => {
         selections: state.selections,
         themes: state.themes,
         comments: state.comments,
-        kits: state.kits
+        kits: state.kits,
+        community: state.community
 
     }
 }

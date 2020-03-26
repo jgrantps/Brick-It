@@ -168,7 +168,8 @@ export const loadCommunityComments = () => {
         api.fetchCommunityComments(window.localStorage.token)
         .then(resp => {
             dispatch({type: 'LOAD_COMMUNITY_COMMENTS',
-                payload: thunkAction.filteryCommunityPayload(resp)
+                // payload: thunkAction.filteryCommunityPayload(resp)
+                payload: resp
             })
         })
         .catch(err => console.log(err))
