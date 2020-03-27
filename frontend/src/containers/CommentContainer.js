@@ -32,10 +32,23 @@ class CommentContainer extends Component {
     }
 
     localCommentList = () => {
+        const {fromCommunity, currentSelection} = this.props
+
+        if (fromCommunity) {
+           if (currentSelection.length > 0){
+            let localUser = this.props.community.body.find(selection => selection.data.attributes.user.id == currentSelection[0].user_id).data.attributes.user
+            return currentSelection.map(comment => {
+                comment.user = localUser
+                return <CommentList comment={comment} user={localUser} handleOnClick={this.handleDeleteComment}/>
+            })
+          }
+        } else {
         let localComments = this.props.comments.body.filter(comment => comment.selection.id == this.props.currentSelection.id)
-       return  localComments.map(comment => {
-           return <CommentList comment={comment} user={this.props.user} handleOnClick={this.handleDeleteComment} />
-        })  
+                return  localComments.map(comment => {
+                    return <CommentList comment={comment} user={this.props.user} handleOnClick={this.handleDeleteComment} />
+                 }) 
+                } 
+        // fromCommunity ? localComments = currentSelection : localComments = this.props.comments.body.filter(comment => comment.selection.id == this.props.currentSelection.id)
     }
 
     filterComments = (comment) => {
@@ -45,7 +58,6 @@ class CommentContainer extends Component {
     render() {
         return(
             <>
-            
             <CommentInput trackChange={this.trackChange} commentState={this.state.comment} handleSubmit={this.handleSubmit}/>
             {this.localCommentList()}
            </>
@@ -66,6 +78,7 @@ const mapStateToProps = state => {
         kits: state.kits,
         collection: state.collection,
         comments: state.comments,
+        community: state.community,
         user: state.user
     }
 }

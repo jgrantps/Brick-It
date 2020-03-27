@@ -46,6 +46,7 @@ const TrashCan = (comment, user) => {
 }
 
 export const CommentList = (props) => {
+    
     const {comment, user, handleOnClick} = props
     return (
         <div key={uuid()} className="flex border-b justify-between m-1 px-2 py-1">
@@ -73,7 +74,7 @@ export const TileWrapper = (props) => {
         <SelectionImage name={unit.name} image={unit.set_img_url} />
         {/* <div className="bg-red-900 h-32 w-auto "></div> */}
         <TitleHeading name={unit.name} />
-        <CommentContainer currentSelection={comments}/>
+        <CommentContainer currentSelection={comments} fromCommunity={false}/>
     </div> 
     )
 }

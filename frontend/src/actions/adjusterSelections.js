@@ -175,3 +175,22 @@ export const loadCommunityComments = () => {
         .catch(err => console.log(err))
     }
 }
+
+
+export const submitCommunityComment = (commentPayload) => {
+    return (dispatch) => {
+        dispatch({type: 'LOADING_COMMENTS'})
+        dispatch({type: 'LOADING_COMMUNITY_UPDATE'})
+        api.subitComment(commentPayload, window.localStorage.token)
+        .then(resp => {
+            dispatch({type:'LOAD_NEW_COMMENT',
+                payload: resp.data.attributes
+            })
+
+            dispatch({type:'LOAD_NEW_COMMUNITY_COMMENT',
+                payload: resp.data.attributes
+            })
+        })
+        .catch(err => console.log(err))
+    }
+}
