@@ -34,7 +34,6 @@ class CommentContainer extends Component {
     localCommentList = () => {
         let localComments = this.props.comments.body.filter(comment => comment.selection.id == this.props.currentSelection.id)
        return  localComments.map(comment => {
-           debugger
            return <CommentList comment={comment} user={this.props.user} handleOnClick={this.handleDeleteComment} />
         })  
     }

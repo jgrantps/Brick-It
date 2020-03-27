@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import NavContainer from './NavContainer'
+import uuid from 'react-uuid'
 
 import CommunityCollectionWrapper from '../components/Community/CommunityCollectionWrapper'
 import {loadCommunityComments} from '../actions/adjusterSelections'
@@ -18,16 +19,22 @@ class CommunityContainer extends Component {
     communityUsers = () => {
         const {community} = this.props
         var communityUsersRaw = []
+        
         community.body.map(selection => {
             communityUsersRaw.push(selection.data.attributes.user.id)
         })
+
         let communityUsers = [...new Set(communityUsersRaw)]
         
         return(
             communityUsers.map(user => {
-           let selections= this.compileSelections(user)
-            return <CommunityCollectionWrapper selectionList = {selections} user={user} />
-        })
+                let selections= this.compileSelections(user)
+                return (
+                    <div key={uuid()}>
+                        <CommunityCollectionWrapper selectionList = {selections} user={user} />
+                    </div>
+                )
+            })
         )
     }
     
@@ -37,8 +44,6 @@ class CommunityContainer extends Component {
         return selectionList
         
     }
-
-
     
     
     render() {

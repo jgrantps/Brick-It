@@ -70,7 +70,6 @@ export default function mainReducer(
 
       case 'ADD_KIT': 
       let kitThemeId = action.payload[0].theme_id
-      debugger
       return {
         ...state, loading: false, kits: [...state.kits, {[kitThemeId]: [...action.payload]}]    
       }
