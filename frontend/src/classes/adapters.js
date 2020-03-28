@@ -112,19 +112,23 @@ class ApiAdapter {
         .then(r => r.json())
     }
 
+
+
     fetchUserComments(token) {
         return fetch(`${this.backend}/comments`, this.getConfig(token))
-            .then(resp => resp.json())
-    }
-
-    deleteComment(configPackage, token) {
-        return fetch(`${this.baseUrl}/comments/${configPackage}`, this.deleteConfig(configPackage, token))
             .then(resp => resp.json())
     }
 
     fetchCommunityComments(token) {
         return fetch(`${this.backend}/community`, this.getConfig(token))
         .then(resp => resp.json())
+    }
+
+
+
+    deleteComment(configPackage, token) {
+        return fetch(`${this.baseUrl}/comments/${configPackage}`, this.deleteConfig(configPackage, token))
+            .then(resp => resp.json())
     }
 
 

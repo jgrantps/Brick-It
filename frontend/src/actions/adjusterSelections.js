@@ -1,5 +1,4 @@
 import thunkAction from '../actions/thunkActions'
-
 import api from '../classes/adapters'
 
 
@@ -8,6 +7,21 @@ export const addCollectionComment = (commentData) => {
     return {
         type: 'ADD_COLLECTION_COMMENT',
         payload: commentData
+    }
+}
+
+export const UserLogOut = () => {
+    return (dispatch) => {
+        api.Logout(window.localStorage.token)
+        .then(resp => {
+            dispatch({type: 'LOG_OUT'})
+           
+            window.localStorage.removeItem('token')
+            window.localStorage.removeItem('state')
+            window.localStorage.removeItem('current_user')
+            console.log(resp)
+        })
+        .catch(err => console.log(err))
     }
 }
 
@@ -46,6 +60,17 @@ export const addSelection = (selectionData) => {
     }
 }
 
+export const loadOauth = (userInfo) => {
+    return (dispatch) => {
+        dispatch({type: 'SET_USER',
+            payload: userInfo       
+        })
+
+        let serializedUser = JSON.stringify(userInfo)
+        window.localStorage.setItem('current_user', serializedUser)
+    }
+}
+
 
 
 export const loadUserCollection = () => {
@@ -62,6 +87,7 @@ export const loadUserCollection = () => {
 
 
 export const loadLogin = (userInfo) => {
+    
     return (dispatch) => {
         dispatch({type: 'LOADING_USER'})
         api.Login(userInfo)
@@ -84,7 +110,10 @@ export const loadLogin = (userInfo) => {
 }
 
 
+
+
 export const loadSignup = (userInfo) => {
+    
     return (dispatch) => {
         dispatch({type: 'LOADING_USER'})
         api.Signup(userInfo)
@@ -138,6 +167,13 @@ export const deleteComment = (commentPayload) => {
 }
 
 
+
+
+
+
+
+
+
 export const loadUserComments = () => {
     return (dispatch) => {
         dispatch({type: 'LOADING_USER_COMMENTS'})
@@ -165,6 +201,19 @@ export const loadCommunityData = () => {
         .catch(err => console.log(err))
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

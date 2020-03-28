@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import uuid from 'react-uuid'
-import { TileWrapper, TitleHeading } from '../Elements/Elements'
+import { SelectionTileWrapper, TitleHeading } from '../Elements/Elements'
 
 class CollectionWrapper extends Component {
 
@@ -11,12 +11,13 @@ class CollectionWrapper extends Component {
         let themeId = Object.keys(theme)[0]
         let themeTitle = theme[themeId][0].included.find(e => e.type == 'theme').attributes.name
         
-        let kitCollection  = theme[themeId].map(unit =>{
+        let kitsInTheme  = theme[themeId].map(unit =>{
             const {attributes: { kit, public: isPublic}} = unit.data
-            
+        
             return (
                 <div key={uuid()}>
-                    <TileWrapper unit={kit} comments={unit.data} isPublic={isPublic}/>
+                    {/* <SelectionTileWrapper unit={kit} comments={unit.data} isPublic={isPublic}/> */}
+                    <SelectionTileWrapper selection ={unit}/>
                 </div>
             
             )
@@ -26,7 +27,7 @@ class CollectionWrapper extends Component {
             <div key={uuid()} className="border-b border-gray-300">
              <TitleHeading name={themeTitle} headingClass="collection-theme-title"/>
             <div  className="flex">
-                {kitCollection}
+                {kitsInTheme}
             </div>
             </div>
         )

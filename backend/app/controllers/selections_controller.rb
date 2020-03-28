@@ -31,7 +31,7 @@ class SelectionsController < ApplicationController
     def index
         collection = current_user.selections
         options = {
-            include: [:user, :kit, :'kit.theme', :comments]
+            include: [:'kit.theme']
         }
 
         # serialized_package = SelectionSerializer.new(collection.first, options)

@@ -36,7 +36,6 @@ export default function userReducer(
         case 'LOG_OUT':
         return{
             ...initialState
-            // name: "", slug:"",id:"",  errors: null, loggedIn: false, loggingIn: false
         }
 
         default: 

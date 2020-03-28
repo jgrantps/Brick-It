@@ -81,6 +81,8 @@ class Thunk {
 
     handleLoginCredentials(fetch) {
         let verifiedUserCredentials={name: fetch.package.name, id: fetch.package.id, slug: service.slugify(fetch.package.name)}
+        let serializedUser = JSON.stringify(verifiedUserCredentials)
+        window.localStorage.setItem('current_user', serializedUser)
         return verifiedUserCredentials;
     }
 

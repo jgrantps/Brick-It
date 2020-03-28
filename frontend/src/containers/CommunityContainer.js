@@ -49,7 +49,8 @@ class CommunityContainer extends Component {
             <>
             <NavContainer props={this.props} />
             <div className="pt-12">
-                {this.communityUsers()}
+                <h2>filler for the community container - check the REDUX!!!</h2>
+                {/* {this.communityUsers()} */}
             </div>
             </>
         )

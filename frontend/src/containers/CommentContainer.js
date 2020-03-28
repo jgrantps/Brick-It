@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import api from '../classes/adapters'
 
 import {CommentInput} from '../components/Comments/CommentInput'
-import { CommentList } from '../components/Elements/Elements';
+import { CommentItem } from '../components/Elements/Elements';
 import { loadComment, deleteComment } from '../actions/adjusterSelections'
 
 
@@ -20,46 +20,43 @@ class CommentContainer extends Component {
 
     handleSubmit = event => {
         event.preventDefault()
-        let commentPayload = {selection_comment: {selection_id: this.props.currentSelection.id, comment: this.state.comment}}
+        let commentPayload = {selection_comment: {selection_id: event.target.id, comment: this.state.comment}}
         this.props.loadComment(commentPayload) 
     }
 
     handleDeleteComment = (e) =>{
         e.preventDefault()
-        console.log("yay I'm deleted!!!")
-        console.log(`please delete comment number: ${e.target.id}`)
         this.props.deleteComment(e.target.id)
     }
 
-    localCommentList = () => {
-        const {fromCommunity, currentSelection} = this.props
+    buildCommentList = () => {
+        const {fromCommunity, currentSelectionID} = this.props
 
         if (fromCommunity) {
-           if (currentSelection.length > 0){
-            let localUser = this.props.community.body.find(selection => selection.data.attributes.user.id == currentSelection[0].user_id).data.attributes.user
-            return currentSelection.map(comment => {
+           if (currentSelectionID.length > 0){
+            let localUser = this.props.community.body.find(selection => selection.data.attributes.user.id == currentSelectionID[0].user_id).data.attributes.user
+            return currentSelectionID.map(comment => {
                 comment.user = localUser
-                return <CommentList comment={comment} user={localUser} handleOnClick={this.handleDeleteComment}/>
+                return <CommentItem comment={comment} user={localUser} handleOnClick={this.handleDeleteComment}/>
             })
           }
         } else {
-        let localComments = this.props.comments.body.filter(comment => comment.selection.id == this.props.currentSelection.id)
+        let localComments = this.props.comments.body.filter(comment => comment.selection.id == currentSelectionID)
                 return  localComments.map(comment => {
-                    return <CommentList comment={comment} user={this.props.user} handleOnClick={this.handleDeleteComment} />
+                    return <CommentItem comment={comment} user={this.props.user} handleOnClick={this.handleDeleteComment} />
                  }) 
                 } 
-        // fromCommunity ? localComments = currentSelection : localComments = this.props.comments.body.filter(comment => comment.selection.id == this.props.currentSelection.id)
     }
 
     filterComments = (comment) => {
-        if (comment) {return <CommentList  comment={comment.comment} />}
+        if (comment) {return <CommentItem  comment={comment.comment} />}
     } 
 
     render() {
         return(
             <>
-            <CommentInput trackChange={this.trackChange} commentState={this.state.comment} handleSubmit={this.handleSubmit}/>
-            {this.localCommentList()}
+            <CommentInput trackChange={this.trackChange} selectionId={this.props.currentSelectionID} commentState={this.state.comment} handleSubmit={this.handleSubmit}/>
+            {this.buildCommentList()}
            </>
         )
     }
