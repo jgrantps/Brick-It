@@ -43,7 +43,7 @@ class CatalogueContainer extends Component {
     }
     
     render() {
-        
+        debugger
         let collectedThemes = this.state.childrenList.map(theme => this.convertThemeToTile(theme))    
         return(
             <>
@@ -77,7 +77,8 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = (state) => {
     return {
         themes: state.themes,
-        loading: state.loading   
+        loading: state.loading,   
+        collection: state.collection
     }
 }
 

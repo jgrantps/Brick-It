@@ -53,7 +53,8 @@ export const addSelection = (selectionData) => {
         api.sendSelection(selectionData, window.localStorage.token)
         .then(resp => {
             dispatch({type: 'ADD_SELECTION',
-                payload: thunkAction.formatSelectionData(resp)
+                // payload: thunkAction.formatSelectionData(resp)
+                payload: resp
             })
         })
         .catch(err => console.log(err))
@@ -72,14 +73,16 @@ export const loadOauth = (userInfo) => {
 }
 
 
-
+//LOADS USER'S COLLECTION OF SELECTIONS FROM DATABASE UPON LOGIN.
 export const loadUserCollection = () => {
     return (dispatch) => {
         dispatch({type: 'LOADING_COLLECTION'})              
         api.fetchAllSelections(window.localStorage.token)   
         .then(resp =>{
+            debugger
             dispatch({type: 'LOAD_USER_COLLECTION_FROM_DB',
-                payload: thunkAction.handleFetchPayload(resp)
+                // payload: thunkAction.handleFetchPayload(resp)
+                payload: (resp)
             })
         })  
     }

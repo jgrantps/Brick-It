@@ -20,57 +20,70 @@ class CollectionContainer extends Component {
         }
     }
 
-selectionSet = () => {
-    
-   return( this.props.selections.body.map(theme => {
-       
-       let specificTheme = this.props.themes.body.find(themeInstance => themeInstance.api_id == Object.keys(theme)[0])
-       return(theme[specificTheme.api_id].map(selection => {
+    selectionSet = () => {
         
-       
-            return (
-                <div key={uuid()} className="flex flex-col w-auto">
-                    <TitleHeading name={specificTheme.name} headingClass="collection-theme-title"/>
-                    <SelectionWrapper  selection={selection} /> 
-                </div>
-            )
+        return( this.props.selections.body.map(theme => {
+            let specificTheme = this.props.themes.body.find(themeInstance => themeInstance.api_id == Object.keys(theme)[0])
+            return(theme[specificTheme.api_id].map(selection => {
+                return (
+                    <div key={uuid()} className="flex flex-col w-auto">
+                        <TitleHeading name={specificTheme.name} headingClass="collection-theme-title"/>
+                        <SelectionWrapper  selection={selection} /> 
+                    </div>
+                )
+            }))
         }))
-    }))
-}    
+    } 
+    
+    
+    collectionSet = () => {
+        const {collection:{body: collectionSet}} = this.props
+        //BUILDS UNIQUE THEME LIST OUT OF ALL THE SELECTIONS IN THE USER'S COLLECTION UPON LOGIN.
+        var currentThemeList = []
+        var currentThemeIdList = []
+        collectionSet.map(selection => {
+            let theme = selection.included.find(e => e.type == 'theme').attributes
+            currentThemeList.push(theme)
+            currentThemeIdList.push(theme.api_id)
+        })
 
-currentSelections = () => {
+        let uniqueCurrentThemeIdlist = [...new Set(currentThemeIdList)]
+        let uniqueCurrentThemeList = []
+        uniqueCurrentThemeIdlist.map(themeId => uniqueCurrentThemeList.push(currentThemeList.find(theme=> theme.api_id == themeId)))
 
+        return uniqueCurrentThemeList.map(theme => {return(<CollectionWrapper key={uuid()} theme ={theme} />)})
+        
+        
+    }
+
+
+
+    currentSelections = () => {
     if (this.props.selections.body.length > 0) {
         return this.selectionSet()              
     } else { 
         return (
             <SelectionPrompt prompt="Please Make A Selection" />
             )   
-        }
-            
+        }      
     }
 
-    render() { 
-        const {userId} = this.props.match.params 
 
-        let loadedCollection = this.props.collection.body.map(theme => {
-            return <CollectionWrapper key={uuid()} theme ={theme} />
-        })
-        
+
+    render() { 
+
         return(
             <>
             <NavContainer props={this.props} />
             <div className="pt-12">
                 <h2 className="text-4xl border-b-2 border-gray-700 mx-8 mb-4">Recent Selections:</h2>
-               
                 
                 {LoadingSignal(this.props.selections.loading)}
                 <div className="flex flex-wrap  bg-blue-100">
                     {this.currentSelections()}
-                    
                 </div>
                 <div>
-                    {loadedCollection}
+                    {this.collectionSet()}
                 </div>
             </div>
             </>

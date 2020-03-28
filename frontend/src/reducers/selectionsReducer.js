@@ -21,7 +21,7 @@ export default function selectionsReducer(
             let specificThemeCurrentList = !!existingList ? Object.values(existingList)[0] : []
             let rebuiltThemeList =  [{...action.payload}, ...specificThemeCurrentList]
             // let rebuiltThemeList =  [{...action.payload.kit}, ...specificThemeCurrentList]
-            
+            debugger
             return {...state, loading: false, body:
                 [ ...otherSelections, {[themeId]: [...rebuiltThemeList]} ]
             }

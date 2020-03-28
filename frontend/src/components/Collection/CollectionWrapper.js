@@ -7,17 +7,13 @@ class CollectionWrapper extends Component {
 
     render() {
         
-        const {theme} = this.props
-        let themeId = Object.keys(theme)[0]
-        let themeTitle = theme[themeId][0].included.find(e => e.type == 'theme').attributes.name
-        
-        let kitsInTheme  = theme[themeId].map(unit =>{
-            const {attributes: { kit, public: isPublic}} = unit.data
-        
+        const {theme, collection:{body: collectionSet}} = this.props
+    
+        let themeSelections = collectionSet.filter(selection => selection.included.find(e => e.type == 'theme').attributes.api_id == theme.api_id)
+        let kitsInTheme  = themeSelections.map(selection =>{    
             return (
                 <div key={uuid()}>
-                    {/* <SelectionTileWrapper unit={kit} comments={unit.data} isPublic={isPublic}/> */}
-                    <SelectionTileWrapper selection ={unit}/>
+                    <SelectionTileWrapper selection ={selection}/>
                 </div>
             
             )
@@ -25,7 +21,7 @@ class CollectionWrapper extends Component {
 
         return(
             <div key={uuid()} className="border-b border-gray-300">
-             <TitleHeading name={themeTitle} headingClass="collection-theme-title"/>
+             <TitleHeading name={theme.name} headingClass="collection-theme-title"/>
             <div  className="flex">
                 {kitsInTheme}
             </div>
