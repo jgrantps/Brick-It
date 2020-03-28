@@ -48,6 +48,7 @@ const TrashCan = (comment, user) => {
 export const CommentList = (props) => {
     
     const {comment, user, handleOnClick} = props
+    debugger
     return (
         <div key={uuid()} className="flex border-b justify-between m-1 px-2 py-1">
             <div className=" flex flex-col">
@@ -55,6 +56,23 @@ export const CommentList = (props) => {
                 <h2>{comment.comment}</h2>
             </div>
             <button id={comment.id}   className="trash-can-wrapper" onClick={handleOnClick}>
+           {TrashCan(comment, user)}
+            </button>
+        </div>
+    )
+}
+
+export const CommunityCommentList = (props) => {
+    
+    const {comment, user, handleOnClick} = props
+    debugger
+    return (
+        <div key={uuid()} className="flex border-b justify-between m-1 px-2 py-1">
+            <div className=" flex flex-col">
+                <h3 className="font-bold">{comment.data.attributes.user.name}:</h3>
+                <h2>{comment.data.attributes.comment}</h2>
+            </div>
+            <button id={comment.data.id}   className="trash-can-wrapper" onClick={handleOnClick}>
            {TrashCan(comment, user)}
             </button>
         </div>

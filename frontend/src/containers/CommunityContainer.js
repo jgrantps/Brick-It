@@ -3,7 +3,7 @@ import NavContainer from './NavContainer'
 import uuid from 'react-uuid'
 
 import CommunityCollectionWrapper from '../components/Community/CommunityCollectionWrapper'
-import {loadCommunityComments} from '../actions/adjusterSelections'
+import {loadCommunityData} from '../actions/adjusterSelections'
 import { connect } from 'react-redux'
 
 class CommunityContainer extends Component {
@@ -12,23 +12,17 @@ class CommunityContainer extends Component {
         const {community} = this.props
         
         if (!community.bulkload) {
-            this.props.loadCommunityComments()
+            
+            this.props.loadCommunityData()
         }
     }
 
     communityUsers = () => {
-        const {community} = this.props
-        var communityUsersRaw = []
-        
-        community.body.map(selection => {
-            communityUsersRaw.push(selection.data.attributes.user.id)
-        })
-
-        let communityUsers = [...new Set(communityUsersRaw)]
+        const {community:{publicUsers}} = this.props
         
         return(
-            communityUsers.map(user => {
-                let selections= this.compileSelections(user)
+            publicUsers.map(user => {
+                let selections= this.compileSelections(user.id)
                 return (
                     <div key={uuid()}>
                         <CommunityCollectionWrapper selectionList = {selections} user={user} />
@@ -40,7 +34,7 @@ class CommunityContainer extends Component {
     
     compileSelections = (userId) => {
         const {community} = this.props
-        let selectionList = community.body.filter(selection => selection.data.attributes.user.id == userId)
+        let selectionList = community.body.filter(unit => unit.data.attributes.user.id == userId)
         return selectionList
         
     }
@@ -76,7 +70,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        loadCommunityComments: () => {dispatch(loadCommunityComments())}
+        loadCommunityData: () => {dispatch(loadCommunityData())}
       }
 }
 

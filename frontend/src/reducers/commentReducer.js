@@ -20,14 +20,26 @@ export default function commentReducer(
         }
             
         case 'LOAD_USER_COMMENTS':
+            debugger
         return{
             ...state, loading: false, loaded: true, bulkLoad: true, body: [...state.body, ...action.payload]
         }
+
+        case 'LOAD_COMMUNITY_DATA':
+            
+            return{
+                ...state, loading: false, loaded: true, bulkload: true, body: [...state.body, ...action.payload.comments]
+            }
 
         case 'LOAD_NEW_COMMENT':
         return{
             ...state, loading: false, loaded: true, body: [...state.body, action.payload]
         }  
+
+        case 'LOAD_NEW_COMMUNIT_COMMENT':
+            return{
+                ...state, loading: false, loaded: true, body: [...state.body, action.payload]
+            }
         
         case 'DELETE_COMMENT':
         let newBody = state.body.filter(comment => comment.id !== action.payload)

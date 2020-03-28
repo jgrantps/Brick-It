@@ -123,31 +123,6 @@ export const loadThemes = () => {
 }
 
 
-export const loadComment = (commentPayload) => {
-    return (dispatch) => {
-        dispatch({type: 'LOADING_COMMENTS'})
-        api.subitComment(commentPayload, window.localStorage.token)
-        .then(resp => {
-            dispatch({type:'LOAD_NEW_COMMENT',
-                payload: resp.data.attributes
-            })
-        })
-        .catch(err => console.log(err))
-    }
-}
-
-export const loadUserComments = () => {
-    return (dispatch) => {
-        dispatch({type: 'LOADING_USER_COMMENTS'})
-        api.fetchUserComments(window.localStorage.token)
-        .then(resp => {
-            dispatch({type: 'LOAD_USER_COMMENTS',
-                payload: thunkAction.filterCommentPayload(resp)
-            })
-        })
-        .catch(err => console.log(err))
-    }
-}
 
 export const deleteComment = (commentPayload) => {
     return (dispatch) => {
@@ -162,14 +137,45 @@ export const deleteComment = (commentPayload) => {
     }
 }
 
-export const loadCommunityComments = () => {
+
+export const loadUserComments = () => {
+    return (dispatch) => {
+        dispatch({type: 'LOADING_USER_COMMENTS'})
+        api.fetchUserComments(window.localStorage.token)
+        .then(resp => {
+            dispatch({type: 'LOAD_USER_COMMENTS',
+                payload: thunkAction.filterCommentPayload(resp)
+            })
+        })
+        .catch(err => console.log(err))
+    }
+}
+
+export const loadCommunityData = () => {
     return (dispatch) => {
         dispatch({type: 'LOADING_COMMUNITY_COMMENTS'})
         api.fetchCommunityComments(window.localStorage.token)
         .then(resp => {
-            dispatch({type: 'LOAD_COMMUNITY_COMMENTS',
-                // payload: thunkAction.filteryCommunityPayload(resp)
-                payload: resp
+            debugger
+            dispatch({type: 'LOAD_COMMUNITY_DATA',
+                // payload: resp
+                payload: thunkAction.filterCommunityDataPayload(resp)
+            })
+        })
+        .catch(err => console.log(err))
+    }
+}
+
+
+
+
+export const loadComment = (commentPayload) => {
+    return (dispatch) => {
+        dispatch({type: 'LOADING_COMMENTS'})
+        api.subitComment(commentPayload, window.localStorage.token)
+        .then(resp => {
+            dispatch({type:'LOAD_NEW_COMMENT',
+                payload: resp.data.attributes
             })
         })
         .catch(err => console.log(err))
@@ -183,12 +189,20 @@ export const submitCommunityComment = (commentPayload) => {
         dispatch({type: 'LOADING_COMMUNITY_UPDATE'})
         api.subitComment(commentPayload, window.localStorage.token)
         .then(resp => {
-            dispatch({type:'LOAD_NEW_COMMENT',
-                payload: resp.data.attributes
-            })
+            dispatch({ type:'LOAD_NEW_COMMUNITY_COMMENT', payload: resp.data.attributes })
+            dispatch({ type:'LOAD_NEW_COMMENT', payload: resp.data.attributes })
+        })
+        .catch(err => console.log(err))
+    }
+}
 
-            dispatch({type:'LOAD_NEW_COMMUNITY_COMMENT',
-                payload: resp.data.attributes
+export const deleteCommunityComment = (commentPayload) => {
+    return (dispatch) => {
+        dispatch({type: 'LOADING_COMMUNITY_UPDATE'})
+        api.deleteComment(commentPayload, window.localStorage.token)
+        .then(resp =>{
+            dispatch({type: 'DELETE_COMMUNITY_COMMENT',
+                payload: thunkAction.filterDeleteComment(resp)
             })
         })
         .catch(err => console.log(err))

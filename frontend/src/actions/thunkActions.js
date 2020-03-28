@@ -130,16 +130,23 @@ class Thunk {
         return filteredComments;
     }
 
+    filterCommunityDataPayload(resp) {
+        var dataPayload = {selections: [], comments: [], publicUsers: []}
+        
+        resp[0].map(unit => dataPayload.comments.push(...unit.comments))
+        resp[0].map(unit => dataPayload.selections.push(unit.selection))
+        dataPayload.publicUsers.push(...resp[1].publicUsers)
+        // resp.map(selection => selection.comments.map(comment =>filteredComments.push(comment.data.attributes) ))
+        debugger
+        return dataPayload;
+    }
+
     filterDeleteComment(resp){
         let deletedComment = resp.deleted_id
         return deletedComment
         //return only the commentId as provided by the backend resp.
-
     }
 
-    filterCommunityPayload(resp) {
-        return "still need to build this!"
-    }
 
 }
 
