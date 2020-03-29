@@ -132,7 +132,7 @@ export const loadSignup = (userInfo) => {
         }
     })
     .catch(err => console.log(err))
-}
+    }
 }
 
 export const loadThemes = () => {
@@ -150,8 +150,6 @@ export const loadThemes = () => {
         .catch(err => console.log(err))
     }
 }
-
-
 
 export const deleteComment = (commentPayload) => {
     return (dispatch) => {
@@ -187,28 +185,12 @@ export const loadCommunityData = () => {
         .then(resp => {
             
             dispatch({type: 'LOAD_COMMUNITY_DATA',
-                payload: resp
+                payload: thunkAction.filterCommunityDataPayload(resp)
             })
         })
         .catch(err => console.log(err))
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 export const loadComment = (commentPayload) => {
     return (dispatch) => {
@@ -222,7 +204,6 @@ export const loadComment = (commentPayload) => {
         .catch(err => console.log(err))
     }
 }
-
 
 export const submitCommunityComment = (commentPayload) => {
     return (dispatch) => {

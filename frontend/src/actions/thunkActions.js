@@ -101,7 +101,6 @@ class Thunk {
     loadKits(data, theme_id) {
     var newKit; 
     var payload;
-        //ADDS 
         if  (data.results == undefined || data.results.length == 0) {
             newKit= {theme_id: theme_id, description: "no data"}
             new Kit(newKit)
@@ -128,25 +127,23 @@ class Thunk {
 
     filterCommentPayload(resp){
         let filteredComments = []
+        
         resp.map(unit => filteredComments.push(unit.data.attributes))
         return filteredComments;
     }
 
     filterCommunityDataPayload(resp) {
-        var dataPayload = {selections: [], comments: [], publicUsers: []}
+        var dataPayload = {selections: [], comments: []}
+
+        dataPayload.comments.push(...this.filterCommentPayload(resp.comments));
+        dataPayload.selections.push(...resp.selections);
         
-        resp[0].map(unit => dataPayload.comments.push(...unit.comments))
-        resp[0].map(unit => dataPayload.selections.push(unit.selection))
-        dataPayload.publicUsers.push(...resp[1].publicUsers)
-        // resp.map(selection => selection.comments.map(comment =>filteredComments.push(comment.data.attributes) ))
-        debugger
         return dataPayload;
     }
 
     filterDeleteComment(resp){
         let deletedComment = resp.deleted_id
         return deletedComment
-        //return only the commentId as provided by the backend resp.
     }
 
 
