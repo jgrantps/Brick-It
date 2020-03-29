@@ -43,7 +43,6 @@ class CatalogueContainer extends Component {
     }
     
     render() {
-        debugger
         let collectedThemes = this.state.childrenList.map(theme => this.convertThemeToTile(theme))    
         return(
             <>

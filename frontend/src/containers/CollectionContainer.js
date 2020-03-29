@@ -21,18 +21,23 @@ class CollectionContainer extends Component {
     }
 
     selectionSet = () => {
+        const {selections:{body: collectionSet}} = this.props
+        //BUILDS UNIQUE THEME LIST OUT OF ALL THE SELECTIONS IN THE USER'S COLLECTION UPON LOGIN.
+        var currentThemeList = []
+        var currentThemeIdList = []
+        collectionSet.map(selection => {
+            let theme = selection.included.find(e => e.type == 'theme').attributes
+            currentThemeList.push(theme)
+            currentThemeIdList.push(theme.api_id)
+        })
+
+        let uniqueCurrentThemeIdlist = [...new Set(currentThemeIdList)]
+        let uniqueCurrentThemeList = []
+        uniqueCurrentThemeIdlist.map(themeId => uniqueCurrentThemeList.push(currentThemeList.find(theme=> theme.api_id == themeId)))
+
+        return uniqueCurrentThemeList.map(theme => {return(<CollectionWrapper key={uuid()} theme ={theme} reduxType="selections"/>)})
         
-        return( this.props.selections.body.map(theme => {
-            let specificTheme = this.props.themes.body.find(themeInstance => themeInstance.api_id == Object.keys(theme)[0])
-            return(theme[specificTheme.api_id].map(selection => {
-                return (
-                    <div key={uuid()} className="flex flex-col w-auto">
-                        <TitleHeading name={specificTheme.name} headingClass="collection-theme-title"/>
-                        <SelectionWrapper  selection={selection} /> 
-                    </div>
-                )
-            }))
-        }))
+        
     } 
     
     
@@ -51,7 +56,7 @@ class CollectionContainer extends Component {
         let uniqueCurrentThemeList = []
         uniqueCurrentThemeIdlist.map(themeId => uniqueCurrentThemeList.push(currentThemeList.find(theme=> theme.api_id == themeId)))
 
-        return uniqueCurrentThemeList.map(theme => {return(<CollectionWrapper key={uuid()} theme ={theme} />)})
+        return uniqueCurrentThemeList.map(theme => {return(<CollectionWrapper key={uuid()} theme ={theme} reduxType="collection" />)})
         
         
     }
