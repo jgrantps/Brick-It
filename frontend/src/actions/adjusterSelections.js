@@ -205,6 +205,26 @@ export const loadComment = (commentPayload) => {
     }
 }
 
+export const updateCommunityComments = (currentCommentIdSet) => {
+    
+    return (dispatch) => {
+        dispatch({type: 'LOADING_COMMENTS'})
+        api.updateComments(currentCommentIdSet, window.localStorage.token)
+        .then(resp => {
+            
+
+            console.log(resp)
+            dispatch({type: 'LOAD_USER_COMMENTS',
+                payload: thunkAction.filterCommentPayload(resp)
+            })
+        })
+        .catch(err => console.log(err))
+    }
+}
+
+
+
+
 export const submitCommunityComment = (commentPayload) => {
     return (dispatch) => {
         dispatch({type: 'LOADING_COMMENTS'})

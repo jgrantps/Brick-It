@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   post '/signup', to: 'users#create'
   post '/logout', to: 'sessions#destroy'
   get '/community', to: 'community#index'
-  get '/community/update', to: 'community#update'
+  post '/community/update', to: 'community#update'
   get '/auth/:provider/callback', to: 'sessions#create'
   get '/omniauth', to: 'sessions#GitHub'
   

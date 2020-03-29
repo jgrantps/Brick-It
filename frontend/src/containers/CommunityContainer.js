@@ -9,20 +9,25 @@ import { connect } from 'react-redux'
 class CommunityContainer extends Component {
     
     componentDidMount() {
-        const {community} = this.props
-        
+        const {community, loadCommunityData, updateCommunityComments} = this.props
         if (!community.bulkload) {   
-            this.props.loadCommunityData()
-        }
-        this.props.updateCommunityComments(this.communityCommentList())
+            loadCommunityData()
+        }    
+        this.updater = setInterval(() => { updateCommunityComments(this.communityCommentList()) }, 3000)
+        
     }
 
+    componentWillUnmount() {
+        clearInterval(this.updater)
+    }
+    
     communityCommentList = () => {
+        
         const {comments:{body: commentSet}} = this.props
         let commentIdSet = [];
         commentSet.map(comment => commentIdSet.push(comment.id))
-        
-        return commentIdSet
+        console.log('commentSet is:', commentSet)
+        return {currentSet: commentIdSet}
     }
 
     communityUsers = () => {
@@ -78,7 +83,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        loadCommunityData: () => {dispatch(loadCommunityData())}
+        loadCommunityData: () => {dispatch(loadCommunityData())},
+        updateCommunityComments: (data) => {dispatch(updateCommunityComments(data))}
       }
 }
 

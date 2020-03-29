@@ -31,7 +31,7 @@ class CommentContainer extends Component {
 
     buildCommentList = () => {
         const {currentSelectionID} = this.props
-debugger
+
      
         let localComments = this.props.comments.body.filter(comment => comment.selection.id == currentSelectionID)
                 return  localComments.map(comment => {
