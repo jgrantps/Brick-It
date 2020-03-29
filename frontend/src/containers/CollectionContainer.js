@@ -35,7 +35,7 @@ class CollectionContainer extends Component {
         let uniqueCurrentThemeList = []
         uniqueCurrentThemeIdlist.map(themeId => uniqueCurrentThemeList.push(currentThemeList.find(theme=> theme.api_id == themeId)))
 
-        return uniqueCurrentThemeList.map(theme => {return(<CollectionWrapper key={uuid()} theme ={theme} reduxType="selections"/>)})
+        return uniqueCurrentThemeList.map(theme => {return(<CollectionWrapper key={uuid()} category={theme} categoryId={theme.api_id} reduxType="selections"/>)})
         
         
     } 
@@ -56,7 +56,7 @@ class CollectionContainer extends Component {
         let uniqueCurrentThemeList = []
         uniqueCurrentThemeIdlist.map(themeId => uniqueCurrentThemeList.push(currentThemeList.find(theme=> theme.api_id == themeId)))
 
-        return uniqueCurrentThemeList.map(theme => {return(<CollectionWrapper key={uuid()} theme ={theme} reduxType="collection" />)})
+        return uniqueCurrentThemeList.map(theme => {return(<CollectionWrapper key={uuid()} category={theme} categoryId={theme.api_id} reduxType="collection" />)})
         
         
     }

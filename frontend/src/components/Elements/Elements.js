@@ -57,7 +57,7 @@ export const SelectionTileWrapper = (props) => {
         {service.publicTag(isPublic)}
         <SelectionImage name={name} image={set_img_url} />
         <TitleHeading name={name} />
-        <CommentContainer currentSelectionID={id} fromCommunity={false}/>
+        <CommentContainer currentSelectionID={id} />
     </div> 
     )
 }

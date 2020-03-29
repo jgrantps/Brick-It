@@ -3,6 +3,7 @@ import NavContainer from './NavContainer'
 import uuid from 'react-uuid'
 
 import CommunityCollectionWrapper from '../components/Community/CommunityCollectionWrapper'
+import CollectionWrapper from '../components/Collection/CollectionWrapper'
 import {loadCommunityData} from '../actions/adjusterSelections'
 import { connect } from 'react-redux'
 
@@ -18,18 +19,31 @@ class CommunityContainer extends Component {
     }
 
     communityUsers = () => {
-        const {community:{publicUsers}} = this.props
+        const {community:{body: collectionSet}} = this.props
         
-        return(
-            publicUsers.map(user => {
-                let selections= this.compileSelections(user.id)
-                return (
-                    <div key={uuid()}>
-                        <CommunityCollectionWrapper selectionList = {selections} user={user} />
-                    </div>
-                )
-            })
-        )
+        var currentUserList = []
+        var currentUserIdList = []
+        collectionSet.map(selection => {
+            let user = selection.data.attributes.user
+            currentUserList.push(user)
+            currentUserIdList.push(user.id)
+        })
+
+        let uniqueCurrentUserIdList = [...new Set(currentUserIdList)]
+        let uniqueCurrentUserList = []
+        uniqueCurrentUserIdList.map(userId => uniqueCurrentUserList.push(currentUserList.find(user => user.id == userId )))
+
+        return uniqueCurrentUserList.map(user => {return(<CollectionWrapper key={uuid()} category = {user} categoryId={user.id} reduxType="community" />  )})
+        // return(
+        //     publicUsers.map(user => {
+        //         let selections= this.compileSelections(user.id)
+        //         return (
+        //             <div key={uuid()}>
+        //                 <CommunityCollectionWrapper selectionList = {selections} user={user} />
+        //             </div>
+        //         )
+        //     })
+        // )
     }
     
     compileSelections = (userId) => {
@@ -49,8 +63,8 @@ class CommunityContainer extends Component {
             <>
             <NavContainer props={this.props} />
             <div className="pt-12">
-                <h2>filler for the community container - check the REDUX!!!</h2>
-                {/* {this.communityUsers()} */}
+                {/* <h2>filler for the community container - check the REDUX!!!</h2> */}
+                {this.communityUsers()}
             </div>
             </>
         )

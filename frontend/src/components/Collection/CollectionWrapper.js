@@ -7,17 +7,19 @@ class CollectionWrapper extends Component {
 
     render() {
         const { reduxType} = this.props
-        const {theme, [reduxType]:{body: collectionSet}} = this.props
+        const {category, categoryId, [reduxType]:{body: collectionSet}} = this.props
         
         
-        
-        let kitsInTheme  = collectionSet.filter(selection => selection.included.find(e=>e.type == 'theme').attributes.api_id == theme.api_id )
+        var kitsInCategory;
+        if (reduxType == 'community') {
+            kitsInCategory  = collectionSet.filter(selection => selection.data.attributes.user.id == categoryId )
+        }else{
+            kitsInCategory  = collectionSet.filter(selection => selection.included.find(e=>e.type == 'theme').attributes.api_id == categoryId )
+        }
         
 
 
-    let fromattedKits  = kitsInTheme.map(selection =>{ 
-        
-           
+    let fromattedKits  = kitsInCategory.map(selection =>{    
             return (
                 <div key={uuid()}>
                     <SelectionTileWrapper selection ={selection}/>
@@ -27,7 +29,7 @@ class CollectionWrapper extends Component {
 
         return(
             <div key={uuid()} className="border-b border-gray-300">
-             <TitleHeading name={theme.name} headingClass="collection-theme-title"/>
+             <TitleHeading name={category.name} headingClass="collection-theme-title"/>
             <div  className="flex">
                 {fromattedKits}
             </div>

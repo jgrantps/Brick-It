@@ -30,22 +30,14 @@ class CommentContainer extends Component {
     }
 
     buildCommentList = () => {
-        const {fromCommunity, currentSelectionID} = this.props
-
-        if (fromCommunity) {
-           if (currentSelectionID.length > 0){
-            let localUser = this.props.community.body.find(selection => selection.data.attributes.user.id == currentSelectionID[0].user_id).data.attributes.user
-            return currentSelectionID.map(comment => {
-                comment.user = localUser
-                return <CommentItem comment={comment} user={localUser} handleOnClick={this.handleDeleteComment}/>
-            })
-          }
-        } else {
+        const {currentSelectionID} = this.props
+debugger
+     
         let localComments = this.props.comments.body.filter(comment => comment.selection.id == currentSelectionID)
                 return  localComments.map(comment => {
                     return <CommentItem comment={comment} user={this.props.user} handleOnClick={this.handleDeleteComment} />
                  }) 
-                } 
+                
     }
 
     filterComments = (comment) => {

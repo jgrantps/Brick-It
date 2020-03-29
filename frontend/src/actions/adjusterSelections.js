@@ -52,9 +52,7 @@ export const addSelection = (selectionData) => {
         dispatch({type: 'LOADING_SELECTION'})              
         api.sendSelection(selectionData, window.localStorage.token)
         .then(resp => {
-            debugger
             dispatch({type: 'ADD_SELECTION',
-                // payload: thunkAction.formatSelectionData(resp)
                 payload: resp
             })
         })
@@ -80,9 +78,7 @@ export const loadUserCollection = () => {
         dispatch({type: 'LOADING_COLLECTION'})              
         api.fetchAllSelections(window.localStorage.token)   
         .then(resp =>{
-            debugger
             dispatch({type: 'LOAD_USER_COLLECTION_FROM_DB',
-                // payload: thunkAction.handleFetchPayload(resp)
                 payload: (resp)
             })
         })  
@@ -171,13 +167,6 @@ export const deleteComment = (commentPayload) => {
 }
 
 
-
-
-
-
-
-
-
 export const loadUserComments = () => {
     return (dispatch) => {
         dispatch({type: 'LOADING_USER_COMMENTS'})
@@ -196,10 +185,9 @@ export const loadCommunityData = () => {
         dispatch({type: 'LOADING_COMMUNITY_COMMENTS'})
         api.fetchCommunityComments(window.localStorage.token)
         .then(resp => {
-            debugger
+            
             dispatch({type: 'LOAD_COMMUNITY_DATA',
-                // payload: resp
-                payload: thunkAction.filterCommunityDataPayload(resp)
+                payload: resp
             })
         })
         .catch(err => console.log(err))

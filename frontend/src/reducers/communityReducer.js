@@ -17,9 +17,9 @@ export default function communityReducer(
             }
         
         case 'LOAD_COMMUNITY_DATA':
-            
+            debugger
             return{
-                ...state, loading: false, bulkload: true, body:[...action.payload.selections], publicUsers: [...action.payload.publicUsers]
+                ...state, loading: false, bulkload: true, body:[...action.payload.selections]
             }
 
         case 'LOADING_COMMUNITY_UPDATE':
