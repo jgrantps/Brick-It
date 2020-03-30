@@ -2,11 +2,10 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import NavContainer from './NavContainer'
 import uuid from 'react-uuid'
-import {loadUserComments} from '../actions/adjusterSelections'
+import {loadUserComments, loadCommunityData} from '../actions/adjusterSelections'
 
-import SelectionWrapper from '../components/Selection/SelectionWrapper'
 import CollectionWrapper from '../components/Collection/CollectionWrapper'
-import { SelectionPrompt, TitleHeading, LoadingSignal } from '../components/Elements/Elements'
+import { SelectionPrompt, LoadingSignal } from '../components/Elements/Elements'
 
 
 
@@ -14,10 +13,11 @@ import { SelectionPrompt, TitleHeading, LoadingSignal } from '../components/Elem
 class CollectionContainer extends Component {
 
     componentDidMount() {
-        const {comments} = this.props
+        const {comments, loadCommunityData} = this.props
         if (!comments.bulkLoad) {
             this.props.loadUserComments()
         }
+        loadCommunityData()
     }
 
     selectionSet = () => {
@@ -36,8 +36,6 @@ class CollectionContainer extends Component {
         uniqueCurrentThemeIdlist.map(themeId => uniqueCurrentThemeList.push(currentThemeList.find(theme=> theme.api_id == themeId)))
 
         return uniqueCurrentThemeList.map(theme => {return(<CollectionWrapper key={uuid()} category={theme} categoryId={theme.api_id} reduxType="selections"/>)})
-        
-        
     } 
     
     
@@ -56,9 +54,7 @@ class CollectionContainer extends Component {
         let uniqueCurrentThemeList = []
         uniqueCurrentThemeIdlist.map(themeId => uniqueCurrentThemeList.push(currentThemeList.find(theme=> theme.api_id == themeId)))
 
-        return uniqueCurrentThemeList.map(theme => {return(<CollectionWrapper key={uuid()} category={theme} categoryId={theme.api_id} reduxType="collection" />)})
-        
-        
+        return uniqueCurrentThemeList.map(theme => {return(<CollectionWrapper key={uuid()} category={theme} categoryId={theme.api_id} reduxType="collection" />)})   
     }
 
 
@@ -98,7 +94,8 @@ class CollectionContainer extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        loadUserComments: () => {dispatch(loadUserComments())}
+        loadUserComments: () => {dispatch(loadUserComments())},
+        loadCommunityData: () => {dispatch(loadCommunityData())}
       }
 }
 

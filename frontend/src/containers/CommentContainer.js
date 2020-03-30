@@ -4,7 +4,7 @@ import api from '../classes/adapters'
 
 import {CommentInput} from '../components/Comments/CommentInput'
 import { CommentItem } from '../components/Elements/Elements';
-import { loadComment, deleteComment } from '../actions/adjusterSelections'
+import { loadComment, deleteComment, updateCommunityComments, setOnBlur, setOnFocus } from '../actions/adjusterSelections'
 
 
 class CommentContainer extends Component {
@@ -31,8 +31,6 @@ class CommentContainer extends Component {
 
     buildCommentList = () => {
         const {currentSelectionID} = this.props
-
-     
         let localComments = this.props.comments.body.filter(comment => comment.selection.id == currentSelectionID)
                 return  localComments.map(comment => {
                     return <CommentItem comment={comment} user={this.props.user} handleOnClick={this.handleDeleteComment} />
@@ -40,14 +38,29 @@ class CommentContainer extends Component {
                 
     }
 
-    filterComments = (comment) => {
-        if (comment) {return <CommentItem  comment={comment.comment} />}
-    } 
+    handleOnFocus = () => {
+        console.log('I am focused')
+        // this.props.setOnFocus()
+    }
+    
+    sayHi = () => {
+        this.props.setOnFocus()
+        
+    }
+    
+    handleOnBlur = () => {
+        console.log('I am blurred')
+        
+    }
+
+    secondBlur = () => {
+        console.log("second!!!!")
+    }
 
     render() {
         return(
             <>
-            <CommentInput trackChange={this.trackChange} selectionId={this.props.currentSelectionID} commentState={this.state.comment} handleSubmit={this.handleSubmit}/>
+            <CommentInput trackChange={this.trackChange} selectionId={this.props.currentSelectionID} handleFocus={this.handleOnFocus} handleBlur={this.handleOnBlur} commentState={this.state.comment} handleSubmit={this.handleSubmit}/>
             {this.buildCommentList()}
            </>
         )
@@ -57,7 +70,11 @@ class CommentContainer extends Component {
 const mapDispatchToProps = dispatch => {
    return {
        loadComment: (commentPayload) => {dispatch(loadComment(commentPayload))},
-       deleteComment: (commentPayload) => {dispatch(deleteComment(commentPayload))}
+       deleteComment: (commentPayload) => {dispatch(deleteComment(commentPayload))},
+       updateCommunityComments: (data) => {dispatch(updateCommunityComments(data))},
+       setOnFocus: () => {dispatch(setOnFocus())},
+       setOnBlur: () => {dispatch(setOnBlur())}
+
     }
 }
 

@@ -60,6 +60,10 @@ class Services {
     return JSON.parse(localStorage.getItem('current_user'))
   }
 
+  // backgroundUpdate = () => {
+  //          setInterval(() => { updateCommunityComments(this.communityCommentList()) }, 3000)
+
+  // }
       
         
 

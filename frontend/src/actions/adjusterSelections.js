@@ -30,7 +30,7 @@ export const addKits = (children) => {
         const state = getState()
         const {kits} = state
         
-        dispatch({type: 'LOADING_KITS'})              //1
+        dispatch({type: 'LOADING_KITS'})             
         children.map(child => {  
             let existingKits = kits.body.find(kit => Object.keys(kit)[0] == child.api_id)
             
@@ -250,3 +250,17 @@ export const deleteCommunityComment = (commentPayload) => {
         .catch(err => console.log(err))
     }
 }
+
+export const setOnFocus = () => {
+    console.log('in the adjusterSelections as focus')
+    return {
+        type: 'ON_FOCUS'
+    }
+}
+
+export const setOnBlur = () => {
+    console.log('in the adjusterSelections as blur')
+    return {
+        type: 'ON_BLUR'
+    };
+};

@@ -10,6 +10,8 @@ export const TitleHeading = (props) => {
 }
 
 
+
+
 export const TextField = (props) => {
     return <input type={props.type} onChange={props.trackChange} value={props.value} name={props.name} id={props.id} className="submit-btn"/>
 }
@@ -57,7 +59,7 @@ export const SelectionTileWrapper = (props) => {
         {service.publicTag(isPublic)}
         <SelectionImage name={name} image={set_img_url} />
         <TitleHeading name={name} />
-        <CommentContainer currentSelectionID={id} />
+        <CommentContainer currentSelectionID={id}  />
     </div> 
     )
 }

@@ -1,24 +1,18 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import NavContainer from './NavContainer'
 import uuid from 'react-uuid'
 
 import CollectionWrapper from '../components/Collection/CollectionWrapper'
-import {loadCommunityData, updateCommunityComments} from '../actions/adjusterSelections'
-import { connect } from 'react-redux'
+import {loadCommunityData} from '../actions/adjusterSelections'
 
 class CommunityContainer extends Component {
     
     componentDidMount() {
-        const {community, loadCommunityData, updateCommunityComments} = this.props
+        const {community, loadCommunityData, user:{ focusStatus }} = this.props
         if (!community.bulkload) {   
             loadCommunityData()
         }    
-        this.updater = setInterval(() => { updateCommunityComments(this.communityCommentList()) }, 3000)
-        
-    }
-
-    componentWillUnmount() {
-        clearInterval(this.updater)
     }
     
     communityCommentList = () => {
@@ -26,7 +20,6 @@ class CommunityContainer extends Component {
         const {comments:{body: commentSet}} = this.props
         let commentIdSet = [];
         commentSet.map(comment => commentIdSet.push(comment.id))
-        console.log('commentSet is:', commentSet)
         return {currentSet: commentIdSet}
     }
 
@@ -51,8 +44,7 @@ class CommunityContainer extends Component {
     compileSelections = (userId) => {
         const {community} = this.props
         let selectionList = community.body.filter(unit => unit.data.attributes.user.id == userId)
-        return selectionList
-        
+        return selectionList    
     }
     
     
@@ -71,6 +63,7 @@ class CommunityContainer extends Component {
 
 const mapStateToProps = (state) => {
     return {
+        user: state.user,
         collection: state.collection,
         selections: state.selections,
         themes: state.themes,
@@ -84,7 +77,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
     return {
         loadCommunityData: () => {dispatch(loadCommunityData())},
-        updateCommunityComments: (data) => {dispatch(updateCommunityComments(data))}
+        
       }
 }
 
