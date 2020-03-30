@@ -39,22 +39,14 @@ class CommentContainer extends Component {
     }
 
     handleOnFocus = () => {
-        console.log('I am focused')
+        console.log("Focused")
         // this.props.setOnFocus()
     }
     
-    sayHi = () => {
-        this.props.setOnFocus()
-        
-    }
-    
     handleOnBlur = () => {
-        console.log('I am blurred')
+        console.log("Blurred")
         
-    }
-
-    secondBlur = () => {
-        console.log("second!!!!")
+        // this.props.setOnBlur()   
     }
 
     render() {

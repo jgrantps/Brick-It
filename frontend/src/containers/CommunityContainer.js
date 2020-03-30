@@ -7,21 +7,27 @@ import CollectionWrapper from '../components/Collection/CollectionWrapper'
 import {loadCommunityData} from '../actions/adjusterSelections'
 
 class CommunityContainer extends Component {
+
+    state = {
+        focus: false
+    }
     
     componentDidMount() {
-        const {community, loadCommunityData, user:{ focusStatus }} = this.props
+        const {community, loadCommunityData} = this.props
         if (!community.bulkload) {   
             loadCommunityData()
         }    
+
+        // this.updater = setInterval(() => { updateCommunityComments(this.communityCommentList()) }, 3000)
     }
     
-    communityCommentList = () => {
+    // communityCommentList = () => {
         
-        const {comments:{body: commentSet}} = this.props
-        let commentIdSet = [];
-        commentSet.map(comment => commentIdSet.push(comment.id))
-        return {currentSet: commentIdSet}
-    }
+    //     const {comments:{body: commentSet}} = this.props
+    //     let commentIdSet = [];
+    //     commentSet.map(comment => commentIdSet.push(comment.id))
+    //     return {currentSet: commentIdSet}
+    // }
 
     communityUsers = () => {
         const {community:{body: collectionSet}} = this.props
@@ -46,8 +52,23 @@ class CommunityContainer extends Component {
         let selectionList = community.body.filter(unit => unit.data.attributes.user.id == userId)
         return selectionList    
     }
+
+
+
+    handleOnFocus = () => {
+        console.log('I am focused')
+        this.setState({...this.state, focus: true})
+    }
+    
+    handleOnBlur = () => {
+        console.log('I am blurred')
+        this.setState({...this.state, focus: false})
+        
+    }
     
     
+
+
     render() {
 
         return(

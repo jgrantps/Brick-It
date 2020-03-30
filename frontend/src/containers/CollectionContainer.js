@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import NavContainer from './NavContainer'
 import uuid from 'react-uuid'
-import {loadUserComments, loadCommunityData} from '../actions/adjusterSelections'
+import {loadUserComments, loadCommunityData, updateCommunityComments} from '../actions/adjusterSelections'
 
 import CollectionWrapper from '../components/Collection/CollectionWrapper'
 import { SelectionPrompt, LoadingSignal } from '../components/Elements/Elements'
@@ -13,11 +13,29 @@ import { SelectionPrompt, LoadingSignal } from '../components/Elements/Elements'
 class CollectionContainer extends Component {
 
     componentDidMount() {
-        const {comments, loadCommunityData} = this.props
+        const {comments, loadCommunityData, user:{ focusStatus }, updateCommunityComments} = this.props
+        loadCommunityData()
+        
         if (!comments.bulkLoad) {
             this.props.loadUserComments()
         }
-        loadCommunityData()
+
+        this.updater = setInterval(() => { updateCommunityComments(this.communityCommentList()) }, 3000)
+        if (focusStatus) {
+        }
+    }
+
+
+    componentWillUnmount() {
+        clearInterval(this.updater)
+    }
+
+    communityCommentList = () => {
+        
+        const {comments:{body: commentSet}} = this.props
+        let commentIdSet = [];
+        commentSet.map(comment => commentIdSet.push(comment.id))
+        return {currentSet: commentIdSet}
     }
 
     selectionSet = () => {
@@ -57,8 +75,6 @@ class CollectionContainer extends Component {
         return uniqueCurrentThemeList.map(theme => {return(<CollectionWrapper key={uuid()} category={theme} categoryId={theme.api_id} reduxType="collection" />)})   
     }
 
-
-
     currentSelections = () => {
     if (this.props.selections.body.length > 0) {
         return this.selectionSet()              
@@ -95,7 +111,8 @@ class CollectionContainer extends Component {
 const mapDispatchToProps = dispatch => {
     return {
         loadUserComments: () => {dispatch(loadUserComments())},
-        loadCommunityData: () => {dispatch(loadCommunityData())}
+        loadCommunityData: () => {dispatch(loadCommunityData())},
+        updateCommunityComments: (e) => {dispatch(updateCommunityComments(e))}
       }
 }
 
@@ -103,6 +120,7 @@ const mapStateToProps = (state) => {
     return {
         collection: state.collection,
         selections: state.selections,
+        user: state.user,
         themes: state.themes,
         comments: state.comments,
         kits: state.kits

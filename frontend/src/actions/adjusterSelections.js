@@ -211,8 +211,6 @@ export const updateCommunityComments = (currentCommentIdSet) => {
         dispatch({type: 'LOADING_COMMENTS'})
         api.updateComments(currentCommentIdSet, window.localStorage.token)
         .then(resp => {
-            
-
             console.log(resp)
             dispatch({type: 'LOAD_USER_COMMENTS',
                 payload: thunkAction.filterCommentPayload(resp)

@@ -3,15 +3,7 @@ import React from 'react';
 import {SubmitBtn} from '../Elements/Elements'
 
 export const CommentInput = (props) => {
-    const {trackChange, commentState, handleSubmit, selectionId, handleFocus} = props
-
-    // const handleFocus = () => {
-    //     console.log("I'm Focused")
-    // }
-    
-    const handleBlur = () => {
-        console.log("I'm blurreddy")
-    }
+    const {trackChange, commentState, handleSubmit, selectionId, handleBlur, handleFocus} = props
 
     return (
         <form>
