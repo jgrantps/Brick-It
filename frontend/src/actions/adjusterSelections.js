@@ -195,7 +195,7 @@ export const loadCommunityData = () => {
 export const loadComment = (commentPayload) => {
     return (dispatch) => {
         dispatch({type: 'LOADING_COMMENTS'})
-        api.subitComment(commentPayload, window.localStorage.token)
+        api.submitComment(commentPayload, window.localStorage.token)
         .then(resp => {
             dispatch({type:'LOAD_NEW_COMMENT',
                 payload: resp.data.attributes
@@ -227,7 +227,7 @@ export const submitCommunityComment = (commentPayload) => {
     return (dispatch) => {
         dispatch({type: 'LOADING_COMMENTS'})
         dispatch({type: 'LOADING_COMMUNITY_UPDATE'})
-        api.subitComment(commentPayload, window.localStorage.token)
+        api.submitComment(commentPayload, window.localStorage.token)
         .then(resp => {
             dispatch({ type:'LOAD_NEW_COMMUNITY_COMMENT', payload: resp.data.attributes })
             dispatch({ type:'LOAD_NEW_COMMENT', payload: resp.data.attributes })
@@ -252,13 +252,13 @@ export const deleteCommunityComment = (commentPayload) => {
 export const setOnFocus = () => {
     console.log('in the adjusterSelections as focus')
     return {
-        type: 'ON_FOCUS'
+        type: 'FOCUS'
     }
 }
 
 export const setOnBlur = () => {
     console.log('in the adjusterSelections as blur')
     return {
-        type: 'ON_BLUR'
+        type: 'BLUR'
     };
 };

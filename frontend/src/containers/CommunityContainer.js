@@ -55,16 +55,16 @@ class CommunityContainer extends Component {
 
 
 
-    handleOnFocus = () => {
-        console.log('I am focused')
-        this.setState({...this.state, focus: true})
-    }
+    // handleOnFocus = () => {
+    //     console.log('I am focused')
+    //     this.setState({...this.state, focus: true})
+    // }
     
-    handleOnBlur = () => {
-        console.log('I am blurred')
-        this.setState({...this.state, focus: false})
+    // handleOnBlur = () => {
+    //     console.log('I am blurred')
+    //     this.setState({...this.state, focus: false})
         
-    }
+    // }
     
     
 

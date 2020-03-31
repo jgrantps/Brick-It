@@ -107,7 +107,7 @@ class ApiAdapter {
         .then(r => r.json())
     }
 
-    subitComment(configPackage, token) {
+    submitComment(configPackage, token) {
         return fetch(`${this.backend}/comments`, this.postConfig(configPackage, token))
         .then(r => r.json())
     }

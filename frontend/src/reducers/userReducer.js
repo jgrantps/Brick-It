@@ -2,7 +2,6 @@ const initialState = {
     name: '',
     slug: '',
     id: '',
-    focusStatus: false,
     errors: null,
     errorThrown: false,
     loggedIn: false,
@@ -34,15 +33,15 @@ export default function userReducer(
              name: action.payload.name, slug: action.payload.slug, id: action.payload.id, loggedIn: true, loggingIn: false, errors: null
         }
         
-        case 'ON_FOCUS':
-        return{
-            ...state, focusStatus: true
-        }
+        // case 'ON_FOCUS':
+        // return{
+        //     ...state, focusStatus: true
+        // }
 
-        case 'ON_BLUR':
-            return{
-                ...state, focusStatus: false
-            }
+        // case 'ON_BLUR':
+        //     return{
+        //         ...state, focusStatus: false
+        //     }
 
         case 'LOG_OUT':
         return{

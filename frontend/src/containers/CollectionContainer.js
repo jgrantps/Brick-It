@@ -20,23 +20,23 @@ class CollectionContainer extends Component {
             this.props.loadUserComments()
         }
 
-        this.updater = setInterval(() => { updateCommunityComments(this.communityCommentList()) }, 3000)
-        if (focusStatus) {
-        }
+        // this.updater = setInterval(() => { updateCommunityComments(this.communityCommentList()) }, 3000)
+        // if (focusStatus) {
+        // }
     }
 
 
     componentWillUnmount() {
-        clearInterval(this.updater)
+        // clearInterval(this.updater)
     }
 
-    communityCommentList = () => {
+    // communityCommentList = () => {
         
-        const {comments:{body: commentSet}} = this.props
-        let commentIdSet = [];
-        commentSet.map(comment => commentIdSet.push(comment.id))
-        return {currentSet: commentIdSet}
-    }
+    //     const {comments:{body: commentSet}} = this.props
+    //     let commentIdSet = [];
+    //     commentSet.map(comment => commentIdSet.push(comment.id))
+    //     return {currentSet: commentIdSet}
+    // }
 
     selectionSet = () => {
         const {selections:{body: collectionSet}} = this.props

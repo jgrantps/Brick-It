@@ -10,7 +10,8 @@ import { loadComment, deleteComment, updateCommunityComments, setOnBlur, setOnFo
 class CommentContainer extends Component {
     
     state= {
-        comment: ""
+        comment: "",
+        focus: false
     }
 
     trackChange = event => {
@@ -38,15 +39,25 @@ class CommentContainer extends Component {
                 
     }
 
-    handleOnFocus = () => {
+    componentDidMount() {
+        if (!this.state.focus){
+           console.log("I'm not focused")
+        } else{
+            console.log("I'm focused!")
+        }
+    }
+
+    handleOnFocus = (e) => {
+        console.log(e)
         console.log("Focused")
-        // this.props.setOnFocus()
+        // this.setState({...this.state, focus: true})
+        this.props.setOnFocus()
     }
     
     handleOnBlur = () => {
         console.log("Blurred")
-        
-        // this.props.setOnBlur()   
+        // this.setState({...this.state, focus: false})
+        this.props.setOnBlur()   
     }
 
     render() {

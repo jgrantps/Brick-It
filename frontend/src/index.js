@@ -17,6 +17,7 @@ const persistedState = service.loadFromLocalStorage();
 const combinedMiddleware = compose(applyMiddleware(thunk), composeWithDevTools())
 
 const store = createStore(rootReducer, persistedState, combinedMiddleware)
+// const store = createStore(rootReducer, combinedMiddleware)
 
 
 store.subscribe(()=> service.saveToLocalStorage(store.getState()))
