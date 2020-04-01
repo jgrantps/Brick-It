@@ -183,7 +183,6 @@ export const loadCommunityData = () => {
         dispatch({type: 'LOADING_COMMUNITY_COMMENTS'})
         api.fetchCommunityComments(window.localStorage.token)
         .then(resp => {
-            
             dispatch({type: 'LOAD_COMMUNITY_DATA',
                 payload: thunkAction.filterCommunityDataPayload(resp)
             })
@@ -197,8 +196,8 @@ export const loadComment = (commentPayload) => {
         dispatch({type: 'LOADING_COMMENTS'})
         api.submitComment(commentPayload, window.localStorage.token)
         .then(resp => {
-            dispatch({type:'LOAD_NEW_COMMENT',payload: resp.data.attributes})
             dispatch({type: 'BLUR'})
+            dispatch({type:'LOAD_NEW_COMMENT',payload: resp.data.attributes})
         })
         .catch(err => console.log(err))
     }
@@ -246,25 +245,40 @@ export const deleteCommunityComment = (commentPayload) => {
 }
 
 export const cSetOnFocus = () => {
-    return {
-        type: 'COLLECTION_FOCUS'
+    return (dispatch, getState) => {
+        dispatch({type: 'COLLECTION_FOCUS'})
+        const bbb = getState();
+        
+        // console.log(bbb)
+        const {collectionfocus} = bbb
+        console.log(collectionfocus)
     }
 }
 
 export const cSetOnBlur = () => {
+    return (dispatch, getState) => {
+        dispatch({type: 'COLLECTION_BLUR'})
+        const bbb = getState();
+        
+        // console.log(bbb)
+        const {collectionfocus} = bbb
+        console.log(collectionfocus)     
+    }
+
+
+
+
+
+}
+
+export const SetOnFocus = () => {
     return {
-        type: 'COLLECTION_BLUR'
+        type: 'FOCUS'
     }
 }
 
-export const dSetOnFocus = () => {
+export const SetOnBlur = () => {
     return {
-        type: 'COMMUNITY_FOCUS'
-    }
-}
-
-export const dSetOnBlur = () => {
-    return {
-        type: 'COMMUNITY_BLUR'
+        type: 'BLUR'
     }
 }

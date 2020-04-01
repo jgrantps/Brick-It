@@ -18,7 +18,7 @@ export default function communityReducer(
         
         case 'LOAD_COMMUNITY_DATA':
             return{
-                ...state, loading: false, bulkload: true, body:[...action.payload.selections]
+                ...state, loading: false, bulkload: true, body: [...action.payload.selections]
             }
 
         case 'LOADING_COMMUNITY_UPDATE':

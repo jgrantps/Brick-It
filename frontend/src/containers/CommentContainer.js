@@ -4,7 +4,7 @@ import api from '../classes/adapters'
 
 import {CommentInput} from '../components/Comments/CommentInput'
 import { CommentItem } from '../components/Elements/Elements';
-import { loadComment, deleteComment, updateCommunityComments, cSetOnBlur, cSetOnFocus, dSetOnBlur, dSetOnFocus } from '../actions/adjusterSelections'
+import { loadComment, deleteComment, updateCommunityComments, SetOnBlur, SetOnFocus, cSetOnBlur, cSetOnFocus } from '../actions/adjusterSelections'
 
 
 class CommentContainer extends Component {
@@ -23,7 +23,7 @@ class CommentContainer extends Component {
         event.preventDefault()
         let commentPayload = {selection_comment: {selection_id: event.target.id, comment: this.state.comment}}
         this.props.loadComment(commentPayload) 
-        this.props.dSetOnBlur()
+        // this.props.dSetOnBlur()
     }
 
     handleDeleteComment = (e) =>{
@@ -44,11 +44,12 @@ class CommentContainer extends Component {
 
     handleOnFocus = () => {
         this.props.cSetOnFocus()
-        this.props.dSetOnFocus()
+        
     }
     
     handleOnBlur = () => {
-        this.props.dSetOnBlur()   
+        this.props.cSetOnBlur()   
+       
     }
 
     render() {
@@ -68,8 +69,9 @@ const mapDispatchToProps = dispatch => {
        updateCommunityComments: (data) => {dispatch(updateCommunityComments(data))},
        cSetOnFocus: () => {dispatch(cSetOnFocus())},
        cSetOnBlur: () => {dispatch(cSetOnBlur())},
-       dSetOnFocus: () => {dispatch(dSetOnFocus())},
-       dSetOnBlur: () => {dispatch(dSetOnBlur())}
+       SetOnBlur: () => {dispatch(SetOnBlur())},
+       SetOnFocus: () => {dispatch(SetOnFocus())},
+//    dSetOnBlur: () => {dispatch(dSetOnBlur())}
 
     }
 }

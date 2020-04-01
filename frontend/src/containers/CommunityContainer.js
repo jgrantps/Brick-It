@@ -59,9 +59,11 @@ class CommunityContainer extends Component {
         let selectionList = community.body.filter(unit => unit.data.attributes.user.id == userId)
         return selectionList    
     }
-    
+
+        
     
     render() {
+       
         
         return(
             <>

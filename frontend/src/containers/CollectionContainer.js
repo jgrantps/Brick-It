@@ -14,7 +14,6 @@ class CollectionContainer extends Component {
 
     componentDidMount() {
         const {comments, loadCommunityData, user:{ focusStatus }, updateCommunityComments} = this.props
-        loadCommunityData()
         
         if (!comments.bulkLoad) {
             this.props.loadUserComments()
@@ -123,7 +122,8 @@ const mapStateToProps = (state) => {
         user: state.user,
         themes: state.themes,
         comments: state.comments,
-        kits: state.kits
+        kits: state.kits,
+        // focus: state.collectionfocus
 
     }
 }
