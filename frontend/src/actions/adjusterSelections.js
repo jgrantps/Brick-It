@@ -244,41 +244,44 @@ export const deleteCommunityComment = (commentPayload) => {
     }
 }
 
-export const cSetOnFocus = () => {
+export const SetOnFocus = () => {
     return (dispatch, getState) => {
         dispatch({type: 'COLLECTION_FOCUS'})
         const bbb = getState();
         
         // console.log(bbb)
         const {collectionfocus} = bbb
-        console.log(collectionfocus)
+
+        collectionfocus ? console.log("I'm focused") : console.log("I'm not focused")
+        // console.log(collectionfocus)
     }
 }
 
-export const cSetOnBlur = () => {
+export const SetOnBlur = () => {
     return (dispatch, getState) => {
         dispatch({type: 'COLLECTION_BLUR'})
         const bbb = getState();
         
         // console.log(bbb)
         const {collectionfocus} = bbb
-        console.log(collectionfocus)     
-    }
-
-
-
-
-
-}
-
-export const SetOnFocus = () => {
-    return {
-        type: 'FOCUS'
+        !collectionfocus ? console.log("I'm focused") : console.log("I'm not focused")
+        // console.log(collectionfocus)     
     }
 }
 
-export const SetOnBlur = () => {
-    return {
-        type: 'BLUR'
-    }
-}
+
+
+
+
+
+// export const SetOnFocus = () => {
+//     return {
+//         type: 'FOCUS'
+//     }
+// }
+
+// export const SetOnBlur = () => {
+//     return {
+//         type: 'BLUR'
+//     }
+// }

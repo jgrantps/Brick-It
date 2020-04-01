@@ -122,8 +122,7 @@ const mapStateToProps = (state) => {
         user: state.user,
         themes: state.themes,
         comments: state.comments,
-        kits: state.kits,
-        // focus: state.collectionfocus
+        kits: state.kits
 
     }
 }

@@ -23,7 +23,7 @@ class CommentContainer extends Component {
         event.preventDefault()
         let commentPayload = {selection_comment: {selection_id: event.target.id, comment: this.state.comment}}
         this.props.loadComment(commentPayload) 
-        // this.props.dSetOnBlur()
+        this.props.SetOnBlur()
     }
 
     handleDeleteComment = (e) =>{
@@ -43,12 +43,12 @@ class CommentContainer extends Component {
     
 
     handleOnFocus = () => {
-        this.props.cSetOnFocus()
+        this.props.SetOnFocus()
         
     }
     
     handleOnBlur = () => {
-        this.props.cSetOnBlur()   
+        this.props.SetOnBlur()   
        
     }
 
@@ -67,11 +67,11 @@ const mapDispatchToProps = dispatch => {
        loadComment: (commentPayload) => {dispatch(loadComment(commentPayload))},
        deleteComment: (commentPayload) => {dispatch(deleteComment(commentPayload))},
        updateCommunityComments: (data) => {dispatch(updateCommunityComments(data))},
-       cSetOnFocus: () => {dispatch(cSetOnFocus())},
-       cSetOnBlur: () => {dispatch(cSetOnBlur())},
-       SetOnBlur: () => {dispatch(SetOnBlur())},
        SetOnFocus: () => {dispatch(SetOnFocus())},
-//    dSetOnBlur: () => {dispatch(dSetOnBlur())}
+       SetOnBlur: () => {dispatch(SetOnBlur())},
+
+
+    
 
     }
 }
