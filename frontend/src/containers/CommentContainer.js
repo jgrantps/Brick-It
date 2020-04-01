@@ -4,7 +4,7 @@ import api from '../classes/adapters'
 
 import {CommentInput} from '../components/Comments/CommentInput'
 import { CommentItem } from '../components/Elements/Elements';
-import { loadComment, deleteComment, updateCommunityComments, setOnBlur, setOnFocus } from '../actions/adjusterSelections'
+import { loadComment, deleteComment, updateCommunityComments, cSetOnBlur, cSetOnFocus, dSetOnBlur, dSetOnFocus } from '../actions/adjusterSelections'
 
 
 class CommentContainer extends Component {
@@ -23,6 +23,7 @@ class CommentContainer extends Component {
         event.preventDefault()
         let commentPayload = {selection_comment: {selection_id: event.target.id, comment: this.state.comment}}
         this.props.loadComment(commentPayload) 
+        this.props.dSetOnBlur()
     }
 
     handleDeleteComment = (e) =>{
@@ -39,25 +40,15 @@ class CommentContainer extends Component {
                 
     }
 
-    componentDidMount() {
-        if (!this.state.focus){
-           console.log("I'm not focused")
-        } else{
-            console.log("I'm focused!")
-        }
-    }
+    
 
-    handleOnFocus = (e) => {
-        console.log(e)
-        console.log("Focused")
-        // this.setState({...this.state, focus: true})
-        this.props.setOnFocus()
+    handleOnFocus = () => {
+        this.props.cSetOnFocus()
+        this.props.dSetOnFocus()
     }
     
     handleOnBlur = () => {
-        console.log("Blurred")
-        // this.setState({...this.state, focus: false})
-        this.props.setOnBlur()   
+        this.props.dSetOnBlur()   
     }
 
     render() {
@@ -75,8 +66,10 @@ const mapDispatchToProps = dispatch => {
        loadComment: (commentPayload) => {dispatch(loadComment(commentPayload))},
        deleteComment: (commentPayload) => {dispatch(deleteComment(commentPayload))},
        updateCommunityComments: (data) => {dispatch(updateCommunityComments(data))},
-       setOnFocus: () => {dispatch(setOnFocus())},
-       setOnBlur: () => {dispatch(setOnBlur())}
+       cSetOnFocus: () => {dispatch(cSetOnFocus())},
+       cSetOnBlur: () => {dispatch(cSetOnBlur())},
+       dSetOnFocus: () => {dispatch(dSetOnFocus())},
+       dSetOnBlur: () => {dispatch(dSetOnBlur())}
 
     }
 }

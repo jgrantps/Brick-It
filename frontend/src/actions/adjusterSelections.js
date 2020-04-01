@@ -197,9 +197,8 @@ export const loadComment = (commentPayload) => {
         dispatch({type: 'LOADING_COMMENTS'})
         api.submitComment(commentPayload, window.localStorage.token)
         .then(resp => {
-            dispatch({type:'LOAD_NEW_COMMENT',
-                payload: resp.data.attributes
-            })
+            dispatch({type:'LOAD_NEW_COMMENT',payload: resp.data.attributes})
+            dispatch({type: 'BLUR'})
         })
         .catch(err => console.log(err))
     }
@@ -219,9 +218,6 @@ export const updateCommunityComments = (currentCommentIdSet) => {
         .catch(err => console.log(err))
     }
 }
-
-
-
 
 export const submitCommunityComment = (commentPayload) => {
     return (dispatch) => {
@@ -249,16 +245,26 @@ export const deleteCommunityComment = (commentPayload) => {
     }
 }
 
-export const setOnFocus = () => {
-    console.log('in the adjusterSelections as focus')
+export const cSetOnFocus = () => {
     return {
-        type: 'FOCUS'
+        type: 'COLLECTION_FOCUS'
     }
 }
 
-export const setOnBlur = () => {
-    console.log('in the adjusterSelections as blur')
+export const cSetOnBlur = () => {
     return {
-        type: 'BLUR'
-    };
-};
+        type: 'COLLECTION_BLUR'
+    }
+}
+
+export const dSetOnFocus = () => {
+    return {
+        type: 'COMMUNITY_FOCUS'
+    }
+}
+
+export const dSetOnBlur = () => {
+    return {
+        type: 'COMMUNITY_BLUR'
+    }
+}

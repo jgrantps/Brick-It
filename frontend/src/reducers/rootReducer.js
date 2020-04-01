@@ -2,7 +2,8 @@ import { combineReducers } from "redux";
 import userReducer from "./userReducer"
 import collectionReducer from "./collectionReducer"
 import kitsReducer from "./kitsReducer"
-import focusReducer from "./focusReducer"
+import collectionFocusReducer from "./collectionFocusReducer"
+import communityFocusReducer from "./communityFocusReducer"
 import themesReducer from "./themesReducer"
 import selectionsReducer from "./selectionsReducer"
 import commentReducer from "./commentReducer"
@@ -17,7 +18,8 @@ const rootReducer = combineReducers({
   collection: collectionReducer,
   comments: commentReducer,
   community: communityReducer,
-  focus: focusReducer
+  collectionFocus: collectionFocusReducer,
+  communityFocus: communityFocusReducer
 });
  
 export default rootReducer;
