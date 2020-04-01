@@ -3,7 +3,6 @@ import userReducer from "./userReducer"
 import collectionReducer from "./collectionReducer"
 import kitsReducer from "./kitsReducer"
 import focusReducer from "./focusReducer"
-// import collectionFocusReducer from "./collectionFocusReducer"
 import themesReducer from "./themesReducer"
 import selectionsReducer from "./selectionsReducer"
 import commentReducer from "./commentReducer"
@@ -19,7 +18,6 @@ const rootReducer = combineReducers({
   comments: commentReducer,
   community: communityReducer,
   focus: focusReducer,
-  // collectionfocus: collectionFocusReducer
 });
  
 export default rootReducer;

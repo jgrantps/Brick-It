@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import api from '../classes/adapters'
 
 import {CommentInput} from '../components/Comments/CommentInput'
 import { CommentItem } from '../components/Elements/Elements';
@@ -11,7 +10,6 @@ class CommentContainer extends Component {
     
     state= {
         comment: "",
-        focus: false
     }
 
     trackChange = event => {
@@ -23,7 +21,6 @@ class CommentContainer extends Component {
         event.preventDefault()
         let commentPayload = {selection_comment: {selection_id: event.target.id, comment: this.state.comment}}
         this.props.loadComment(commentPayload) 
-        this.props.SetOnBlur()
     }
 
     handleDeleteComment = (e) =>{
@@ -68,11 +65,7 @@ const mapDispatchToProps = dispatch => {
        deleteComment: (commentPayload) => {dispatch(deleteComment(commentPayload))},
        updateCommunityComments: (data) => {dispatch(updateCommunityComments(data))},
        SetOnFocus: () => {dispatch(SetOnFocus())},
-       SetOnBlur: () => {dispatch(SetOnBlur())},
-
-
-    
-
+       SetOnBlur: () => {dispatch(SetOnBlur())}
     }
 }
 

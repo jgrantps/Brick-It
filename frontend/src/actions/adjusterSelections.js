@@ -247,13 +247,11 @@ export const deleteCommunityComment = (commentPayload) => {
 export const SetOnFocus = () => {
     return (dispatch, getState) => {
         dispatch({type: 'FOCUS'})
-        const bbb = getState();
-        
-        // console.log(bbb)
-        const {focus} = bbb
-
+        const i = getState();
+        const {focus} = i
+        // clearInterval(updater)
         focus ? console.log("I'm focused") : console.log("I'm not focused")
-        // console.log(collectionfocus)
+        
     }
 }
 
@@ -262,26 +260,27 @@ export const SetOnBlur = () => {
         dispatch({type: 'BLUR'})
         const bbb = getState();
         
-        // console.log(bbb)
-        const {focus} = bbb
-        !focus ? console.log("I'm focused") : console.log("I'm not focused")
-        // console.log(collectionfocus)     
+        
+        const {focus, comments: {body: commentSet}} = bbb
+        debugger
+        focus ?  console.log(thunkAction.communityCommentList(commentSet)) : console.log("I'm the other")
+        //  this.updater = setInterval(() => { updateCommunityComments(this.communityCommentList()) }, 3000)            
+        //  if (!focus) {
+        //      console.log("i'm blurred!")
+            
+        //  }
+        //  !focus ? console.log("I'm focused") : console.log("I'm not focused")
+        }
     }
-}
+    
+// const updater = setInterval(() => { updateCommunityComments(communityCommentList()) }, 3000)            
 
-
-
-
-
-
-// export const SetOnFocus = () => {
-//     return {
-//         type: 'FOCUS'
-//     }
-// }
-
-// export const SetOnBlur = () => {
-//     return {
-//         type: 'BLUR'
+// const communityCommentList = () => {
+//     return(dispatch, getState) => {
+//         const i = getState();
+//         const {comments:{body: commentSet}} = i
+//         let commentIdSet = [];
+//         commentSet.map(comment => commentIdSet.push(comment.id))
+//         return {currentSet: commentIdSet}
 //     }
 // }

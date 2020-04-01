@@ -146,6 +146,19 @@ class Thunk {
         return deletedComment
     }
 
+    test(commentSet){
+        console.log(commentSet[0])
+    }
+
+    communityCommentList(commentSet){
+        let commentIdSet = [];
+            commentSet.map(comment => commentIdSet.push(comment.id))
+            return {currentSet: commentIdSet}
+    }
+
+
+
+
 
 }
 
