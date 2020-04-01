@@ -85,7 +85,7 @@ const mapStateToProps = (state) => {
         comments: state.comments,
         kits: state.kits,
         community: state.community,
-        focus: state.focus
+        
 
     }
 }

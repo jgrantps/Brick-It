@@ -246,25 +246,25 @@ export const deleteCommunityComment = (commentPayload) => {
 
 export const SetOnFocus = () => {
     return (dispatch, getState) => {
-        dispatch({type: 'COLLECTION_FOCUS'})
+        dispatch({type: 'FOCUS'})
         const bbb = getState();
         
         // console.log(bbb)
-        const {collectionfocus} = bbb
+        const {focus} = bbb
 
-        collectionfocus ? console.log("I'm focused") : console.log("I'm not focused")
+        focus ? console.log("I'm focused") : console.log("I'm not focused")
         // console.log(collectionfocus)
     }
 }
 
 export const SetOnBlur = () => {
     return (dispatch, getState) => {
-        dispatch({type: 'COLLECTION_BLUR'})
+        dispatch({type: 'BLUR'})
         const bbb = getState();
         
         // console.log(bbb)
-        const {collectionfocus} = bbb
-        !collectionfocus ? console.log("I'm focused") : console.log("I'm not focused")
+        const {focus} = bbb
+        !focus ? console.log("I'm focused") : console.log("I'm not focused")
         // console.log(collectionfocus)     
     }
 }
