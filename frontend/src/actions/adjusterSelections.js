@@ -203,21 +203,6 @@ export const loadComment = (commentPayload) => {
     }
 }
 
-export const updateCommunityComments = (currentCommentIdSet) => {
-    
-    return (dispatch) => {
-        dispatch({type: 'LOADING_COMMENTS'})
-        api.updateComments(currentCommentIdSet, window.localStorage.token)
-        .then(resp => {
-            console.log(resp)
-            dispatch({type: 'LOAD_USER_COMMENTS',
-                payload: thunkAction.filterCommentPayload(resp)
-            })
-        })
-        .catch(err => console.log(err))
-    }
-}
-
 export const submitCommunityComment = (commentPayload) => {
     return (dispatch) => {
         dispatch({type: 'LOADING_COMMENTS'})
@@ -244,17 +229,26 @@ export const deleteCommunityComment = (commentPayload) => {
     }
 }
 
+// var updater = setInterval(() => { 
+//     updateCommunityComments(communityCommentList()) 
+// }, 3000)
+
+
+
 export const SetOnFocus = () => {
     return (dispatch, getState) => {
         dispatch({type: 'FOCUS'})
         const i = getState();
         const {focus} = i
         // clearInterval(updater)
-        focus ? console.log("I'm focused") : console.log("I'm not focused")
+        console.log(bill)
+        focus.focus ? console.log("I'm focused") : console.log("I'm not focused")
         
     }
 }
 
+var bob = "this is bob"
+var bill = "this is bill"
 export const SetOnBlur = () => {
     return (dispatch, getState) => {
         dispatch({type: 'BLUR'})
@@ -262,18 +256,40 @@ export const SetOnBlur = () => {
         
         
         const {focus, comments: {body: commentSet}} = bbb
-        debugger
-        focus ?  console.log(thunkAction.communityCommentList(commentSet)) : console.log("I'm the other")
+        console.log(bob)
+        !focus.focus ?  console.log(thunkAction.communityCommentList(commentSet)) : console.log("I'm the other")
         //  this.updater = setInterval(() => { updateCommunityComments(this.communityCommentList()) }, 3000)            
         //  if (!focus) {
-        //      console.log("i'm blurred!")
+            //      console.log("i'm blurred!")
             
-        //  }
-        //  !focus ? console.log("I'm focused") : console.log("I'm not focused")
+            //  }
+            //  !focus ? console.log("I'm focused") : console.log("I'm not focused")
         }
     }
     
-// const updater = setInterval(() => { updateCommunityComments(communityCommentList()) }, 3000)            
+    
+    export const updateCommunityComments = () => {
+        
+        return (dispatch, getState) => {
+            dispatch({type: 'LOADING_COMMENTS'})
+            const i = getState();
+            const { comments: {body: commentSet}} = i
+            let currentCommentIdSet = thunkAction.communityCommentList(commentSet)
+            //I think this ought to work for passing the commentlist to the api
+            //you'll need to still figure out how to tie it to the focus state and the setInterval. 
+            api.updateComments(currentCommentIdSet, window.localStorage.token)
+            .then(resp => {
+                console.log(resp)
+                dispatch({type: 'LOAD_USER_COMMENTS',
+                    payload: thunkAction.filterCommentPayload(resp)
+                })
+            })
+            .catch(err => console.log(err))
+        }
+    }
+    
+    
+// const updater = setInterval(() => { updateCommunityComments(thunkAction.communityCommentList()) }, 3000)            
 
 // const communityCommentList = () => {
 //     return(dispatch, getState) => {

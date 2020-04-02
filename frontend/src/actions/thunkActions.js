@@ -2,6 +2,7 @@ import {Kit} from '../classes/kits'
 import service from '../classes/service'
 import {Theme} from '../classes/themes'
 
+
 class Thunk {
 
     formatThemes(data) {
@@ -146,20 +147,11 @@ class Thunk {
         return deletedComment
     }
 
-    test(commentSet){
-        console.log(commentSet[0])
-    }
-
     communityCommentList(commentSet){
         let commentIdSet = [];
             commentSet.map(comment => commentIdSet.push(comment.id))
             return {currentSet: commentIdSet}
     }
-
-
-
-
-
 }
 
 let thunkAction = new Thunk
