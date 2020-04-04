@@ -3,7 +3,7 @@ import service from '../classes/service'
 
 import { connect } from 'react-redux';
 import { Redirect} from 'react-router-dom';
-import { loadOauth } from '../actions/adjusterSelections';
+import { loadOauth } from '../actions/userAccess';
 
 class Oauth extends Component {
 

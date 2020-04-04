@@ -39,7 +39,7 @@ class CollectionContainer extends Component {
 
     selectionSet = () => {
         const {selections:{body: collectionSet}} = this.props
-        //BUILDS UNIQUE THEME LIST OUT OF ALL THE SELECTIONS IN THE USER'S COLLECTION UPON LOGIN.
+        //BUILDS UNIQUE THEME LIST OUT OF ALL THE SELECTIONS ADDED BY THE USER FROM THE CATALOG IN A GIVEN SESSION.
         var currentThemeList = []
         var currentThemeIdList = []
         collectionSet.map(selection => {
@@ -95,7 +95,7 @@ class CollectionContainer extends Component {
                 <h2 className="text-4xl border-b-2 border-gray-700 mx-8 mb-4">Recent Selections:</h2>
                 
                 {LoadingSignal(this.props.selections.loading)}
-                <div className="flex flex-wrap  bg-blue-100">
+                <div className="flex flex-wrap bg-blue-100">
                     {this.currentSelections()}
                 </div>
                 <div>

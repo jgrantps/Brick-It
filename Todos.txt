@@ -25,7 +25,7 @@ Monday March 2nd:
         d. kit data are returned and are again built into "Kit" objects and rendered to the DOM.
         e. User clicks on a "select" button, which adds the selected "Kit" object to the selections array
         f. User clicks on a "Submit" button, which sends a "POST" request to the local API <selections#create>.
-            // http://localhost:3001/selections
+            // http://localhost:5000/selections
         g. Create action populates database with the selections to the current_user. It then renders back all selections.
         h. React rebuilds the user's selections page with the updated selections.      
 

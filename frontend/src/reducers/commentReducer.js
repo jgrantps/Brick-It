@@ -20,14 +20,24 @@ export default function commentReducer(
         }
             
         case 'LOAD_USER_COMMENTS':
+            //map each comment in the action.payload and accept it into the state.body only if its ID is not already found.
+            let newStateBody = []
+            action.payload.map(comment => state.body.find(i => i.id == comment.id) ? null : newStateBody.push(comment))
+            state.body.map(i => newStateBody.push(i))
+            debugger
         return{
-            ...state, loading: false, loaded: true, bulkLoad: true, body: [...state.body, ...action.payload]
+            ...state, loading: false, loaded: true, bulkLoad: true, body: [...newStateBody]
+            // ...state, loading: false, loaded: true, bulkLoad: true, body: [...state.body, ...action.payload]
         }
 
         case 'LOAD_COMMUNITY_DATA':
-            
+            //map each comment in the action.payload.comments and accept it into the state.body only if its ID is not already found.
+            let newCommunityStateBody = []
+            action.payload.comments.map(comment => state.body.find(i => i.id == comment.id) ? null : newCommunityStateBody.push(comment))
+            state.body.map(i => newCommunityStateBody.push(i))
             return{
-                ...state, loading: false, loaded: true, bulkload: true, body: [...state.body, ...action.payload.comments]
+                ...state, loading: false, loaded: true, bulkload: true, body: [ ...newCommunityStateBody]
+                // ...state, loading: false, loaded: true, bulkload: true, body: [...state.body, ...action.payload.comments]
             }
 
         case 'LOAD_NEW_COMMENT':

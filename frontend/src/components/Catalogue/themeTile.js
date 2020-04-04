@@ -5,7 +5,7 @@ import api from '../../classes/adapters'
 import uuid from 'react-uuid'
 import {SelectThemeBtn} from '../Elements/Elements'
 import {connect} from 'react-redux'
-import {addKits, adKits} from '../../actions/adjusterSelections'
+import {addKits} from '../../actions/reBrickableAPIAccess'
 
 class ThemeTile extends Component {
     state = {

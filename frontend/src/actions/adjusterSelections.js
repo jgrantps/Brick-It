@@ -10,41 +10,41 @@ export const addCollectionComment = (commentData) => {
     }
 }
 
-export const UserLogOut = () => {
-    return (dispatch) => {
-        api.Logout(window.localStorage.token)
-        .then(resp => {
-            dispatch({type: 'LOG_OUT'})
+// export const UserLogOut = () => {
+//     return (dispatch) => {
+//         api.Logout(window.localStorage.token)
+//         .then(resp => {
+//             dispatch({type: 'LOG_OUT'})
            
-            window.localStorage.removeItem('token')
-            window.localStorage.removeItem('state')
-            window.localStorage.removeItem('current_user')
-        })
-        .catch(err => console.log(err))
-    }
-}
+//             window.localStorage.removeItem('token')
+//             window.localStorage.removeItem('state')
+//             window.localStorage.removeItem('current_user')
+//         })
+//         .catch(err => console.log(err))
+//     }
+// }
 
-export const addKits = (children) => {  
-    return (dispatch, getState) => {
-        const state = getState()
-        const {kits} = state
+// export const addKits = (children) => {  
+//     return (dispatch, getState) => {
+//         const state = getState()
+//         const {kits} = state
         
-        dispatch({type: 'LOADING_KITS'})             
-        children.map(child => {  
-            let existingKits = kits.body.find(kit => Object.keys(kit)[0] == child.api_id)
+//         dispatch({type: 'LOADING_KITS'})             
+//         children.map(child => {  
+//             let existingKits = kits.body.find(kit => Object.keys(kit)[0] == child.api_id)
             
-            if (!existingKits){
-                api.fetchKitsForTheme(child.api_id)
-                .then(resp => { 
-                    dispatch({ type: 'ADD_KIT', 
-                        payload: thunkAction.loadKits(resp, child.api_id)
-                    })
-                })
-                .catch(err => console.log(err))
-            }
-        })
-    }
-}
+//             if (!existingKits){
+//                 api.fetchKitsForTheme(child.api_id)
+//                 .then(resp => { 
+//                     dispatch({ type: 'ADD_KIT', 
+//                         payload: thunkAction.loadKits(resp, child.api_id)
+//                     })
+//                 })
+//                 .catch(err => console.log(err))
+//             }
+//         })
+//     }
+// }
 
 export const addSelection = (selectionData) => {
     return (dispatch) => {
@@ -59,16 +59,16 @@ export const addSelection = (selectionData) => {
     }
 }
 
-export const loadOauth = (userInfo) => {
-    return (dispatch) => {
-        dispatch({type: 'SET_USER',
-            payload: userInfo       
-        })
+// export const loadOauth = (userInfo) => {
+//     return (dispatch) => {
+//         dispatch({type: 'SET_USER',
+//             payload: userInfo       
+//         })
 
-        let serializedUser = JSON.stringify(userInfo)
-        window.localStorage.setItem('current_user', serializedUser)
-    }
-}
+//         let serializedUser = JSON.stringify(userInfo)
+//         window.localStorage.setItem('current_user', serializedUser)
+//     }
+// }
 
 
 //LOADS USER'S COLLECTION OF SELECTIONS FROM DATABASE UPON LOGIN.
@@ -85,70 +85,70 @@ export const loadUserCollection = () => {
 }
 
 
-export const loadLogin = (userInfo) => {
+// export const loadLogin = (userInfo) => {
     
-    return (dispatch) => {
-        dispatch({type: 'LOADING_USER'})
-        api.Login(userInfo)
-        .then(resp => {
-            if (resp.token){
-                window.localStorage.setItem('token', resp.token)
-                dispatch({type: 'SET_USER',
-                    payload: thunkAction.handleLoginCredentials(resp)
-                })
-            }else{
-                setTimeout(() => {dispatch({ type:'COMPLETE_LOGIN_THROW' })}, 2000)
-                dispatch({
-                    type: 'THROW_LOGIN_ERROR',
-                    payload: resp.error
-                })
-            }
-        })
-        .catch(err => console.log(err))
-    }
-}
+//     return (dispatch) => {
+//         dispatch({type: 'LOADING_USER'})
+//         api.Login(userInfo)
+//         .then(resp => {
+//             if (resp.token){
+//                 window.localStorage.setItem('token', resp.token)
+//                 dispatch({type: 'SET_USER',
+//                     payload: thunkAction.handleLoginCredentials(resp)
+//                 })
+//             }else{
+//                 setTimeout(() => {dispatch({ type:'COMPLETE_LOGIN_THROW' })}, 2000)
+//                 dispatch({
+//                     type: 'THROW_LOGIN_ERROR',
+//                     payload: resp.error
+//                 })
+//             }
+//         })
+//         .catch(err => console.log(err))
+//     }
+// }
 
 
 
 
-export const loadSignup = (userInfo) => {
+// export const loadSignup = (userInfo) => {
     
-    return (dispatch) => {
-        dispatch({type: 'LOADING_USER'})
-        api.Signup(userInfo)
-        .then(resp => {
-            if (resp.token){
-                window.localStorage.setItem('token', resp.token)
-                dispatch({type: 'SET_USER',
-                payload: thunkAction.handleLoginCredentials(resp)
-            })
-        }else{
-            setTimeout(() => {dispatch({ type:'COMPLETE_LOGIN_THROW' })}, 2000)
-            dispatch({
-                type: 'THROW_LOGIN_ERROR',
-                payload: `Signup failed: ${thunkAction.handleLoginErrors(resp)}` 
-            })
-        }
-    })
-    .catch(err => console.log(err))
-    }
-}
+//     return (dispatch) => {
+//         dispatch({type: 'LOADING_USER'})
+//         api.Signup(userInfo)
+//         .then(resp => {
+//             if (resp.token){
+//                 window.localStorage.setItem('token', resp.token)
+//                 dispatch({type: 'SET_USER',
+//                 payload: thunkAction.handleLoginCredentials(resp)
+//             })
+//         }else{
+//             setTimeout(() => {dispatch({ type:'COMPLETE_LOGIN_THROW' })}, 2000)
+//             dispatch({
+//                 type: 'THROW_LOGIN_ERROR',
+//                 payload: `Signup failed: ${thunkAction.handleLoginErrors(resp)}` 
+//             })
+//         }
+//     })
+//     .catch(err => console.log(err))
+//     }
+// }
 
-export const loadThemes = () => {
-    return (dispatch) => {
-        dispatch({type: 'LOADING_THEMES'})
-        api.retrieveThemes()
-        .then(resp => {
-            dispatch({type: 'LOAD_THEMES',
-                payload: thunkAction.formatThemes(resp)
-            })
-            dispatch({type: 'LOAD_THEME_PARENTS',
-                payload: thunkAction.formatThemeParents()
-            })
-        })
-        .catch(err => console.log(err))
-    }
-}
+// export const loadThemes = () => {
+//     return (dispatch) => {
+//         dispatch({type: 'LOADING_THEMES'})
+//         api.retrieveThemes()
+//         .then(resp => {
+//             dispatch({type: 'LOAD_THEMES',
+//                 payload: thunkAction.formatThemes(resp)
+//             })
+//             dispatch({type: 'LOAD_THEME_PARENTS',
+//                 payload: thunkAction.formatThemeParents()
+//             })
+//         })
+//         .catch(err => console.log(err))
+//     }
+// }
 
 export const deleteComment = (commentPayload) => {
     return (dispatch) => {
@@ -229,11 +229,11 @@ export const deleteCommunityComment = (commentPayload) => {
 
 
 
-const test = (x, dispatch) => {
+const update = (x, dispatch) => {
     liveUpdate(x, dispatch)
 }
 
-var testy = null; 
+var updater = null; 
 
 
 
@@ -245,7 +245,8 @@ export const SetOnBlur = () => {
         const { comments: {body: commentSet}} = i
         let currentCommentIdSet = thunkAction.communityCommentList(commentSet)
         debugger
-        testy =  setInterval(test, 1000, currentCommentIdSet, dispatch)
+        // updater =  setInterval(update, 3000, currentCommentIdSet, dispatch)
+        updater =  update(currentCommentIdSet, dispatch)
     }
 }
 
@@ -254,7 +255,7 @@ export const SetOnFocus = () => {
         dispatch({type: 'FOCUS'})
         const i = getState();
         const {focus} = i
-            clearInterval(testy)
+            clearInterval(updater)
             console.log("the clearInterval should have fired")
     }
 }

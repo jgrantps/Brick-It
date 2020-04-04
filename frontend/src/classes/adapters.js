@@ -1,8 +1,8 @@
 class ApiAdapter {
 
     constructor() { 
-        this.backend = "http://localhost:3001" 
-        this.baseUrl = "http://localhost:3001" 
+        this.backend = "http://localhost:5000" 
+        this.baseUrl = "http://localhost:5000" 
         this.rebrickableBaseUrl = "https://rebrickable.com/api/v3/lego/"
         
         //AUTHENTICATION HEADER FOR FETCH REQUESTS TO LOCAL API.
@@ -96,7 +96,6 @@ class ApiAdapter {
 
     //Retrieve all SELECTIONS from User's DB and add to Collection Store.
     fetchAllSelections(token) {
-        // return fetch(`http://localhost:3001/selections`, this.getConfig(token))
         return fetch(`${this.backend}/selections`, this.getConfig(token))
             .then(resp => resp.json())
     }

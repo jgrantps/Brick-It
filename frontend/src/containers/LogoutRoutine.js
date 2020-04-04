@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
-import {UserLogOut} from '../actions/adjusterSelections'
+import {UserLogOut} from '../actions/userAccess'
 import {Theme} from '../classes/themes'
 import {Kit} from '../classes/kits'
 

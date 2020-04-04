@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import NavContainer from './NavContainer'
-import { loadThemes } from '../actions/adjusterSelections'
+import { loadThemes } from '../actions/reBrickableAPIAccess'
 import service from '../classes/service'
 import { Theme } from '../classes/themes';
 import ThemeUI from '../components/Catalogue/themeUI'

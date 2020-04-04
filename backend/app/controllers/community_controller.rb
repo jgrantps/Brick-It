@@ -44,8 +44,8 @@ class CommunityController < ApplicationController
         options = {
             include: [:user, :selection, :'selection.kit', :'selection.kit.theme']
         }
-
         updated_comments.each {|comment|serialized_comments.push(CommentSerializer.new(comment, options))}
+        # byebug
         
              render json: serialized_comments   
     end
