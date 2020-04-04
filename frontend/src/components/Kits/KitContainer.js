@@ -7,7 +7,7 @@ import api from '../../classes/adapters'
 import { Kit } from '../../classes/kits';
 import { Selection } from '../../classes/selections';
 import { Theme } from '../../classes/themes'
-import {addSelection} from '../../actions/adjusterSelections'
+import {addSelection} from '../../actions/userCRUDActions'
 
 
 import KitTitle from '../Kits/kitTitle'

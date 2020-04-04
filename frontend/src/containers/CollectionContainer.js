@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import NavContainer from './NavContainer'
 import uuid from 'react-uuid'
 import {loadUserComments} from '../actions/bulkActions'
-import { updateCommunityComments} from '../actions/adjusterSelections'
+import { updateCommunityComments} from '../actions/liveUpdate'
 
 import CollectionWrapper from '../components/Collection/CollectionWrapper'
 import { SelectionPrompt, LoadingSignal } from '../components/Elements/Elements'

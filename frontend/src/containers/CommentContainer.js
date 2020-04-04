@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 
 import {CommentInput} from '../components/Comments/CommentInput'
 import { CommentItem } from '../components/Elements/Elements';
-import { loadComment, deleteComment, updateCommunityComments, SetOnBlur, SetOnFocus, cSetOnBlur, cSetOnFocus } from '../actions/adjusterSelections'
-
+import { updateCommunityComments, SetOnBlur, SetOnFocus } from '../actions/liveUpdate'
+import {deleteComment, loadComment} from '../actions/userCRUDActions'
 
 class CommentContainer extends Component {
     
