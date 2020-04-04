@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 
-import { loadUserCollection } from '../actions/adjusterSelections'
+import { loadUserCollection } from '../actions/bulkActions'
 import NavContainer from './NavContainer'
 
 class UserContainer extends Component {

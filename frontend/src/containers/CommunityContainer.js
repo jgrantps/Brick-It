@@ -4,7 +4,7 @@ import NavContainer from './NavContainer'
 import uuid from 'react-uuid'
 
 import CollectionWrapper from '../components/Collection/CollectionWrapper'
-import {loadCommunityData, updateCommunityComments} from '../actions/adjusterSelections'
+import {loadCommunityData} from '../actions/bulkActions'
 
 class CommunityContainer extends Component {
     

@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import NavContainer from './NavContainer'
 import uuid from 'react-uuid'
-import {loadUserComments, loadCommunityData, updateCommunityComments} from '../actions/adjusterSelections'
+import {loadUserComments} from '../actions/bulkActions'
+import { updateCommunityComments} from '../actions/adjusterSelections'
 
 import CollectionWrapper from '../components/Collection/CollectionWrapper'
 import { SelectionPrompt, LoadingSignal } from '../components/Elements/Elements'
@@ -13,7 +14,7 @@ import { SelectionPrompt, LoadingSignal } from '../components/Elements/Elements'
 class CollectionContainer extends Component {
 
     componentDidMount() {
-        const {comments, loadCommunityData, user:{ focusStatus }, updateCommunityComments} = this.props
+        const {comments, user:{ focusStatus }, updateCommunityComments} = this.props
         
         if (!comments.bulkLoad) {
             this.props.loadUserComments()
@@ -110,7 +111,6 @@ class CollectionContainer extends Component {
 const mapDispatchToProps = dispatch => {
     return {
         loadUserComments: () => {dispatch(loadUserComments())},
-        loadCommunityData: () => {dispatch(loadCommunityData())},
         updateCommunityComments: (e) => {dispatch(updateCommunityComments(e))}
       }
 }

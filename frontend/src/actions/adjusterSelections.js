@@ -72,17 +72,17 @@ export const addSelection = (selectionData) => {
 
 
 //LOADS USER'S COLLECTION OF SELECTIONS FROM DATABASE UPON LOGIN.
-export const loadUserCollection = () => {
-    return (dispatch) => {
-        dispatch({type: 'LOADING_COLLECTION'})              
-        api.fetchAllSelections(window.localStorage.token)   
-        .then(resp =>{
-            dispatch({type: 'LOAD_USER_COLLECTION_FROM_DB',
-                payload: (resp)
-            })
-        })  
-    }
-}
+// export const loadUserCollection = () => {
+//     return (dispatch) => {
+//         dispatch({type: 'LOADING_COLLECTION'})              
+//         api.fetchAllSelections(window.localStorage.token)   
+//         .then(resp =>{
+//             dispatch({type: 'LOAD_USER_COLLECTION_FROM_DB',
+//                 payload: (resp)
+//             })
+//         })  
+//     }
+// }
 
 
 // export const loadLogin = (userInfo) => {
@@ -163,31 +163,31 @@ export const deleteComment = (commentPayload) => {
     }
 }
 
-export const loadUserComments = () => {
-    return (dispatch) => {
-        dispatch({type: 'LOADING_USER_COMMENTS'})
-        api.fetchUserComments(window.localStorage.token)
-        .then(resp => {
-            dispatch({type: 'LOAD_USER_COMMENTS',
-                payload: thunkAction.filterCommentPayload(resp)
-            })
-        })
-        .catch(err => console.log(err))
-    }
-}
+// export const loadUserComments = () => {
+//     return (dispatch) => {
+//         dispatch({type: 'LOADING_USER_COMMENTS'})
+//         api.fetchUserComments(window.localStorage.token)
+//         .then(resp => {
+//             dispatch({type: 'LOAD_USER_COMMENTS',
+//                 payload: thunkAction.filterCommentPayload(resp)
+//             })
+//         })
+//         .catch(err => console.log(err))
+//     }
+// }
 
-export const loadCommunityData = () => {
-    return (dispatch) => {
-        dispatch({type: 'LOADING_COMMUNITY_COMMENTS'})
-        api.fetchCommunityComments(window.localStorage.token)
-        .then(resp => {
-            dispatch({type: 'LOAD_COMMUNITY_DATA',
-                payload: thunkAction.filterCommunityDataPayload(resp)
-            })
-        })
-        .catch(err => console.log(err))
-    }
-}
+// export const loadCommunityData = () => {
+//     return (dispatch) => {
+//         dispatch({type: 'LOADING_COMMUNITY_COMMENTS'})
+//         api.fetchCommunityComments(window.localStorage.token)
+//         .then(resp => {
+//             dispatch({type: 'LOAD_COMMUNITY_DATA',
+//                 payload: thunkAction.filterCommunityDataPayload(resp)
+//             })
+//         })
+//         .catch(err => console.log(err))
+//     }
+// }
 
 export const loadComment = (commentPayload) => {
     return (dispatch) => {
