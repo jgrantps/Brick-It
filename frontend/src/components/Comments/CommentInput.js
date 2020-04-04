@@ -6,7 +6,7 @@ export const CommentInput = (props) => {
     const {trackChange, commentState, handleSubmit, selectionId, handleBlur, handleFocus} = props
 
     return (
-        <form>
+        <form onSubmit={handleSubmit} id={selectionId} >
             <div className="my-2 my-2">
                 <label className="font-semibold flex flex-col">
                     Comment:

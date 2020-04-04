@@ -3,40 +3,29 @@ import { connect } from 'react-redux'
 import NavContainer from './NavContainer'
 import uuid from 'react-uuid'
 import {loadUserComments} from '../actions/bulkActions'
-import { updateCommunityComments} from '../actions/liveUpdate'
+import {onStart} from '../actions/liveUpdate'
 
 import CollectionWrapper from '../components/Collection/CollectionWrapper'
 import { SelectionPrompt, LoadingSignal } from '../components/Elements/Elements'
 
 
-
-
 class CollectionContainer extends Component {
+    intervalID = 0
 
     componentDidMount() {
-        const {comments, user:{ focusStatus }, updateCommunityComments} = this.props
-        
+        const {comments} = this.props 
         if (!comments.bulkLoad) {
             this.props.loadUserComments()
         }
 
-        // this.updater = setInterval(() => { updateCommunityComments(this.communityCommentList()) }, 3000)
-        // if (focusStatus) {
-        // }
+        const {updater, timer, localStateRef} = onStart
+        this.intervalID = setInterval(updater, timer, localStateRef)
+ 
     }
-
 
     componentWillUnmount() {
-        // clearInterval(this.updater)
+        clearInterval(this.intervalID)
     }
-
-    // communityCommentList = () => {
-        
-    //     const {comments:{body: commentSet}} = this.props
-    //     let commentIdSet = [];
-    //     commentSet.map(comment => commentIdSet.push(comment.id))
-    //     return {currentSet: commentIdSet}
-    // }
 
     selectionSet = () => {
         const {selections:{body: collectionSet}} = this.props
@@ -111,7 +100,6 @@ class CollectionContainer extends Component {
 const mapDispatchToProps = dispatch => {
     return {
         loadUserComments: () => {dispatch(loadUserComments())},
-        updateCommunityComments: (e) => {dispatch(updateCommunityComments(e))}
       }
 }
 
@@ -122,7 +110,8 @@ const mapStateToProps = (state) => {
         user: state.user,
         themes: state.themes,
         comments: state.comments,
-        kits: state.kits
+        kits: state.kits,
+        // focus: state.focus
 
     }
 }

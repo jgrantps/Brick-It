@@ -19,6 +19,8 @@ class CommentContainer extends Component {
 
     handleSubmit = event => {
         event.preventDefault()
+        this.handleOnBlur()
+        
         let commentPayload = {selection_comment: {selection_id: event.target.id, comment: this.state.comment}}
         this.props.loadComment(commentPayload) 
     }
@@ -31,12 +33,10 @@ class CommentContainer extends Component {
     buildCommentList = () => {
         const {currentSelectionID} = this.props
         let localComments = this.props.comments.body.filter(comment => comment.selection.id == currentSelectionID)
-                return  localComments.map(comment => {
-                    return <CommentItem comment={comment} user={this.props.user} handleOnClick={this.handleDeleteComment} />
-                 }) 
-                
+            return  localComments.map(comment => {
+                return <CommentItem comment={comment} user={this.props.user} handleOnClick={this.handleDeleteComment} />
+            })     
     }
-
     
 
     handleOnFocus = () => {
@@ -45,8 +45,7 @@ class CommentContainer extends Component {
     }
     
     handleOnBlur = () => {
-        this.props.SetOnBlur()   
-       
+        this.props.SetOnBlur()     
     }
 
     render() {

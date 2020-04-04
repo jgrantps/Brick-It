@@ -38,14 +38,15 @@ class CommunityController < ApplicationController
         public_selections = Selection.are_public
         public_comments = []
         public_selections.each {|selection| selection.comments.each {|comment| public_comments.push(comment)}}
+
         updated_comments = public_comments.reject {|num| update_params.detect{|i| i == num.id}}
-        
+
         serialized_comments = []
         options = {
             include: [:user, :selection, :'selection.kit', :'selection.kit.theme']
         }
         updated_comments.each {|comment|serialized_comments.push(CommentSerializer.new(comment, options))}
-        # byebug
+        
         
              render json: serialized_comments   
     end

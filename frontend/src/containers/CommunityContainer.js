@@ -5,27 +5,24 @@ import uuid from 'react-uuid'
 
 import CollectionWrapper from '../components/Collection/CollectionWrapper'
 import {loadCommunityData} from '../actions/bulkActions'
+import {onStart} from '../actions/liveUpdate'
 
 class CommunityContainer extends Component {
-    
+   intervalID = 0
+
     componentDidMount() {
         const {community, loadCommunityData} = this.props
         if (!community.bulkload) {   
             loadCommunityData()
-        }    
+        }  
+
+        const {updater, timer, localStateRef} = onStart
+        this.intervalID = setInterval(updater, timer, localStateRef)
+        // let liveUpdater = setInterval(updater, timer, localStateRef)  
     }
 
-    // componentDidUpdate() {
-    //     const {updateCommunityComments, focus:{focus}} = this.props
-    //     if (!focus) {
-    //         this.updater = setInterval(() => { updateCommunityComments(this.communityCommentList()) }, 3000)            
-    //     } else {
-    //         clearInterval(this.updater)
-    //     }
-    // }
-
     componentWillUnmount() {
-        clearInterval(this.updater)
+        clearInterval(this.intervalID)
     }
     
     communityCommentList = () => {
@@ -59,12 +56,9 @@ class CommunityContainer extends Component {
         let selectionList = community.body.filter(unit => unit.data.attributes.user.id == userId)
         return selectionList    
     }
-
         
     
-    render() {
-       
-        
+    render() {    
         return(
             <>
             <NavContainer props={this.props} />
@@ -85,6 +79,8 @@ const mapStateToProps = (state) => {
         comments: state.comments,
         kits: state.kits,
         community: state.community,
+        // focus: state.focus
+        // why does the focus not work?? no one will ever really know why...
         
 
     }
@@ -93,8 +89,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
     return {
         loadCommunityData: () => {dispatch(loadCommunityData())},
-        // updateCommunityComments: (commentSet) => {dispatch(updateCommunityComments(commentSet))}
-        
       }
 }
 
