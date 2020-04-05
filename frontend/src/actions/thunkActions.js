@@ -55,7 +55,7 @@ class Thunk {
         let selectionPayload = {selection: selection, kit: augmentedSelectionKit, theme: selectionTheme}
         
         return selectionPayload
-      }
+    }
 
 
     handleFetchPayload(payload) {
@@ -97,8 +97,6 @@ class Thunk {
         return msg
     }
 
-
-
     loadKits(data, theme_id) {
     var newKit; 
     var payload;
@@ -106,12 +104,12 @@ class Thunk {
             newKit= {theme_id: theme_id, description: "no data"}
             new Kit(newKit)
         } else {
-            data.results.map(kit => {
-                
+            data.results.map(kit => {   
                 newKit = new Kit(kit)
             })    
         }
         payload = Kit.allIncludedKits.filter(kit => kit.theme_id === theme_id)
+
         return payload;
     }
 
@@ -130,6 +128,7 @@ class Thunk {
         let filteredComments = []
         console.log(resp)
         resp.map(unit => filteredComments.push(unit.data.attributes))
+        
         return filteredComments;
     }
 

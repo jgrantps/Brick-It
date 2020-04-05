@@ -1,6 +1,6 @@
 class CommunityController < ApplicationController
     def index
-        public_selections = Selection.are_public #.filter{ |i| !i.comments.empty? }
+        public_selections = Selection.are_public
         
         options = {
             include: [:'kit.theme']
@@ -42,13 +42,13 @@ class CommunityController < ApplicationController
         updated_comments = public_comments.reject {|num| update_params.detect{|i| i == num.id}}
 
         serialized_comments = []
+        
         options = {
             include: [:user, :selection, :'selection.kit', :'selection.kit.theme']
         }
         updated_comments.each {|comment|serialized_comments.push(CommentSerializer.new(comment, options))}
         
-        
-             render json: serialized_comments   
+        render json: serialized_comments   
     end
 
     

@@ -18,7 +18,6 @@ class CommunityContainer extends Component {
 
         const {updater, timer, localStateRef} = onStart
         this.intervalID = setInterval(updater, timer, localStateRef)
-        // let liveUpdater = setInterval(updater, timer, localStateRef)  
     }
 
     componentWillUnmount() {
@@ -62,7 +61,7 @@ class CommunityContainer extends Component {
         return(
             <>
             <NavContainer props={this.props} />
-            <div className="pt-12">
+            <div className="pt-4 mt-16">
                 {this.communityUsers()}
             </div>
             </>

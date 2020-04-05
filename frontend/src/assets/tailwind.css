@@ -10,6 +10,10 @@
     @apply bg-gray-200;
   }
 
+  .submit-btn:focus {
+    @apply outline-none bg-gray-200;
+  }
+
 .theme-letter {
   @apply px-2 py-1 m-2 w-10 justify-center flex border rounded text-lg font-bold;
 }
@@ -69,6 +73,14 @@
 
 .trash-can-wrapper:hover {
   @apply text-red-800;
+}
+
+.menu-btn {
+  @apply flex-1 text-center;
+}
+
+.menu-btn:hover {
+  @apply font-semibold text-gray-800;
 }
 
 

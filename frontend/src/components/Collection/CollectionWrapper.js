@@ -28,9 +28,9 @@ class CollectionWrapper extends Component {
         })        
 
         return(
-            <div key={uuid()} className="border-b border-gray-300">
+            <div key={uuid()} className="flex  flex-col mx-8 border-b border-gray-300">
              <TitleHeading name={category.name} headingClass="collection-theme-title"/>
-            <div  className="flex">
+            <div  className="flex flex-wrap">
                 {fromattedKits}
             </div>
             </div>

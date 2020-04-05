@@ -4,36 +4,39 @@ import { connect } from 'react-redux';
 
 import { loadUserCollection } from '../actions/bulkActions'
 import NavContainer from './NavContainer'
+import {LoadingSignal} from '../components/Elements/Elements'
+
 
 class UserContainer extends Component {
 
     componentDidMount() {
-        const { collection } = this.props
-
         //FETCH ALL SELECTIONS FROM THE USER'S DATABASE.
+        const { collection } = this.props
         if (!collection.loaded) {
             this.props.loadUserCollection()
         }   
     }
     
-    loadingSignal = () => {
-        const { collection } = this.props
-        if (collection.loading){
-            return <h1 className="text-2xl">I AM LOADING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</h1>
-        }
-    }
-
     render() {
-        
-        const { name, slug, match:{url}} =  this.props
+        const { name} =  this.props
         return(
             <>
            <NavContainer props={this.props} /> 
              
-            <div id="user-container" className="user pt-12">
+            <div id="user-container" className=" flex items-center  h-64 border-2 border-black rounded  m-4 mt-24">
+                <div className="h-20 w-20 bg-blue-500 m-4"></div>
+                <div className="h-20 w-20 bg-red-500 m-4"></div>
+                <div className="h-20 w-20 bg-green-500 m-4"></div>
+                {/* {LoadingSignal(this.props.collection.loading)}
                 <h2>welcome {name}!</h2>
-                {this.loadingSignal()}
-                <h2>Please select from the above Menu.</h2>
+                <h2>About</h2>
+                <p className="w-1/2">
+                    Brickit is an app designed to help users of the rebrickable Lego community connect and share ideas.
+                    Users build their own collection of their favorite lego sets from the catalogue, and then are able to comment on their selections, as well as share them with the brickit community should they choose.
+                    <br></br>
+                    <br></br>
+                    Users are able to comment on other community members' publicly available selections.
+                </p> */}
             </div>
             </>
         )

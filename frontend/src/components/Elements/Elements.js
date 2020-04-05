@@ -6,11 +6,8 @@ import CommentContainer from '../../containers/CommentContainer'
 import loading from '../../assets/images/loading.gif'
 
 export const TitleHeading = (props) => {
-    return <h2 className={props.headingClass}>{props.name}</h2>
+    return <h2 className="font-semibold text-xl uppercase pt-2 ">{props.name}</h2>
 }
-
-
-
 
 export const TextField = (props) => {
     return <input type={props.type} onChange={props.trackChange} value={props.value} name={props.name} id={props.id} className="submit-btn"/>
@@ -47,15 +44,10 @@ const TrashCan = (comment, ) => {
     }
 }
 
-
-
-
-
-
 export const SelectionTileWrapper = (props) => {
     const {data:{id, attributes:{public: isPublic, kit:{name, set_img_url}}}} = props.selection
     return(
-        <div key={uuid()} className={isPublic ? "bg-gray-100 w-96 max-w-sm flex flex-col content-between m-4 px-6 " : "flex flex-col pt-6 content-between w-96 max-w-sm m-4 px-6 "}>
+        <div key={uuid()} className={isPublic ? "bg-gray-100 w-96 max-w-sm flex flex-col content-between m-4 px-6 " : "flex flex-col border border-black rounded-lg pt-6 content-between w-96 max-w-sm m-4 px-6 "}>
         {service.publicTag(isPublic)}
         <SelectionImage name={name} image={set_img_url} />
         <TitleHeading name={name} />
@@ -92,22 +84,22 @@ export const CommentItem = (props) => {
 
 
 
-export const CommunityCommentList = (props) => {
+// export const CommunityCommentList = (props) => {
     
-    const {comment, user, handleOnClick} = props
-    debugger
-    return (
-        <div key={uuid()} className="flex border-b justify-between m-1 px-2 py-1">
-            <div className=" flex flex-col">
-                <h3 className="font-bold">{comment.data.attributes.user.name}:</h3>
-                <h2>{comment.data.attributes.comment}</h2>
-            </div>
-            <button id={comment.data.id}   className="trash-can-wrapper" onClick={handleOnClick}>
-           {TrashCan(comment, user)}
-            </button>
-        </div>
-    )
-}
+//     const {comment, user, handleOnClick} = props
+//     debugger
+//     return (
+//         <div key={uuid()} className="flex border-b justify-between m-1 px-2 py-1">
+//             <div className=" flex flex-col">
+//                 <h3 className="font-bold">{comment.data.attributes.user.name}:</h3>
+//                 <h2>{comment.data.attributes.comment}</h2>
+//             </div>
+//             <button id={comment.data.id}   className="trash-can-wrapper" onClick={handleOnClick}>
+//            {TrashCan(comment, user)}
+//             </button>
+//         </div>
+//     )
+// }
 
 
 export const SelectionImage = (props) => {
