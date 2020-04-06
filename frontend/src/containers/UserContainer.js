@@ -23,20 +23,24 @@ class UserContainer extends Component {
             <>
            <NavContainer props={this.props} /> 
              
-            <div id="user-container" className=" flex items-center  h-64 border-2 border-black rounded  m-4 mt-24">
-                <div className="h-20 w-20 bg-blue-500 m-4"></div>
-                <div className="h-20 w-20 bg-red-500 m-4"></div>
-                <div className="h-20 w-20 bg-green-500 m-4"></div>
-                {/* {LoadingSignal(this.props.collection.loading)}
-                <h2>welcome {name}!</h2>
-                <h2>About</h2>
-                <p className="w-1/2">
+            <div id="user-container" className="welcome-container">
+                
+                {LoadingSignal(this.props.collection.loading)}
+                <h2>Welcome {name}!</h2>
+                    <br></br>
+                <p className="max-w-xl">
                     Brickit is an app designed to help users of the rebrickable Lego community connect and share ideas.
                     Users build their own collection of their favorite lego sets from the catalogue, and then are able to comment on their selections, as well as share them with the brickit community should they choose.
                     <br></br>
                     <br></br>
-                    Users are able to comment on other community members' publicly available selections.
-                </p> */}
+                    Click on the "catalogue" tab to browse the lego catalogue via the Rebrickable API.  You can choose which kits added to your collection are public - making them available for other users to comment.
+                    <br></br>
+                    <br></br>
+                    Click on the "Collection" tab to browse your own collection of leg kits.  Kits added to your collection in your current session will appear at the top of the page.
+                    <br></br>
+                    <br></br>
+                    Click on the "Community" tab to see what other Brickit users are choosing for their collections!  Comment on their collected kits to let them know what you think. 
+                </p>
             </div>
             </>
         )

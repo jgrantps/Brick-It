@@ -126,7 +126,6 @@ class Thunk {
 
     filterCommentPayload(resp){
         let filteredComments = []
-        console.log(resp)
         resp.map(unit => filteredComments.push(unit.data.attributes))
         
         return filteredComments;

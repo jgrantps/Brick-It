@@ -60,8 +60,11 @@ class CollectionContainer extends Component {
         let uniqueCurrentThemeIdlist = [...new Set(currentThemeIdList)]
         let uniqueCurrentThemeList = []
         uniqueCurrentThemeIdlist.map(themeId => uniqueCurrentThemeList.push(currentThemeList.find(theme=> theme.api_id == themeId)))
-
-        return uniqueCurrentThemeList.map(theme => {return(<CollectionWrapper key={uuid()} category={theme} categoryId={theme.api_id} reduxType="collection" />)})   
+        if (collectionSet.length >0){
+            return uniqueCurrentThemeList.map(theme => {return(<CollectionWrapper key={uuid()} category={theme} categoryId={theme.api_id} reduxType="collection" />)})   
+        } else {
+            return (<SelectionPrompt prompt="You currently have no kits in your collection" />)
+        }
     }
 
     currentSelections = () => {

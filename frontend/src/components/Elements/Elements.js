@@ -15,7 +15,7 @@ export const TextField = (props) => {
 
 export  const SelectionPrompt = (props) => {
     return (
-        <div className="selection-prompt-wrapper">
+        <div className="mx-8 prompt-wrapper">
             <h2 className="selection-prompt">{props.prompt}</h2>
         </div>
         )

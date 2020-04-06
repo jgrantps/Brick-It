@@ -763,6 +763,19 @@ video {
   color: #2d3748;
 }
 
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  border-width: 2px;
+  border-color: #000;
+  border-radius: 0.25rem;
+  margin: 1rem;
+  padding: 1.5rem;
+  margin-top: 6rem
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

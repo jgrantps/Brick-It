@@ -18,6 +18,11 @@ export default function collectionReducer(
     return{
         ...state, loading: false, loaded: true, body: [...action.payload]
     }
+    
+    case 'NEW_USER':
+        return{
+            ...state, loading: false, loaded: true, body: [...state.body]
+        }
 
     case 'LOG_OUT':
         return{
