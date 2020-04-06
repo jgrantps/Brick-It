@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import uuid from 'react-uuid'
 
 
-import {TileWrapper} from '../Elements/Elements'
+import {SelectionTileWrapper} from '../Elements/Elements'
 
 class SelectionWrapper extends Component {
     
@@ -10,7 +10,7 @@ class SelectionWrapper extends Component {
         const {selection} = this.props
         return (
             <div key={uuid()} >
-                <TileWrapper unit={selection.kit} comments={selection.selection} isPublic={selection.selection.public}/>
+                <SelectionTileWrapper unit={selection.kit} comments={selection.selection} isPublic={selection.selection.public}/>
             </div>
         )
     }

@@ -32,11 +32,20 @@ export default function userReducer(
         return{
              name: action.payload.name, slug: action.payload.slug, id: action.payload.id, loggedIn: true, loggingIn: false, errors: null
         }
+        
+        // case 'ON_FOCUS':
+        // return{
+        //     ...state, focusStatus: true
+        // }
+
+        // case 'ON_BLUR':
+        //     return{
+        //         ...state, focusStatus: false
+        //     }
 
         case 'LOG_OUT':
         return{
             ...initialState
-            // name: "", slug:"",id:"",  errors: null, loggedIn: false, loggingIn: false
         }
 
         default: 

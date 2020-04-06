@@ -25,24 +25,19 @@ class App extends Component {
 
     
     return(
-      <div className="App">
+      <div className="App flex flex-col">
         
        
         <Switch>
-          
-        <HideWelcome exact path="/" loggedIn={loggedIn} slug={slug} component={LandingPage} />
-        <Oauth path="/login/github/" component={Oauth} />
-        <HideLogin exact path='/login' bar="bazz" loggedIn={loggedIn} params={this.props.params} slug={slug} component={LoginContainer} />
-        <Route path="/logout" component={LogoutRoutine}/>
-        <PrivateUser exact path={`/:userId`} loggedIn={loggedIn} name={name} params={this.props.params} slug={slug} component={UserContainer} /> 
-        
-        <PrivateUser exact path={`/:userId/community`} loggedIn={loggedIn} params={this.props.params} slug={slug} component={CommunityContainer} />
-        <PrivateUser exact path={`/:userId/collection`} loggedIn={loggedIn} params={this.props.params} slug={slug} component={CollectionContainer} />
-        <PrivateUser exact path={`/:userId/catalogue`} loggedIn={loggedIn} params={this.props.params} slug={slug} component={CatalogueContainer} />
-           
-      
+          <HideWelcome exact path="/" loggedIn={loggedIn} slug={slug} component={LandingPage} />
+          <Oauth path="/login/github/" component={Oauth} />
+          <HideLogin exact path='/login' bar="bazz" loggedIn={loggedIn} params={this.props.params} slug={slug} component={LoginContainer} />
+          <Route path="/logout" component={LogoutRoutine}/>
+          <PrivateUser exact path={`/:userId`} loggedIn={loggedIn} name={name} params={this.props.params} slug={slug} component={UserContainer} /> 
+          <PrivateUser exact path={`/:userId/community`} loggedIn={loggedIn} params={this.props.params} slug={slug} component={CommunityContainer} />
+          <PrivateUser exact path={`/:userId/collection`} loggedIn={loggedIn} params={this.props.params} slug={slug} component={CollectionContainer} />
+          <PrivateUser exact path={`/:userId/catalogue`} loggedIn={loggedIn} params={this.props.params} slug={slug} component={CatalogueContainer} />
         </Switch>
-        
       </div>
     ) 
   }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
-import { loadLogin, loadSignup } from '../actions/adjusterSelections'
+import { loadLogin, loadSignup } from '../actions/userAccess'
 import LoginInput from '../components/Login/LoginInput';
 import LoginOauth from '../components/Login/LoginOauth';
 

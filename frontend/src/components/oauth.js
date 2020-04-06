@@ -2,14 +2,10 @@ import React, { Component } from 'react'
 import service from '../classes/service'
 
 import { connect } from 'react-redux';
-import {setUser} from '../actions/authentications'
 import { Redirect} from 'react-router-dom';
+import { loadOauth } from '../actions/userAccess';
 
 class Oauth extends Component {
-
-
-
-
 
     render () {
     let queryString=window.location.search
@@ -19,7 +15,7 @@ class Oauth extends Component {
     let userId = urlParam.get('id')
     window.localStorage.setItem('token', newtoken)
     let verifiedUserCredentials={name: userName, id: userId, slug: service.slugify(userName)}
-    this.props.setUser(verifiedUserCredentials) 
+    this.props.loadOauth(verifiedUserCredentials) 
 
     return <Redirect to='/login'  />
 }   
@@ -27,9 +23,7 @@ class Oauth extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        setUser: (userInfo => {
-            dispatch(setUser(userInfo))
-        })
+        loadOauth: (userInfo => {dispatch(loadOauth(userInfo))})
     }
 }
 

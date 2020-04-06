@@ -56,6 +56,14 @@ class Services {
     return isPublic ? "rounded-lg bg-gray-500 flex flex-col m-4 px-6 shadow" : "rounded-lg bg-green-100  flex flex-col m-4 px-6 shadow"
   }
 
+  currentUser = () => {
+    return JSON.parse(localStorage.getItem('current_user'))
+  }
+
+  // backgroundUpdate = () => {
+  //          setInterval(() => { updateCommunityComments(this.communityCommentList()) }, 3000)
+
+  // }
       
         
 

@@ -4,7 +4,7 @@ import { createStore, compose, applyMiddleware} from 'redux';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { composeWithDevTools } from 'redux-devtools-extension';
-// import mainReducer from './reducers/mainReducer';
+
 import rootReducer from './reducers/rootReducer';
 import thunk from 'redux-thunk';
 import './assets/main.css'
@@ -13,11 +13,11 @@ import * as serviceWorker from './serviceWorker';
 import service from './classes/service'
 
 const persistedState = service.loadFromLocalStorage();
-// const middleware = applyMiddleware(thunk)
+
 const combinedMiddleware = compose(applyMiddleware(thunk), composeWithDevTools())
 
-// const store = createStore(mainReducer, persistedState, applyMiddleware(thunk))
 const store = createStore(rootReducer, persistedState, combinedMiddleware)
+// const store = createStore(rootReducer, combinedMiddleware)
 
 
 store.subscribe(()=> service.saveToLocalStorage(store.getState()))

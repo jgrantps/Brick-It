@@ -2,9 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import NavContainer from './NavContainer'
-import { loadThemes } from '../actions/adjusterSelections'
+import { loadThemes } from '../actions/reBrickableAPIAccess'
 import service from '../classes/service'
-import { Theme } from '../classes/themes';
 import ThemeUI from '../components/Catalogue/themeUI'
 import ThemeTile from '../components/Catalogue/themeTile'
 import {LoadingSignal} from '../components/Elements/Elements'
@@ -17,11 +16,6 @@ class CatalogueContainer extends Component {
         childrenList: []
     }
 
-    // loadingSignal = () => {
-    //     if (this.props.themes.loading){
-    //         return <h1 className="text-2xl">I AM LOADING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</h1>
-    //     }
-    // }
     
     handleLetterSelect = (e) => {
         const {themes} = this.props
@@ -43,12 +37,11 @@ class CatalogueContainer extends Component {
     }
     
     render() {
-        
         let collectedThemes = this.state.childrenList.map(theme => this.convertThemeToTile(theme))    
         return(
             <>
             <NavContainer props={this.props} />
-            <div id="flex flex-col justify-center w-auto" className="pt-12">
+            <div id="flex flex-col justify-center w-auto" className="pt-4 mt-16">
                 <ThemeUI handleOnSubmit={this.handleLetterSelect} />
                 {collectedThemes}
                 {LoadingSignal(this.props.themes.loading)}
@@ -77,7 +70,8 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = (state) => {
     return {
         themes: state.themes,
-        loading: state.loading   
+        loading: state.loading,   
+        collection: state.collection
     }
 }
 

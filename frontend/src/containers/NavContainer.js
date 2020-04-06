@@ -10,56 +10,23 @@ import CollectionContainer from './CollectionContainer'
 import CommunityContainer from './CommunityContainer'
 
 class NavContainer extends Component {
-    logInLogOut= (loggedIn, name) => {
-        if (loggedIn) {
-            return (
-                <>
-                <span className="leading-tight text-sm">Logged In as</span> <span className="underline font-bold mr-4">{name}</span>
-                <Link to="/logout">Logout</Link>
-                </>)
-        } else {
-            return <Link to="/login">Login</Link>
-        }     
-    }
-    
-    accessInternals= (loggedIn) => {
-        const {props:{match:{url}}} =  this.props
-        const {userId} = this.props.props.computedMatch.params
-        
-        if (loggedIn) {
-            return(
-                <>
-              
-            <Link to={`/${userId}/collection`}>My Collection</Link>
-            <Link to={`/${userId}/catalogue`}>Catalogue</Link>
-            <Link to={`/${userId}/community`}>Community</Link>
-
-            
-            </>
-            )
-        }
-    }
     render() {
         
-        const {loggedIn, name, props:{match:{url}}} = this.props
+        const {loggedIn, name} = this.props
+        const {userId} = this.props.props.computedMatch.params
         return(
-            <div className="flex absolute h-12 bg-blue-200 w-full items-center justify-around px-16">
-                <div className="title">
-                    {this.logInLogOut(loggedIn, name)}
+            <div className=" flex fixed items-center h-14 z-40 bg-blue-200 w-full px-16 py-3">
+                <Link className= "menu-btn" to={`/${userId}/collection`}>My Collection</Link>
+                <Link className= "menu-btn" to={`/${userId}/catalogue`}>Catalogue</Link>
+                <Link className= "menu-btn" to={`/${userId}/community`}>Community</Link>
+               
+                <div className="flex flex-col align-middle content-center text-center">
+                    <div>
+                        <span className="leading-tight text-sm">Logged In as</span> <span className="underline font-bold mr-4">{name}</span>
+                    </div>
+                    <Link className="menu-btn" to="/logout">Logout</Link>
                 </div>
-                {this.accessInternals(loggedIn)}
-                
-                {/* <Route exact path={`/${url}/community`} component={CommunityContainer} />
-                <Route exact path={`/${url}/catalogue`} component ={CatalogueContainer} />
-                <Route exact path={`/${url}/collection`} component={CollectionContainer} /> */}
-            
             </div>
-            
-
-            
-            
-            
-
         )
     }
 }

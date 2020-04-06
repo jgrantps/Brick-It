@@ -2,6 +2,7 @@ import {Kit} from '../classes/kits'
 import service from '../classes/service'
 import {Theme} from '../classes/themes'
 
+
 class Thunk {
 
     formatThemes(data) {
@@ -54,7 +55,7 @@ class Thunk {
         let selectionPayload = {selection: selection, kit: augmentedSelectionKit, theme: selectionTheme}
         
         return selectionPayload
-      }
+    }
 
 
     handleFetchPayload(payload) {
@@ -81,6 +82,8 @@ class Thunk {
 
     handleLoginCredentials(fetch) {
         let verifiedUserCredentials={name: fetch.package.name, id: fetch.package.id, slug: service.slugify(fetch.package.name)}
+        let serializedUser = JSON.stringify(verifiedUserCredentials)
+        window.localStorage.setItem('current_user', serializedUser)
         return verifiedUserCredentials;
     }
 
@@ -94,22 +97,19 @@ class Thunk {
         return msg
     }
 
-
-
     loadKits(data, theme_id) {
     var newKit; 
     var payload;
-        //ADDS 
         if  (data.results == undefined || data.results.length == 0) {
             newKit= {theme_id: theme_id, description: "no data"}
             new Kit(newKit)
         } else {
-            data.results.map(kit => {
-                
+            data.results.map(kit => {   
                 newKit = new Kit(kit)
             })    
         }
         payload = Kit.allIncludedKits.filter(kit => kit.theme_id === theme_id)
+
         return payload;
     }
 
@@ -127,20 +127,29 @@ class Thunk {
     filterCommentPayload(resp){
         let filteredComments = []
         resp.map(unit => filteredComments.push(unit.data.attributes))
+        
         return filteredComments;
+    }
+
+    filterCommunityDataPayload(resp) {
+        var dataPayload = {selections: [], comments: []}
+
+        dataPayload.comments.push(...this.filterCommentPayload(resp.comments));
+        dataPayload.selections.push(...resp.selections);
+        
+        return dataPayload;
     }
 
     filterDeleteComment(resp){
         let deletedComment = resp.deleted_id
         return deletedComment
-        //return only the commentId as provided by the backend resp.
-
     }
 
-    filterCommunityPayload(resp) {
-        return "still need to build this!"
+    communityCommentList(commentSet){
+        let commentIdSet = [];
+            commentSet.map(comment => commentIdSet.push(comment.id))
+            return {currentSet: commentIdSet}
     }
-
 }
 
 let thunkAction = new Thunk

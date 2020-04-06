@@ -10,4 +10,14 @@ class User < ApplicationRecord
 
     validates :password, :presence => true
 
+    def self.public_users
+        aa = []
+        self.all.each do |i|
+            aa.push(i) if (i.selections.detect {|e| e.public == true })
+        end
+        aa
+    end
+
+
+
 end

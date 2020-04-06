@@ -1,8 +1,8 @@
 class ApiAdapter {
 
     constructor() { 
-        this.backend = "http://localhost:3001" 
-        this.baseUrl = "http://localhost:3001" 
+        this.backend = "http://localhost:5000" 
+        this.baseUrl = "http://localhost:5000" 
         this.rebrickableBaseUrl = "https://rebrickable.com/api/v3/lego/"
         
         //AUTHENTICATION HEADER FOR FETCH REQUESTS TO LOCAL API.
@@ -96,7 +96,6 @@ class ApiAdapter {
 
     //Retrieve all SELECTIONS from User's DB and add to Collection Store.
     fetchAllSelections(token) {
-        // return fetch(`http://localhost:3001/selections`, this.getConfig(token))
         return fetch(`${this.backend}/selections`, this.getConfig(token))
             .then(resp => resp.json())
     }
@@ -107,24 +106,33 @@ class ApiAdapter {
         .then(r => r.json())
     }
 
-    subitComment(configPackage, token) {
+    submitComment(configPackage, token) {
         return fetch(`${this.backend}/comments`, this.postConfig(configPackage, token))
         .then(r => r.json())
     }
+
+
 
     fetchUserComments(token) {
         return fetch(`${this.backend}/comments`, this.getConfig(token))
             .then(resp => resp.json())
     }
 
-    deleteComment(configPackage, token) {
-        return fetch(`${this.baseUrl}/comments/${configPackage}`, this.deleteConfig(configPackage, token))
-            .then(resp => resp.json())
+    updateComments(configPackage, token) {
+        return fetch(`${this.backend}/community/update`, this.postConfig(configPackage, token))
+        .then(r => r.json())
     }
 
     fetchCommunityComments(token) {
         return fetch(`${this.backend}/community`, this.getConfig(token))
         .then(resp => resp.json())
+    }
+
+
+
+    deleteComment(configPackage, token) {
+        return fetch(`${this.baseUrl}/comments/${configPackage}`, this.deleteConfig(configPackage, token))
+            .then(resp => resp.json())
     }
 
 
