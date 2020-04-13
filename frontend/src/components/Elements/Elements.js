@@ -4,6 +4,9 @@ import DeleteComment from '../../assets/images/deleteCommentSVG'
 import service from '../../classes/service'
 import CommentContainer from '../../containers/CommentContainer'
 import loading from '../../assets/images/loading.gif'
+import Counter from '../../components/Counter'
+
+
 
 export const TitleHeading = (props) => {
     return <h2 className="font-semibold text-xl uppercase pt-2 ">{props.name}</h2>
@@ -49,6 +52,7 @@ export const SelectionTileWrapper = (props) => {
     return(
         <div key={uuid()} className={isPublic ? "bg-gray-100 w-96 max-w-sm flex flex-col content-between m-4 px-6 " : "flex flex-col border border-black rounded-lg pt-6 content-between w-96 max-w-sm m-4 px-6 "}>
         {service.publicTag(isPublic)}
+        <Counter />
         <SelectionImage name={name} image={set_img_url} />
         <TitleHeading name={name} />
         <CommentContainer currentSelectionID={id}  />
