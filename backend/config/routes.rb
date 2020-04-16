@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   post '/community/update', to: 'community#update'
   get '/auth/:provider/callback', to: 'sessions#create'
   get '/omniauth', to: 'sessions#GitHub'
+
+  mount ActionCable.server => '/cable'
   
   resources :themes
   resources :kits

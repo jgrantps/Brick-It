@@ -1,15 +1,22 @@
 class CommentsController < ApplicationController
     def create
-        
+
         comment = Comment.new(:user_id => current_user.id, :selection_id => commentParams[:selection_id], :comment => commentParams[:comment])
+        
         if comment.save
             options = {
-                include: [:user, :selection, :'selection.kit', :'selection.kit.theme']
-            }
-
-            render json: CommentSerializer.new(comment)
-        else
-            render json: {main: comment.errors.as_json(full_messages: true), reason: "error!"}
+                    include: [:user, :selection, :'selection.kit', :'selection.kit.theme']
+                }
+                new_comment = CommentSerializer.new(comment, options)
+            if comment.selection.public
+                # Render to all users.
+                ActionCable.server.broadcast('comments', {comment: new_comment})
+                head :ok
+            else
+               # Render only to the current_user
+                ActionCable.server.broadcast('comments', {comment: new_comment})
+                head :ok
+            end
         end
 
     end

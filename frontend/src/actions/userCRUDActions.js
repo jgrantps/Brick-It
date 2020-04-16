@@ -21,10 +21,10 @@ export const loadComment = (commentPayload) => {
     return (dispatch) => {
         dispatch({type: 'LOADING_COMMENTS'})
         api.submitComment(commentPayload, window.localStorage.token)
-        .then(resp => {
-            dispatch({type:'LOAD_NEW_COMMENT',payload: resp.data.attributes})
-        })
-        .catch(err => console.log(err))
+        // .then(resp => {
+        //     dispatch({type:'LOAD_NEW_COMMENT',payload: resp.data.attributes})
+        // })
+        // .catch(err => console.log(err))
     }
 }
 

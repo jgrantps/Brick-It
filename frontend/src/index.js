@@ -4,6 +4,8 @@ import { createStore, compose, applyMiddleware} from 'redux';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import {ActionCableProvider} from 'react-actioncable-provider'
+import {API_WS_ROOT} from './constants/index'
 
 import rootReducer from './reducers/rootReducer';
 import thunk from 'redux-thunk';
@@ -25,7 +27,9 @@ store.subscribe(()=> service.saveToLocalStorage(store.getState()))
 ReactDOM.render(
     <Provider store = {store}>
     <BrowserRouter>
-        <App />
+        <ActionCableProvider url={API_WS_ROOT}>
+            <App />
+        </ActionCableProvider>
     </BrowserRouter>
     </Provider>,
      document.getElementById('root'));

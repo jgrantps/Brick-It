@@ -4,9 +4,11 @@ import NavContainer from './NavContainer'
 import uuid from 'react-uuid'
 import {loadUserComments} from '../actions/bulkActions'
 import {onStart} from '../actions/liveUpdate'
+import {ActionCable} from 'react-actioncable-provider'
 
 import CollectionWrapper from '../components/Collection/CollectionWrapper'
 import { SelectionPrompt, LoadingSignal } from '../components/Elements/Elements'
+import service from '../classes/service'
 
 
 class CollectionContainer extends Component {
@@ -18,8 +20,8 @@ class CollectionContainer extends Component {
             this.props.loadUserComments()
         }
 
-        const {updater, timer, localStateRef} = onStart
-        this.intervalID = setInterval(updater, timer, localStateRef)
+        // const {updater, timer, localStateRef} = onStart
+        // this.intervalID = setInterval(updater, timer, localStateRef)
  
     }
 
@@ -77,6 +79,13 @@ class CollectionContainer extends Component {
         }      
     }
 
+    handleReceivedComment = response => {
+        console.log(response)
+        let currentUser = service.currentUser()
+        
+        console.log(currentUser.name)
+    }
+
 
 
     render() { 
@@ -84,9 +93,12 @@ class CollectionContainer extends Component {
         return(
             <>
             <NavContainer props={this.props} />
+           
             <div className="pt-4 mt-16">
                 <h2 className="text-4xl border-b-2 border-gray-700 mx-8 mb-4">Recent Selections:</h2>
-                
+                <ActionCable channel={{ channel: 'CommentsChannel' }} onReceived={this.handleReceivedComment}/>
+                <ActionCable channel={{ channel: `CommentsChannel` }} onReceived={this.handleReceivedComment}/>
+
                 {LoadingSignal(this.props.selections.loading)}
                 <div className="flex flex-wrap bg-blue-100">
                     {this.currentSelections()}

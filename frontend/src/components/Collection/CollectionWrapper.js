@@ -2,8 +2,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import uuid from 'react-uuid'
 import { SelectionTileWrapper, TitleHeading } from '../Elements/Elements'
+import NewTileWrapper from './NewTileWrapper'
 
 class CollectionWrapper extends Component {
+
+    
 
     render() {
         const { reduxType} = this.props
@@ -22,7 +25,7 @@ class CollectionWrapper extends Component {
     let fromattedKits  = kitsInCategory.map(selection =>{    
             return (
                 <div key={uuid()}>
-                    <SelectionTileWrapper selection ={selection}/>
+                    <NewTileWrapper selection ={selection} handleReceivedComment={this.handleReceivedComment}/>
                 </div>
             )
         })        
@@ -33,6 +36,7 @@ class CollectionWrapper extends Component {
             <div  className="flex flex-wrap">
                 {fromattedKits}
             </div>
+            
             </div>
         )
     }
