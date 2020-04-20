@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import axios from 'axios'
 
 import { loadLogin, loadSignup } from '../actions/userAccess'
 import LoginInput from '../components/Login/LoginInput';
@@ -24,15 +25,29 @@ class LoginContainer extends Component {
     }
 
     //LOG USER IN.
-    handleOnLogin = e => {
-        e.preventDefault()
+    // handleOnLogin = e => {
+    //     e.preventDefault()
        
-        let logInCredentials = {
-            name: this.state.name,
-            password: this.state.password
-        }
-        this.props.submitLogin(logInCredentials)
-    } 
+    //     let logInCredentials = {
+    //         name: this.state.name,
+    //         password: this.state.password
+    //     }
+    //     this.props.submitLogin(logInCredentials)
+    // } 
+
+    handleOnLogin = e => {
+        const {name, password} = this.state
+        axios.post("http://localhost:5000/login", {
+            session: {
+                name: name,
+                password: password,
+                
+            }
+        },
+        { withCredentials: true}
+        ).then(resp => console.log(resp))
+        .catch(err => console.log(err))
+    }
 
     //SIGN NEW USER UP.
     handleOnSignup = e => {

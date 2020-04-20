@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   require 'open-uri'
 
   def create
-   
+  #  byebug
     if request.env["omniauth.auth"]
       # log in with omniauth data
       oauth_username = request.env["omniauth.auth"]["info"]["nickname"]
@@ -29,12 +29,16 @@ class SessionsController < ApplicationController
         
 
     else
-      
+    
       # Normal login with username and password
       user = User.find_by(:name => sessionParams[:name])
       if user && user.try(:authenticate, sessionParams[:password])
-        token = Auth.create_token({:name=> user.name, :id=> user.id})
-        render json: {token: token, package: {name: user.name, id: user.id}}
+        created_jwt = issue_token({id: user.id})
+        cookies.signed[:jwt] = {value:  created_jwt, httponly: true, expires: 1.hour.from_now}
+        render json: {username: user.name}
+        
+        # token = Auth.create_token({:name=> user.name, :id=> user.id})
+        # render json: {token: token, package: {name: user.name, id: user.id}}
       else
         
         render json: {error: "Login Failed: Name and/or Password are incorrect.  Please try again!"}

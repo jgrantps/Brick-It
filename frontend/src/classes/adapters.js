@@ -24,9 +24,19 @@ class ApiAdapter {
                 body: JSON.stringify(configPackage)
             })
         }
+
+        this.loginConfig = (configPackage) => {
+            
+            return({
+                method: "POST",
+                credentials: 'include',
+                // body: JSON.stringify({name: "boobs"})
+                body: {"test": "hello"}
+            })
+        }
         
         //CONFIGURATION OBJECT FOR DELETE REQUESTS TO LOCAL API.
-        this.deleteConfig = (configPackage= '', token=undefined, method="DELETE") =>{
+        this.deleteConfig = (configPackage= '', token=undefined, method="DELETE") =>{   
             return ({  
                 method: method,
                 headers: {
@@ -69,9 +79,21 @@ class ApiAdapter {
 // Requests to Brickit API:
     
     //LOG USER IN
-    Login(formData) {
-        return fetch(`${API_ROOT}/login`, this.postConfig(formData))
-        .then(r=>r.json())
+    // Login(formData) {
+    //     return fetch(`${API_ROOT}/login`, this.loginConfig(formData))
+    //     .then(r=>r.json())
+    // }
+
+    Login(loginParams) {
+        // debugger
+        return fetch(`http://localhost:5000/login`, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+            // "Content-Type": "application/json",
+            // "Accept": "application/json",
+            withCredentials: 'include',
+            body: JSON.stringify(loginParams)
+        }).then(r=>r.json())
     }
 
     //SIGN NEW USER UP

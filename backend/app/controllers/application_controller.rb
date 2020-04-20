@@ -2,6 +2,7 @@ require 'Auth'
 require 'byebug'
 class ApplicationController < ActionController::API
   include ::ActionController::Cookies
+
   before_action :signed_in?
     def signed_out?
         return true if !!current_user != true
