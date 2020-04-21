@@ -16,6 +16,7 @@
     "react-twitter-auth": "0.0.13",
     "react-uid": "^2.2.0",
     "react-uuid": "^1.0.2",
+    "readme-md-generator": "^1.0.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "tailwindcss": "^1.2.0"
