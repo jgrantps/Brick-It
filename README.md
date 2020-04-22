@@ -1,70 +1,63 @@
-# Project Title
+# Welcome to Brick-it
 
-One Paragraph of project description goes here
+Brick-it is a fully developed React/Rails API-powered user forum web-app designed for lego enthusiasts.  Leveraging the [ReBrickable API](https://rebrickable.com/api/v3/docs/), users can browse Lego sets from the ReBrickable catalogue and add them to their collection as either public or private selections.  Public selections are exposed to a community page, where other Brick-it users may post their own comments on any given public selection.
+
+Brick-it is a secure app, utilizing JWT and Omniauth (via Github) sign-up & log-in strategies. Live comment updating is provided via JavaScript polling (see the end of the readme for details on the websocket-based updating strategy in this repo).
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+**In order for any part of the app to work, you must boot up both the front and back ends of this project (found in their respective folders).**
 
-Say what the step will be
+Step 1: First fork and Clone the this Repo.
 
-```
-Give the example
-```
-
-And repeat
+Step 2: In the `/backend` directory, first run `bundle install` to initialize the project dependencies.
 
 ```
-until finished
+bundle install
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+Step 3: In the `/backend` directory, run `rake db:migrate` to initialize the database.
 
 ```
-Give an example
+rake db:migrate
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
+Step 4: In the `/backend` directory, run `rails s -p 5000` to spin up the rails server on the appropriate port
 
 ```
-Give an example
+rails s -p 5000
 ```
 
-## Deployment
+Step 5: In the `/frontend` directory, run `npm install` to initialize the React dependencies.
 
-Add additional notes about how to deploy this on a live system
+```
+npm install
+```
+
+Step 6: In the `/frontend` directory, run `npm start` to start the react.js app.
+
+```
+npm start
+```
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Ruby On Rails](https://rubyonrails.org/) - The Framework used for the API
+* [OmniAuth Github](https://github.com/omniauth/omniauth-github) - The Omniauth strategy for authenticating to Github.
+* [fast_jsonapi](https://github.com/Netflix/fast_jsonapi) - The JSON:API serializer for backend ruby objects
+* [React](https://facebook.github.io/react/) - JavaScript library used
+* [Redux](http://redux.js.org/) - Used for Frontend State Management
+* [Tailwindcss](https://tailwindcss.com/) - the CSS framework used
+
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Comments and suggestions are welcome.  Feel free to submit a pull request with details of what you think could be improved.
 
 ## Versioning
 
@@ -72,9 +65,8 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Peter Grant** - *Initial work* - [PurpleBooth](https://github.com/jgrantps)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
@@ -82,6 +74,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* Special thanks to the faculty at Flatiron School for their assistance in acheiving some of stretch goals in this project.
+* Special thanks to [Joan Deitchman](https://github.com/jdeitchman) for being an exceptional sister and friend in helping me with my journey into the tech space.
