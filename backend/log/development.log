@@ -17766,3 +17766,12 @@ Completed 200 OK in 603ms (Views: 263.0ms | ActiveRecord: 13.0ms | Allocations: 
 
 
 Started GET "/auth/github" for ::1 at 2020-04-22 08:23:05 -0300
+Started POST "/logout" for ::1 at 2020-04-22 08:40:42 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#destroy as */*
+  Parameters: {"_json"=>nil, "session"=>{"_json"=>nil}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `current_user'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 726)
+
+
