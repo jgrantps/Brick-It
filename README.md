@@ -59,6 +59,14 @@ npm start
 
 Comments and suggestions are welcome.  Feel free to submit a pull request with details of what you think could be improved.
 
+## Future Releases
+
+**Work is underway to refactor the following app components:**
+
+* Users will be given full CRUD cabalities on selections as well as comments.
+* JWT authentication is being replaced with HTTPonly cookies.
+* JavaScript polling is being replaced with Websockets via actioncable.
+
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
