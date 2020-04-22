@@ -73,7 +73,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Peter Grant** - *Initial work* - [PurpleBooth](https://github.com/jgrantps)
+* **Peter Grant** - *Initial work* - [github](https://github.com/jgrantps)
 
 
 ## License
