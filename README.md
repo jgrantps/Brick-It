@@ -1,70 +1,86 @@
-I'm Updated!
+# Welcome to Brick-it
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Brick-it is a fully developed React/Rails API-powered user forum web-app designed for lego enthusiasts.  Leveraging the [ReBrickable API](https://rebrickable.com/api/v3/docs/), users can browse Lego sets from the ReBrickable catalogue and add them to their collection as either public or private selections.  Public selections are exposed to a community page, where other Brick-it users may post their own comments on any given public selection.
 
-## Available Scripts
+Brick-it is a secure app, utilizing JWT and Omniauth (via Github) sign-up & log-in strategies. Live comment updating is provided via JavaScript polling (see the end of the readme for details on the websocket-based updating strategy in this repo).
 
-In the project directory, you can run:
+## Getting Started
 
-### `yarn start`
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Installing
 
-### `yarn test`
+**In order for any part of the app to work, you must boot up both the front and back ends of this project (found in their respective folders).**
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Step 1: First fork and Clone the this Repo.
 
-### `yarn build`
+Step 2: In the `/backend` directory, first run `bundle install` to initialize the project dependencies.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+bundle install
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Step 3: In the `/backend` directory, run `rake db:migrate` to initialize the database.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+rake db:migrate
+```
 
-### `yarn eject`
+Step 4: In the `/backend` directory, run `rails s -p 5000` to spin up the rails server on the appropriate port
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+rails s -p 5000
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Step 5: In the `/frontend` directory, run `npm install` to initialize the React dependencies.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+npm install
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Step 6: In the `/frontend` directory, run `npm start` to start the react.js app.
 
-## Learn More
+```
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Built With
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* [Ruby On Rails](https://rubyonrails.org/) - The Framework used for the API
+* [OmniAuth Github](https://github.com/omniauth/omniauth-github) - The Omniauth strategy for authenticating to Github.
+* [fast_jsonapi](https://github.com/Netflix/fast_jsonapi) - The JSON:API serializer for backend ruby objects
+* [React](https://facebook.github.io/react/) - JavaScript library used
+* [Redux](http://redux.js.org/) - Used for Frontend State Management
+* [Tailwindcss](https://tailwindcss.com/) - the CSS framework used
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Contributing
 
-### Analyzing the Bundle Size
+Comments and suggestions are welcome.  Feel free to submit a pull request with details of what you think could be improved.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Future Releases
 
-### Making a Progressive Web App
+**Work is underway to refactor the following app components:**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+* Users will be given full CRUD cabalities on selections as well as comments.
+* JWT authentication is being replaced with HTTPonly cookies.
+* JavaScript polling is being replaced with Websockets via actioncable.
 
-### Advanced Configuration
+## Versioning
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
-### Deployment
+## Authors
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+* **Peter Grant** - *Initial work* - [github](https://github.com/jgrantps)
 
-### `yarn build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* Special thanks to the faculty at Flatiron School for their assistance in acheiving some of stretch goals in this project.
+* Special thanks to [Joan Deitchman](https://github.com/jdeitchman) for being an exceptional sister and friend in helping me with my journey into the tech space.
